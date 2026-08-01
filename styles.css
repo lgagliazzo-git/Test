@@ -133,10 +133,117 @@ a.hub-bullet:hover {
   color: var(--color-accent);
   text-decoration: none;
   font-weight: 600;
+  margin-top: 32px;
 }
 
 .hub-back:hover {
   text-decoration: underline;
+}
+
+.hub-wide {
+  max-width: 560px;
+}
+
+/* Flight search form */
+.flight-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin-bottom: 24px;
+}
+
+.flight-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-field label {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.form-field input,
+.form-field select {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+}
+
+.form-field select {
+  text-transform: none;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.flight-form-error {
+  display: none;
+  color: #ff6b6b;
+  font-size: 0.85rem;
+}
+
+.flight-results {
+  width: 100%;
+  text-align: left;
+}
+
+.flight-results-title {
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.flight-results-group {
+  margin-bottom: 20px;
+}
+
+.flight-results-group-label {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 10px;
+}
+
+.flight-results-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.flight-result-link {
+  padding: 10px 18px;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.flight-result-link:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
 }
 
 .hub-footer {

@@ -8,13 +8,61 @@
   <script src="password-gate.js"></script>
 </head>
 <body>
-  <div class="hub">
+  <div class="hub hub-wide">
     <a href="index.html" class="hub-logo">gagli<span>dom</span></a>
     <p class="hub-page-title">✈️ Busca de viagens</p>
-    <p class="hub-page-subtitle">Em desenvolvimento.</p>
+    <p class="hub-page-subtitle">
+      Preencha os dados e abra a busca já pronta em cada site. Compare os preços entre as abas.
+    </p>
+
+    <form id="flight-form" class="flight-form" novalidate>
+      <div class="flight-form-row">
+        <div class="form-field">
+          <label for="origin">Origem (código do aeroporto)</label>
+          <input type="text" id="origin" placeholder="Ex: GRU" maxlength="3" required />
+        </div>
+        <div class="form-field">
+          <label for="destination">Destino (código do aeroporto)</label>
+          <input type="text" id="destination" placeholder="Ex: JFK" maxlength="3" required />
+        </div>
+      </div>
+      <div class="flight-form-row">
+        <div class="form-field">
+          <label for="start-date">Data de ida</label>
+          <input type="date" id="start-date" required />
+        </div>
+        <div class="form-field">
+          <label for="end-date">Data de volta</label>
+          <input type="date" id="end-date" required />
+        </div>
+      </div>
+      <div class="form-field">
+        <label for="cabin">Classe</label>
+        <select id="cabin">
+          <option value="economy">Econômica</option>
+          <option value="business">Executiva</option>
+        </select>
+      </div>
+      <p class="flight-form-error" id="flight-form-error">Preencha origem, destino e as duas datas (com código de 3 letras do aeroporto).</p>
+      <button type="submit" class="btn btn-primary btn-lg">Buscar</button>
+    </form>
+
+    <div id="flight-results" class="flight-results" hidden>
+      <p class="flight-results-title">Abra cada site para comparar o preço:</p>
+      <div class="flight-results-group">
+        <p class="flight-results-group-label">Agregadores (preenchimento confiável)</p>
+        <div id="flight-results-aggregators" class="flight-results-list"></div>
+      </div>
+      <div class="flight-results-group">
+        <p class="flight-results-group-label">Companhias aéreas (melhor esforço — pode não preencher tudo)</p>
+        <div id="flight-results-airlines" class="flight-results-list"></div>
+      </div>
+    </div>
+
     <a href="index.html" class="hub-back">&larr; Voltar</a>
   </div>
   <footer class="hub-footer">&copy; <span id="year"></span> gaglidom</footer>
   <script src="script.js"></script>
+  <script src="viagens.js"></script>
 </body>
 </html>
