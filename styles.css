@@ -168,6 +168,7 @@ a.hub-bullet:hover {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  min-width: 0;
 }
 
 .form-field label {
@@ -177,6 +178,7 @@ a.hub-bullet:hover {
 
 .form-field input,
 .form-field select {
+  width: 100%;
   background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: 8px;
