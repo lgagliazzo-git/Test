@@ -4,171 +4,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>gaglidom</title>
-  <meta name="description" content="gaglidom — sua solução simples e moderna." />
+  <meta name="description" content="gaglidom — página de acesso." />
   <link rel="stylesheet" href="styles.css" />
   <script src="password-gate.js"></script>
 </head>
 <body>
-  <header class="site-header">
-    <nav class="navbar container">
-      <a href="#top" class="logo">gagli<span>dom</span></a>
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#features">Recursos</a></li>
-        <li><a href="#about">Sobre</a></li>
-        <li><a href="#pricing">Preços</a></li>
-        <li><a href="#contact">Contato</a></li>
-      </ul>
-      <a href="#contact" class="btn btn-primary nav-cta">Começar agora</a>
-    </nav>
-  </header>
+  <div class="hub">
+    <a href="#" class="hub-logo">gagli<span>dom</span></a>
 
-  <main>
-    <section id="top" class="hero">
-      <div class="container hero-inner">
-        <div class="hero-content">
-          <span class="badge">Novo · gaglidom</span>
-          <h1>Sua ideia, no ar em minutos com <span class="highlight">gaglidom</span></h1>
-          <p class="hero-subtitle">
-            Uma página simples, rápida e moderna para apresentar seu domínio ao mundo.
-            Sem complicação, sem dependências pesadas — só resultado.
-          </p>
-          <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary btn-lg">Quero começar</a>
-            <a href="#features" class="btn btn-ghost btn-lg">Saiba mais</a>
-          </div>
-        </div>
-        <div class="hero-visual" aria-hidden="true">
-          <div class="hero-card card-1"></div>
-          <div class="hero-card card-2"></div>
-          <div class="hero-card card-3"></div>
-        </div>
-      </div>
-    </section>
+    <ul class="hub-bullets">
+      <li>
+        <a href="noticias.html" class="hub-bullet">
+          <span class="bullet-num">1</span>
+          <span class="bullet-label">Notícias</span>
+        </a>
+      </li>
+      <li>
+        <a href="viagens.html" class="hub-bullet">
+          <span class="bullet-num">2</span>
+          <span class="bullet-label">Busca de viagens</span>
+        </a>
+      </li>
+      <li><span class="hub-bullet hub-bullet-empty"><span class="bullet-num">3</span></span></li>
+      <li><span class="hub-bullet hub-bullet-empty"><span class="bullet-num">4</span></span></li>
+      <li><span class="hub-bullet hub-bullet-empty"><span class="bullet-num">5</span></span></li>
+      <li><span class="hub-bullet hub-bullet-empty"><span class="bullet-num">6</span></span></li>
+      <li><span class="hub-bullet hub-bullet-empty"><span class="bullet-num">7</span></span></li>
+      <li><span class="hub-bullet hub-bullet-empty"><span class="bullet-num">8</span></span></li>
+      <li><span class="hub-bullet hub-bullet-empty"><span class="bullet-num">9</span></span></li>
+      <li><span class="hub-bullet hub-bullet-empty"><span class="bullet-num">10</span></span></li>
+    </ul>
+  </div>
 
-    <section id="features" class="features">
-      <div class="container">
-        <h2 class="section-title">Por que escolher o gaglidom</h2>
-        <p class="section-subtitle">Tudo que você precisa para começar bem, sem enrolação.</p>
-        <div class="feature-grid">
-          <div class="feature-card">
-            <div class="feature-icon">⚡</div>
-            <h3>Rápido</h3>
-            <p>Carregamento leve, sem frameworks pesados. Sua página abre instantaneamente.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🎨</div>
-            <h3>Moderno</h3>
-            <p>Design limpo e responsivo que funciona bem em qualquer dispositivo.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🔒</div>
-            <h3>Confiável</h3>
-            <p>Código simples e transparente, fácil de manter e hospedar em qualquer lugar.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="about">
-      <div class="container about-inner">
-        <div class="about-text">
-          <h2 class="section-title">Sobre o gaglidom</h2>
-          <p>
-            O gaglidom nasceu para ser a porta de entrada do seu domínio: uma página de
-            apresentação direta, bonita e funcional. Ideal para lançar rapidamente uma
-            presença online enquanto o restante do projeto é construído.
-          </p>
-        </div>
-        <div class="about-stats">
-          <div class="stat">
-            <span class="stat-number">100%</span>
-            <span class="stat-label">Responsivo</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">0</span>
-            <span class="stat-label">Dependências</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">&lt;1s</span>
-            <span class="stat-label">Carregamento</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="pricing" class="pricing">
-      <div class="container">
-        <h2 class="section-title">Planos simples</h2>
-        <p class="section-subtitle">Escolha o que faz sentido para você agora.</p>
-        <div class="pricing-grid">
-          <div class="price-card">
-            <h3>Básico</h3>
-            <p class="price">Grátis</p>
-            <ul>
-              <li>Página de entrada</li>
-              <li>Design responsivo</li>
-              <li>Suporte por e-mail</li>
-            </ul>
-            <a href="#contact" class="btn btn-ghost">Começar</a>
-          </div>
-          <div class="price-card featured">
-            <span class="price-tag">Popular</span>
-            <h3>Pro</h3>
-            <p class="price">R$ 29<span>/mês</span></p>
-            <ul>
-              <li>Tudo do Básico</li>
-              <li>Domínio personalizado</li>
-              <li>Suporte prioritário</li>
-            </ul>
-            <a href="#contact" class="btn btn-primary">Assinar</a>
-          </div>
-          <div class="price-card">
-            <h3>Empresarial</h3>
-            <p class="price">Sob consulta</p>
-            <ul>
-              <li>Tudo do Pro</li>
-              <li>Integrações customizadas</li>
-              <li>Gerente de conta dedicado</li>
-            </ul>
-            <a href="#contact" class="btn btn-ghost">Falar com vendas</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <div class="container contact-inner">
-        <h2 class="section-title">Vamos começar</h2>
-        <p class="section-subtitle">Deixe seus dados e entraremos em contato.</p>
-        <form id="contactForm" class="contact-form" novalidate>
-          <div class="form-row">
-            <label for="name">Nome</label>
-            <input type="text" id="name" name="name" placeholder="Seu nome" required />
-          </div>
-          <div class="form-row">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="voce@exemplo.com" required />
-          </div>
-          <div class="form-row">
-            <label for="message">Mensagem</label>
-            <textarea id="message" name="message" rows="4" placeholder="Como podemos ajudar?"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
-          <p class="form-feedback" id="formFeedback" role="status"></p>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <a href="#top" class="logo">gagli<span>dom</span></a>
-      <p>&copy; <span id="year"></span> gaglidom. Todos os direitos reservados.</p>
-    </div>
-  </footer>
+  <footer class="hub-footer">&copy; <span id="year"></span> gaglidom</footer>
 
   <script src="script.js"></script>
 </body>
