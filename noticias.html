@@ -8,13 +8,69 @@
   <script src="password-gate.js"></script>
 </head>
 <body>
-  <div class="hub">
+  <div class="hub hub-wide">
     <a href="index.html" class="hub-logo">gagli<span>dom</span></a>
     <p class="hub-page-title">📰 Notícias</p>
-    <p class="hub-page-subtitle">Em desenvolvimento — resumo do mercado financeiro brasileiro via WhatsApp a cada 2 horas.</p>
+    <p class="hub-page-subtitle">
+      Configure as fontes, categorias e frequência de envio das notícias pelo WhatsApp.
+    </p>
+
+    <form id="news-form" class="flight-form news-form">
+      <fieldset class="news-fieldset">
+        <legend>Fontes de notícia</legend>
+        <div class="news-checkbox-grid" id="sources-grid"></div>
+      </fieldset>
+
+      <fieldset class="news-fieldset">
+        <legend>Tipos de notícia</legend>
+        <div class="news-checkbox-grid" id="categories-grid"></div>
+      </fieldset>
+
+      <div class="flight-form-row">
+        <div class="form-field">
+          <label for="frequency">Frequência de busca e envio</label>
+          <select id="frequency">
+            <option value="1">A cada 1 hora</option>
+            <option value="2" selected>A cada 2 horas</option>
+            <option value="3">A cada 3 horas</option>
+            <option value="4">A cada 4 horas</option>
+            <option value="6">A cada 6 horas</option>
+            <option value="8">A cada 8 horas</option>
+            <option value="12">A cada 12 horas</option>
+            <option value="24">A cada 24 horas</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="quantity">Quantidade de notícias por envio</label>
+          <select id="quantity">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for="keyword-input">Palavras-chave de busca (até 10)</label>
+        <div class="keyword-input-row">
+          <input type="text" id="keyword-input" placeholder="Digite uma palavra-chave e pressione Enter" />
+          <button type="button" id="keyword-add" class="btn btn-primary">Adicionar</button>
+        </div>
+        <div class="keyword-tags" id="keyword-tags"></div>
+        <span class="keyword-count" id="keyword-count">0/10 palavras-chave</span>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg">Salvar configuração</button>
+      <p class="news-saved-msg" id="news-saved-msg">Configuração salva neste navegador ✓</p>
+    </form>
+
     <a href="index.html" class="hub-back">&larr; Voltar</a>
   </div>
   <footer class="hub-footer">&copy; <span id="year"></span> gaglidom</footer>
   <script src="script.js"></script>
+  <script src="noticias.js"></script>
 </body>
 </html>
