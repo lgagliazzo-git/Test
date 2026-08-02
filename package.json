@@ -1,0 +1,12 @@
+{
+  "name": "gaglidom-news-engine",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Motor de busca de notícias do gaglidom.cloud",
+  "scripts": {
+    "fetch-news": "node scripts/fetch-news.js"
+  },
+  "dependencies": {
+    "rss-parser": "^3.13.0"
+  }
+}

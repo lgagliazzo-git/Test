@@ -1,0 +1,120 @@
+const fs = require("fs");
+const path = require("path");
+const Parser = require("rss-parser");
+
+const parser = new Parser({ timeout: 15000 });
+
+const CONFIG_PATH = path.join(__dirname, "..", "news-config.json");
+const OUTPUT_DIR = path.join(__dirname, "..", "news");
+const OUTPUT_PATH = path.join(OUTPUT_DIR, "news.json");
+const WINDOW_HOURS = 96;
+
+// Fontes com feed RSS mapeado. Só as listadas aqui são buscadas de fato —
+// outras fontes escolhidas na tela de configuração são ignoradas até
+// termos um feed confiável para elas.
+const FEEDS = {
+  "InfoMoney": "https://www.infomoney.com.br/feed/",
+  "G1": "https://g1.globo.com/rss/g1/economia/",
+  "CNN Brasil": "https://www.cnnbrasil.com.br/economia/feed/",
+  "Poder360": "https://www.poder360.com.br/feed/",
+  "Tecmundo": "https://www.tecmundo.com.br/rss",
+  "Canaltech": "https://canaltech.com.br/rss/",
+  "Exame": "https://exame.com/feed/",
+  "Estadão": "https://www.estadao.com.br/rss/economia.xml",
+  "UOL": "https://rss.uol.com.br/feed/economia.xml",
+  "Valor Econômico": "https://valor.globo.com/rss/valor/economia/",
+};
+
+function loadConfig() {
+  if (!fs.existsSync(CONFIG_PATH)) {
+    return { sources: Object.keys(FEEDS), categories: [], keywords: [], quantity: 10, frequency: 2 };
+  }
+  return JSON.parse(fs.readFileSync(CONFIG_PATH, "utf-8"));
+}
+
+function loadExisting() {
+  if (!fs.existsSync(OUTPUT_PATH)) return [];
+  try {
+    return JSON.parse(fs.readFileSync(OUTPUT_PATH, "utf-8")).articles || [];
+  } catch {
+    return [];
+  }
+}
+
+function scoreArticle(item, keywords) {
+  if (!keywords || keywords.length === 0) return 1;
+  const text = `${item.title || ""} ${item.contentSnippet || ""}`.toLowerCase();
+  return keywords.reduce((score, kw) => score + (text.includes(kw.toLowerCase()) ? 1 : 0), 0);
+}
+
+async function main() {
+  const config = loadConfig();
+  const enabledSources = config.sources && config.sources.length ? config.sources : Object.keys(FEEDS);
+  const now = Date.now();
+  const windowStart = now - WINDOW_HOURS * 60 * 60 * 1000;
+
+  const existing = loadExisting();
+  const existingLinks = new Set(existing.map((a) => a.link));
+  const collected = [...existing];
+  const runLog = [];
+
+  for (const sourceName of enabledSources) {
+    const feedUrl = FEEDS[sourceName];
+    if (!feedUrl) {
+      runLog.push({ source: sourceName, status: "sem feed RSS mapeado, ignorado" });
+      continue;
+    }
+    try {
+      const feed = await parser.parseURL(feedUrl);
+      let added = 0;
+      for (const item of feed.items) {
+        if (!item.link || existingLinks.has(item.link)) continue;
+        const publishedAt = item.isoDate || item.pubDate;
+        const publishedTime = publishedAt ? new Date(publishedAt).getTime() : now;
+        if (Number.isNaN(publishedTime) || publishedTime < windowStart) continue;
+
+        const score = scoreArticle(item, config.keywords);
+        if (config.keywords && config.keywords.length > 0 && score === 0) continue;
+
+        collected.push({
+          source: sourceName,
+          title: item.title,
+          link: item.link,
+          publishedAt: new Date(publishedTime).toISOString(),
+          score,
+        });
+        existingLinks.add(item.link);
+        added += 1;
+      }
+      runLog.push({ source: sourceName, status: `ok, ${added} nova(s)` });
+    } catch (err) {
+      runLog.push({ source: sourceName, status: `falhou: ${err.message}` });
+    }
+  }
+
+  const fresh = collected.filter((a) => new Date(a.publishedAt).getTime() >= windowStart);
+  fresh.sort((a, b) => b.score - a.score || new Date(b.publishedAt) - new Date(a.publishedAt));
+
+  fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+  fs.writeFileSync(
+    OUTPUT_PATH,
+    JSON.stringify(
+      {
+        updatedAt: new Date().toISOString(),
+        windowHours: WINDOW_HOURS,
+        count: fresh.length,
+        articles: fresh,
+      },
+      null,
+      2
+    )
+  );
+
+  console.log(`Salvo ${fresh.length} notícia(s) em ${OUTPUT_PATH}`);
+  console.table(runLog);
+}
+
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
