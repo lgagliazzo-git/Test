@@ -35,10 +35,11 @@ const FEEDS = {
   "Poder360": "https://www.poder360.com.br/feed/",
   "Canaltech": "https://canaltech.com.br/rss/",
   "Exame": "https://exame.com/feed/",
-  "UOL": "https://economia.uol.com.br/rss.xml",
   "Valor Econômico": "https://valor.globo.com/rss/valor/economia/",
   // Tecmundo e Estadão: duas tentativas de URL cada, ambas com 404.
-  // Removidos do mapa até acharmos o endereço certo do feed — a fonte
+  // UOL: bloqueia com 403 mesmo com User-Agent de navegador (bloqueio
+  // mais robusto, provavelmente por IP/rede do runner).
+  // Removidos do mapa até acharmos um caminho que funcione — a fonte
   // continua na tela de configuração, só fica marcada como "sem feed
   // mapeado" nos logs em vez de falhar toda execução.
 };
