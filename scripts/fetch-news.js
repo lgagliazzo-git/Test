@@ -2,7 +2,18 @@ const fs = require("fs");
 const path = require("path");
 const Parser = require("rss-parser");
 
-const parser = new Parser({ timeout: 15000 });
+const FETCH_TIMEOUT_MS = 15000;
+const parser = new Parser({ timeout: FETCH_TIMEOUT_MS });
+
+// O timeout embutido do rss-parser nem sempre é respeitado (depende da lib
+// HTTP por baixo), o que já travou uma execução real. Isso força a
+// desistência no prazo mesmo que a requisição continue pendurada.
+function withTimeout(promise, ms, label) {
+  return Promise.race([
+    promise,
+    new Promise((_, reject) => setTimeout(() => reject(new Error(`timeout após ${ms}ms (${label})`)), ms)),
+  ]);
+}
 
 const CONFIG_PATH = path.join(__dirname, "..", "news-config.json");
 const OUTPUT_DIR = path.join(__dirname, "..", "news");
@@ -83,7 +94,7 @@ async function main() {
       continue;
     }
     try {
-      const feed = await parser.parseURL(feedUrl);
+      const feed = await withTimeout(parser.parseURL(feedUrl), FETCH_TIMEOUT_MS, sourceName);
       let added = 0;
       for (const item of feed.items) {
         if (!item.link || existingLinks.has(item.link)) continue;
@@ -137,7 +148,9 @@ async function main() {
   console.table(runLog);
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+main()
+  .then(() => process.exit(0)) // encerra à força caso alguma requisição "abandonada" pelo timeout ainda mantenha o processo vivo
+  .catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
