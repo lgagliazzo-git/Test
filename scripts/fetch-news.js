@@ -38,23 +38,20 @@ const FEEDS = {
   "Valor Econômico": "https://valor.globo.com/rss/valor/economia/",
   "Tecmundo": "https://rss.tecmundo.com.br/feed",
   "UOL": "http://www3.uol.com.br/xml/midiaindoor/economia.xml",
-  // 4ª tentativa: mesmo padrão Arc XP que funcionou pro Bloomberg Línea.
-  "Estadão": "https://www.estadao.com.br/arc/outboundfeeds/new-news-feed/?outputType=xml",
-  // Fontes novas — URLs achadas via pesquisa, ainda não confirmadas
-  // (nenhuma ferramenta daqui consegue testar direto, só o runner do
-  // GitHub Actions). Se alguma falhar, tiramos do mapa como as outras.
-  "Money Times": "https://www.moneytimes.com.br/feed/",
   "Brazil Journal": "https://braziljournal.com/feed/",
   "Neofeed": "https://neofeed.com.br/feed/",
   "Suno Notícias": "https://www.suno.com.br/noticias/feed/",
-  "Seu Dinheiro": "https://www.seudinheiro.com/feed/",
-  "Bloomberg Línea Brasil": "https://www.bloomberglinea.com.br/arc/outboundfeeds/new-news-feed/?outputType=xml",
   "Folha de S.Paulo": "https://feeds.folha.uol.com.br/emcimadahora/rss091.xml",
   "Quem (Globo)": "https://revistaquem.globo.com/rss/quem/",
-  "Purepeople": "https://www.purepeople.com.br/feed",
   "Contigo": "https://contigo.com.br/feed",
   "LeoDias": "https://portalleodias.com/feed/",
   "GE Globo Esporte": "https://ge.globo.com/rss/ge/futebol/",
+  // Sem feed confirmado (a fonte fica na tela de configuração, só
+  // não é buscada de fato até acharmos um endereço que funcione):
+  // - Estadão: 4 URLs testadas, todas falharam.
+  // - Money Times, Seu Dinheiro: bloqueiam com 403.
+  // - Bloomberg Línea Brasil: URL não devolve XML válido.
+  // - Purepeople: 404.
 };
 
 // Quais fontes atendem cada categoria (usado só se o usuário filtrar por categoria).
