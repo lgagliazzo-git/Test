@@ -36,12 +36,14 @@ const FEEDS = {
   "Canaltech": "https://canaltech.com.br/rss/",
   "Exame": "https://exame.com/feed/",
   "Valor Econômico": "https://valor.globo.com/rss/valor/economia/",
-  // Tecmundo e Estadão: duas tentativas de URL cada, ambas com 404.
-  // UOL: bloqueia com 403 mesmo com User-Agent de navegador (bloqueio
-  // mais robusto, provavelmente por IP/rede do runner).
-  // Removidos do mapa até acharmos um caminho que funcione — a fonte
-  // continua na tela de configuração, só fica marcada como "sem feed
-  // mapeado" nos logs em vez de falhar toda execução.
+  // Terceira tentativa pra essas três, com URLs achadas via pesquisa
+  // (as anteriores deram 404/403). Não deu pra confirmar de antemão —
+  // nem este sandbox nem a ferramenta de busca conseguem alcançar
+  // esses sites (bloqueio anti-bot), só o runner do GitHub Actions
+  // passou até agora. Se falhar de novo, tiramos do mapa igual antes.
+  "Tecmundo": "https://rss.tecmundo.com.br/feed",
+  "Estadão": "https://einvestidor.estadao.com.br/feed",
+  "UOL": "http://www3.uol.com.br/xml/midiaindoor/economia.xml",
 };
 
 // Quais fontes atendem cada categoria (usado só se o usuário filtrar por categoria).
