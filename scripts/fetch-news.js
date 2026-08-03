@@ -38,19 +38,35 @@ const FEEDS = {
   "Valor Econômico": "https://valor.globo.com/rss/valor/economia/",
   "Tecmundo": "https://rss.tecmundo.com.br/feed",
   "UOL": "http://www3.uol.com.br/xml/midiaindoor/economia.xml",
-  // Estadão: 3 URLs testadas (404, 404, 403), nenhuma funcionou.
-  // Removido do mapa — a fonte continua na tela de configuração, só
-  // fica marcada como "sem feed RSS mapeado" nos logs.
+  // 4ª tentativa: mesmo padrão Arc XP que funcionou pro Bloomberg Línea.
+  "Estadão": "https://www.estadao.com.br/arc/outboundfeeds/new-news-feed/?outputType=xml",
+  // Fontes novas — URLs achadas via pesquisa, ainda não confirmadas
+  // (nenhuma ferramenta daqui consegue testar direto, só o runner do
+  // GitHub Actions). Se alguma falhar, tiramos do mapa como as outras.
+  "Money Times": "https://www.moneytimes.com.br/feed/",
+  "Brazil Journal": "https://braziljournal.com/feed/",
+  "Neofeed": "https://neofeed.com.br/feed/",
+  "Suno Notícias": "https://www.suno.com.br/noticias/feed/",
+  "Seu Dinheiro": "https://www.seudinheiro.com/feed/",
+  "Bloomberg Línea Brasil": "https://www.bloomberglinea.com.br/arc/outboundfeeds/new-news-feed/?outputType=xml",
+  "Folha de S.Paulo": "https://feeds.folha.uol.com.br/emcimadahora/rss091.xml",
+  "Quem (Globo)": "https://revistaquem.globo.com/rss/quem/",
+  "Purepeople": "https://www.purepeople.com.br/feed",
+  "Contigo": "https://contigo.com.br/feed",
+  "LeoDias": "https://portalleodias.com/feed/",
+  "GE Globo Esporte": "https://ge.globo.com/rss/ge/futebol/",
 };
 
 // Quais fontes atendem cada categoria (usado só se o usuário filtrar por categoria).
 const CATEGORY_SOURCES = {
-  "Economia": ["InfoMoney", "G1", "Estadão", "UOL", "Valor Econômico", "Exame"],
-  "Finanças": ["InfoMoney", "Valor Econômico", "Exame"],
-  "Empresas": ["InfoMoney", "Exame", "Valor Econômico"],
-  "Política": ["Poder360", "CNN Brasil", "Estadão"],
-  "Tecnologia": ["Tecmundo", "Canaltech"],
-  "Internacional": ["CNN Brasil"],
+  "Economia": ["InfoMoney", "G1", "Estadão", "UOL", "Valor Econômico", "Exame", "Folha de S.Paulo"],
+  "Finanças": ["InfoMoney", "Valor Econômico", "Exame", "Money Times", "Suno Notícias", "Seu Dinheiro", "Bloomberg Línea Brasil"],
+  "Empresas": ["InfoMoney", "Exame", "Valor Econômico", "Brazil Journal", "Neofeed", "Bloomberg Línea Brasil"],
+  "Política": ["Poder360", "CNN Brasil", "Estadão", "Folha de S.Paulo"],
+  "Tecnologia": ["Tecmundo", "Canaltech", "Neofeed"],
+  "Esportes": ["GE Globo Esporte"],
+  "Internacional": ["CNN Brasil", "Bloomberg Línea Brasil"],
+  "Fofoca": ["Quem (Globo)", "Purepeople", "Contigo", "LeoDias"],
 };
 
 function loadConfig() {
