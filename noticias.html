@@ -67,10 +67,21 @@
       <p class="news-saved-msg" id="news-saved-msg">Configuração salva neste navegador ✓</p>
     </form>
 
+    <div class="news-feed">
+      <div class="news-feed-header">
+        <p class="news-feed-title">Notícias coletadas (últimas 96h)</p>
+        <span class="news-feed-updated" id="news-feed-updated"></span>
+      </div>
+      <div id="news-feed-list" class="news-feed-list">
+        <p class="news-feed-empty">Carregando...</p>
+      </div>
+    </div>
+
     <a href="index.html" class="hub-back">&larr; Voltar</a>
   </div>
   <footer class="hub-footer">&copy; <span id="year"></span> gaglidom</footer>
   <script src="script.js"></script>
   <script src="noticias.js"></script>
+  <script src="news-feed.js"></script>
 </body>
 </html>
