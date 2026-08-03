@@ -25,6 +25,16 @@ const FEEDS = {
   "Valor Econômico": "https://valor.globo.com/rss/valor/economia/",
 };
 
+// Quais fontes atendem cada categoria (usado só se o usuário filtrar por categoria).
+const CATEGORY_SOURCES = {
+  "Economia": ["InfoMoney", "G1", "Estadão", "UOL", "Valor Econômico", "Exame"],
+  "Finanças": ["InfoMoney", "Valor Econômico", "Exame"],
+  "Empresas": ["InfoMoney", "Exame", "Valor Econômico"],
+  "Política": ["Poder360", "CNN Brasil", "Estadão"],
+  "Tecnologia": ["Tecmundo", "Canaltech"],
+  "Internacional": ["CNN Brasil"],
+};
+
 function loadConfig() {
   if (!fs.existsSync(CONFIG_PATH)) {
     return { sources: Object.keys(FEEDS), categories: [], keywords: [], quantity: 10, frequency: 2 };
@@ -47,9 +57,17 @@ function scoreArticle(item, keywords) {
   return keywords.reduce((score, kw) => score + (text.includes(kw.toLowerCase()) ? 1 : 0), 0);
 }
 
+function applyCategoryFilter(sources, categories) {
+  if (!categories || categories.length === 0) return sources;
+  const allowed = new Set(categories.flatMap((c) => CATEGORY_SOURCES[c] || []));
+  return sources.filter((s) => allowed.has(s));
+}
+
 async function main() {
   const config = loadConfig();
-  const enabledSources = config.sources && config.sources.length ? config.sources : Object.keys(FEEDS);
+  const quantity = config.quantity && config.quantity > 0 ? config.quantity : 10;
+  let enabledSources = config.sources && config.sources.length ? config.sources : Object.keys(FEEDS);
+  enabledSources = applyCategoryFilter(enabledSources, config.categories);
   const now = Date.now();
   const windowStart = now - WINDOW_HOURS * 60 * 60 * 1000;
 
@@ -95,6 +113,10 @@ async function main() {
   const fresh = collected.filter((a) => new Date(a.publishedAt).getTime() >= windowStart);
   fresh.sort((a, b) => b.score - a.score || new Date(b.publishedAt) - new Date(a.publishedAt));
 
+  // Mesma lista que será usada pro envio no WhatsApp — arquivo e envio
+  // sempre alinhados na mesma quantidade, fontes, categorias e palavras-chave.
+  const top = fresh.slice(0, quantity);
+
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   fs.writeFileSync(
     OUTPUT_PATH,
@@ -102,15 +124,16 @@ async function main() {
       {
         updatedAt: new Date().toISOString(),
         windowHours: WINDOW_HOURS,
-        count: fresh.length,
-        articles: fresh,
+        quantity,
+        count: top.length,
+        articles: top,
       },
       null,
       2
     )
   );
 
-  console.log(`Salvo ${fresh.length} notícia(s) em ${OUTPUT_PATH}`);
+  console.log(`Salvo ${top.length} notícia(s) (de ${fresh.length} candidatas) em ${OUTPUT_PATH}`);
   console.table(runLog);
 }
 
