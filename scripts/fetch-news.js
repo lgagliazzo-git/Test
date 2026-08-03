@@ -3,7 +3,12 @@ const path = require("path");
 const Parser = require("rss-parser");
 
 const FETCH_TIMEOUT_MS = 15000;
-const parser = new Parser({ timeout: FETCH_TIMEOUT_MS });
+const parser = new Parser({
+  timeout: FETCH_TIMEOUT_MS,
+  headers: {
+    "User-Agent": "Mozilla/5.0 (compatible; gaglidom-news-bot/1.0; +https://gaglidom.cloud)",
+  },
+});
 
 // O timeout embutido do rss-parser nem sempre é respeitado (depende da lib
 // HTTP por baixo), o que já travou uma execução real. Isso força a
@@ -28,12 +33,14 @@ const FEEDS = {
   "G1": "https://g1.globo.com/rss/g1/economia/",
   "CNN Brasil": "https://www.cnnbrasil.com.br/feed/",
   "Poder360": "https://www.poder360.com.br/feed/",
-  "Tecmundo": "https://www.tecmundo.com.br/feed",
   "Canaltech": "https://canaltech.com.br/rss/",
   "Exame": "https://exame.com/feed/",
-  "Estadão": "https://www.estadao.com.br/arc/outboundfeeds/rss/category/economia/?outputType=xml",
   "UOL": "https://economia.uol.com.br/rss.xml",
   "Valor Econômico": "https://valor.globo.com/rss/valor/economia/",
+  // Tecmundo e Estadão: duas tentativas de URL cada, ambas com 404.
+  // Removidos do mapa até acharmos o endereço certo do feed — a fonte
+  // continua na tela de configuração, só fica marcada como "sem feed
+  // mapeado" nos logs em vez de falhar toda execução.
 };
 
 // Quais fontes atendem cada categoria (usado só se o usuário filtrar por categoria).
