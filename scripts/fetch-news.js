@@ -15,13 +15,13 @@ const WINDOW_HOURS = 96;
 const FEEDS = {
   "InfoMoney": "https://www.infomoney.com.br/feed/",
   "G1": "https://g1.globo.com/rss/g1/economia/",
-  "CNN Brasil": "https://www.cnnbrasil.com.br/economia/feed/",
+  "CNN Brasil": "https://www.cnnbrasil.com.br/feed/",
   "Poder360": "https://www.poder360.com.br/feed/",
-  "Tecmundo": "https://www.tecmundo.com.br/rss",
+  "Tecmundo": "https://www.tecmundo.com.br/feed",
   "Canaltech": "https://canaltech.com.br/rss/",
   "Exame": "https://exame.com/feed/",
-  "Estadão": "https://www.estadao.com.br/rss/economia.xml",
-  "UOL": "https://rss.uol.com.br/feed/economia.xml",
+  "Estadão": "https://www.estadao.com.br/arc/outboundfeeds/rss/category/economia/?outputType=xml",
+  "UOL": "https://economia.uol.com.br/rss.xml",
   "Valor Econômico": "https://valor.globo.com/rss/valor/economia/",
 };
 
