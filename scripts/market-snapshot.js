@@ -1,19 +1,11 @@
 const { sendText, requireEnv, WindowClosedError } = require("./whatsapp");
 
-const YAHOO_TIMEOUT_MS = 15000;
+const TIMEOUT_MS = 15000;
 const BCB_CDI_SERIES = 4389; // Taxa CDI anualizada, base 252
-
-// A ordem aqui é a ordem em que as linhas aparecem na mensagem.
-const QUOTES = [
-  { group: "Bolsas", label: "IBOV", symbol: "^BVSP" },
-  { group: "Bolsas", label: "S&P 500", symbol: "^GSPC" },
-  { group: "Câmbio & Commodities", label: "USD/BRL", symbol: "BRL=X" },
-  { group: "Câmbio & Commodities", label: "WTI", symbol: "CL=F" },
-  { group: "Câmbio & Commodities", label: "BITCOIN", symbol: "BTC-USD" },
-  { group: "Câmbio & Commodities", label: "T10Y EUA", symbol: "^TNX", isPercent: true },
-];
-
 const VALUE_COLUMN = 23;
+
+const BROWSER_UA =
+  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36";
 
 function withTimeout(promise, ms, label) {
   return Promise.race([
@@ -21,6 +13,150 @@ function withTimeout(promise, ms, label) {
     new Promise((_, reject) => setTimeout(() => reject(new Error(`timeout (${label})`)), ms)),
   ]);
 }
+
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+async function getText(url) {
+  const res = await withTimeout(fetch(url, { headers: { "User-Agent": BROWSER_UA } }), TIMEOUT_MS, url);
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return res.text();
+}
+
+async function getJson(url) {
+  const res = await withTimeout(fetch(url, { headers: { "User-Agent": BROWSER_UA } }), TIMEOUT_MS, url);
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return res.json();
+}
+
+// Tenta de novo em falhas transitórias (5xx, timeout). Não insiste em 4xx,
+// que é bloqueio/símbolo errado e não melhora com repetição.
+async function withRetry(fn, { attempts = 3, baseDelayMs = 800 } = {}) {
+  let lastErr;
+  for (let i = 0; i < attempts; i += 1) {
+    try {
+      return await fn();
+    } catch (err) {
+      lastErr = err;
+      const permanent = /HTTP 4\d\d/.test(err.message);
+      if (permanent || i === attempts - 1) break;
+      await sleep(baseDelayMs * 2 ** i);
+    }
+  }
+  throw lastErr;
+}
+
+// ---------- Fontes de cotação ----------
+
+// Stooq: CSV diário sem chave. As duas últimas linhas dão fechamento atual
+// e anterior, que é o que precisamos para calcular a variação.
+async function fromStooq(symbol) {
+  const csv = await getText(`https://stooq.com/q/d/l/?s=${encodeURIComponent(symbol)}&i=d`);
+  const rows = csv.trim().split("\n").filter(Boolean);
+  if (rows.length < 3) throw new Error("stooq sem histórico");
+  const closeOf = (row) => Number(row.split(",")[4]);
+  const price = closeOf(rows[rows.length - 1]);
+  const previous = closeOf(rows[rows.length - 2]);
+  if (!Number.isFinite(price) || !Number.isFinite(previous) || previous === 0) {
+    throw new Error("stooq sem preço válido");
+  }
+  return { price, previous };
+}
+
+async function fromYahoo(symbol) {
+  const json = await getJson(
+    `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?range=5d&interval=1d`
+  );
+  const meta = json?.chart?.result?.[0]?.meta;
+  const price = meta?.regularMarketPrice;
+  const previous = meta?.chartPreviousClose ?? meta?.previousClose;
+  if (typeof price !== "number" || typeof previous !== "number" || previous === 0) {
+    throw new Error("yahoo sem preço válido");
+  }
+  return { price, previous };
+}
+
+// AwesomeAPI: brasileira, sem chave, já devolve a variação percentual pronta.
+async function fromAwesome(pair) {
+  const json = await getJson(`https://economia.awesomeapi.com.br/json/last/${pair}`);
+  const entry = json?.[pair.replace("-", "")];
+  const price = Number(entry?.bid);
+  const pct = Number(entry?.pctChange);
+  if (!Number.isFinite(price)) throw new Error("awesomeapi sem preço");
+  return { price, changePct: Number.isFinite(pct) ? pct : null };
+}
+
+// A ordem dos provedores é a ordem de tentativa: o primeiro que responder vence.
+const QUOTES = [
+  {
+    group: "Bolsas",
+    label: "IBOV",
+    providers: [() => fromStooq("^bvp"), () => fromYahoo("^BVSP")],
+  },
+  {
+    group: "Bolsas",
+    label: "S&P 500",
+    providers: [() => fromStooq("^spx"), () => fromYahoo("^GSPC")],
+  },
+  {
+    group: "Câmbio & Commodities",
+    label: "USD/BRL",
+    providers: [() => fromAwesome("USD-BRL"), () => fromStooq("usdbrl"), () => fromYahoo("BRL=X")],
+  },
+  {
+    group: "Câmbio & Commodities",
+    label: "WTI",
+    providers: [() => fromStooq("cl.f"), () => fromYahoo("CL=F")],
+  },
+  {
+    group: "Câmbio & Commodities",
+    label: "BITCOIN",
+    providers: [() => fromAwesome("BTC-USD"), () => fromStooq("btcusd"), () => fromYahoo("BTC-USD")],
+  },
+  {
+    group: "Câmbio & Commodities",
+    label: "T10Y EUA",
+    isPercent: true,
+    providers: [() => fromStooq("10usy.b"), () => fromYahoo("^TNX")],
+  },
+];
+
+async function resolveQuote(quote) {
+  const errors = [];
+  for (const provider of quote.providers) {
+    try {
+      const data = await withRetry(provider);
+      let price = data.price;
+      let changePct = data.changePct;
+      if (changePct === undefined || changePct === null) {
+        let previous = data.previous;
+        // O ^TNX do Yahoo às vezes vem x10 (46,4 em vez de 4,64%).
+        if (quote.isPercent && price > 20) {
+          price /= 10;
+          previous /= 10;
+        }
+        changePct = ((price - previous) / previous) * 100;
+      } else if (quote.isPercent && price > 20) {
+        price /= 10;
+      }
+      return { ...quote, price, changePct };
+    } catch (err) {
+      errors.push(err.message);
+    }
+  }
+  console.error(`Falha em ${quote.label}: ${errors.join(" | ")}`);
+  return { ...quote, failed: true };
+}
+
+async function fetchCdi() {
+  const json = await withRetry(() =>
+    getJson(`https://api.bcb.gov.br/dados/serie/bcdata.sgs.${BCB_CDI_SERIES}/dados/ultimos/1?formato=json`)
+  );
+  const raw = json?.[0]?.valor;
+  if (raw === undefined) throw new Error("série sem valor");
+  return Number(String(raw).replace(",", "."));
+}
+
+// ---------- Formatação ----------
 
 function fmtNumber(value) {
   return value.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -41,61 +177,13 @@ function line(label, value, changePct) {
   return `${padded}   ${arrow} ${fmtPercent(changePct)}`;
 }
 
-async function fetchQuote({ symbol, isPercent }) {
-  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?range=5d&interval=1d`;
-  const res = await withTimeout(
-    fetch(url, {
-      headers: {
-        // Sem um User-Agent de navegador o Yahoo devolve 429/403.
-        "User-Agent":
-          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
-      },
-    }),
-    YAHOO_TIMEOUT_MS,
-    symbol
-  );
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-
-  const json = await res.json();
-  const meta = json?.chart?.result?.[0]?.meta;
-  if (!meta) throw new Error("resposta sem meta");
-
-  let price = meta.regularMarketPrice;
-  let previous = meta.chartPreviousClose ?? meta.previousClose;
-  if (typeof price !== "number" || typeof previous !== "number" || previous === 0) {
-    throw new Error("preço indisponível");
-  }
-
-  // O ^TNX às vezes vem multiplicado por 10 (46,4 em vez de 4,64%).
-  if (isPercent && price > 20) {
-    price /= 10;
-    previous /= 10;
-  }
-
-  return { price, changePct: ((price - previous) / previous) * 100 };
-}
-
-async function fetchCdi() {
-  const url = `https://api.bcb.gov.br/dados/serie/bcdata.sgs.${BCB_CDI_SERIES}/dados/ultimos/1?formato=json`;
-  const res = await withTimeout(fetch(url), YAHOO_TIMEOUT_MS, "BCB CDI");
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  const json = await res.json();
-  const raw = json?.[0]?.valor;
-  if (raw === undefined) throw new Error("série sem valor");
-  return Number(String(raw).replace(",", "."));
-}
-
 async function buildMessage() {
-  const results = await Promise.all(
-    QUOTES.map(async (q) => {
-      try {
-        return { ...q, ...(await fetchQuote(q)) };
-      } catch (err) {
-        console.error(`Falha em ${q.label} (${q.symbol}): ${err.message}`);
-        return { ...q, failed: true };
-      }
-    })
-  );
+  // Sequencial de propósito: disparar tudo em paralelo dispara rate limit
+  // (foi o que derrubou a primeira versão, com 429 em todos os símbolos).
+  const results = [];
+  for (const quote of QUOTES) {
+    results.push(await resolveQuote(quote));
+  }
 
   let cdi = null;
   try {
@@ -104,13 +192,13 @@ async function buildMessage() {
     console.error(`Falha no CDI: ${err.message}`);
   }
 
-  const now = new Date();
-  const hour = now.toLocaleString("pt-BR", {
-    timeZone: "America/Sao_Paulo",
-    hour: "2-digit",
-    minute: "2-digit",
-  });
-  const stamp = hour.replace(":", "h");
+  const stamp = new Date()
+    .toLocaleString("pt-BR", {
+      timeZone: "America/Sao_Paulo",
+      hour: "2-digit",
+      minute: "2-digit",
+    })
+    .replace(":", "h");
 
   const lines = [`⚡ *GAGLIDOM CLOSE — ${stamp}*`, ""];
 
@@ -130,7 +218,7 @@ async function buildMessage() {
 
   lines.push("*Juros*");
   lines.push(line("CDI", cdi === null ? "—" : `${fmtNumber(cdi)}% a.a.`, null));
-  lines.push(`_Snapshot ${stamp} BRT · Yahoo Finance + BCB_`);
+  lines.push(`_Snapshot ${stamp} BRT · Stooq + AwesomeAPI + BCB_`);
   lines.push("");
   lines.push("📰 gaglidom · Market Desk");
   lines.push("");
@@ -145,7 +233,6 @@ async function main() {
   console.log(message);
 
   try {
-    // preview_url off: sem link no corpo, e evita o WhatsApp inventar card.
     const result = await sendText(message, { previewUrl: false });
     console.log(`\nEnviado. id: ${result.messages?.[0]?.id || "(sem id)"}`);
   } catch (err) {
