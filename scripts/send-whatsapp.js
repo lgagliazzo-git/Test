@@ -1,60 +1,12 @@
 const fs = require("fs");
 const path = require("path");
+const { sendText, requireEnv, WindowClosedError } = require("./whatsapp");
 
 const NEWS_PATH = path.join(__dirname, "..", "news", "news.json");
 const CONFIG_PATH = path.join(__dirname, "..", "news-config.json");
 
-const GRAPH_VERSION = "v25.0";
-
-// Código que a API devolve quando a janela de atendimento de 24h está
-// fechada (o usuário não mandou mensagem pro bot nas últimas 24h).
-const WINDOW_CLOSED_CODE = 131047;
-
-const TOKEN = process.env.WHATSAPP_TOKEN;
-const PHONE_NUMBER_ID = process.env.WHATSAPP_PHONE_NUMBER_ID;
-const TO = process.env.WHATSAPP_TO;
-
-function requireEnv() {
-  const missing = [];
-  if (!TOKEN) missing.push("WHATSAPP_TOKEN");
-  if (!PHONE_NUMBER_ID) missing.push("WHATSAPP_PHONE_NUMBER_ID");
-  if (!TO) missing.push("WHATSAPP_TO");
-  if (missing.length) {
-    console.error(`Faltando variável(is) de ambiente: ${missing.join(", ")}`);
-    process.exit(1);
-  }
-}
-
 function formatMessage({ title, source, link }) {
   return `📰 ${title}\n\nFonte: ${source}\n${link}`;
-}
-
-class WindowClosedError extends Error {}
-
-async function sendText(body) {
-  const res = await fetch(`https://graph.facebook.com/${GRAPH_VERSION}/${PHONE_NUMBER_ID}/messages`, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${TOKEN}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      messaging_product: "whatsapp",
-      recipient_type: "individual",
-      to: TO,
-      type: "text",
-      text: { preview_url: true, body },
-    }),
-  });
-
-  const payload = await res.json();
-  if (!res.ok) {
-    if (payload?.error?.code === WINDOW_CLOSED_CODE) {
-      throw new WindowClosedError(payload.error.message);
-    }
-    throw new Error(`HTTP ${res.status} — ${JSON.stringify(payload)}`);
-  }
-  return payload;
 }
 
 async function main() {

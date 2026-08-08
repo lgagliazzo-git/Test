@@ -5,7 +5,8 @@
   "description": "Motor de busca de notícias do gaglidom.cloud",
   "scripts": {
     "fetch-news": "node scripts/fetch-news.js",
-    "send-whatsapp": "node scripts/send-whatsapp.js"
+    "send-whatsapp": "node scripts/send-whatsapp.js",
+    "market-snapshot": "node scripts/market-snapshot.js"
   },
   "dependencies": {
     "rss-parser": "^3.13.0"
