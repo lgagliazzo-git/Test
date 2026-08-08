@@ -4,9 +4,11 @@ const path = require("path");
 const NEWS_PATH = path.join(__dirname, "..", "news", "news.json");
 const CONFIG_PATH = path.join(__dirname, "..", "news-config.json");
 
-const TEMPLATE_NAME = "noticia_gaglidom";
-const TEMPLATE_LANG = "pt_BR";
 const GRAPH_VERSION = "v25.0";
+
+// Código que a API devolve quando a janela de atendimento de 24h está
+// fechada (o usuário não mandou mensagem pro bot nas últimas 24h).
+const WINDOW_CLOSED_CODE = 131047;
 
 const TOKEN = process.env.WHATSAPP_TOKEN;
 const PHONE_NUMBER_ID = process.env.WHATSAPP_PHONE_NUMBER_ID;
@@ -23,15 +25,13 @@ function requireEnv() {
   }
 }
 
-// Parâmetros de template não aceitam quebra de linha, tabulação, nem mais de
-// 4 espaços seguidos — a API rejeita a mensagem inteira se isso passar.
-function sanitize(text) {
-  return String(text || "")
-    .replace(/\s+/g, " ")
-    .trim();
+function formatMessage({ title, source, link }) {
+  return `📰 ${title}\n\nFonte: ${source}\n${link}`;
 }
 
-async function sendTemplate({ title, source, link }) {
+class WindowClosedError extends Error {}
+
+async function sendText(body) {
   const res = await fetch(`https://graph.facebook.com/${GRAPH_VERSION}/${PHONE_NUMBER_ID}/messages`, {
     method: "POST",
     headers: {
@@ -40,30 +40,21 @@ async function sendTemplate({ title, source, link }) {
     },
     body: JSON.stringify({
       messaging_product: "whatsapp",
+      recipient_type: "individual",
       to: TO,
-      type: "template",
-      template: {
-        name: TEMPLATE_NAME,
-        language: { code: TEMPLATE_LANG },
-        components: [
-          {
-            type: "body",
-            parameters: [
-              { type: "text", text: sanitize(title) },
-              { type: "text", text: sanitize(source) },
-              { type: "text", text: sanitize(link) },
-            ],
-          },
-        ],
-      },
+      type: "text",
+      text: { preview_url: true, body },
     }),
   });
 
-  const body = await res.json();
+  const payload = await res.json();
   if (!res.ok) {
-    throw new Error(`HTTP ${res.status} — ${JSON.stringify(body)}`);
+    if (payload?.error?.code === WINDOW_CLOSED_CODE) {
+      throw new WindowClosedError(payload.error.message);
+    }
+    throw new Error(`HTTP ${res.status} — ${JSON.stringify(payload)}`);
   }
-  return body;
+  return payload;
 }
 
 async function main() {
@@ -91,15 +82,32 @@ async function main() {
     return;
   }
 
-  for (const article of pending) {
-    const result = await sendTemplate(article);
-    article.sentAt = new Date().toISOString();
-    console.log(`Enviado: [${article.source}] ${article.title}`);
-    console.log(`  id: ${result.messages?.[0]?.id || "(sem id)"}`);
+  let sent = 0;
+  try {
+    for (const article of pending) {
+      const result = await sendText(formatMessage(article));
+      article.sentAt = new Date().toISOString();
+      sent += 1;
+      console.log(`Enviado: [${article.source}] ${article.title}`);
+      console.log(`  id: ${result.messages?.[0]?.id || "(sem id)"}`);
+    }
+  } catch (err) {
+    if (err instanceof WindowClosedError) {
+      // Não é falha do robô: a janela de 24h fechou porque o usuário não
+      // mandou mensagem pro bot. A notícia fica pendente e sai no próximo
+      // ciclo depois que ele reabrir a janela — por isso não marcamos
+      // sentAt nem derrubamos a execução com erro.
+      console.log("Janela de 24h fechada — mande qualquer mensagem ao bot para reabrir.");
+      console.log("As notícias pendentes serão enviadas no próximo ciclo.");
+    } else {
+      throw err;
+    }
   }
 
-  fs.writeFileSync(NEWS_PATH, JSON.stringify(data, null, 2));
-  console.log(`${pending.length} notícia(s) enviada(s) e marcada(s) no acervo.`);
+  if (sent > 0) {
+    fs.writeFileSync(NEWS_PATH, JSON.stringify(data, null, 2));
+    console.log(`${sent} notícia(s) enviada(s) e marcada(s) no acervo.`);
+  }
 }
 
 main().catch((err) => {
