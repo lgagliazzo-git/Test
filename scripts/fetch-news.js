@@ -141,12 +141,11 @@ async function main() {
     }
   }
 
+  // O arquivo guarda TUDO da janela de 96h (é o acervo que o site exibe).
+  // Quem escolhe o que vai pro WhatsApp é o send-whatsapp.js, que pega a
+  // mais relevante ainda não enviada — por isso o campo sentAt é preservado.
   const fresh = collected.filter((a) => new Date(a.publishedAt).getTime() >= windowStart);
   fresh.sort((a, b) => b.score - a.score || new Date(b.publishedAt) - new Date(a.publishedAt));
-
-  // Mesma lista que será usada pro envio no WhatsApp — arquivo e envio
-  // sempre alinhados na mesma quantidade, fontes, categorias e palavras-chave.
-  const top = fresh.slice(0, quantity);
 
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   fs.writeFileSync(
@@ -155,16 +154,16 @@ async function main() {
       {
         updatedAt: new Date().toISOString(),
         windowHours: WINDOW_HOURS,
-        quantity,
-        count: top.length,
-        articles: top,
+        perSend: quantity,
+        count: fresh.length,
+        articles: fresh,
       },
       null,
       2
     )
   );
 
-  console.log(`Salvo ${top.length} notícia(s) (de ${fresh.length} candidatas) em ${OUTPUT_PATH}`);
+  console.log(`Acervo com ${fresh.length} notícia(s) das últimas ${WINDOW_HOURS}h em ${OUTPUT_PATH}`);
   console.table(runLog);
 }
 

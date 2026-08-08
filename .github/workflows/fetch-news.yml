@@ -2,7 +2,7 @@ name: Fetch news
 
 on:
   schedule:
-    - cron: "0 * * * *"
+    - cron: "0 */2 * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -12,6 +12,10 @@ jobs:
   fetch:
     runs-on: ubuntu-latest
     timeout-minutes: 8
+    env:
+      WHATSAPP_TOKEN: ${{ secrets.WHATSAPP_TOKEN }}
+      WHATSAPP_PHONE_NUMBER_ID: ${{ secrets.WHATSAPP_PHONE_NUMBER_ID }}
+      WHATSAPP_TO: ${{ secrets.WHATSAPP_TO }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -24,6 +28,13 @@ jobs:
       - run: npm install
 
       - run: npm run fetch-news
+
+      # Só envia se o token estiver configurado nos secrets do repositório.
+      # Sem ele o passo é pulado e a coleta segue funcionando normalmente.
+      # (o contexto `secrets` não é permitido em `if`, por isso o teste é no env)
+      - name: Send top story to WhatsApp
+        if: env.WHATSAPP_TOKEN != ''
+        run: npm run send-whatsapp
 
       - name: Commit updated news
         run: |
