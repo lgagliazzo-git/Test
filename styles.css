@@ -145,7 +145,7 @@ a.hub-bullet:hover {
 }
 
 .hub-full {
-  max-width: 1000px;
+  max-width: 1060px;
 }
 
 /* Adega */
@@ -198,7 +198,7 @@ a.hub-bullet:hover {
 
 .adega-table th,
 .adega-table td {
-  padding: 10px 14px;
+  padding: 10px 12px;
   border-bottom: 1px solid var(--color-border);
   white-space: nowrap;
 }
@@ -215,6 +215,10 @@ a.hub-bullet:hover {
   background: var(--color-bg-alt);
   position: sticky;
   top: 0;
+  /* Títulos longos ("Data de fabricação") quebram em vez de alargar a
+     coluna e empurrar o preço para fora da área visível. */
+  white-space: normal;
+  vertical-align: bottom;
 }
 
 .adega-table th[data-sort] {
@@ -246,7 +250,7 @@ a.hub-bullet:hover {
 .adega-td-name {
   font-weight: 600;
   white-space: normal;
-  min-width: 180px;
+  min-width: 120px;
 }
 
 /* Origem é o campo mais longo; sem quebrar linha ela empurra o preço
