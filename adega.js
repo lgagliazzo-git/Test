@@ -84,7 +84,7 @@ function render() {
           <td>${escapeHtml(w.country) || "—"}</td>
           <td>${escapeHtml(w.vintage) || "—"}</td>
           <td>${escapeHtml(w.grape) || "—"}</td>
-          <td>${escapeHtml(w.origin) || "—"}</td>
+          <td class="adega-td-origin">${escapeHtml(w.origin) || "—"}</td>
           <td class="adega-td-num">${fmtPrice(w)}</td>
         </tr>`
     )

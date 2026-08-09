@@ -249,6 +249,13 @@ a.hub-bullet:hover {
   min-width: 180px;
 }
 
+/* Origem é o campo mais longo; sem quebrar linha ela empurra o preço
+   para fora da área visível da tabela. */
+.adega-td-origin {
+  white-space: normal;
+  min-width: 150px;
+}
+
 .adega-th-num,
 .adega-td-num {
   text-align: right;
