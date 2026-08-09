@@ -61,8 +61,31 @@ async function fromStooq(symbol) {
   const price = closeOf(rows[rows.length - 1]);
   const previous = closeOf(rows[rows.length - 2]);
   if (!Number.isFinite(price) || !Number.isFinite(previous) || previous === 0) {
-    throw new Error("stooq sem preço válido");
+    throw new Error(`stooq sem preço [${rows[rows.length - 1].slice(0, 50)}]`);
   }
+  return { price, previous };
+}
+
+// FRED (Federal Reserve de St. Louis): CSV público, sem chave. É fonte
+// oficial e não bloqueia IP de datacenter, diferente de Yahoo/Stooq.
+async function fromFred(seriesId) {
+  const start = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
+  const csv = await getText(
+    `https://fred.stlouisfed.org/graph/fredgraph.csv?id=${encodeURIComponent(seriesId)}&cosd=${start}`
+  );
+  // O FRED marca dia sem cotação (feriado) com "." — precisa descartar,
+  // senão a variação sai contra um valor inexistente.
+  const values = csv
+    .trim()
+    .split("\n")
+    .slice(1)
+    .map((row) => Number(row.split(",")[1]))
+    .filter((n) => Number.isFinite(n));
+
+  if (values.length < 2) throw new Error(`fred sem série [${csv.slice(0, 50).replace(/\s+/g, " ")}]`);
+  const price = values[values.length - 1];
+  const previous = values[values.length - 2];
+  if (previous === 0) throw new Error("fred sem base de comparação");
   return { price, previous };
 }
 
@@ -125,7 +148,7 @@ const QUOTES = [
   {
     group: "Bolsas",
     label: "S&P 500",
-    providers: [() => fromStooq("^spx"), () => fromYahoo("^GSPC")],
+    providers: [() => fromFred("SP500"), () => fromStooq("^spx"), () => fromYahoo("^GSPC")],
   },
   {
     group: "Câmbio & Commodities",
@@ -140,7 +163,7 @@ const QUOTES = [
   {
     group: "Câmbio & Commodities",
     label: "WTI",
-    providers: [() => fromStooq("cl.f"), () => fromYahoo("CL=F")],
+    providers: [() => fromFred("DCOILWTICO"), () => fromStooq("cl.f"), () => fromYahoo("CL=F")],
   },
   {
     group: "Câmbio & Commodities",
@@ -156,7 +179,7 @@ const QUOTES = [
     group: "Câmbio & Commodities",
     label: "T10Y EUA",
     isPercent: true,
-    providers: [() => fromStooq("10usy.b"), () => fromYahoo("^TNX")],
+    providers: [() => fromFred("DGS10"), () => fromStooq("10usy.b"), () => fromYahoo("^TNX")],
   },
 ];
 
@@ -258,7 +281,7 @@ async function buildMessage() {
 
   lines.push("*Juros*");
   lines.push(line("CDI", cdi === null ? "—" : `${fmtNumber(cdi)}% a.a.`, null));
-  lines.push(`_Snapshot ${stamp} BRT · BCB + CoinGecko + Stooq_`);
+  lines.push(`_Snapshot ${stamp} BRT · BCB + FRED + CoinGecko_`);
   lines.push("");
   lines.push("📰 gaglidom · Market Desk");
   lines.push("");
