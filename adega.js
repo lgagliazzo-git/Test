@@ -80,12 +80,12 @@ function render() {
       (w) => `
         <tr>
           <td class="adega-td-photo">${photoCell(w)}</td>
-          <td class="adega-td-name">${escapeHtml(w.name) || "—"}</td>
-          <td>${escapeHtml(w.country) || "—"}</td>
-          <td>${escapeHtml(w.vintage) || "—"}</td>
-          <td>${escapeHtml(w.grape) || "—"}</td>
-          <td class="adega-td-origin">${escapeHtml(w.origin) || "—"}</td>
-          <td class="adega-td-num">${fmtPrice(w)}</td>
+          <td class="adega-td-name" data-label="Vinho">${escapeHtml(w.name) || "—"}</td>
+          <td data-label="País">${escapeHtml(w.country) || "—"}</td>
+          <td data-label="Data de fabricação">${escapeHtml(w.vintage) || "—"}</td>
+          <td data-label="Tipo de uva">${escapeHtml(w.grape) || "—"}</td>
+          <td class="adega-td-origin" data-label="Origem">${escapeHtml(w.origin) || "—"}</td>
+          <td class="adega-td-num" data-label="Preço">${fmtPrice(w)}</td>
         </tr>`
     )
     .join("");
@@ -110,6 +110,8 @@ function render() {
     th.classList.toggle("adega-sorted", active);
     th.dataset.dir = active ? (sortAsc ? "asc" : "desc") : "";
   });
+
+  document.getElementById("adega-sort").value = sortKey;
 }
 
 async function load() {
@@ -134,6 +136,12 @@ document.querySelectorAll("th[data-sort]").forEach((th) => {
     }
     render();
   });
+});
+
+document.getElementById("adega-sort").addEventListener("change", (e) => {
+  sortKey = e.target.value;
+  sortAsc = true;
+  render();
 });
 
 document.getElementById("adega-search").addEventListener("input", render);

@@ -15,6 +15,16 @@
 
     <div class="adega-toolbar">
       <input type="text" id="adega-search" class="adega-search" placeholder="Buscar por nome, país, uva, origem..." />
+      <!-- No celular a tabela vira cartões e o cabeçalho some, então a
+           ordenação precisa de um controle próprio. -->
+      <select id="adega-sort" class="adega-sort" aria-label="Ordenar por">
+        <option value="name">Vinho</option>
+        <option value="country">País</option>
+        <option value="vintage">Data de fabricação</option>
+        <option value="grape">Tipo de uva</option>
+        <option value="origin">Origem</option>
+        <option value="price">Preço</option>
+      </select>
       <span class="adega-count" id="adega-count"></span>
     </div>
 
