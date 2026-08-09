@@ -1,9 +1,388 @@
 {
-  "updatedAt": "2026-08-09T04:46:32.398Z",
+  "updatedAt": "2026-08-09T08:10:05.339Z",
   "windowHours": 96,
   "perSend": 1,
-  "count": 1032,
+  "count": 1080,
   "articles": [
+    {
+      "source": "G1",
+      "title": "Câmeras com IA prometem prever crimes antes que aconteçam, mas acendem alerta sobre privacidade",
+      "link": "https://g1.globo.com/tecnologia/noticia/2026/08/09/cameras-com-ia-prometem-prever-crimes-antes-que-acontecam-mas-acendem-alerta-sobre-privacidade.ghtml",
+      "publishedAt": "2026-08-09T08:00:34.000Z",
+      "score": 1,
+      "sentAt": "2026-08-09T08:10:07.499Z"
+    },
+    {
+      "source": "G1",
+      "title": "Mais lojas, mais problemas? Entenda por que supermercados já não apostam tanto em lojas físicas",
+      "link": "https://g1.globo.com/empreendedorismo/noticia/2026/08/09/mais-lojas-mais-problemas-entenda-por-que-supermercados-ja-nao-apostam-tanto-em-lojas-fisicas.ghtml",
+      "publishedAt": "2026-08-09T08:00:30.000Z",
+      "score": 1
+    },
+    {
+      "source": "InfoMoney",
+      "title": "Conheça a avó de 82 anos que recusou US$ 26 mi para fazenda não virar um data center",
+      "link": "https://www.infomoney.com.br/business/global/conheca-a-avo-de-82-anos-que-recusou-us-26-mi-para-fazenda-nao-virar-um-data-center/",
+      "publishedAt": "2026-08-09T08:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "InfoMoney",
+      "title": "Enquanto a pressão aumenta, EUA buscam o próximo líder de Cuba",
+      "link": "https://www.infomoney.com.br/business/global/enquanto-a-pressao-aumenta-eua-buscam-o-proximo-lider-de-cuba/",
+      "publishedAt": "2026-08-09T08:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "InfoMoney",
+      "title": "Escolha do vice raramente muda votos, mas pode redefinir o rumo da campanha",
+      "link": "https://www.infomoney.com.br/politica/escolha-do-vice-raramente-muda-votos-mas-pode-redefinir-o-rumo-da-campanha/",
+      "publishedAt": "2026-08-09T08:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "InfoMoney",
+      "title": "A Embraer dos últimos dez anos: o que mudou na tese de investimento das ações?",
+      "link": "https://www.infomoney.com.br/mercados/a-embraer-dos-ultimos-dez-anos-o-que-mudou-na-tese-de-investimento-das-acoes/",
+      "publishedAt": "2026-08-09T08:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Tecmundo",
+      "title": "O que dá para fazer com o ChatGPT grátis com chats ilimitados?",
+      "link": "https://www.tecmundo.com.br/software/415150-o-que-da-para-fazer-com-o-chatgpt-gratis-com-chats-ilimitados.htm",
+      "publishedAt": "2026-08-09T08:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Petrobras escolhe empresa para cr�ditos de carbono cujo s�cio teve madeireira punida",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/ambiente/2026/08/petrobras-escolhe-empresa-para-creditos-de-carbono-cujo-socio-teve-madeireira-punida.shtml",
+      "publishedAt": "2026-08-09T08:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "River Plate chega a cinco derrotas seguidas, e Coudet admite risco: \"Se os resultados não vierem...\"",
+      "link": "https://ge.globo.com/futebol/futebol-internacional/futebol-argentino/noticia/2026/08/09/river-plate-chega-a-cinco-derrotas-seguidas-e-coudet-admite-risco-se-os-resultados-nao-vierem.ghtml",
+      "publishedAt": "2026-08-09T07:32:51.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Cuiabá x Fortaleza: horário e onde assistir ao jogo do Brasileirão Série B",
+      "link": "https://www.cnnbrasil.com.br/esportes/brasileirao/cuiaba-x-fortaleza-horario-e-onde-assistir-ao-jogo-do-brasileirao-serie-b/",
+      "publishedAt": "2026-08-09T07:30:28.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Corrida no polo sul da Lua: entenda agora o plano chinês",
+      "link": "https://www.cnnbrasil.com.br/ciencia/corrida-no-polo-sul-da-lua-entenda-agora-o-plano-chines/",
+      "publishedAt": "2026-08-09T07:30:08.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Investidores de 60 anos ou mais crescem 358% na B3 nos últimos dez anos",
+      "link": "https://www.cnnbrasil.com.br/economia/macroeconomia/investidores-de-60-anos-ou-mais-crescem-358-na-b3-nos-ultimos-dez-anos/",
+      "publishedAt": "2026-08-09T07:30:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Antimicrobianos viram desafio para pecuária brasileira",
+      "link": "https://www.cnnbrasil.com.br/agro/antimicrobianos-viram-desafio-para-pecuaria-brasileira/",
+      "publishedAt": "2026-08-09T07:23:31.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Trigo mais caro pressiona moinhos e padarias; veja como fica preço do pão",
+      "link": "https://www.cnnbrasil.com.br/agro/trigo-mais-caro-pressiona-moinhos-e-padarias-veja-como-fica-preco-do-pao/",
+      "publishedAt": "2026-08-09T07:19:33.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Náutico x Atlético-GO: horário e onde assistir ao jogo da Série B",
+      "link": "https://www.cnnbrasil.com.br/esportes/brasileirao/nautico-x-atletico-go-horario-e-onde-assistir-ao-jogo-da-serie-b/",
+      "publishedAt": "2026-08-09T07:15:59.000Z",
+      "score": 1
+    },
+    {
+      "source": "G1",
+      "title": "Por que sistema elétrico brasileiro enfrenta risco por excesso de geração de energia",
+      "link": "https://g1.globo.com/economia/noticia/2026/08/09/por-que-sistema-eletrico-brasileiro-enfrenta-risco-por-excesso-de-geracao-de-energia.ghtml",
+      "publishedAt": "2026-08-09T07:01:14.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Bahia x Vasco: horário e onde assistir ao Brasileirão Série A",
+      "link": "https://www.cnnbrasil.com.br/esportes/brasileirao/bahia-x-vasco-horario-e-onde-assistir-ao-brasileirao-serie-a/",
+      "publishedAt": "2026-08-09T07:00:55.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Bragantino x Corinthians: veja onde assistir ao vivo, horário e escalações",
+      "link": "https://ge.globo.com/sp/vale-do-paraiba-regiao/futebol/brasileirao-serie-a/noticia/2026/08/09/bragantino-x-corinthians-veja-onde-assistir-ao-vivo-horario-e-escalacoes.ghtml",
+      "publishedAt": "2026-08-09T07:00:54.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Palmeiras x Internacional: horário e onde assistir ao Brasileirão Série A",
+      "link": "https://www.cnnbrasil.com.br/esportes/brasileirao/palmeiras-x-internacional-horario-e-onde-assistir-ao-brasileirao-serie-a/",
+      "publishedAt": "2026-08-09T07:00:52.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Flamengo x Vitória: horário e onde assistir ao Brasileirão Série A",
+      "link": "https://www.cnnbrasil.com.br/esportes/brasileirao/flamengo-x-vitoria-horario-e-onde-assistir-ao-brasileirao-serie-a/",
+      "publishedAt": "2026-08-09T07:00:51.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Palmeiras x Internacional: onde assistir ao vivo, horário e escalações",
+      "link": "https://ge.globo.com/sp/futebol/brasileirao-serie-a/noticia/2026/08/09/palmeiras-x-internacional-onde-assistir-ao-vivo-horario-e-escalacoes.ghtml",
+      "publishedAt": "2026-08-09T07:00:47.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Endividamento recorde e juro elevado preocupam setores da economia",
+      "link": "https://www.cnnbrasil.com.br/economia/macroeconomia/endividamento-recorde-e-juro-elevado-preocupam-setores-da-economia/",
+      "publishedAt": "2026-08-09T07:00:42.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Análise: São Paulo peca em detalhes que dificultam a reação no Brasileirão",
+      "link": "https://ge.globo.com/futebol/times/sao-paulo/noticia/2026/08/09/analise-sao-paulo-peca-em-detalhes-que-dificultam-a-reacao-no-brasileirao.ghtml",
+      "publishedAt": "2026-08-09T07:00:40.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Bahia x Vasco: onde assistir ao vivo, horário e escalações",
+      "link": "https://ge.globo.com/ba/futebol/brasileirao-serie-a/noticia/2026/08/09/bahia-x-vasco-onde-assistir-ao-vivo-horario-e-escalacoes.ghtml",
+      "publishedAt": "2026-08-09T07:00:37.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Vasco, Inter e Santos voltam ao Brasileirão em situação delicada contra Z4",
+      "link": "https://www.cnnbrasil.com.br/esportes/brasileirao/vasco-inter-e-santos-voltam-ao-brasileirao-em-situacao-delicada-contra-z4/",
+      "publishedAt": "2026-08-09T07:00:31.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Novorizontino x Juventude: horário e onde assistir ao jogo da Série B",
+      "link": "https://www.cnnbrasil.com.br/esportes/brasileirao/novorizontino-x-juventude-horario-e-onde-assistir-ao-jogo-da-serie-b/",
+      "publishedAt": "2026-08-09T07:00:23.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Análise: Atlético-MG é castigado por postura retraída e perde chance de encostar no pelotão de cima",
+      "link": "https://ge.globo.com/futebol/times/atletico-mg/noticia/2026/08/09/analise-atletico-mg-e-castigado-por-postura-retraida-e-perde-chance-de-encostar-no-pelotao-de-cima.ghtml",
+      "publishedAt": "2026-08-09T07:00:15.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Com divisão definida na TV, campanhas se prepararam para gravar propagandas",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/com-divisao-definida-na-tv-campanhas-se-prepararam-para-gravar-propagandas/",
+      "publishedAt": "2026-08-09T07:00:10.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Análise: Botafogo evolui pós-Copa, mas ainda precisa de ajustes se quiser algo a mais em 2026  ",
+      "link": "https://ge.globo.com/futebol/times/botafogo/noticia/2026/08/09/analise-botafogo-evolui-pos-copa-mas-ainda-precisa-de-ajustes-se-quiser-algo-a-mais-em-2026.ghtml",
+      "publishedAt": "2026-08-09T07:00:10.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "“A Casa do Dragão” estreia último episódio da 3ª temporada; o que esperar",
+      "link": "https://www.cnnbrasil.com.br/pop/streaming/a-casa-do-dragao-estreia-ultimo-episodio-da-3a-temporada-o-que-esperar/",
+      "publishedAt": "2026-08-09T07:00:06.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Primeiro a OpenAI, depois a Meta: por que rob�s de IA continuam fazendo ataques hackers",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/tec/2026/08/primeiro-a-openai-depois-a-meta-por-que-robos-de-ia-continuam-fazendo-ataques-hackers.shtml",
+      "publishedAt": "2026-08-09T07:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Ap�s recidiva da leucemia, menino de 6 anos recebe alta com imunoterapia",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/equilibrioesaude/2026/08/apos-recidiva-da-leucemia-menino-de-6-anos-recebe-alta-com-imunoterapia.shtml",
+      "publishedAt": "2026-08-09T07:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Infertilidade masculina � descoberta tardiamente e adia gravidez de casais",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/equilibrio/2026/08/infertilidade-masculina-e-descoberta-tardiamente-e-adia-gravidez-de-casais.shtml",
+      "publishedAt": "2026-08-09T07:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Agora na Lei Rouanet, bets avan�am no setor cultural e viram dilema para artistas",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/ilustrada/2026/08/agora-na-lei-rouanet-bets-avancam-no-setor-cultural-e-viram-dilema-para-artistas.shtml",
+      "publishedAt": "2026-08-09T07:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Confira a partir das 11h deste domingo (9) o resultado do concurso 3042 da Mega-Sena",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/cotidiano/2026/08/confira-a-partir-das-11h-deste-domingo-9-o-resultado-do-concurso-3042-da-mega-sena.shtml",
+      "publishedAt": "2026-08-09T07:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Virginia Fonseca n�o desiste de TV e avalia pesquisa sobre sua imagem no mercado",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://f5.folha.uol.com.br/colunistas/outro-canal/2026/08/virginia-fonseca-nao-desiste-de-tv-e-avalia-pesquisa-sobre-sua-imagem-no-mercado.shtml",
+      "publishedAt": "2026-08-09T07:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Brasil tem maior número de chapas puro-sangue desde a redemocratização",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/brasil-tem-maior-numero-de-chapas-puro-sangue-desde-a-redemocratizacao/",
+      "publishedAt": "2026-08-09T06:50:39.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Seu pai foi ausente? O que isso pode ensinar você a ser um pai incrível",
+      "link": "https://www.cnnbrasil.com.br/saude/seu-pai-foi-ausente-o-que-isso-pode-ensinar-voce-a-ser-um-pai-incrivel/",
+      "publishedAt": "2026-08-09T06:43:43.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Melhor imagem do Sol registrada na história revela processo oculto",
+      "link": "https://www.cnnbrasil.com.br/ciencia/melhor-imagem-do-sol-registrada-na-historia-revela-processo-oculto/",
+      "publishedAt": "2026-08-09T06:37:26.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "“Descobri 12 miomas e consegui realizar o sonho ser mãe”; conheça história",
+      "link": "https://www.cnnbrasil.com.br/saude/descobri-12-miomas-e-consegui-realizar-o-sonho-ser-mae-conheca-historia/",
+      "publishedAt": "2026-08-09T06:37:17.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Acusado de massacre na Tailândia consumia conteúdo violento, diz polícia",
+      "link": "https://www.cnnbrasil.com.br/internacional/acusado-de-massacre-na-tailandia-consumia-conteudo-violento-diz-policia/",
+      "publishedAt": "2026-08-09T06:34:01.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Dia dos Pais: veja cinco dicas para ajudar seu pai a cuidar da saúde",
+      "link": "https://www.cnnbrasil.com.br/saude/dia-dos-pais-veja-cinco-dicas-para-ajudar-seu-pai-a-cuidar-da-saude/",
+      "publishedAt": "2026-08-09T06:30:33.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Presidenciáveis escolhem “berço político” para abertura de campanha em 2026",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/presidenciaveis-escolhem-berco-politico-para-abertura-de-campanha-em-2026/",
+      "publishedAt": "2026-08-09T06:30:30.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Boom de IAs não garante alcance nas eleições, diz Renato Dolci",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/boom-de-ias-nao-garante-alcance-nas-eleicoes-diz-renato-dolci/",
+      "publishedAt": "2026-08-09T06:30:07.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Tufão Dolphin chega à China com ventos de até 162 km/h",
+      "link": "https://www.cnnbrasil.com.br/internacional/tufao-dolphin-chega-a-china-com-ventos-de-ate-162-km-h/",
+      "publishedAt": "2026-08-09T06:07:46.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "STF deve retomar até novembro julgamento sobre bets e jogos de azar",
+      "link": "https://www.cnnbrasil.com.br/politica/stf-deve-retomar-ate-novembro-julgamento-sobre-bets-e-jogos-de-azar/",
+      "publishedAt": "2026-08-09T06:00:49.000Z",
+      "score": 1
+    },
+    {
+      "source": "G1",
+      "title": "Menos vacas, mais leite: como genética e bem-estar mais que dobraram a produção em 24 anos",
+      "link": "https://g1.globo.com/economia/agronegocios/noticia/2026/08/09/menos-vacas-mais-leite-como-genetica-e-bem-estar-mais-que-dobraram-a-producao-em-24-anos.ghtml",
+      "publishedAt": "2026-08-09T06:00:29.000Z",
+      "score": 1
+    },
+    {
+      "source": "G1",
+      "title": "Por que a Alemanha quer mudar os 'minijobs', emprego parcial isento de imposto",
+      "link": "https://g1.globo.com/trabalho-e-carreira/noticia/2026/08/09/por-que-a-alemanha-quer-mudar-os-minijobs-emprego-parcial-isento-de-imposto.ghtml",
+      "publishedAt": "2026-08-09T06:00:20.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Fifa emite comunicado em defesa de Gianni Infantino e com recado direto a críticos",
+      "link": "https://ge.globo.com/futebol/futebol-internacional/noticia/2026/08/09/fifa-emite-comunicado-em-defesa-de-gianni-infantino-e-com-recado-direto-a-criticos.ghtml",
+      "publishedAt": "2026-08-09T06:00:15.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Análise: Fluminense supera limitações e se mostra mais competitivo mesmo com reservas contra o Botafogo",
+      "link": "https://ge.globo.com/futebol/times/fluminense/noticia/2026/08/09/analise-fluminense-supera-limitacoes-e-se-mostra-mais-competitivo-mesmo-com-reservas-contra-o-botafogo.ghtml",
+      "publishedAt": "2026-08-09T06:00:08.000Z",
+      "score": 1
+    },
+    {
+      "source": "Exame",
+      "title": "Como transformar um PDF de centenas de páginas em um especialista usando ferramentas de IA",
+      "link": "https://exame.com/inteligencia-artificial/como-transformar-um-pdf-de-centenas-de-paginas-em-um-especialista-usando-ferramentas-de-ia/",
+      "publishedAt": "2026-08-09T05:05:08.000Z",
+      "score": 1
+    },
+    {
+      "source": "Exame",
+      "title": "Cruzeiro x Mirassol: horário e onde assistir ao jogo do Brasileirão hoje",
+      "link": "https://exame.com/esporte/cruzeiro-x-mirassol-horario-e-onde-assistir-ao-jogo-do-brasileirao-hoje/",
+      "publishedAt": "2026-08-09T05:01:17.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Flamengo x Vitória: onde assistir ao vivo, horário e escalações",
+      "link": "https://ge.globo.com/rj/futebol/brasileirao-serie-a/noticia/2026/08/09/flamengo-x-vitoria-onde-assistir-ao-vivo-horario-e-escalacoes.ghtml",
+      "publishedAt": "2026-08-09T05:00:08.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Após mortes em operações, ICE acelera implantação de câmeras corporais",
+      "link": "https://www.cnnbrasil.com.br/internacional/apos-mortes-em-operacoes-ice-acelera-implantacao-de-cameras-corporais/",
+      "publishedAt": "2026-08-09T04:57:17.000Z",
+      "score": 1
+    },
     {
       "source": "LeoDias",
       "title": "Virginia revela se fez acordo com Vini Jr. e explica mudança de comportamento",
@@ -7190,48 +7569,6 @@
       "title": "Starbucks é alvo de operação policial na Coreia do Sul após campanha polêmica; entenda",
       "link": "https://g1.globo.com/economia/noticia/2026/08/05/starbucks-e-alvo-de-operacao-policial-na-coreia-do-sul-apos-campanha-polemica-entenda.ghtml",
       "publishedAt": "2026-08-05T11:01:46.000Z",
-      "score": 1
-    },
-    {
-      "source": "G1",
-      "title": "Gasolina sobe 30% nos EUA e Trump cobra petroleiras; entenda o que está por trás da alta",
-      "link": "https://g1.globo.com/economia/noticia/2026/08/05/gasolina-sobe-30percent-nos-eua-e-trump-cobra-petroleiras-entenda-o-que-esta-por-tras-da-alta.ghtml",
-      "publishedAt": "2026-08-05T08:04:44.000Z",
-      "score": 1
-    },
-    {
-      "source": "G1",
-      "title": "Por que recebemos tantas ligações indesejadas? E como evitar esse tipo de chamada?",
-      "link": "https://g1.globo.com/tecnologia/noticia/2026/08/05/por-que-recebemos-tantas-ligacoes-indesejadas-e-como-evitar-esse-tipo-de-chamada.ghtml",
-      "publishedAt": "2026-08-05T08:03:15.000Z",
-      "score": 1
-    },
-    {
-      "source": "G1",
-      "title": "'Nem para comer me chamavam': entenda o que é a solidão corporativa e como pode afetar sua carreira",
-      "link": "https://g1.globo.com/trabalho-e-carreira/noticia/2026/08/05/nem-para-comer-me-chamavam-entenda-o-que-e-a-solidao-corporativa-e-como-pode-afetar-sua-carreira.ghtml",
-      "publishedAt": "2026-08-05T06:00:09.000Z",
-      "score": 1
-    },
-    {
-      "source": "G1",
-      "title": "Cachorro-quente, brigadeiro e mais: como empreendedores faturam até R$ 4 milhões por ano com ideias simples ",
-      "link": "https://g1.globo.com/empreendedorismo/guia-do-empreendedor/noticia/2026/08/05/comida-comum-negocios-milionarios.ghtml",
-      "publishedAt": "2026-08-05T06:00:08.000Z",
-      "score": 1
-    },
-    {
-      "source": "G1",
-      "title": "Após trégua nos preços, azeite volta a ser ameaçado por calor extremo e incêndios na Europa",
-      "link": "https://g1.globo.com/economia/agronegocios/noticia/2026/08/05/apos-tregua-nos-precos-azeite-volta-a-ser-ameacado-por-calor-extremo-e-incendios-na-europa.ghtml",
-      "publishedAt": "2026-08-05T05:00:10.000Z",
-      "score": 1
-    },
-    {
-      "source": "G1",
-      "title": "Veto da UE atinge carne e mel brasileiros enquanto ganhavam espaço no mercado europeu",
-      "link": "https://g1.globo.com/economia/agronegocios/noticia/2026/08/05/veto-da-ue-atinge-carne-e-mel-brasileiros-enquanto-ganhavam-espaco-no-mercado-europeu.ghtml",
-      "publishedAt": "2026-08-05T05:00:08.000Z",
       "score": 1
     }
   ]
