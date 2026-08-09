@@ -52,7 +52,11 @@ async function withRetry(fn, { attempts = 3, baseDelayMs = 800 } = {}) {
 async function fromStooq(symbol) {
   const csv = await getText(`https://stooq.com/q/d/l/?s=${encodeURIComponent(symbol)}&i=d`);
   const rows = csv.trim().split("\n").filter(Boolean);
-  if (rows.length < 3) throw new Error("stooq sem histórico");
+  if (rows.length < 3) {
+    // Stooq responde 200 tanto para símbolo inexistente quanto para bloqueio
+    // por volume — sem ver o corpo não dá pra saber qual dos dois é.
+    throw new Error(`stooq inválido [${csv.slice(0, 60).replace(/\s+/g, " ")}]`);
+  }
   const closeOf = (row) => Number(row.split(",")[4]);
   const price = closeOf(rows[rows.length - 1]);
   const previous = closeOf(rows[rows.length - 2]);
@@ -85,6 +89,32 @@ async function fromAwesome(pair) {
   return { price, changePct: Number.isFinite(pct) ? pct : null };
 }
 
+// BCB é a única fonte que respondeu de dentro do GitHub Actions até agora,
+// então vale como âncora para o que ela cobre (câmbio e juros).
+async function fromBcbSeries(series) {
+  const json = await getJson(
+    `https://api.bcb.gov.br/dados/serie/bcdata.sgs.${series}/dados/ultimos/2?formato=json`
+  );
+  if (!Array.isArray(json) || json.length < 2) throw new Error("bcb sem histórico");
+  const num = (row) => Number(String(row.valor).replace(",", "."));
+  const price = num(json[json.length - 1]);
+  const previous = num(json[json.length - 2]);
+  if (!Number.isFinite(price) || !Number.isFinite(previous) || previous === 0) {
+    throw new Error("bcb sem valor válido");
+  }
+  return { price, previous };
+}
+
+async function fromCoinGecko(id) {
+  const json = await getJson(
+    `https://api.coingecko.com/api/v3/simple/price?ids=${id}&vs_currencies=usd&include_24hr_change=true`
+  );
+  const price = json?.[id]?.usd;
+  const pct = json?.[id]?.usd_24h_change;
+  if (!Number.isFinite(price)) throw new Error("coingecko sem preço");
+  return { price, changePct: Number.isFinite(pct) ? pct : null };
+}
+
 // A ordem dos provedores é a ordem de tentativa: o primeiro que responder vence.
 const QUOTES = [
   {
@@ -100,7 +130,12 @@ const QUOTES = [
   {
     group: "Câmbio & Commodities",
     label: "USD/BRL",
-    providers: [() => fromAwesome("USD-BRL"), () => fromStooq("usdbrl"), () => fromYahoo("BRL=X")],
+    providers: [
+      () => fromBcbSeries(1), // PTAX dólar comercial (venda)
+      () => fromAwesome("USD-BRL"),
+      () => fromStooq("usdbrl"),
+      () => fromYahoo("BRL=X"),
+    ],
   },
   {
     group: "Câmbio & Commodities",
@@ -110,7 +145,12 @@ const QUOTES = [
   {
     group: "Câmbio & Commodities",
     label: "BITCOIN",
-    providers: [() => fromAwesome("BTC-USD"), () => fromStooq("btcusd"), () => fromYahoo("BTC-USD")],
+    providers: [
+      () => fromCoinGecko("bitcoin"),
+      () => fromAwesome("BTC-USD"),
+      () => fromStooq("btcusd"),
+      () => fromYahoo("BTC-USD"),
+    ],
   },
   {
     group: "Câmbio & Commodities",
@@ -218,7 +258,7 @@ async function buildMessage() {
 
   lines.push("*Juros*");
   lines.push(line("CDI", cdi === null ? "—" : `${fmtNumber(cdi)}% a.a.`, null));
-  lines.push(`_Snapshot ${stamp} BRT · Stooq + AwesomeAPI + BCB_`);
+  lines.push(`_Snapshot ${stamp} BRT · BCB + CoinGecko + Stooq_`);
   lines.push("");
   lines.push("📰 gaglidom · Market Desk");
   lines.push("");
