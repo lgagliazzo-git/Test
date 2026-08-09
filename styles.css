@@ -144,6 +144,142 @@ a.hub-bullet:hover {
   max-width: 560px;
 }
 
+.hub-full {
+  max-width: 1000px;
+}
+
+/* Adega */
+.adega-toolbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.adega-search {
+  flex: 1;
+  min-width: 0;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.adega-search:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.adega-count {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+/* A tabela rola sozinha no celular em vez de empurrar a página inteira. */
+.adega-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.adega-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.adega-table th,
+.adega-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.adega-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.adega-table th {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  background: var(--color-bg-alt);
+  position: sticky;
+  top: 0;
+}
+
+.adega-table th[data-sort] {
+  cursor: pointer;
+  user-select: none;
+}
+
+.adega-table th[data-sort]:hover {
+  color: var(--color-text);
+}
+
+.adega-table th.adega-sorted {
+  color: var(--color-accent);
+}
+
+.adega-table th.adega-sorted::after {
+  content: " ▲";
+  font-size: 0.7em;
+}
+
+.adega-table th.adega-sorted[data-dir="desc"]::after {
+  content: " ▼";
+}
+
+.adega-table tbody tr:hover {
+  background: var(--color-bg-alt);
+}
+
+.adega-td-name {
+  font-weight: 600;
+  white-space: normal;
+  min-width: 180px;
+}
+
+.adega-th-num,
+.adega-td-num {
+  text-align: right;
+}
+
+.adega-th-photo,
+.adega-td-photo {
+  width: 56px;
+  padding-right: 0;
+}
+
+.adega-photo {
+  width: 40px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+  background: var(--color-bg);
+}
+
+.adega-nophoto {
+  color: var(--color-text-muted);
+}
+
+.adega-empty {
+  padding: 24px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
 /* Flight search form */
 .flight-form {
   width: 100%;

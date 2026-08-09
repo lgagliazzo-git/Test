@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gaglidom · Adega</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="password-gate.js"></script>
+</head>
+<body>
+  <div class="hub hub-full">
+    <a href="index.html" class="hub-logo">gagli<span>dom</span></a>
+    <p class="hub-page-title">🍷 Adega</p>
+    <p class="hub-page-subtitle">Catálogo dos vinhos, classificados por país, safra, uva, origem e preço.</p>
+
+    <div class="adega-toolbar">
+      <input type="text" id="adega-search" class="adega-search" placeholder="Buscar por nome, país, uva, origem..." />
+      <span class="adega-count" id="adega-count"></span>
+    </div>
+
+    <div class="adega-table-wrap">
+      <table class="adega-table">
+        <thead>
+          <tr>
+            <th class="adega-th-photo">Foto</th>
+            <th data-sort="name">Vinho</th>
+            <th data-sort="country">País</th>
+            <th data-sort="vintage">Safra</th>
+            <th data-sort="grape">Uva</th>
+            <th data-sort="origin">Origem</th>
+            <th data-sort="price" class="adega-th-num">Preço</th>
+          </tr>
+        </thead>
+        <tbody id="adega-body"></tbody>
+      </table>
+      <p class="adega-empty" id="adega-empty" hidden>
+        Nenhum vinho cadastrado ainda. Me mande as fotos que eu preencho a tabela.
+      </p>
+    </div>
+
+    <a href="index.html" class="hub-back">&larr; Voltar</a>
+  </div>
+  <footer class="hub-footer">&copy; <span id="year"></span> gaglidom</footer>
+  <script src="script.js"></script>
+  <script src="adega.js"></script>
+</body>
+</html>
