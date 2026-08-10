@@ -284,6 +284,79 @@ a.hub-bullet:hover {
   color: var(--color-text-muted);
 }
 
+.btn-ghost-sm {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 9px 14px;
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-ghost-sm:hover {
+  border-color: var(--color-primary);
+}
+
+.adega-bulk {
+  width: 100%;
+  text-align: left;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 18px;
+  margin-bottom: 16px;
+}
+
+.adega-bulk-help {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  margin-bottom: 12px;
+}
+
+.adega-bulk-help code {
+  background: var(--color-bg);
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 0.95em;
+}
+
+.adega-bulk-input {
+  width: 100%;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: var(--color-text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  resize: vertical;
+}
+
+.adega-bulk-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.adega-bulk-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.adega-bulk-msg {
+  font-size: 0.85rem;
+  color: var(--color-accent);
+}
+
+.adega-bulk-msg-error {
+  color: #ff6b6b;
+}
+
 .adega-price-search {
   color: var(--color-accent);
   text-decoration: none;

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-09T19:25:00.000Z",
+  "updatedAt": "2026-08-09T20:00:00.000Z",
   "wines": [
     {
       "name": "Albuquerque & Davo Syrah",
@@ -7,8 +7,9 @@
       "vintage": "2022",
       "grape": "Syrah",
       "origin": "Sul de Minas, MG",
-      "price": 199,
-      "currency": "BRL",
+      "priceBR": 199,
+      "priceUSD": null,
+      "rating": null,
       "photo": "adega/fotos/lote-01.jpg"
     },
     {
@@ -17,8 +18,9 @@
       "vintage": "2025",
       "grape": "Gamay",
       "origin": "Beaujolais, Borgonha",
-      "price": null,
-      "currency": "BRL",
+      "priceBR": null,
+      "priceUSD": 13,
+      "rating": null,
       "photo": "adega/fotos/lote-01.jpg"
     },
     {
@@ -27,8 +29,9 @@
       "vintage": null,
       "grape": "Primitivo / Negroamaro",
       "origin": "Salento, Puglia",
-      "price": null,
-      "currency": "BRL",
+      "priceBR": null,
+      "priceUSD": 40,
+      "rating": null,
       "photo": "adega/fotos/lote-01.jpg"
     },
     {
@@ -37,8 +40,9 @@
       "vintage": "2019",
       "grape": "Bonarda / Malbec",
       "origin": "Mendoza",
-      "price": 392.93,
-      "currency": "BRL",
+      "priceBR": 392.93,
+      "priceUSD": null,
+      "rating": null,
       "photo": "adega/fotos/lote-01.jpg"
     }
   ]

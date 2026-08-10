@@ -11,7 +11,9 @@
   <div class="hub hub-full">
     <a href="index.html" class="hub-logo">gagli<span>dom</span></a>
     <p class="hub-page-title">🍷 Adega</p>
-    <p class="hub-page-subtitle">Catálogo dos vinhos, classificados por país, data de fabricação, tipo de uva, origem e preço.</p>
+    <p class="hub-page-subtitle">
+      Catálogo dos vinhos por país, data de fabricação, tipo de uva, origem, preço e nota.
+    </p>
 
     <div class="adega-toolbar">
       <input type="text" id="adega-search" class="adega-search" placeholder="Buscar por nome, país, uva, origem..." />
@@ -23,9 +25,33 @@
         <option value="vintage">Data de fabricação</option>
         <option value="grape">Tipo de uva</option>
         <option value="origin">Origem</option>
-        <option value="price">Preço</option>
+        <option value="priceBR">Preço BR</option>
+        <option value="priceUSD">Preço origem</option>
+        <option value="rating">Nota</option>
       </select>
       <span class="adega-count" id="adega-count"></span>
+      <button type="button" id="adega-toggle-bulk" class="btn-ghost-sm">Importar / exportar</button>
+    </div>
+
+    <div class="adega-bulk" id="adega-bulk" hidden>
+      <p class="adega-bulk-help">
+        Cole aqui as colunas copiadas do Excel/Google Sheets (uma linha por vinho, separadas por tabulação).
+        A primeira linha deve ser o cabeçalho com os nomes das colunas:
+        <code>nome, pais, data, uva, origem, preco_br, preco_usd, nota</code>.
+        Vinhos com o mesmo <strong>nome</strong> são atualizados; os demais são adicionados.
+      </p>
+      <textarea id="adega-bulk-input" class="adega-bulk-input" rows="6"
+        placeholder="nome&#9;pais&#9;data&#9;uva&#9;origem&#9;preco_br&#9;preco_usd&#9;nota"></textarea>
+      <div class="adega-bulk-actions">
+        <button type="button" id="adega-import" class="btn btn-primary">Importar</button>
+        <button type="button" id="adega-export-tsv" class="btn-ghost-sm">Copiar tabela (Excel)</button>
+        <button type="button" id="adega-export-json" class="btn-ghost-sm">Baixar wines.json</button>
+        <span class="adega-bulk-msg" id="adega-bulk-msg"></span>
+      </div>
+      <p class="adega-bulk-help">
+        Alterações feitas aqui ficam salvas só neste navegador. Para publicá-las no site,
+        baixe o <code>wines.json</code> e me envie, ou suba o arquivo em <code>adega/</code> no repositório.
+      </p>
     </div>
 
     <div class="adega-table-wrap">
@@ -38,7 +64,9 @@
             <th data-sort="vintage">Data de fabricação</th>
             <th data-sort="grape">Tipo de uva</th>
             <th data-sort="origin">Origem</th>
-            <th data-sort="price" class="adega-th-num">Preço</th>
+            <th data-sort="priceBR" class="adega-th-num">Preço BR</th>
+            <th data-sort="priceUSD" class="adega-th-num">Preço origem</th>
+            <th data-sort="rating" class="adega-th-num">Nota</th>
           </tr>
         </thead>
         <tbody id="adega-body"></tbody>
