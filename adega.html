@@ -30,6 +30,10 @@
         <option value="rating">Nota</option>
       </select>
       <span class="adega-count" id="adega-count"></span>
+      <div class="adega-view-switch" role="group" aria-label="Formato de exibição">
+        <button type="button" class="adega-view-btn" data-view="list">Lista</button>
+        <button type="button" class="adega-view-btn" data-view="table">Tabela</button>
+      </div>
       <button type="button" id="adega-toggle-bulk" class="btn-ghost-sm">Importar / exportar</button>
     </div>
 
@@ -54,7 +58,7 @@
       </p>
     </div>
 
-    <div class="adega-table-wrap">
+    <div class="adega-table-wrap" id="adega-table-wrap">
       <table class="adega-table">
         <thead>
           <tr>

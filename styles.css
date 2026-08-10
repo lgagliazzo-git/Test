@@ -392,9 +392,112 @@ a.hub-bullet:hover {
   text-align: center;
 }
 
-/* A tabela de 9 colunas só cabe inteira acima de ~1200px. Abaixo disso,
-   rolar de lado esconderia justamente os campos (preço, nota), então
-   cada vinho vira um cartão com tudo empilhado e rotulado. */
+/* Formato "lista": cada vinho vira um cartão com todos os campos
+   empilhados e rotulados. É o padrão em tela estreita, onde a tabela de
+   9 colunas não caberia, mas o usuário pode forçar qualquer um dos dois
+   pelo botão Lista/Tabela. */
+.adega-table-wrap.is-list {
+  overflow-x: visible;
+  border: none;
+  background: none;
+}
+
+.adega-table-wrap.is-list .adega-table,
+.adega-table-wrap.is-list tbody,
+.adega-table-wrap.is-list tr,
+.adega-table-wrap.is-list td {
+  display: block;
+  width: 100%;
+}
+
+.adega-table-wrap.is-list thead {
+  display: none;
+}
+
+.adega-table-wrap.is-list tr {
+  position: relative;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 14px 16px 14px 84px;
+  margin-bottom: 12px;
+  min-height: 108px;
+}
+
+.adega-table-wrap.is-list tbody tr:hover {
+  background: var(--color-surface);
+}
+
+.adega-table-wrap.is-list td {
+  border: none;
+  padding: 3px 0;
+  white-space: normal;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  text-align: right;
+}
+
+.adega-table-wrap.is-list td::before {
+  content: attr(data-label);
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: left;
+  flex-shrink: 0;
+}
+
+.adega-table-wrap.is-list .adega-td-name {
+  font-size: 1rem;
+  padding-bottom: 8px;
+}
+
+/* A foto ancora no canto esquerdo do cartão, fora do fluxo dos campos. */
+.adega-table-wrap.is-list .adega-td-photo {
+  position: absolute;
+  left: 16px;
+  top: 14px;
+  width: 52px;
+  padding: 0;
+}
+
+.adega-table-wrap.is-list .adega-td-photo::before {
+  content: none;
+}
+
+.adega-table-wrap.is-list .adega-photo {
+  width: 52px;
+  height: 74px;
+}
+
+.adega-view-switch {
+  display: inline-flex;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.adega-view-btn {
+  background: transparent;
+  border: none;
+  padding: 9px 14px;
+  color: var(--color-text-muted);
+  font-family: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.adega-view-btn:hover {
+  color: var(--color-text);
+}
+
+.adega-view-btn[aria-pressed="true"] {
+  background: var(--color-primary);
+  color: #fff;
+}
+
 @media (max-width: 1200px) {
   .adega-toolbar {
     flex-wrap: wrap;
@@ -402,82 +505,6 @@ a.hub-bullet:hover {
 
   .adega-search {
     flex-basis: 100%;
-  }
-
-  .adega-table-wrap {
-    overflow-x: visible;
-    border: none;
-    background: none;
-  }
-
-  .adega-table,
-  .adega-table tbody,
-  .adega-table tr,
-  .adega-table td {
-    display: block;
-    width: 100%;
-  }
-
-  .adega-table thead {
-    display: none;
-  }
-
-  .adega-table tr {
-    position: relative;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-    padding: 14px 16px 14px 84px;
-    margin-bottom: 12px;
-    min-height: 108px;
-  }
-
-  .adega-table tbody tr:hover {
-    background: var(--color-surface);
-  }
-
-  .adega-table td {
-    border: none;
-    padding: 3px 0;
-    white-space: normal;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 12px;
-    text-align: right;
-  }
-
-  .adega-table td::before {
-    content: attr(data-label);
-    color: var(--color-text-muted);
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    text-align: left;
-    flex-shrink: 0;
-  }
-
-  .adega-table .adega-td-name {
-    font-size: 1rem;
-    padding-bottom: 8px;
-  }
-
-  /* A foto ancora no canto esquerdo do cartão, fora do fluxo dos campos. */
-  .adega-table .adega-td-photo {
-    position: absolute;
-    left: 16px;
-    top: 14px;
-    width: 52px;
-    padding: 0;
-  }
-
-  .adega-table .adega-td-photo::before {
-    content: none;
-  }
-
-  .adega-photo {
-    width: 52px;
-    height: 74px;
   }
 }
 

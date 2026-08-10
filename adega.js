@@ -1,4 +1,9 @@
 const STORAGE_KEY = "gaglidom_adega_wines";
+const VIEW_KEY = "gaglidom_adega_view";
+
+// Abaixo disso a tabela de 9 colunas não cabe, então lista é o padrão —
+// mas a escolha do usuário, se houver, sempre vence.
+const TABLE_MIN_WIDTH = 1200;
 
 let wines = [];
 let sortKey = "name";
@@ -180,6 +185,24 @@ function render() {
   document.getElementById("adega-sort").value = sortKey;
 }
 
+// ---------- Formato de exibição ----------
+
+function applyView(view) {
+  document.getElementById("adega-table-wrap").classList.toggle("is-list", view === "list");
+  document.querySelectorAll(".adega-view-btn").forEach((btn) => {
+    btn.setAttribute("aria-pressed", String(btn.dataset.view === view));
+  });
+}
+
+function setView(view) {
+  localStorage.setItem(VIEW_KEY, view);
+  applyView(view);
+}
+
+function currentView() {
+  return localStorage.getItem(VIEW_KEY) || (window.innerWidth > TABLE_MIN_WIDTH ? "table" : "list");
+}
+
 // ---------- Importar / exportar em massa ----------
 
 const EXPORT_COLUMNS = [
@@ -298,6 +321,10 @@ document.getElementById("adega-sort").addEventListener("change", (e) => {
 
 document.getElementById("adega-search").addEventListener("input", render);
 
+document.querySelectorAll(".adega-view-btn").forEach((btn) => {
+  btn.addEventListener("click", () => setView(btn.dataset.view));
+});
+
 document.getElementById("adega-toggle-bulk").addEventListener("click", () => {
   const panel = document.getElementById("adega-bulk");
   panel.hidden = !panel.hidden;
@@ -340,4 +367,5 @@ document.getElementById("adega-export-json").addEventListener("click", () => {
   flash("wines.json baixado.");
 });
 
+applyView(currentView());
 load();
