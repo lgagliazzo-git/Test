@@ -4,8 +4,18 @@ let sortAsc = true;
 
 const COLLATOR = new Intl.Collator("pt-BR", { sensitivity: "base", numeric: true });
 
+function priceSearchLink(wine, label) {
+  const query = [wine.name, wine.vintage, "vinho preço"].filter(Boolean).join(" ");
+  const url = `https://www.google.com/search?tbm=shop&q=${encodeURIComponent(query)}`;
+  return `<a class="adega-price-search" href="${url}" target="_blank" rel="noopener">${label}</a>`;
+}
+
 function fmtPrice(wine) {
-  if (wine.price === null || wine.price === undefined || wine.price === "") return "—";
+  // Sem preço fechado, o link abre a busca já pronta na loja — mais útil
+  // que um traço, já que os preços de importado mudam bastante.
+  if (wine.price === null || wine.price === undefined || wine.price === "") {
+    return priceSearchLink(wine, "buscar preço");
+  }
   const currency = wine.currency || "BRL";
   try {
     return Number(wine.price).toLocaleString("pt-BR", {

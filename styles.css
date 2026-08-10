@@ -284,6 +284,18 @@ a.hub-bullet:hover {
   color: var(--color-text-muted);
 }
 
+.adega-price-search {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-size: 0.82rem;
+  border-bottom: 1px dashed currentColor;
+  white-space: nowrap;
+}
+
+.adega-price-search:hover {
+  color: var(--color-primary-hover);
+}
+
 .adega-sort {
   background: var(--color-bg);
   border: 1px solid var(--color-border);
