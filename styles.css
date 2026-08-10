@@ -145,7 +145,7 @@ a.hub-bullet:hover {
 }
 
 .hub-full {
-  max-width: 1060px;
+  max-width: 1200px;
 }
 
 /* Adega */
@@ -392,10 +392,10 @@ a.hub-bullet:hover {
   text-align: center;
 }
 
-/* No celular a tabela de 7 colunas não cabe: rolar de lado esconde
-   justamente os campos (país, safra, uva, origem, preço). Cada vinho
-   vira um cartão com todos os campos empilhados e rotulados. */
-@media (max-width: 760px) {
+/* A tabela de 9 colunas só cabe inteira acima de ~1200px. Abaixo disso,
+   rolar de lado esconderia justamente os campos (preço, nota), então
+   cada vinho vira um cartão com tudo empilhado e rotulado. */
+@media (max-width: 1200px) {
   .adega-toolbar {
     flex-wrap: wrap;
   }
