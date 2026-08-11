@@ -284,6 +284,90 @@ a.hub-bullet:hover {
   color: var(--color-text-muted);
 }
 
+.adega-filters {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.adega-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+  min-width: 0;
+}
+
+.adega-filter > span {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+}
+
+.adega-filter select,
+.adega-filter input {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 9px 12px;
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: 16px;
+  max-width: 100%;
+}
+
+.adega-filter input {
+  width: 120px;
+}
+
+.adega-filter select:focus,
+.adega-filter input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.adega-summary {
+  width: 100%;
+  text-align: left;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.adega-summary strong {
+  color: var(--color-text);
+  font-size: 1.05rem;
+}
+
+.adega-table tfoot td {
+  border-top: 1px solid var(--color-border);
+  border-bottom: none;
+  background: var(--color-bg-alt);
+  font-weight: 700;
+}
+
+.adega-foot-label {
+  color: var(--color-text-muted);
+  font-weight: 600;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Em formato lista o rodapé da tabela não faz sentido: o total já está
+   na barra de resumo, que aparece nos dois formatos. */
+.adega-table-wrap.is-list tfoot {
+  display: none;
+}
+
 .btn-ghost-sm {
   background: transparent;
   border: 1px solid var(--color-border);

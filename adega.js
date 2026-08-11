@@ -129,6 +129,91 @@ function matches(wine, term) {
     .includes(term);
 }
 
+// "Primitivo / Negroamaro" precisa aparecer ao filtrar por qualquer uma
+// das duas, então o campo é quebrado em uvas individuais.
+function grapesOf(wine) {
+  return String(wine.grape || "")
+    .split(/[/,]/)
+    .map((g) => g.trim())
+    .filter(Boolean);
+}
+
+function currentFilters() {
+  return {
+    country: document.getElementById("filter-country").value,
+    grape: document.getElementById("filter-grape").value,
+    min: parseNumber(document.getElementById("filter-price-min").value),
+    max: parseNumber(document.getElementById("filter-price-max").value),
+  };
+}
+
+function passesFilters(wine, f) {
+  if (f.country && wine.country !== f.country) return false;
+  if (f.grape && !grapesOf(wine).includes(f.grape)) return false;
+
+  if (f.min !== null || f.max !== null) {
+    // Vinho sem preço não entra numa faixa de preço — deixá-lo passar
+    // inflaria a contagem e sujaria o total.
+    if (isBlank(wine.priceBR)) return false;
+    const price = Number(wine.priceBR);
+    if (f.min !== null && price < f.min) return false;
+    if (f.max !== null && price > f.max) return false;
+  }
+  return true;
+}
+
+function fillFilterOptions() {
+  const countries = [...new Set(wines.map((w) => w.country).filter(Boolean))].sort(COLLATOR.compare);
+  const grapes = [...new Set(wines.flatMap(grapesOf))].sort(COLLATOR.compare);
+
+  const fill = (id, values, allLabel) => {
+    const select = document.getElementById(id);
+    const chosen = select.value;
+    select.innerHTML =
+      `<option value="">${allLabel}</option>` +
+      values.map((v) => `<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join("");
+    // Mantém a seleção se o valor ainda existir depois de uma importação.
+    if (values.includes(chosen)) select.value = chosen;
+  };
+
+  fill("filter-country", countries, "Todos");
+  fill("filter-grape", grapes, "Todas");
+}
+
+function renderSummary(visible) {
+  const withPrice = visible.filter((w) => !isBlank(w.priceBR));
+  const total = withPrice.reduce((sum, w) => sum + Number(w.priceBR), 0);
+  const missing = visible.length - withPrice.length;
+
+  const rated = visible.filter((w) => !isBlank(w.rating));
+  const avgRating = rated.length
+    ? (rated.reduce((s, w) => s + Number(w.rating), 0) / rated.length).toLocaleString("pt-BR", {
+        minimumFractionDigits: 1,
+        maximumFractionDigits: 1,
+      })
+    : null;
+
+  const parts = [
+    `<strong>Total ${fmtMoney(total, "BRL") || "R$ 0,00"}</strong>`,
+    `${visible.length} vinho${visible.length === 1 ? "" : "s"}`,
+  ];
+  // Sem esse aviso o total parece o valor da adega inteira quando não é.
+  if (missing > 0) parts.push(`${missing} sem preço (fora do total)`);
+  if (avgRating) parts.push(`nota média ${avgRating}`);
+
+  document.getElementById("adega-summary").innerHTML = parts.join(" · ");
+
+  const foot = document.getElementById("adega-foot");
+  foot.innerHTML = visible.length
+    ? `<tr>
+         <td colspan="6" class="adega-foot-label">Total (${withPrice.length} com preço)</td>
+         <td class="adega-td-num">${fmtMoney(total, "BRL")}</td>
+         <td class="adega-td-num">—</td>
+         <td class="adega-td-num">${avgRating || "—"}</td>
+       </tr>`
+    : "";
+}
+
 function photoCell(wine) {
   if (!wine.photo) return `<span class="adega-nophoto">—</span>`;
   const alt = escapeHtml(wine.name || "vinho");
@@ -139,7 +224,8 @@ function photoCell(wine) {
 
 function render() {
   const term = document.getElementById("adega-search").value.trim().toLowerCase();
-  const visible = wines.filter((w) => matches(w, term)).sort(compare);
+  const filters = currentFilters();
+  const visible = wines.filter((w) => matches(w, term) && passesFilters(w, filters)).sort(compare);
 
   const body = document.getElementById("adega-body");
   const empty = document.getElementById("adega-empty");
@@ -183,6 +269,8 @@ function render() {
   });
 
   document.getElementById("adega-sort").value = sortKey;
+
+  renderSummary(visible);
 }
 
 // ---------- Formato de exibição ----------
@@ -298,6 +386,7 @@ async function load() {
     /* localStorage corrompido: segue com o arquivo publicado */
   }
 
+  fillFilterOptions();
   render();
 }
 
@@ -319,6 +408,18 @@ document.getElementById("adega-sort").addEventListener("change", (e) => {
   render();
 });
 
+["filter-country", "filter-grape", "filter-price-min", "filter-price-max"].forEach((id) => {
+  document.getElementById(id).addEventListener("input", render);
+});
+
+document.getElementById("filter-clear").addEventListener("click", () => {
+  ["filter-country", "filter-grape", "filter-price-min", "filter-price-max"].forEach((id) => {
+    document.getElementById(id).value = "";
+  });
+  document.getElementById("adega-search").value = "";
+  render();
+});
+
 document.getElementById("adega-search").addEventListener("input", render);
 
 document.querySelectorAll(".adega-view-btn").forEach((btn) => {
@@ -335,6 +436,7 @@ document.getElementById("adega-import").addEventListener("click", () => {
   try {
     const { added, updated } = importTsv(input.value);
     persist();
+    fillFilterOptions();
     render();
     input.value = "";
     flash(`${added} adicionado(s), ${updated} atualizado(s).`);

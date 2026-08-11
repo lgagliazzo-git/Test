@@ -37,6 +37,28 @@
       <button type="button" id="adega-toggle-bulk" class="btn-ghost-sm">Importar / exportar</button>
     </div>
 
+    <div class="adega-filters">
+      <label class="adega-filter">
+        <span>País</span>
+        <select id="filter-country"><option value="">Todos</option></select>
+      </label>
+      <label class="adega-filter">
+        <span>Uva</span>
+        <select id="filter-grape"><option value="">Todas</option></select>
+      </label>
+      <label class="adega-filter">
+        <span>Preço BR de</span>
+        <input type="number" id="filter-price-min" inputmode="decimal" min="0" placeholder="R$ mín" />
+      </label>
+      <label class="adega-filter">
+        <span>até</span>
+        <input type="number" id="filter-price-max" inputmode="decimal" min="0" placeholder="R$ máx" />
+      </label>
+      <button type="button" id="filter-clear" class="btn-ghost-sm">Limpar filtros</button>
+    </div>
+
+    <div class="adega-summary" id="adega-summary"></div>
+
     <div class="adega-bulk" id="adega-bulk" hidden>
       <p class="adega-bulk-help">
         Cole aqui as colunas copiadas do Excel/Google Sheets (uma linha por vinho, separadas por tabulação).
@@ -74,6 +96,7 @@
           </tr>
         </thead>
         <tbody id="adega-body"></tbody>
+        <tfoot id="adega-foot"></tfoot>
       </table>
       <p class="adega-empty" id="adega-empty" hidden>
         Nenhum vinho cadastrado ainda. Me mande as fotos que eu preencho a tabela.
