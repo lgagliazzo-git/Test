@@ -9,13 +9,11 @@ on:
 jobs:
   snapshot:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 10
     env:
       WHATSAPP_TOKEN: ${{ secrets.WHATSAPP_TOKEN }}
       WHATSAPP_PHONE_NUMBER_ID: ${{ secrets.WHATSAPP_PHONE_NUMBER_ID }}
       WHATSAPP_TO: ${{ secrets.WHATSAPP_TO }}
-      FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
-      BRAPI_TOKEN: ${{ secrets.BRAPI_TOKEN }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -25,6 +23,19 @@ jobs:
         with:
           node-version: "20"
 
+      - run: npm install
+
+      - run: npx playwright install --with-deps chromium
+
       - name: Send market snapshot
         if: env.WHATSAPP_TOKEN != ''
         run: npm run market-snapshot
+
+      - name: Upload snapshot for debugging
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: market-snapshot-png
+          path: /tmp/gaglidom-market-snapshot.png
+          if-no-files-found: ignore
+          retention-days: 3

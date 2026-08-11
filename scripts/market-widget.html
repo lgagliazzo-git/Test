@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #0b1220;
+  }
+  #card {
+    width: 880px;
+    padding: 28px 28px 20px;
+    background: #0b1220;
+    font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  #card h1 {
+    color: #f8fafc;
+    font-size: 22px;
+    margin: 0 0 4px;
+  }
+  #card p {
+    color: #94a3b8;
+    font-size: 13px;
+    margin: 0 0 18px;
+  }
+  .tradingview-widget-container {
+    width: 824px;
+  }
+</style>
+</head>
+<body>
+  <div id="card">
+    <h1 id="title">⚡ GAGLIDOM CLOSE</h1>
+    <p id="stamp"></p>
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+    </div>
+  </div>
+  <script src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+  {
+    "colorTheme": "dark",
+    "dateRange": "1D",
+    "showChart": false,
+    "locale": "br",
+    "isTransparent": false,
+    "showSymbolLogo": true,
+    "showFloatingTooltip": false,
+    "width": 824,
+    "height": 420,
+    "plotLineColorGrowing": "rgba(41, 98, 255, 1)",
+    "plotLineColorFalling": "rgba(41, 98, 255, 1)",
+    "gridLineColor": "rgba(240, 243, 250, 0)",
+    "scaleFontColor": "rgba(148, 163, 184, 1)",
+    "belowLineFillColorGrowing": "rgba(41, 98, 255, 0.12)",
+    "belowLineFillColorFalling": "rgba(41, 98, 255, 0.12)",
+    "belowLineFillColorGrowingBottom": "rgba(41, 98, 255, 0)",
+    "belowLineFillColorFallingBottom": "rgba(41, 98, 255, 0)",
+    "symbolActiveColor": "rgba(41, 98, 255, 0.12)",
+    "tabs": [
+      {
+        "title": "Gaglidom",
+        "symbols": [
+          { "s": "BMFBOVESPA:IBOV", "d": "IBOV" },
+          { "s": "SP:SPX", "d": "S&P 500" },
+          { "s": "FX_IDC:USDBRL", "d": "USD/BRL" },
+          { "s": "TVC:USOIL", "d": "WTI" },
+          { "s": "COINBASE:BTCUSD", "d": "BITCOIN" },
+          { "s": "TVC:US10Y", "d": "T10Y EUA" }
+        ],
+        "originalTitle": "Gaglidom"
+      }
+    ]
+  }
+  </script>
+</body>
+</html>

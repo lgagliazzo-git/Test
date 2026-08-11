@@ -9,6 +9,7 @@
     "market-snapshot": "node scripts/market-snapshot.js"
   },
   "dependencies": {
+    "playwright": "^1.47.0",
     "rss-parser": "^3.13.0"
   }
 }
