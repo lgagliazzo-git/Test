@@ -25,7 +25,9 @@
         <option value="vintage">Data de fabricação</option>
         <option value="grape">Tipo de uva</option>
         <option value="origin">Origem</option>
+        <option value="quantity">Quantidade</option>
         <option value="priceBR">Preço BR</option>
+        <option value="pricePaid">Preço pago</option>
         <option value="priceUSD">Preço origem</option>
         <option value="rating">Nota</option>
       </select>
@@ -63,11 +65,11 @@
       <p class="adega-bulk-help">
         Cole aqui as colunas copiadas do Excel/Google Sheets (uma linha por vinho, separadas por tabulação).
         A primeira linha deve ser o cabeçalho com os nomes das colunas:
-        <code>nome, pais, data, uva, origem, preco_br, preco_usd, nota</code>.
+        <code>nome, pais, data, uva, origem, qtd, preco_br, preco_pago, preco_usd, nota</code>.
         Vinhos com o mesmo <strong>nome</strong> são atualizados; os demais são adicionados.
       </p>
       <textarea id="adega-bulk-input" class="adega-bulk-input" rows="6"
-        placeholder="nome&#9;pais&#9;data&#9;uva&#9;origem&#9;preco_br&#9;preco_usd&#9;nota"></textarea>
+        placeholder="nome&#9;pais&#9;data&#9;uva&#9;origem&#9;qtd&#9;preco_br&#9;preco_pago&#9;preco_usd&#9;nota"></textarea>
       <div class="adega-bulk-actions">
         <button type="button" id="adega-import" class="btn btn-primary">Importar</button>
         <button type="button" id="adega-export-tsv" class="btn-ghost-sm">Copiar tabela (Excel)</button>
@@ -90,7 +92,9 @@
             <th data-sort="vintage">Data de fabricação</th>
             <th data-sort="grape">Tipo de uva</th>
             <th data-sort="origin">Origem</th>
+            <th data-sort="quantity" class="adega-th-num">Qtd</th>
             <th data-sort="priceBR" class="adega-th-num">Preço BR</th>
+            <th data-sort="pricePaid" class="adega-th-num">Preço pago</th>
             <th data-sort="priceUSD" class="adega-th-num">Preço origem</th>
             <th data-sort="rating" class="adega-th-num">Nota</th>
           </tr>

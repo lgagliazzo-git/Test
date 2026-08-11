@@ -22,6 +22,12 @@ const COLUMN_ALIASES = {
   ano: "vintage",
   uva: "grape",
   origem: "origin",
+  qtd: "quantity",
+  quantidade: "quantity",
+  garrafas: "quantity",
+  preco_pago: "pricePaid",
+  precopago: "pricePaid",
+  pago: "pricePaid",
   preco_br: "priceBR",
   precobr: "priceBR",
   preco: "priceBR",
@@ -31,7 +37,9 @@ const COLUMN_ALIASES = {
   foto: "photo",
 };
 
-const NUMERIC_FIELDS = new Set(["priceBR", "priceUSD", "rating"]);
+const NUMERIC_FIELDS = new Set(["quantity", "priceBR", "pricePaid", "priceUSD", "rating"]);
+// Campos digitáveis direto na linha.
+const EDITABLE_FIELDS = { quantity: "Qtd", pricePaid: "Preço pago" };
 
 function isBlank(v) {
   return v === null || v === undefined || v === "";
@@ -84,6 +92,14 @@ function searchLink(wine, kind) {
   };
   const labels = { priceBR: "buscar", priceUSD: "buscar", rating: "buscar" };
   return `<a class="adega-price-search" href="${urls[kind]}" target="_blank" rel="noopener">${labels[kind]}</a>`;
+}
+
+function editableCell(wine, field) {
+  const raw = isBlank(wine[field]) ? "" : wine[field];
+  const step = field === "quantity" ? "1" : "0.01";
+  return `<input type="number" class="adega-cell-input" inputmode="decimal" min="0" step="${step}"
+            value="${escapeHtml(raw)}" data-field="${field}" data-name="${escapeHtml(wine.name)}"
+            aria-label="${EDITABLE_FIELDS[field]} de ${escapeHtml(wine.name)}" />`;
 }
 
 function cellValue(wine, kind) {
@@ -180,10 +196,22 @@ function fillFilterOptions() {
   fill("filter-grape", grapes, "Todas");
 }
 
+function qtyOf(wine) {
+  const n = Number(wine.quantity);
+  // Um vinho catalogado é ao menos uma garrafa; quantidade em branco não
+  // pode zerar o valor dele no total.
+  return Number.isFinite(n) && n > 0 ? n : 1;
+}
+
 function renderSummary(visible) {
+  const bottles = visible.reduce((sum, w) => sum + qtyOf(w), 0);
+
   const withPrice = visible.filter((w) => !isBlank(w.priceBR));
-  const total = withPrice.reduce((sum, w) => sum + Number(w.priceBR), 0);
+  const total = withPrice.reduce((sum, w) => sum + Number(w.priceBR) * qtyOf(w), 0);
   const missing = visible.length - withPrice.length;
+
+  const withPaid = visible.filter((w) => !isBlank(w.pricePaid));
+  const totalPaid = withPaid.reduce((sum, w) => sum + Number(w.pricePaid) * qtyOf(w), 0);
 
   const rated = visible.filter((w) => !isBlank(w.rating));
   const avgRating = rated.length
@@ -194,11 +222,15 @@ function renderSummary(visible) {
     : null;
 
   const parts = [
-    `<strong>Total ${fmtMoney(total, "BRL") || "R$ 0,00"}</strong>`,
-    `${visible.length} vinho${visible.length === 1 ? "" : "s"}`,
+    `<strong>Pago ${fmtMoney(totalPaid, "BRL") || "R$ 0,00"}</strong>`,
+    `mercado ${fmtMoney(total, "BRL") || "R$ 0,00"}`,
+    `${bottles} garrafa${bottles === 1 ? "" : "s"} em ${visible.length} rótulo${visible.length === 1 ? "" : "s"}`,
   ];
-  // Sem esse aviso o total parece o valor da adega inteira quando não é.
-  if (missing > 0) parts.push(`${missing} sem preço (fora do total)`);
+  // Sem esses avisos os totais parecem cobrir a adega inteira quando não cobrem.
+  if (withPaid.length < visible.length) {
+    parts.push(`${visible.length - withPaid.length} sem preço pago`);
+  }
+  if (missing > 0) parts.push(`${missing} sem preço de mercado`);
   if (avgRating) parts.push(`nota média ${avgRating}`);
 
   document.getElementById("adega-summary").innerHTML = parts.join(" · ");
@@ -206,8 +238,10 @@ function renderSummary(visible) {
   const foot = document.getElementById("adega-foot");
   foot.innerHTML = visible.length
     ? `<tr>
-         <td colspan="6" class="adega-foot-label">Total (${withPrice.length} com preço)</td>
+         <td colspan="6" class="adega-foot-label">Totais (× quantidade)</td>
+         <td class="adega-td-num">${bottles}</td>
          <td class="adega-td-num">${fmtMoney(total, "BRL")}</td>
+         <td class="adega-td-num">${fmtMoney(totalPaid, "BRL")}</td>
          <td class="adega-td-num">—</td>
          <td class="adega-td-num">${avgRating || "—"}</td>
        </tr>`
@@ -258,7 +292,9 @@ function render() {
           <td data-label="Data de fabricação">${escapeHtml(w.vintage) || "—"}</td>
           <td data-label="Tipo de uva">${escapeHtml(w.grape) || "—"}</td>
           <td class="adega-td-origin" data-label="Origem">${escapeHtml(w.origin) || "—"}</td>
+          <td class="adega-td-num" data-label="Qtd">${editableCell(w, "quantity")}</td>
           <td class="adega-td-num" data-label="Preço BR">${cellValue(w, "priceBR")}</td>
+          <td class="adega-td-num" data-label="Preço pago">${editableCell(w, "pricePaid")}</td>
           <td class="adega-td-num" data-label="Preço origem">${cellValue(w, "priceUSD")}</td>
           <td class="adega-td-num" data-label="Nota">${cellValue(w, "rating")}</td>
         </tr>`
@@ -302,6 +338,21 @@ document.getElementById("adega-body").addEventListener("click", (e) => {
   if (btn) openZoom(btn.dataset.zoom, btn.dataset.name);
 });
 
+// Só o resumo é recalculado enquanto digita — um render completo
+// recriaria o input e o cursor sairia do campo.
+document.getElementById("adega-body").addEventListener("input", (e) => {
+  const input = e.target.closest(".adega-cell-input");
+  if (!input) return;
+  const wine = wines.find((w) => w.name === input.dataset.name);
+  if (!wine) return;
+  wine[input.dataset.field] = parseNumber(input.value);
+  renderSummary(wines.filter((w) => matches(w, document.getElementById("adega-search").value.trim().toLowerCase()) && passesFilters(w, currentFilters())));
+});
+
+document.getElementById("adega-body").addEventListener("change", (e) => {
+  if (e.target.closest(".adega-cell-input")) persist();
+});
+
 document.getElementById("adega-zoom-close").addEventListener("click", closeZoom);
 
 document.getElementById("adega-zoom").addEventListener("click", (e) => {
@@ -335,7 +386,9 @@ const EXPORT_COLUMNS = [
   ["data", "vintage"],
   ["uva", "grape"],
   ["origem", "origin"],
+  ["qtd", "quantity"],
   ["preco_br", "priceBR"],
+  ["preco_pago", "pricePaid"],
   ["preco_usd", "priceUSD"],
   ["nota", "rating"],
   ["foto", "photo"],
@@ -378,7 +431,7 @@ function importTsv(text) {
       }
       updated += 1;
     } else {
-      wines.push({ priceBR: null, priceUSD: null, rating: null, photo: null, ...incoming });
+      wines.push({ quantity: 1, priceBR: null, pricePaid: null, priceUSD: null, rating: null, photo: null, ...incoming });
       added += 1;
     }
   }
@@ -405,6 +458,8 @@ async function load() {
     wines = (data.wines || []).map((w) => ({
       // priceBR substituiu o campo antigo "price"; mantido para não perder
       // dado de arquivos gerados antes da mudança.
+      quantity: w.quantity ?? 1,
+      pricePaid: w.pricePaid ?? null,
       priceBR: w.priceBR ?? w.price ?? null,
       priceUSD: w.priceUSD ?? null,
       rating: w.rating ?? null,
@@ -463,6 +518,21 @@ document.getElementById("adega-search").addEventListener("input", render);
 document.getElementById("adega-body").addEventListener("click", (e) => {
   const btn = e.target.closest(".adega-photo-btn");
   if (btn) openZoom(btn.dataset.zoom, btn.dataset.name);
+});
+
+// Só o resumo é recalculado enquanto digita — um render completo
+// recriaria o input e o cursor sairia do campo.
+document.getElementById("adega-body").addEventListener("input", (e) => {
+  const input = e.target.closest(".adega-cell-input");
+  if (!input) return;
+  const wine = wines.find((w) => w.name === input.dataset.name);
+  if (!wine) return;
+  wine[input.dataset.field] = parseNumber(input.value);
+  renderSummary(wines.filter((w) => matches(w, document.getElementById("adega-search").value.trim().toLowerCase()) && passesFilters(w, currentFilters())));
+});
+
+document.getElementById("adega-body").addEventListener("change", (e) => {
+  if (e.target.closest(".adega-cell-input")) persist();
 });
 
 document.getElementById("adega-zoom-close").addEventListener("click", closeZoom);
