@@ -93,17 +93,33 @@ async function captureSnapshot(stampText) {
   try {
     const page = await browser.newPage({ viewport: { width: 960, height: 640 } });
     page.on("pageerror", (err) => console.error(`Erro na página do widget: ${err.message}`));
+    page.on("requestfailed", (req) =>
+      console.error(`Requisição falhou: ${req.url()} — ${req.failure()?.errorText}`)
+    );
+    page.on("response", (res) => {
+      if (res.url().includes("tradingview")) console.log(`Resposta ${res.status()} — ${res.url()}`);
+    });
     await page.goto(`http://127.0.0.1:${port}/`);
     await page.evaluate((text) => {
       document.getElementById("stamp").textContent = `Snapshot ${text} BRT`;
     }, stampText);
-    await page.waitForSelector(".tradingview-widget-container iframe", { timeout: 20000 });
+
+    let hasIframe = true;
+    try {
+      await page.waitForSelector(".tradingview-widget-container iframe", { timeout: 20000 });
+    } catch (err) {
+      hasIframe = false;
+      console.error(`Iframe do widget não apareceu: ${err.message}`);
+    }
     // O iframe carrega os preços via websocket depois de montado; não tem
     // evento de "dados prontos" exposto, então dá um tempo fixo pra
-    // renderizar antes do print.
-    await page.waitForTimeout(6000);
+    // renderizar antes do print. Tira o print mesmo sem o iframe, pra dar
+    // pra inspecionar visualmente o que a página mostrou (placeholder de
+    // erro do widget, página em branco, etc).
+    await page.waitForTimeout(hasIframe ? 6000 : 0);
     const outputPath = path.join(os.tmpdir(), "gaglidom-market-snapshot.png");
     await page.locator("#card").screenshot({ path: outputPath });
+    if (!hasIframe) throw new Error("widget não carregou o iframe (print de diagnóstico salvo mesmo assim)");
     return outputPath;
   } finally {
     await browser.close();
