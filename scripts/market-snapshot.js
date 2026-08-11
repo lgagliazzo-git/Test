@@ -1,13 +1,11 @@
 const path = require("path");
 const os = require("os");
-const fs = require("fs");
-const http = require("http");
 const { chromium } = require("playwright");
 const { sendText, sendImage, requireEnv, WindowClosedError } = require("./whatsapp");
 
 const TIMEOUT_MS = 15000;
 const BCB_CDI_SERIES = 4389; // Taxa CDI anualizada, base 252
-const WIDGET_PATH = path.join(__dirname, "market-widget.html");
+const WIDGET_URL = "https://gaglidom.cloud/market-widget.html";
 
 const BROWSER_UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36";
@@ -66,29 +64,16 @@ function stamp() {
     .replace(":", "h");
 }
 
-// Serve a página num http://localhost real em vez de file://. O widget do
-// TradingView usa storage/postMessage internamente e simplesmente não monta
-// o iframe quando a origem é file:// (confirmado: waitForSelector do iframe
-// estourava timeout todas as vezes com file://, sem nenhum erro de rede).
-function startStaticServer(filePath) {
-  const html = fs.readFileSync(filePath);
-  return new Promise((resolve) => {
-    const server = http.createServer((req, res) => {
-      res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
-      res.end(html);
-    });
-    server.listen(0, "127.0.0.1", () => resolve(server));
-  });
-}
-
 // Print de um widget de mercado embutido (TradingView) em vez de somar
 // cotações de várias APIs sem chave — essas vinham sendo bloqueadas
-// (HTTP 429) ou travando (timeout) de dentro do GitHub Actions. O widget é
-// feito pra ser embutido em página de terceiro, então não bloqueia
-// navegador automatizado do jeito que os endpoints de dados bloqueiam.
+// (HTTP 429) ou travando (timeout) de dentro do GitHub Actions. Precisa
+// carregar de uma origem pública real: o widget faz uma checagem própria
+// de origem ("sheriff") contra a URL da página, e rejeita silenciosamente
+// (sem erro de JS, sem 4xx visível) tanto file:// quanto http://localhost
+// — confirmado nos dois testes anteriores. market-widget.html por isso
+// mora na raiz do site, publicado em gaglidom.cloud como qualquer outra
+// página, sem o gate de senha (não tem informação nenhuma do usuário).
 async function captureSnapshot(stampText) {
-  const server = await startStaticServer(WIDGET_PATH);
-  const { port } = server.address();
   const browser = await chromium.launch();
   try {
     const page = await browser.newPage({ viewport: { width: 960, height: 640 } });
@@ -99,7 +84,7 @@ async function captureSnapshot(stampText) {
     page.on("response", (res) => {
       if (res.url().includes("tradingview")) console.log(`Resposta ${res.status()} — ${res.url()}`);
     });
-    await page.goto(`http://127.0.0.1:${port}/`);
+    await page.goto(WIDGET_URL, { waitUntil: "domcontentloaded" });
     await page.evaluate((text) => {
       document.getElementById("stamp").textContent = `Snapshot ${text} BRT`;
     }, stampText);
@@ -123,7 +108,6 @@ async function captureSnapshot(stampText) {
     return outputPath;
   } finally {
     await browser.close();
-    server.close();
   }
 }
 
