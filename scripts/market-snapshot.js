@@ -5,7 +5,12 @@ const { sendText, sendImage, requireEnv, WindowClosedError } = require("./whatsa
 
 const TIMEOUT_MS = 15000;
 const BCB_CDI_SERIES = 4389; // Taxa CDI anualizada, base 252
-const WIDGET_URL = "https://gaglidom.cloud/market-widget.html";
+// gaglidom.cloud (domínio próprio) deu erro de certificado TLS
+// (net::ERR_CERT_COMMON_NAME_INVALID) rodando de dentro do GitHub Actions —
+// problema de infraestrutura do domínio custom, sem relação com o widget.
+// A URL github.io do próprio GitHub Pages tem certificado sempre válido e
+// serve o mesmo arquivo, então usa essa pra não depender do domínio custom.
+const WIDGET_URL = "https://lgagliazzo-git.github.io/Test/market-widget.html";
 
 const BROWSER_UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36";
