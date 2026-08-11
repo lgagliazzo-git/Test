@@ -81,7 +81,15 @@ function stamp() {
 async function captureSnapshot(stampText) {
   const browser = await chromium.launch();
   try {
-    const page = await browser.newPage({ viewport: { width: 960, height: 640 } });
+    // A checagem "sheriff" do widget bloqueou tanto localhost quanto o
+    // domínio real (gaglidom.cloud) do mesmo jeito -- não é sobre origem,
+    // é impressão digital de automação. O navegador headless do Playwright
+    // manda User-Agent com "HeadlessChrome", o sinal mais comum e mais
+    // checado por esse tipo de bloqueio; troca por um Chrome normal.
+    const page = await browser.newPage({ viewport: { width: 960, height: 640 }, userAgent: BROWSER_UA });
+    await page.addInitScript(() => {
+      Object.defineProperty(navigator, "webdriver", { get: () => undefined });
+    });
     page.on("pageerror", (err) => console.error(`Erro na página do widget: ${err.message}`));
     page.on("requestfailed", (req) =>
       console.error(`Requisição falhou: ${req.url()} — ${req.failure()?.errorText}`)
