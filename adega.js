@@ -217,9 +217,27 @@ function renderSummary(visible) {
 function photoCell(wine) {
   if (!wine.photo) return `<span class="adega-nophoto">—</span>`;
   const alt = escapeHtml(wine.name || "vinho");
-  return `<a href="${escapeHtml(wine.photo)}" target="_blank" rel="noopener">
+  return `<button type="button" class="adega-photo-btn" data-zoom="${escapeHtml(wine.photo)}"
+            data-name="${alt}" aria-label="Ampliar foto de ${alt}">
             <img class="adega-photo" src="${escapeHtml(wine.photo)}" alt="${alt}" loading="lazy" />
-          </a>`;
+          </button>`;
+}
+
+// ---------- Zoom da foto ----------
+
+function openZoom(src, name) {
+  document.getElementById("adega-zoom-img").src = src;
+  document.getElementById("adega-zoom-img").alt = name;
+  document.getElementById("adega-zoom-caption").textContent = name;
+  document.getElementById("adega-zoom").hidden = false;
+  document.body.classList.add("no-scroll");
+}
+
+function closeZoom() {
+  document.getElementById("adega-zoom").hidden = true;
+  // Solta a imagem para não segurar memória com dezenas de fotos abertas.
+  document.getElementById("adega-zoom-img").removeAttribute("src");
+  document.body.classList.remove("no-scroll");
 }
 
 function render() {
@@ -277,7 +295,25 @@ function render() {
 
 function applyView(view) {
   document.getElementById("adega-table-wrap").classList.toggle("is-list", view === "list");
-  document.querySelectorAll(".adega-view-btn").forEach((btn) => {
+  // As fotos são recriadas a cada render, então o clique é escutado no
+// corpo da tabela em vez de em cada botão.
+document.getElementById("adega-body").addEventListener("click", (e) => {
+  const btn = e.target.closest(".adega-photo-btn");
+  if (btn) openZoom(btn.dataset.zoom, btn.dataset.name);
+});
+
+document.getElementById("adega-zoom-close").addEventListener("click", closeZoom);
+
+document.getElementById("adega-zoom").addEventListener("click", (e) => {
+  // Clicar fora da imagem fecha; clicar nela, não.
+  if (e.target.id === "adega-zoom") closeZoom();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !document.getElementById("adega-zoom").hidden) closeZoom();
+});
+
+document.querySelectorAll(".adega-view-btn").forEach((btn) => {
     btn.setAttribute("aria-pressed", String(btn.dataset.view === view));
   });
 }
@@ -421,6 +457,24 @@ document.getElementById("filter-clear").addEventListener("click", () => {
 });
 
 document.getElementById("adega-search").addEventListener("input", render);
+
+// As fotos são recriadas a cada render, então o clique é escutado no
+// corpo da tabela em vez de em cada botão.
+document.getElementById("adega-body").addEventListener("click", (e) => {
+  const btn = e.target.closest(".adega-photo-btn");
+  if (btn) openZoom(btn.dataset.zoom, btn.dataset.name);
+});
+
+document.getElementById("adega-zoom-close").addEventListener("click", closeZoom);
+
+document.getElementById("adega-zoom").addEventListener("click", (e) => {
+  // Clicar fora da imagem fecha; clicar nela, não.
+  if (e.target.id === "adega-zoom") closeZoom();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !document.getElementById("adega-zoom").hidden) closeZoom();
+});
 
 document.querySelectorAll(".adega-view-btn").forEach((btn) => {
   btn.addEventListener("click", () => setView(btn.dataset.view));
