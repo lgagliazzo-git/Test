@@ -1,5 +1,7 @@
 const path = require("path");
 const os = require("os");
+const fs = require("fs");
+const http = require("http");
 const { chromium } = require("playwright");
 const { sendText, sendImage, requireEnv, WindowClosedError } = require("./whatsapp");
 
@@ -64,16 +66,34 @@ function stamp() {
     .replace(":", "h");
 }
 
+// Serve a página num http://localhost real em vez de file://. O widget do
+// TradingView usa storage/postMessage internamente e simplesmente não monta
+// o iframe quando a origem é file:// (confirmado: waitForSelector do iframe
+// estourava timeout todas as vezes com file://, sem nenhum erro de rede).
+function startStaticServer(filePath) {
+  const html = fs.readFileSync(filePath);
+  return new Promise((resolve) => {
+    const server = http.createServer((req, res) => {
+      res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+      res.end(html);
+    });
+    server.listen(0, "127.0.0.1", () => resolve(server));
+  });
+}
+
 // Print de um widget de mercado embutido (TradingView) em vez de somar
 // cotações de várias APIs sem chave — essas vinham sendo bloqueadas
 // (HTTP 429) ou travando (timeout) de dentro do GitHub Actions. O widget é
 // feito pra ser embutido em página de terceiro, então não bloqueia
 // navegador automatizado do jeito que os endpoints de dados bloqueiam.
 async function captureSnapshot(stampText) {
+  const server = await startStaticServer(WIDGET_PATH);
+  const { port } = server.address();
   const browser = await chromium.launch();
   try {
     const page = await browser.newPage({ viewport: { width: 960, height: 640 } });
-    await page.goto(`file://${WIDGET_PATH}`);
+    page.on("pageerror", (err) => console.error(`Erro na página do widget: ${err.message}`));
+    await page.goto(`http://127.0.0.1:${port}/`);
     await page.evaluate((text) => {
       document.getElementById("stamp").textContent = `Snapshot ${text} BRT`;
     }, stampText);
@@ -87,6 +107,7 @@ async function captureSnapshot(stampText) {
     return outputPath;
   } finally {
     await browser.close();
+    server.close();
   }
 }
 
