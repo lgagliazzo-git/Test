@@ -102,22 +102,30 @@ async function captureSnapshot(stampText) {
       document.getElementById("stamp").textContent = `Snapshot ${text} BRT`;
     }, stampText);
 
-    let hasIframe = true;
+    // Achado nos logs de diagnóstico: esse widget (market-overview) NÃO usa
+    // iframe -- ele monta direto dentro de .tradingview-widget-container__widget.
+    // Os logs de rede mostravam todo o JS/CSS e os logos de cada símbolo
+    // carregando com sucesso (200) mesmo quando o print saía em branco: eu
+    // estava esperando por um elemento que esse widget nunca cria.
+    let rendered = true;
     try {
-      await page.waitForSelector(".tradingview-widget-container iframe", { timeout: 20000 });
+      await page.waitForFunction(
+        () => {
+          const el = document.querySelector(".tradingview-widget-container__widget");
+          return !!el && el.childElementCount > 0;
+        },
+        { timeout: 20000 }
+      );
     } catch (err) {
-      hasIframe = false;
-      console.error(`Iframe do widget não apareceu: ${err.message}`);
+      rendered = false;
+      console.error(`Conteúdo do widget não apareceu: ${err.message}`);
     }
-    // O iframe carrega os preços via websocket depois de montado; não tem
-    // evento de "dados prontos" exposto, então dá um tempo fixo pra
-    // renderizar antes do print. Tira o print mesmo sem o iframe, pra dar
-    // pra inspecionar visualmente o que a página mostrou (placeholder de
-    // erro do widget, página em branco, etc).
-    await page.waitForTimeout(hasIframe ? 6000 : 0);
+    // Dá um tempo pro widget terminar de popular preços/variações depois de
+    // montar a estrutura.
+    await page.waitForTimeout(rendered ? 5000 : 0);
     const outputPath = path.join(os.tmpdir(), "gaglidom-market-snapshot.png");
     await page.locator("#card").screenshot({ path: outputPath });
-    if (!hasIframe) throw new Error("widget não carregou o iframe (print de diagnóstico salvo mesmo assim)");
+    if (!rendered) throw new Error("widget não renderizou (print de diagnóstico salvo mesmo assim)");
     return outputPath;
   } finally {
     await browser.close();
