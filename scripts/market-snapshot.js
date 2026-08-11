@@ -102,30 +102,16 @@ async function captureSnapshot(stampText) {
       document.getElementById("stamp").textContent = `Snapshot ${text} BRT`;
     }, stampText);
 
-    // Achado nos logs de diagnóstico: esse widget (market-overview) NÃO usa
-    // iframe -- ele monta direto dentro de .tradingview-widget-container__widget.
-    // Os logs de rede mostravam todo o JS/CSS e os logos de cada símbolo
-    // carregando com sucesso (200) mesmo quando o print saía em branco: eu
-    // estava esperando por um elemento que esse widget nunca cria.
-    let rendered = true;
-    try {
-      await page.waitForFunction(
-        () => {
-          const el = document.querySelector(".tradingview-widget-container__widget");
-          return !!el && el.childElementCount > 0;
-        },
-        { timeout: 20000 }
-      );
-    } catch (err) {
-      rendered = false;
-      console.error(`Conteúdo do widget não apareceu: ${err.message}`);
-    }
-    // Dá um tempo pro widget terminar de popular preços/variações depois de
-    // montar a estrutura.
-    await page.waitForTimeout(rendered ? 5000 : 0);
+    // Três tentativas de detectar "widget montou" via DOM (iframe, depois
+    // childElementCount) erraram o alvo -- provavelmente o widget usa shadow
+    // DOM, que querySelector não enxerga de fora. Sem conseguir inspecionar
+    // o print aqui (rede do sandbox não alcança o link de artifact do
+    // GitHub), desiste de detectar e usa espera fixa: os logs de rede
+    // (repetidos em todas as tentativas) mostram todo CSS/JS/logo carregado
+    // em ~1s, então 10s cobre a renderização com folga.
+    await page.waitForTimeout(10000);
     const outputPath = path.join(os.tmpdir(), "gaglidom-market-snapshot.png");
     await page.locator("#card").screenshot({ path: outputPath });
-    if (!rendered) throw new Error("widget não renderizou (print de diagnóstico salvo mesmo assim)");
     return outputPath;
   } finally {
     await browser.close();
