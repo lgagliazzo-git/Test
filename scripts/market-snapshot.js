@@ -66,8 +66,29 @@ async function fromStooq(symbol) {
   return { price, previous };
 }
 
-// FRED (Federal Reserve de St. Louis): CSV público, sem chave. É fonte
-// oficial e não bloqueia IP de datacenter, diferente de Yahoo/Stooq.
+// API oficial do FRED (precisa de chave grátis, sem cartão). O endpoint
+// fredgraph.csv (usado abaixo em fromFred) trava sistematicamente em ~15s
+// quando chamado de IP de datacenter do GitHub Actions — parece bloqueio
+// anti-bot da página de gráfico, não limite de taxa. A API REST oficial
+// não tem esse problema.
+async function fromFredApi(seriesId) {
+  const key = process.env.FRED_API_KEY;
+  if (!key) throw new Error("FRED_API_KEY não configurada");
+  const json = await getJson(
+    `https://api.stlouisfed.org/fred/series/observations?series_id=${encodeURIComponent(seriesId)}&api_key=${key}&file_type=json&sort_order=desc&limit=10`
+  );
+  const values = (json?.observations || [])
+    .map((o) => Number(o.value))
+    .filter((n) => Number.isFinite(n));
+  if (values.length < 2) throw new Error("fred api sem série");
+  const price = values[0];
+  const previous = values[1];
+  if (previous === 0) throw new Error("fred api sem base de comparação");
+  return { price, previous };
+}
+
+// CSV público, sem chave. Mantido como último recurso: na prática trava
+// quase sempre em ~15s quando chamado de IP de datacenter (ver fromFredApi).
 async function fromFred(seriesId) {
   const start = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
   const csv = await getText(
@@ -128,6 +149,21 @@ async function fromBcbSeries(series) {
   return { price, previous };
 }
 
+// brapi.dev: API brasileira com chave grátis (sem cartão), cobre IBOV que
+// nenhuma fonte sem chave consegue (Stooq/Yahoo bloqueiam IP de datacenter).
+async function fromBrapi(symbol) {
+  const token = process.env.BRAPI_TOKEN;
+  if (!token) throw new Error("BRAPI_TOKEN não configurado");
+  const json = await getJson(`https://brapi.dev/api/quote/${encodeURIComponent(symbol)}?token=${token}`);
+  const result = json?.results?.[0];
+  const price = result?.regularMarketPrice;
+  const previous = result?.regularMarketPreviousClose;
+  if (typeof price !== "number" || typeof previous !== "number" || previous === 0) {
+    throw new Error("brapi sem preço válido");
+  }
+  return { price, previous };
+}
+
 async function fromCoinGecko(id) {
   const json = await getJson(
     `https://api.coingecko.com/api/v3/simple/price?ids=${id}&vs_currencies=usd&include_24hr_change=true`
@@ -143,12 +179,12 @@ const QUOTES = [
   {
     group: "Bolsas",
     label: "IBOV",
-    providers: [() => fromStooq("^bvp"), () => fromYahoo("^BVSP")],
+    providers: [() => fromBrapi("^BVSP"), () => fromStooq("^bvp"), () => fromYahoo("^BVSP")],
   },
   {
     group: "Bolsas",
     label: "S&P 500",
-    providers: [() => fromFred("SP500"), () => fromStooq("^spx"), () => fromYahoo("^GSPC")],
+    providers: [() => fromFredApi("SP500"), () => fromFred("SP500"), () => fromStooq("^spx"), () => fromYahoo("^GSPC")],
   },
   {
     group: "Câmbio & Commodities",
@@ -163,7 +199,12 @@ const QUOTES = [
   {
     group: "Câmbio & Commodities",
     label: "WTI",
-    providers: [() => fromFred("DCOILWTICO"), () => fromStooq("cl.f"), () => fromYahoo("CL=F")],
+    providers: [
+      () => fromFredApi("DCOILWTICO"),
+      () => fromFred("DCOILWTICO"),
+      () => fromStooq("cl.f"),
+      () => fromYahoo("CL=F"),
+    ],
   },
   {
     group: "Câmbio & Commodities",
@@ -179,7 +220,12 @@ const QUOTES = [
     group: "Câmbio & Commodities",
     label: "T10Y EUA",
     isPercent: true,
-    providers: [() => fromFred("DGS10"), () => fromStooq("10usy.b"), () => fromYahoo("^TNX")],
+    providers: [
+      () => fromFredApi("DGS10"),
+      () => fromFred("DGS10"),
+      () => fromStooq("10usy.b"),
+      () => fromYahoo("^TNX"),
+    ],
   },
 ];
 

@@ -14,6 +14,8 @@ jobs:
       WHATSAPP_TOKEN: ${{ secrets.WHATSAPP_TOKEN }}
       WHATSAPP_PHONE_NUMBER_ID: ${{ secrets.WHATSAPP_PHONE_NUMBER_ID }}
       WHATSAPP_TO: ${{ secrets.WHATSAPP_TO }}
+      FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+      BRAPI_TOKEN: ${{ secrets.BRAPI_TOKEN }}
     steps:
       - uses: actions/checkout@v4
         with:
