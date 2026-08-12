@@ -87,7 +87,13 @@ async function captureSnapshot(stampText) {
     // é impressão digital de automação. O navegador headless do Playwright
     // manda User-Agent com "HeadlessChrome", o sinal mais comum e mais
     // checado por esse tipo de bloqueio; troca por um Chrome normal.
-    const page = await browser.newPage({ viewport: { width: 960, height: 640 }, userAgent: BROWSER_UA });
+    // deviceScaleFactor 2: o widget é ampliado por zoom no CSS, e sem dobrar
+    // a densidade de pixels o texto sairia serrilhado no print.
+    const page = await browser.newPage({
+      viewport: { width: 960, height: 900 },
+      deviceScaleFactor: 2,
+      userAgent: BROWSER_UA,
+    });
     await page.addInitScript(() => {
       Object.defineProperty(navigator, "webdriver", { get: () => undefined });
     });
