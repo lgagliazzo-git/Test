@@ -155,8 +155,6 @@ async function main() {
   const caption = [
     `⚡ *GAGLIDOM CLOSE — ${stampText}*`,
     `CDI: ${cdi === null ? "—" : `${fmtNumber(cdi)}% a.a.`}`,
-    "",
-    "_Informações educacionais. Não constituem recomendação de investimento._",
   ].join("\n");
 
   // Modo de teste: gera o print e loga o diagnóstico, mas não manda nada pro
