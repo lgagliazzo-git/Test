@@ -110,6 +110,19 @@ async function captureSnapshot(stampText) {
     // evento público de "pronto"), então espera fixa pra popular os números.
     await page.waitForTimeout(8000);
 
+    // O Playwright lê iframe de outra origem (opera via CDP, não pelo JS da
+    // página), então dá pra registrar o que o widget realmente mostrou. É
+    // como eu confiro se algum símbolo veio sem cotação sem abrir a imagem.
+    try {
+      const frame = page.frames().find((f) => f.url().includes("embed-widget/market-overview"));
+      if (frame) {
+        const texto = (await frame.locator("body").innerText()).replace(/\s*\n\s*/g, " | ");
+        console.log(`Conteúdo do widget: ${texto}`);
+      }
+    } catch (err) {
+      console.error(`Não consegui ler o conteúdo do widget: ${err.message}`);
+    }
+
     const outputPath = path.join(os.tmpdir(), "gaglidom-market-snapshot.png");
     const card = page.locator("#card");
     // Sem conseguir abrir a imagem daqui (a rede do sandbox não alcança o
