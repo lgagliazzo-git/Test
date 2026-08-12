@@ -2,8 +2,8 @@ name: Market snapshot
 
 on:
   schedule:
-    # 19h00 BRT = 22h00 UTC (o Brasil não usa mais horário de verão)
-    - cron: "0 22 * * *"
+    # 18h00 BRT = 21h00 UTC (o Brasil não usa mais horário de verão)
+    - cron: "0 21 * * *"
   workflow_dispatch:
     inputs:
       dry_run:
