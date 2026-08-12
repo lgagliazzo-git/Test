@@ -4,7 +4,12 @@ on:
   schedule:
     # 19h00 BRT = 22h00 UTC (o Brasil não usa mais horário de verão)
     - cron: "0 22 * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Só gera o print e mostra o diagnóstico, sem mandar no WhatsApp"
+        type: boolean
+        default: false
 
 jobs:
   snapshot:
@@ -14,6 +19,7 @@ jobs:
       WHATSAPP_TOKEN: ${{ secrets.WHATSAPP_TOKEN }}
       WHATSAPP_PHONE_NUMBER_ID: ${{ secrets.WHATSAPP_PHONE_NUMBER_ID }}
       WHATSAPP_TO: ${{ secrets.WHATSAPP_TO }}
+      DRY_RUN: ${{ inputs.dry_run }}
     steps:
       - uses: actions/checkout@v4
         with:

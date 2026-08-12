@@ -35,10 +35,13 @@
     <p id="stamp"></p>
     <div class="tradingview-widget-container">
       <div class="tradingview-widget-container__widget"></div>
-    </div>
-  </div>
-  <script src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
-  {
+      <!-- O script PRECISA ficar dentro de .tradingview-widget-container: o
+           embed do TradingView injeta o widget como irmão da própria tag de
+           script. Com ele no fim do body o widget renderizava fora do #card,
+           e o print (que recorta só o #card) saía com o título e nada mais
+           -- exatamente o bug que fazia o PNG ficar preso em ~7KB. -->
+      <script src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+      {
     "colorTheme": "dark",
     "dateRange": "1D",
     "showChart": false,
@@ -72,6 +75,8 @@
       }
     ]
   }
-  </script>
+      </script>
+    </div>
+  </div>
 </body>
 </html>

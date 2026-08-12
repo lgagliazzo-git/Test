@@ -1,5 +1,6 @@
 const path = require("path");
 const os = require("os");
+const fs = require("fs");
 const { chromium } = require("playwright");
 const { sendText, sendImage, requireEnv, WindowClosedError } = require("./whatsapp");
 
@@ -102,16 +103,25 @@ async function captureSnapshot(stampText) {
       document.getElementById("stamp").textContent = `Snapshot ${text} BRT`;
     }, stampText);
 
-    // Três tentativas de detectar "widget montou" via DOM (iframe, depois
-    // childElementCount) erraram o alvo -- provavelmente o widget usa shadow
-    // DOM, que querySelector não enxerga de fora. Sem conseguir inspecionar
-    // o print aqui (rede do sandbox não alcança o link de artifact do
-    // GitHub), desiste de detectar e usa espera fixa: os logs de rede
-    // (repetidos em todas as tentativas) mostram todo CSS/JS/logo carregado
-    // em ~1s, então 10s cobre a renderização com folga.
-    await page.waitForTimeout(10000);
+    // Agora que o <script> está dentro do container, o iframe do widget é
+    // criado lá dentro e esse seletor finalmente casa.
+    await page.waitForSelector(".tradingview-widget-container iframe", { timeout: 30000 });
+    // O iframe monta antes de receber as cotações (chegam por websocket, sem
+    // evento público de "pronto"), então espera fixa pra popular os números.
+    await page.waitForTimeout(8000);
+
     const outputPath = path.join(os.tmpdir(), "gaglidom-market-snapshot.png");
-    await page.locator("#card").screenshot({ path: outputPath });
+    const card = page.locator("#card");
+    // Sem conseguir abrir a imagem daqui (a rede do sandbox não alcança o
+    // link de artifact do GitHub), altura do card e tamanho do arquivo são a
+    // prova de que o widget entrou no print: só o título dava ~100px/~7KB.
+    const box = await card.boundingBox();
+    await card.screenshot({ path: outputPath });
+    const kb = (fs.statSync(outputPath).size / 1024).toFixed(1);
+    console.log(`Card renderizado: ${Math.round(box.width)}x${Math.round(box.height)}px — PNG ${kb}KB`);
+    if (box.height < 200) {
+      throw new Error(`card com ${Math.round(box.height)}px de altura — widget não entrou no print`);
+    }
     return outputPath;
   } finally {
     await browser.close();
@@ -136,12 +146,21 @@ async function main() {
     "_Informações educacionais. Não constituem recomendação de investimento._",
   ].join("\n");
 
+  // Modo de teste: gera o print e loga o diagnóstico, mas não manda nada pro
+  // WhatsApp. Cada execução de teste chegava como mensagem real no celular.
+  const dryRun = process.env.DRY_RUN === "true";
+
   try {
     const screenshotPath = await captureSnapshot(stampText);
     console.log(`Print gerado em ${screenshotPath}`);
+    if (dryRun) {
+      console.log("DRY_RUN ativo — print gerado, nada enviado ao WhatsApp.");
+      return;
+    }
     const result = await sendImage(screenshotPath, caption);
     console.log(`Enviado. id: ${result.messages?.[0]?.id || "(sem id)"}`);
   } catch (err) {
+    if (dryRun) throw err;
     if (err instanceof WindowClosedError) {
       console.log("Janela de 24h fechada — mande qualquer mensagem ao bot para reabrir.");
       return;
