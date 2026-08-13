@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-13T18:41:54.000Z",
+  "updatedAt": "2026-08-13T18:51:38.000Z",
   "wines": [
     {
       "name": "Albuquerque & Davo Syrah",
@@ -374,11 +374,12 @@
       "grape": "Tempranillo",
       "origin": "Rioja",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 1107.6,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 142,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Neromora Aglianico",
@@ -400,11 +401,12 @@
       "grape": "Tempranillo",
       "origin": "Haro, Rioja Alta",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 522.6,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 67,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Marqués de Riscal Gran Reserva",
@@ -413,11 +415,12 @@
       "grape": "Tempranillo",
       "origin": "Rioja",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 429.0,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 55,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Muga Selección Especial",
@@ -426,11 +429,12 @@
       "grape": "Tempranillo",
       "origin": "Rioja",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 382.2,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 49,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "San Vicente",
@@ -466,11 +470,12 @@
       "grape": "Tempranillo",
       "origin": "Haro, Rioja Alta",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 507.0,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 65,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Caymus Vineyards Cabernet Sauvignon",
@@ -753,11 +758,12 @@
       "grape": "Tempranillo",
       "origin": "Rioja",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 273.0,
       "pricePaid": null,
-      "priceUSD": null,
-      "rating": null,
-      "photo": null
+      "priceUSD": 35,
+      "rating": 91,
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Dievole Novecento Chianti Classico Riserva",
@@ -805,11 +811,12 @@
       "grape": "Corte de vinhas velhas",
       "origin": "Douro",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 351.0,
       "pricePaid": null,
-      "priceUSD": null,
-      "rating": null,
-      "photo": null
+      "priceUSD": 45,
+      "rating": 95,
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "EPU",
