@@ -189,12 +189,29 @@ a.hub-bullet:hover {
   background: var(--color-surface);
 }
 
+/* table-layout fixed é o que faz o texto QUEBRAR em vez de vazar por cima
+   da coluna vizinha: com layout automático, max-width em célula é só uma
+   sugestão e o conteúdo transborda. Com layout fixo as larguras abaixo
+   valem de verdade e a tabela inteira cabe no card sem rolagem. */
 .adega-table {
   width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
   text-align: left;
   font-size: 0.9rem;
 }
+
+.adega-table th.adega-th-photo { width: 56px; }
+.adega-table th[data-sort="name"] { width: 170px; }
+.adega-table th[data-sort="country"] { width: 90px; }
+.adega-table th[data-sort="vintage"] { width: 110px; }
+.adega-table th[data-sort="grape"] { width: 130px; }
+.adega-table th[data-sort="origin"] { width: 150px; }
+.adega-table th[data-sort="quantity"] { width: 78px; }
+.adega-table th[data-sort="priceBR"] { width: 96px; }
+.adega-table th[data-sort="pricePaid"] { width: 96px; }
+.adega-table th[data-sort="priceUSD"] { width: 96px; }
+.adega-table th[data-sort="rating"] { width: 72px; }
 
 .adega-table th,
 .adega-table td {
@@ -247,17 +264,30 @@ a.hub-bullet:hover {
   background: var(--color-bg-alt);
 }
 
-.adega-td-name {
+/* O max-width é o que segura a tabela dentro do card: sem ele um rótulo
+   comprido ("Conte di Campiano Primitivo di Manduria Riserva") alarga a
+   coluna e empurra as colunas de preço para fora da área visível. */
+/* Precisa ser mais específico que ".adega-table td", que declara nowrap --
+   sem isso o nowrap vence por especificidade e o texto vaza por cima da
+   coluna vizinha em vez de quebrar. */
+.adega-table td.adega-td-name {
   font-weight: 600;
   white-space: normal;
-  min-width: 120px;
+  overflow-wrap: anywhere;
 }
 
 /* Origem é o campo mais longo; sem quebrar linha ela empurra o preço
    para fora da área visível da tabela. */
-.adega-td-origin {
+.adega-table td.adega-td-origin {
   white-space: normal;
-  min-width: 150px;
+  overflow-wrap: anywhere;
+}
+
+/* Mesma razão: cortes como "Primitivo / Negroamaro" numa linha só custam
+   quase 60px de largura que fazem falta para as colunas de preço. */
+.adega-table td.adega-td-grape {
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .adega-th-num,
@@ -1049,7 +1079,7 @@ body.no-scroll {
 
 /* Campos digitáveis dentro da linha (quantidade e preço pago). */
 .adega-cell-input {
-  width: 84px;
+  width: 64px;
   background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: 6px;

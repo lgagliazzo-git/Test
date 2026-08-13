@@ -290,7 +290,7 @@ function render() {
           <td class="adega-td-name" data-label="Vinho">${escapeHtml(w.name) || "—"}</td>
           <td data-label="País">${escapeHtml(w.country) || "—"}</td>
           <td data-label="Data de fabricação">${escapeHtml(w.vintage) || "—"}</td>
-          <td data-label="Tipo de uva">${escapeHtml(w.grape) || "—"}</td>
+          <td class="adega-td-grape" data-label="Tipo de uva">${escapeHtml(w.grape) || "—"}</td>
           <td class="adega-td-origin" data-label="Origem">${escapeHtml(w.origin) || "—"}</td>
           <td class="adega-td-num" data-label="Qtd">${editableCell(w, "quantity")}</td>
           <td class="adega-td-num" data-label="Preço BR">${cellValue(w, "priceBR")}</td>

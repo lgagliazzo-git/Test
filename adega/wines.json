@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-09T20:00:00.000Z",
+  "updatedAt": "2026-08-13T00:12:19.000Z",
   "wines": [
     {
       "name": "Albuquerque & Davo Syrah",
@@ -52,6 +52,71 @@
       "priceUSD": null,
       "rating": null,
       "photo": "adega/fotos/alma-negra.jpg"
+    },
+    {
+      "name": "El Enemigo Malbec",
+      "country": "Argentina",
+      "vintage": "2019",
+      "grape": "Malbec",
+      "origin": "Mendoza",
+      "quantity": 1,
+      "priceBR": null,
+      "pricePaid": null,
+      "priceUSD": null,
+      "rating": null,
+      "photo": null
+    },
+    {
+      "name": "El Enemigo Chardonnay",
+      "country": "Argentina",
+      "vintage": null,
+      "grape": "Chardonnay",
+      "origin": "Mendoza",
+      "quantity": 1,
+      "priceBR": null,
+      "pricePaid": null,
+      "priceUSD": null,
+      "rating": null,
+      "photo": null
+    },
+    {
+      "name": "Luigi Bosca Chardonnay",
+      "country": "Argentina",
+      "vintage": "2024",
+      "grape": "Chardonnay",
+      "origin": "Mendoza",
+      "quantity": 1,
+      "priceBR": null,
+      "pricePaid": null,
+      "priceUSD": null,
+      "rating": null,
+      "photo": null
+    },
+    {
+      "name": "Marques de Casa Concha Heritage",
+      "country": "Chile",
+      "vintage": "2020",
+      "grape": null,
+      "origin": "Puente Alto, Valle do Maipo",
+      "quantity": 1,
+      "priceBR": null,
+      "pricePaid": null,
+      "priceUSD": null,
+      "rating": null,
+      "photo": null
+    },
+    {
+      "name": "Conte di Campiano Primitivo di Manduria Riserva",
+      "country": "Itália",
+      "vintage": null,
+      "grape": "Primitivo",
+      "origin": "Manduria, Puglia",
+      "quantity": 1,
+      "priceBR": null,
+      "pricePaid": null,
+      "priceUSD": null,
+      "rating": null,
+      "photo": null
     }
   ]
 }
