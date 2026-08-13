@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-13T00:39:52.000Z",
+  "updatedAt": "2026-08-13T00:42:02.000Z",
   "wines": [
     {
       "name": "Albuquerque & Davo Syrah",
@@ -828,6 +828,19 @@
       "origin": "Vacqueyras, Rhône",
       "quantity": 1,
       "priceBR": null,
+      "pricePaid": null,
+      "priceUSD": null,
+      "rating": null,
+      "photo": null
+    },
+    {
+      "name": "VIK La Piu Belle Rosé",
+      "country": "Chile",
+      "vintage": null,
+      "grape": null,
+      "origin": null,
+      "quantity": 1,
+      "priceBR": 132.89,
       "pricePaid": null,
       "priceUSD": null,
       "rating": null,
