@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-13T18:26:42.000Z",
+  "updatedAt": "2026-08-13T18:41:54.000Z",
   "wines": [
     {
       "name": "Albuquerque & Davo Syrah",
@@ -492,11 +492,12 @@
       "grape": "Grenache / Mourvèdre / Syrah",
       "origin": "Châteauneuf-du-Pape, Rhône",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 850.2,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 109,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Rosé Piscine",
@@ -1025,11 +1026,12 @@
       "grape": "Sangiovese",
       "origin": "Montalcino, Toscana",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 663.0,
       "pricePaid": null,
-      "priceUSD": null,
-      "rating": null,
-      "photo": null
+      "priceUSD": 85,
+      "rating": 94,
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Castello Banfi Brunello di Montalcino",
@@ -1236,11 +1238,12 @@
       "grape": "Cabernet Sauvignon / Carmenère / Malbec",
       "origin": "Valle de Aconcagua",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 1170.0,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 150,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Fanti Brunello di Montalcino",
