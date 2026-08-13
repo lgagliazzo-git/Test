@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-13T00:27:54.000Z",
+  "updatedAt": "2026-08-13T00:29:42.000Z",
   "wines": [
     {
       "name": "Albuquerque & Davo Syrah",
@@ -514,6 +514,32 @@
       "vintage": null,
       "grape": null,
       "origin": null,
+      "quantity": 1,
+      "priceBR": null,
+      "pricePaid": null,
+      "priceUSD": null,
+      "rating": null,
+      "photo": null
+    },
+    {
+      "name": "Gran Reserva White Sauvignon Blanc",
+      "country": "Chile",
+      "vintage": "2023",
+      "grape": "Sauvignon Blanc",
+      "origin": null,
+      "quantity": 1,
+      "priceBR": null,
+      "pricePaid": null,
+      "priceUSD": null,
+      "rating": null,
+      "photo": null
+    },
+    {
+      "name": "D.V. Catena Tinto Histórico",
+      "country": "Argentina",
+      "vintage": "2023",
+      "grape": null,
+      "origin": "Mendoza",
       "quantity": 1,
       "priceBR": null,
       "pricePaid": null,
