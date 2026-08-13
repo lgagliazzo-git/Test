@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-13T17:26:57.000Z",
+  "updatedAt": "2026-08-13T17:49:37.000Z",
   "wines": [
     {
       "name": "Albuquerque & Davo Syrah",
@@ -1048,10 +1048,10 @@
       "grape": "Sangiovese / Cabernet Sauvignon / Cabernet Franc",
       "origin": "Toscana",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 999.9,
       "pricePaid": null,
       "priceUSD": null,
-      "rating": null,
+      "rating": 97,
       "photo": null
     },
     {
@@ -1193,8 +1193,8 @@
       "quantity": 1,
       "priceBR": null,
       "pricePaid": null,
-      "priceUSD": null,
-      "rating": null,
+      "priceUSD": 110,
+      "rating": 94,
       "photo": null
     },
     {
@@ -1206,7 +1206,7 @@
       "quantity": 1,
       "priceBR": null,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 325,
       "rating": null,
       "photo": null
     },
@@ -1258,8 +1258,8 @@
       "quantity": 1,
       "priceBR": null,
       "pricePaid": null,
-      "priceUSD": null,
-      "rating": null,
+      "priceUSD": 78,
+      "rating": 93,
       "photo": null
     },
     {
@@ -1297,8 +1297,8 @@
       "quantity": 1,
       "priceBR": null,
       "pricePaid": null,
-      "priceUSD": null,
-      "rating": null,
+      "priceUSD": 197,
+      "rating": 97,
       "photo": null
     }
   ]
