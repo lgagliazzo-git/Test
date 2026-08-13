@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-13T00:18:37.000Z",
+  "updatedAt": "2026-08-13T00:20:39.000Z",
   "wines": [
     {
       "name": "Albuquerque & Davo Syrah",
@@ -175,6 +175,71 @@
       "country": "Argentina",
       "vintage": "2017",
       "grape": null,
+      "origin": null,
+      "quantity": 1,
+      "priceBR": null,
+      "pricePaid": null,
+      "priceUSD": null,
+      "rating": null,
+      "photo": null
+    },
+    {
+      "name": "Montes Alpha Special Cuvée Cabernet Sauvignon",
+      "country": "Chile",
+      "vintage": "2021",
+      "grape": "Cabernet Sauvignon",
+      "origin": "Valle de Colchagua",
+      "quantity": 1,
+      "priceBR": null,
+      "pricePaid": null,
+      "priceUSD": null,
+      "rating": null,
+      "photo": null
+    },
+    {
+      "name": "Cartuxa Évora Branco",
+      "country": "Portugal",
+      "vintage": null,
+      "grape": null,
+      "origin": "Évora, Alentejo",
+      "quantity": 1,
+      "priceBR": null,
+      "pricePaid": null,
+      "priceUSD": null,
+      "rating": null,
+      "photo": null
+    },
+    {
+      "name": "Lotes de Coleção Touriga Nacional",
+      "country": "Brasil",
+      "vintage": "2024",
+      "grape": "Touriga Nacional",
+      "origin": null,
+      "quantity": 1,
+      "priceBR": null,
+      "pricePaid": null,
+      "priceUSD": null,
+      "rating": null,
+      "photo": null
+    },
+    {
+      "name": "Amarone della Valpolicella",
+      "country": "Itália",
+      "vintage": null,
+      "grape": null,
+      "origin": "Valpolicella, Veneto",
+      "quantity": 1,
+      "priceBR": null,
+      "pricePaid": null,
+      "priceUSD": null,
+      "rating": null,
+      "photo": null
+    },
+    {
+      "name": "Torcello Chardonnay",
+      "country": "Brasil",
+      "vintage": "2024",
+      "grape": "Chardonnay",
       "origin": null,
       "quantity": 1,
       "priceBR": null,
