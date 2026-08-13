@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-13T20:36:42.000Z",
+  "updatedAt": "2026-08-13T21:19:09.000Z",
   "wines": [
     {
       "name": "Albuquerque & Davo Syrah",
@@ -194,11 +194,12 @@
       "grape": "Cabernet Sauvignon",
       "origin": "Valle de Colchagua",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 218.4,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 28,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Cartuxa Évora Branco",
@@ -273,11 +274,12 @@
       "grape": "Cabernet Sauvignon",
       "origin": "Valle Central",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 85.8,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 11,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Collemattoni Rosso di Montalcino",
@@ -489,11 +491,12 @@
       "grape": "Cabernet Sauvignon",
       "origin": "Napa Valley",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 585.0,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 75,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Château de Beaucastel Châteauneuf-du-Pape",
@@ -832,11 +835,12 @@
       "grape": "Cabernet Sauvignon / Carmenère",
       "origin": "Puente Alto",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 483.6,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 62,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Xavier Vignon Vacqueyras",
@@ -1097,11 +1101,12 @@
       "grape": "Pinot Noir",
       "origin": "Russian River Valley, Sonoma",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 366.6,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 47,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Pascal Bouchard Chablis Le Classique",
