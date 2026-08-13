@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-13T18:51:38.000Z",
+  "updatedAt": "2026-08-13T19:28:25.000Z",
   "wines": [
     {
       "name": "Albuquerque & Davo Syrah",
@@ -589,7 +589,7 @@
       "grape": "Chardonnay",
       "origin": null,
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 46.9,
       "pricePaid": null,
       "priceUSD": null,
       "rating": null,
@@ -732,11 +732,12 @@
       "grape": "Merlot / Sangiovese / Cabernet Sauvignon",
       "origin": "Toscana",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 249.6,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 32,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Viña Albina Reserva",
@@ -785,11 +786,12 @@
       "grape": "Carignano / Cabernet Sauvignon / Merlot",
       "origin": "Sulcis, Sardenha",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 397.8,
       "pricePaid": null,
-      "priceUSD": null,
-      "rating": null,
-      "photo": null
+      "priceUSD": 51,
+      "rating": 91,
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Antonio Gaudioso Amarone della Valpolicella",
@@ -903,11 +905,12 @@
       "grape": "Nebbiolo",
       "origin": "Monforte d'Alba, Piemonte",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 327.6,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 42,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Sideral",
@@ -942,11 +945,12 @@
       "grape": "Sangiovese",
       "origin": "Toscana",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 304.2,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 39,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Caballo Loco Grand Cru Sagrada Familia",
@@ -1113,11 +1117,12 @@
       "grape": "Sangiovese / Cabernet Sauvignon / Merlot",
       "origin": "Toscana",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 163.8,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 21,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "1300 Estate Sauvignon Blanc",
@@ -1152,7 +1157,7 @@
       "grape": null,
       "origin": null,
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 46.9,
       "pricePaid": null,
       "priceUSD": null,
       "rating": null,
