@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-13T18:02:43.000Z",
+  "updatedAt": "2026-08-13T18:26:42.000Z",
   "wines": [
     {
       "name": "Albuquerque & Davo Syrah",
@@ -25,7 +25,8 @@
       "pricePaid": null,
       "priceUSD": 13,
       "rating": null,
-      "photo": "adega/fotos/beaujolais.jpg"
+      "photo": "adega/fotos/beaujolais.jpg",
+      "priceBREstimado": true
     },
     {
       "name": "Amativo — Cantele",
@@ -38,7 +39,8 @@
       "pricePaid": null,
       "priceUSD": 40,
       "rating": null,
-      "photo": "adega/fotos/amativo.jpg"
+      "photo": "adega/fotos/amativo.jpg",
+      "priceBREstimado": true
     },
     {
       "name": "Alma Negra M Blend",
@@ -454,7 +456,8 @@
       "pricePaid": null,
       "priceUSD": 131,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "López de Heredia Viña Tondonia Reserva",
@@ -1039,7 +1042,8 @@
       "pricePaid": null,
       "priceUSD": 70,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Tignanello",
@@ -1195,7 +1199,8 @@
       "pricePaid": null,
       "priceUSD": 110,
       "rating": 94,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Opus One",
@@ -1208,7 +1213,8 @@
       "pricePaid": null,
       "priceUSD": 325,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Castello Finoto Brunello di Montalcino",
@@ -1260,7 +1266,8 @@
       "pricePaid": null,
       "priceUSD": 78,
       "rating": 93,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Castello di Volpaia Il Puro Casanova",
@@ -1286,7 +1293,8 @@
       "pricePaid": null,
       "priceUSD": 51,
       "rating": 95,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Château-Figeac",
@@ -1299,7 +1307,8 @@
       "pricePaid": null,
       "priceUSD": 197,
       "rating": 97,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     }
   ]
 }

@@ -1099,3 +1099,14 @@ body.no-scroll {
   font-size: 16px;
   width: 100px;
 }
+
+/* Preço BR convertido do dólar (não encontrado em loja brasileira). O
+   vermelho sai sozinho quando o valor é digitado por cima. */
+.adega-cell-input.is-estimado {
+  color: #ff8a8a;
+  border-color: #b4453f;
+}
+
+.adega-cell-input.is-estimado:focus {
+  border-color: var(--color-primary);
+}

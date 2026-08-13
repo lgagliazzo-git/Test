@@ -39,7 +39,7 @@ const COLUMN_ALIASES = {
 
 const NUMERIC_FIELDS = new Set(["quantity", "priceBR", "pricePaid", "priceUSD", "rating"]);
 // Campos digitáveis direto na linha.
-const EDITABLE_FIELDS = { quantity: "Qtd", pricePaid: "Preço pago" };
+const EDITABLE_FIELDS = { quantity: "Qtd", priceBR: "Preço BR", pricePaid: "Preço pago" };
 
 function isBlank(v) {
   return v === null || v === undefined || v === "";
@@ -97,7 +97,10 @@ function searchLink(wine, kind) {
 function editableCell(wine, field) {
   const raw = isBlank(wine[field]) ? "" : wine[field];
   const step = field === "quantity" ? "1" : "0.01";
-  return `<input type="number" class="adega-cell-input" inputmode="decimal" min="0" step="${step}"
+  // Vermelho = preço convertido do dólar, não encontrado em loja brasileira.
+  // Some assim que o valor é digitado por cima (ver o handler de input).
+  const estimado = field === "priceBR" && wine.priceBREstimado ? " is-estimado" : "";
+  return `<input type="number" class="adega-cell-input${estimado}" inputmode="decimal" min="0" step="${step}"
             value="${escapeHtml(raw)}" data-field="${field}" data-name="${escapeHtml(wine.name)}"
             aria-label="${EDITABLE_FIELDS[field]} de ${escapeHtml(wine.name)}" />`;
 }
@@ -293,7 +296,7 @@ function render() {
           <td class="adega-td-grape" data-label="Tipo de uva">${escapeHtml(w.grape) || "—"}</td>
           <td class="adega-td-origin" data-label="Origem">${escapeHtml(w.origin) || "—"}</td>
           <td class="adega-td-num" data-label="Qtd">${editableCell(w, "quantity")}</td>
-          <td class="adega-td-num" data-label="Preço BR">${cellValue(w, "priceBR")}</td>
+          <td class="adega-td-num" data-label="Preço BR">${editableCell(w, "priceBR")}</td>
           <td class="adega-td-num" data-label="Preço pago">${editableCell(w, "pricePaid")}</td>
           <td class="adega-td-num" data-label="Preço origem">${cellValue(w, "priceUSD")}</td>
           <td class="adega-td-num" data-label="Nota">${cellValue(w, "rating")}</td>
@@ -345,7 +348,14 @@ document.getElementById("adega-body").addEventListener("input", (e) => {
   if (!input) return;
   const wine = wines.find((w) => w.name === input.dataset.name);
   if (!wine) return;
-  wine[input.dataset.field] = parseNumber(input.value);
+  const campo = input.dataset.field;
+  wine[campo] = parseNumber(input.value);
+  // Valor digitado deixa de ser estimativa: tira o vermelho na hora, sem
+  // re-renderizar a linha (isso apagaria o cursor no meio da digitação).
+  if (campo === "priceBR" && wine.priceBREstimado) {
+    delete wine.priceBREstimado;
+    input.classList.remove("is-estimado");
+  }
   renderSummary(wines.filter((w) => matches(w, document.getElementById("adega-search").value.trim().toLowerCase()) && passesFilters(w, currentFilters())));
 });
 
@@ -463,6 +473,7 @@ async function load() {
       priceBR: w.priceBR ?? w.price ?? null,
       priceUSD: w.priceUSD ?? null,
       rating: w.rating ?? null,
+      priceBREstimado: w.priceBREstimado ?? false,
       ...w,
     }));
   } catch (err) {
@@ -527,7 +538,14 @@ document.getElementById("adega-body").addEventListener("input", (e) => {
   if (!input) return;
   const wine = wines.find((w) => w.name === input.dataset.name);
   if (!wine) return;
-  wine[input.dataset.field] = parseNumber(input.value);
+  const campo = input.dataset.field;
+  wine[campo] = parseNumber(input.value);
+  // Valor digitado deixa de ser estimativa: tira o vermelho na hora, sem
+  // re-renderizar a linha (isso apagaria o cursor no meio da digitação).
+  if (campo === "priceBR" && wine.priceBREstimado) {
+    delete wine.priceBREstimado;
+    input.classList.remove("is-estimado");
+  }
   renderSummary(wines.filter((w) => matches(w, document.getElementById("adega-search").value.trim().toLowerCase()) && passesFilters(w, currentFilters())));
 });
 
