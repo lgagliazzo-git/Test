@@ -241,12 +241,13 @@ function renderSummary(visible) {
   const foot = document.getElementById("adega-foot");
   foot.innerHTML = visible.length
     ? `<tr>
-         <td colspan="6" class="adega-foot-label">Totais (× quantidade)</td>
+         <td colspan="3" class="adega-foot-label">Totais (× quantidade)</td>
          <td class="adega-td-num">${bottles}</td>
          <td class="adega-td-num">${fmtMoney(total, "BRL")}</td>
          <td class="adega-td-num">${fmtMoney(totalPaid, "BRL")}</td>
          <td class="adega-td-num">—</td>
          <td class="adega-td-num">${avgRating || "—"}</td>
+         <td colspan="3">—</td>
        </tr>`
     : "";
 }
@@ -292,14 +293,14 @@ function render() {
           <td class="adega-td-photo">${photoCell(w)}</td>
           <td class="adega-td-name" data-label="Vinho">${escapeHtml(w.name) || "—"}</td>
           <td data-label="País">${escapeHtml(w.country) || "—"}</td>
-          <td data-label="Data de fabricação">${escapeHtml(w.vintage) || "—"}</td>
-          <td class="adega-td-grape" data-label="Tipo de uva">${escapeHtml(w.grape) || "—"}</td>
-          <td class="adega-td-origin" data-label="Origem">${escapeHtml(w.origin) || "—"}</td>
           <td class="adega-td-num" data-label="Qtd">${editableCell(w, "quantity")}</td>
           <td class="adega-td-num" data-label="Preço BR">${editableCell(w, "priceBR")}</td>
           <td class="adega-td-num" data-label="Preço pago">${editableCell(w, "pricePaid")}</td>
           <td class="adega-td-num" data-label="Preço origem">${cellValue(w, "priceUSD")}</td>
           <td class="adega-td-num" data-label="Nota">${cellValue(w, "rating")}</td>
+          <td data-label="Data de fabricação">${escapeHtml(w.vintage) || "—"}</td>
+          <td class="adega-td-grape" data-label="Tipo de uva">${escapeHtml(w.grape) || "—"}</td>
+          <td class="adega-td-origin" data-label="Origem">${escapeHtml(w.origin) || "—"}</td>
         </tr>`
     )
     .join("");
