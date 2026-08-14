@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-14T08:12:48.204135.000Z",
+  "updatedAt": "2026-08-14T08:14:22.966548.000Z",
   "wines": [
     {
       "name": "Albuquerque & Davo Syrah",
@@ -239,11 +239,12 @@
       "grape": "Corvina / Rondinella / Molinara",
       "origin": "Valpolicella, Veneto",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 226.2,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 29,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Torcello Chardonnay",
@@ -403,11 +404,12 @@
       "grape": "Aglianico",
       "origin": "Irpinia, Campânia",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 156.0,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 20,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "López de Heredia Viña Tondonia Reserva",
@@ -556,11 +558,12 @@
       "grape": "Sauvignon Blanc",
       "origin": null,
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 124.8,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 16,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "D.V. Catena Tinto Histórico",
@@ -1009,11 +1012,12 @@
       "grape": "Cabernet Sauvignon",
       "origin": "Uco Valley, Mendoza",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 124.8,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 16,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Erath Pinot Noir",
@@ -1243,11 +1247,12 @@
       "grape": "Sangiovese",
       "origin": "Montalcino, Toscana",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 522.6,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 67,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Argiano Brunello di Montalcino",
@@ -1340,11 +1345,12 @@
       "grape": "Sangiovese",
       "origin": "Chianti Classico, Toscana",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 1365.0,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 175,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Caparzo Brunello di Montalcino",
