@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-14T13:41:24.136653.000Z",
+  "updatedAt": "2026-08-14T13:42:46.647106.000Z",
   "wines": [
     {
       "name": "Albuquerque & Davo Syrah",
@@ -178,7 +178,7 @@
       "pricePaid": null,
       "priceUSD": 8.0,
       "rating": 83,
-      "photo": null,
+      "photo": "adega/fotos/bernardi-jacur.jpg",
       "priceBREstimado": true
     },
     {
@@ -1140,7 +1140,7 @@
       "pricePaid": null,
       "priceUSD": 77,
       "rating": 91,
-      "photo": null,
+      "photo": "adega/fotos/pera-manca.jpg",
       "priceBREstimado": true
     },
     {
@@ -1393,6 +1393,45 @@
       "rating": 97,
       "photo": null,
       "priceBREstimado": true
+    },
+    {
+      "name": "Montes Alpha Especial",
+      "country": "Chile",
+      "vintage": "2021",
+      "grape": "Carmenère",
+      "origin": "Colchagua Valley",
+      "quantity": 1,
+      "priceBR": null,
+      "pricePaid": null,
+      "priceUSD": null,
+      "rating": null,
+      "photo": "adega/fotos/montes-alpha-especial.jpg"
+    },
+    {
+      "name": "Cachoeiro Ouro Maconal",
+      "country": "Portugal",
+      "vintage": null,
+      "grape": "Tinto Blend",
+      "origin": "Portugal",
+      "quantity": 1,
+      "priceBR": null,
+      "pricePaid": null,
+      "priceUSD": null,
+      "rating": null,
+      "photo": "adega/fotos/cachoeiro.jpg"
+    },
+    {
+      "name": "Ourga Maconal",
+      "country": "Portugal",
+      "vintage": null,
+      "grape": "Branco",
+      "origin": "Portugal",
+      "quantity": 1,
+      "priceBR": null,
+      "pricePaid": null,
+      "priceUSD": null,
+      "rating": null,
+      "photo": "adega/fotos/ourga-maconal.jpg"
     }
   ]
 }
