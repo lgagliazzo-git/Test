@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-14T08:14:22.966548.000Z",
+  "updatedAt": "2026-08-14T08:27:04.097373.000Z",
   "wines": [
     {
       "name": "Albuquerque & Davo Syrah",
@@ -90,11 +90,12 @@
       "grape": "Chardonnay",
       "origin": "Mendoza",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 194.9,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 24.99,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Marques de Casa Concha Heritage",
@@ -117,11 +118,12 @@
       "grape": "Primitivo",
       "origin": "Manduria, Puglia",
       "quantity": 2,
-      "priceBR": null,
+      "priceBR": 187.1,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 23.99,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Rocas de Seña",
@@ -172,11 +174,12 @@
       "grape": "Glera",
       "origin": null,
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 62.4,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 8.0,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Unánime Gran Vino Tinto",
@@ -213,11 +216,12 @@
       "grape": "Arinto / Antão Vaz",
       "origin": "Évora, Alentejo",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 144.3,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 18.5,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Lotes de Coleção Touriga Nacional",
@@ -226,11 +230,12 @@
       "grape": "Touriga Nacional",
       "origin": null,
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 207.0,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 26.54,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Cantina Castelnuovo del Garda Amarone della Valpolicella",
@@ -253,11 +258,12 @@
       "grape": "Chardonnay",
       "origin": null,
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 337.5,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 43.27,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Sessantanni Primitivo di Manduria",
@@ -350,11 +356,12 @@
       "grape": "Cabernet Sauvignon",
       "origin": "Mendoza",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 156.0,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 20.0,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Sessantanni Primitivo di Manduria",
@@ -377,11 +384,12 @@
       "grape": "Corvina / Rondinella / Molinara",
       "origin": "Valpolicella, Veneto",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 171.6,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 22.0,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Marqués de Riscal Gran Reserva (1,5 L)",
@@ -627,11 +635,12 @@
       "grape": "Niágara",
       "origin": "Louveira, SP",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 93.6,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 12.0,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Marziacanale Taurasi",
@@ -709,11 +718,12 @@
       "grape": "Grenache / Cinsault / Syrah",
       "origin": "Méditerranée",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 113.1,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 14.5,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Jean Bouchard Petit-Chablis",
@@ -778,11 +788,12 @@
       "grape": "Tempranillo",
       "origin": "Rioja",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 179.4,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 23.0,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Faustino I Gran Reserva",
@@ -902,11 +913,12 @@
       "grape": null,
       "origin": "Mendoza",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 163.8,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 21.0,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Baron Philippe de Rothschild Bordeaux",
@@ -971,11 +983,12 @@
       "grape": "Merlot",
       "origin": "Vale dos Vinhedos, RS",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 402.0,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 51.54,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Sassoalloro",
@@ -1179,11 +1192,12 @@
       "grape": "Sauvignon Blanc",
       "origin": "Cunha, SP",
       "quantity": 1,
-      "priceBR": null,
+      "priceBR": 218.4,
       "pricePaid": null,
-      "priceUSD": null,
+      "priceUSD": 28.0,
       "rating": null,
-      "photo": null
+      "photo": null,
+      "priceBREstimado": true
     },
     {
       "name": "Pian delle Vigne Rosso di Montalcino",
