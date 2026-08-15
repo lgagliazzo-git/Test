@@ -1,9 +1,347 @@
 {
-  "updatedAt": "2026-08-15T09:36:21.990Z",
+  "updatedAt": "2026-08-15T10:50:25.256Z",
   "windowHours": 96,
   "perSend": 2,
-  "count": 3432,
+  "count": 3496,
   "articles": [
+    {
+      "source": "Poder360",
+      "title": "Aptidão cardiorrespiratória influencia a saúde cognitiva, aponta estudo",
+      "link": "https://www.poder360.com.br/poder-saude/aptidao-cardiorrespiratoria-influencia-a-saude-cognitiva-aponta-estudo/",
+      "publishedAt": "2026-08-15T10:45:29.000Z",
+      "score": 1,
+      "sentAt": "2026-08-15T10:50:26.673Z"
+    },
+    {
+      "source": "InfoMoney",
+      "title": "Inflação, fluxo estrangeiro na bolsa e balanços do 2T26; veja destaques da semana",
+      "link": "https://www.infomoney.com.br/onde-investir/inflacao-fluxo-estrangeiro-na-bolsa-e-balancos-do-2t26-veja-destaques-da-semana/",
+      "publishedAt": "2026-08-15T10:36:00.000Z",
+      "score": 1,
+      "sentAt": "2026-08-15T10:50:27.351Z"
+    },
+    {
+      "source": "Quem (Globo)",
+      "title": "Latino postou 'poligamia não é pecado' horas antes de ex expor agressões",
+      "link": "https://revistaquem.globo.com/noticias/noticia/2026/08/latino-postou-poligamia-nao-e-pecado-horas-antes-de-ex-expor-agressoes.ghtml",
+      "publishedAt": "2026-08-15T10:33:57.000Z",
+      "score": 1
+    },
+    {
+      "source": "Poder360",
+      "title": "Anvisa alerta para prazo de adequação à regularização de alimentos",
+      "link": "https://www.poder360.com.br/poder-saude/anvisa-alerta-para-prazo-de-adequacao-a-regularizacao-de-alimentos/",
+      "publishedAt": "2026-08-15T10:30:54.000Z",
+      "score": 1
+    },
+    {
+      "source": "Poder360",
+      "title": "Combinação de fármacos ajuda a reparar lesões nos nervos",
+      "link": "https://www.poder360.com.br/poder-saude/combinacao-de-farmacos-ajuda-a-reparar-lesoes-nos-nervos/",
+      "publishedAt": "2026-08-15T10:30:01.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Canadá oferece bolsas de graduação a estudantes internacionais; saiba mais",
+      "link": "https://www.cnnbrasil.com.br/educacao/canada-oferece-bolsas-de-graduacao-a-estudantes-internacionais-saiba-mais/",
+      "publishedAt": "2026-08-15T10:15:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Tecmundo",
+      "title": "Relógio Garmin vale a pena? Confira os 5 melhores modelos",
+      "link": "https://www.tecmundo.com.br/guia-de-compras/415155-relogio-garmin-vale-a-pena-confira-os-5-melhores-modelos.htm",
+      "publishedAt": "2026-08-15T10:15:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "'Sofri agress�es das mais diversas formas', diz ex-mulher de Latino",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/ilustrada/2026/08/sofri-agressoes-das-mais-diversas-formas-diz-ex-mulher-de-latino.shtml",
+      "publishedAt": "2026-08-15T10:13:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Quem (Globo)",
+      "title": "Eliezer e Viih Tube dão pistas de destino da lua de mel; confira",
+      "link": "https://revistaquem.globo.com/eventos/casamentos/noticia/2026/08/eliezer-e-viih-tube-dao-pistas-de-destino-da-lua-de-mel-confira.ghtml",
+      "publishedAt": "2026-08-15T10:06:40.000Z",
+      "score": 1
+    },
+    {
+      "source": "Quem (Globo)",
+      "title": "Vem bebê aí? Carla Perez abre o coração sobre chegada de netos em meio ao casamento do filho",
+      "link": "https://revistaquem.globo.com/noticias/filhos-dos-famosos/noticia/2026/08/vem-bebe-ai-carla-perez-abre-o-coracao-sobre-chegada-de-netos-em-meio-ao-casamento-do-filho.ghtml",
+      "publishedAt": "2026-08-15T10:05:39.000Z",
+      "score": 1
+    },
+    {
+      "source": "Quem (Globo)",
+      "title": "Henrique Barreira comenta torcida por André e Dora em 'Quem Ama Cuida': \"História delicada\"",
+      "link": "https://revistaquem.globo.com/entrevistas/noticia/2026/08/henrique-barreira-comenta-torcida-por-andre-e-dora-em-quem-ama-cuida-historia-delicada.ghtml",
+      "publishedAt": "2026-08-15T10:04:33.000Z",
+      "score": 1
+    },
+    {
+      "source": "Quem (Globo)",
+      "title": "Como usar animal print e outras estampas maximalistas de acordo com as famosas",
+      "link": "https://revistaquem.globo.com/moda-e-beleza/noticia/2026/08/como-usar-animal-print-e-outras-estampas-maximalistas-de-acordo-com-as-famosas.ghtml",
+      "publishedAt": "2026-08-15T10:02:18.000Z",
+      "score": 1
+    },
+    {
+      "source": "Poder360",
+      "title": "Senado aprova incentivos à indústria nacional de fertilizantes",
+      "link": "https://www.poder360.com.br/poder-congresso/senado-aprova-incentivos-a-industria-nacional-de-fertilizantes/",
+      "publishedAt": "2026-08-15T10:02:17.000Z",
+      "score": 1
+    },
+    {
+      "source": "Poder360",
+      "title": "Comissão aprova transição de 3 anos para novo piso de médicos e dentistas",
+      "link": "https://www.poder360.com.br/poder-congresso/comissao-aprova-transicao-de-3-anos-para-novo-piso-de-medicos-e-dentistas/",
+      "publishedAt": "2026-08-15T10:00:48.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "5 vícios ao dirigir que estão destruindo o seu carro (e o seu bolso)",
+      "link": "https://www.cnnbrasil.com.br/auto/5-vicios-ao-dirigir-que-estao-destruindo-o-seu-carro-e-o-seu-bolso/",
+      "publishedAt": "2026-08-15T10:00:46.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "56% das horas trabalhadas no Brasil poderiam ser automatizadas, diz estudo",
+      "link": "https://www.cnnbrasil.com.br/economia/money/macroeconomia/56-das-horas-trabalhadas-no-brasil-poderiam-ser-automatizadas-diz-estudo/",
+      "publishedAt": "2026-08-15T10:00:42.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Contra o Fluminense, Palmeiras vive dilema antes de decisão na Libertadores",
+      "link": "https://www.cnnbrasil.com.br/esportes/futebol/palmeiras/contra-o-fluminense-palmeiras-vive-dilema-antes-de-decisao-na-libertadores/",
+      "publishedAt": "2026-08-15T10:00:40.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Crise Brasil-EUA expõe divergências entre política e economia no governo",
+      "link": "https://www.cnnbrasil.com.br/internacional/crise-brasil-eua-cria-racha-entre-politica-e-economia-no-governo-lula/",
+      "publishedAt": "2026-08-15T10:00:40.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Líbero ou volante? Entenda função que Sosa brilhou no Racing e pode ajudar o Vasco",
+      "link": "https://ge.globo.com/futebol/times/vasco/noticia/2026/08/15/libero-ou-volante-entenda-funcao-que-sosa-brilhou-no-racing-e-pode-ajudar-o-vasco.ghtml",
+      "publishedAt": "2026-08-15T10:00:29.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Da rejeição à escolha: início da campanha testa projetos de presidenciáveis",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/da-rejeicao-a-escolha-inicio-da-campanha-testa-projetos-de-presidenciaveis/",
+      "publishedAt": "2026-08-15T10:00:20.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Volta do Talibã ao poder no Afeganistão completa 5 anos; veja o que mudou",
+      "link": "https://www.cnnbrasil.com.br/internacional/volta-do-taliba-ao-poder-no-afeganistao-completa-5-anos-veja-o-que-mudou/",
+      "publishedAt": "2026-08-15T10:00:18.000Z",
+      "score": 1
+    },
+    {
+      "source": "Poder360",
+      "title": "Prazo para registro de candidaturas termina neste sábado",
+      "link": "https://www.poder360.com.br/poder-eleicoes-2026/prazo-para-registro-de-candidaturas-termina-neste-sabado/",
+      "publishedAt": "2026-08-15T10:00:07.000Z",
+      "score": 1
+    },
+    {
+      "source": "InfoMoney",
+      "title": "IA não causa “apocalipse” no mercado de trabalho dos EUA, mas alguns sinais já surgem",
+      "link": "https://www.infomoney.com.br/economia/ia-nao-causa-apocalipse-no-mercado-de-trabalho-dos-eua-mas-alguns-sinais-ja-surgem/",
+      "publishedAt": "2026-08-15T10:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "InfoMoney",
+      "title": "Data centers em expansão são indústria bilionária e sedenta por energia e água",
+      "link": "https://www.infomoney.com.br/business/data-centers-em-expansao-sao-industria-bilionaria-e-sedenta-por-energia-e-agua/",
+      "publishedAt": "2026-08-15T10:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "InfoMoney",
+      "title": "Vício em bets pode levar à justa causa? Veja o que diz a Justiça",
+      "link": "https://www.infomoney.com.br/minhas-financas/vicio-em-jogo-na-empresa-da-justa-causa-saiba-como-a-justica-tem-tratado-os-casos/",
+      "publishedAt": "2026-08-15T10:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Al�m de crueldade, estupidez estava no DNA do escravismo romano",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/reinaldojoselopes/2026/08/alem-de-crueldade-estupidez-estava-no-dna-do-escravismo-romano.shtml",
+      "publishedAt": "2026-08-15T10:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Poder360",
+      "title": "Saiba como funciona o teste de integridade da urna eletrônica",
+      "link": "https://www.poder360.com.br/poder-eleicoes-2026/saiba-como-funciona-o-teste-de-integridade-da-urna-eletronica/",
+      "publishedAt": "2026-08-15T09:45:34.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Entenda a crise que envolve marinheiros pulando de porta-aviões dos EUA",
+      "link": "https://www.cnnbrasil.com.br/internacional/entenda-a-crise-que-envolve-marinheiros-pulando-de-porta-avioes-dos-eua/",
+      "publishedAt": "2026-08-15T09:30:46.000Z",
+      "score": 1
+    },
+    {
+      "source": "Poder360",
+      "title": "Reajuste de custas processuais da Justiça Federal volta à Câmara",
+      "link": "https://www.poder360.com.br/poder-congresso/reajuste-de-custas-processuais-da-justica-federal-volta-a-camara/",
+      "publishedAt": "2026-08-15T09:30:37.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "PSG anuncia Ferran Torres, autor do gol do título mundial da Espanha; veja valores",
+      "link": "https://ge.globo.com/futebol/futebol-internacional/noticia/2026/08/15/psg-anuncia-ferran-torres-autor-do-gol-do-titulo-mundial-da-espanha-veja-valores.ghtml",
+      "publishedAt": "2026-08-15T09:16:42.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "USP desenvolve IA para identificar cárie em radiografias",
+      "link": "https://www.cnnbrasil.com.br/economia/money/inteligencia-artificial/usp-desenvolve-ia-para-identificar-carie-em-radiografias/",
+      "publishedAt": "2026-08-15T09:15:07.000Z",
+      "score": 1
+    },
+    {
+      "source": "Poder360",
+      "title": "Infra em 1 Minuto: falta de concorrência encarece gás no Brasil",
+      "link": "https://www.poder360.com.br/poder-infra/infra-em-1-minuto-falta-de-concorrencia-encarece-gas-no-brasil/",
+      "publishedAt": "2026-08-15T09:14:25.000Z",
+      "score": 1
+    },
+    {
+      "source": "Poder360",
+      "title": "Data centers devem crescer nos próximos 5 a 10 anos, diz Schneider",
+      "link": "https://www.poder360.com.br/poder-infra/data-centers-devem-crescer-nos-proximos-5-a-10-anos-diz-schneider/",
+      "publishedAt": "2026-08-15T09:05:48.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Corinthians x Franca no Paulista de basquete: onde assistir ao vivo e horário",
+      "link": "https://ge.globo.com/sp/ribeirao-preto-e-regiao/basquete/noticia/2026/08/15/corinthians-x-franca-no-paulista-de-basquete-onde-assistir-ao-vivo-e-horario.ghtml",
+      "publishedAt": "2026-08-15T09:01:01.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Rosario abraça Messi com homenagens ao pai, memórias e roteiro pela infância do craque",
+      "link": "https://ge.globo.com/futebol/futebol-internacional/noticia/2026/08/15/rosario-abraca-messi-com-homenagens-ao-pai-memorias-e-roteiro-pela-infancia-do-craque.ghtml",
+      "publishedAt": "2026-08-15T09:00:54.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Futebol europeu de volta: veja agenda de jogos do fim de semana",
+      "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/futebol-europeu-de-volta-veja-agenda-de-jogos-do-fim-de-semana/",
+      "publishedAt": "2026-08-15T09:00:52.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Adversário do Atlético-PI, 3B da Amazônia busca retorno à elite após primeiro rebaixamento",
+      "link": "https://ge.globo.com/pi/futebol/futebol-feminino/brasileiro-feminino-serie-a2/noticia/2026/08/15/adversario-do-atletico-pi-3b-da-amazonia-busca-retorno-a-elite-apos-primeiro-rebaixamento.ghtml",
+      "publishedAt": "2026-08-15T09:00:47.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Embaixadas dos EUA no Oriente Médio reduzem equipes durante guerra com Irã",
+      "link": "https://www.cnnbrasil.com.br/internacional/embaixadas-dos-eua-no-oriente-medio-reduzem-equipes-durante-guerra-com-ira/",
+      "publishedAt": "2026-08-15T09:00:38.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Palmeiras mira reação contra o Fluminense antes de decidir vaga nas quartas da Libertadores",
+      "link": "https://ge.globo.com/futebol/times/palmeiras/noticia/2026/08/15/palmeiras-mira-reacao-contra-o-fluminense-antes-de-decidir-vaga-nas-quartas-da-libertadores.ghtml",
+      "publishedAt": "2026-08-15T09:00:36.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Reciprocidade tenta fazer EUA negociarem tarifas novamente, diz Arko Advice",
+      "link": "https://www.cnnbrasil.com.br/economia/reciprocidade-tenta-fazer-eua-negociarem-tarifas-novamente-diz-arko-advice/",
+      "publishedAt": "2026-08-15T09:00:32.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Colômbia entra no sexto dia de buscas por sobreviventes após terremoto",
+      "link": "https://www.cnnbrasil.com.br/internacional/colombia-entra-no-sexto-dia-de-buscas-por-sobreviventes-apos-terremoto/",
+      "publishedAt": "2026-08-15T09:00:21.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Bragantino x Vitória: horário e onde assistir ao Brasileirão Feminino",
+      "link": "https://www.cnnbrasil.com.br/esportes/brasileirao/bragantino-x-vitoria-horario-e-onde-assistir-ao-brasileirao-feminino/",
+      "publishedAt": "2026-08-15T09:00:20.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "André Jardine estreia neste sábado nos Emirados Árabes em time com 13 brasileiros; veja lista",
+      "link": "https://ge.globo.com/futebol/futebol-internacional/noticia/2026/08/15/andre-jardine-estreia-neste-sabado-nos-emirados-arabes-em-time-com-13-brasileiros-veja-lista.ghtml",
+      "publishedAt": "2026-08-15T09:00:19.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Psiquiatra detalha a Dr. Kalil quais os tipos de transtornos alimentares",
+      "link": "https://www.cnnbrasil.com.br/saude/psiquiatra-detalha-a-dr-kalil-quais-os-tipos-de-transtornos-alimentares/",
+      "publishedAt": "2026-08-15T09:00:10.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Cer�mica de 1900 mostra diferen�as de h�bitos alimentares entre grupos no Brasil",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/ciencia/2026/08/ceramica-de-1900-mostra-diferencas-de-habitos-alimentares-entre-grupos-no-brasil.shtml",
+      "publishedAt": "2026-08-15T09:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "LG inaugura f�brica no Paran� e mira 20% do mercado de linha branca",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mercado/2026/08/lg-inaugura-fabrica-no-parana-e-mira-20-do-mercado-de-linha-branca.shtml",
+      "publishedAt": "2026-08-15T09:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Quem � Victor Marx, candidato a governador nos EUA que diz exorcizar por telefone",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mundo/2026/08/quem-e-victor-marx-candidato-a-governador-nos-eua-que-diz-exorcizar-por-telefone.shtml",
+      "publishedAt": "2026-08-15T09:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Custo m�dio com sa�de de senadores � 10 vezes maior que com deputados e 46 vezes mais que no SUS",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/painel/2026/08/custo-medio-com-saude-de-senadores-e-10-vezes-maior-que-com-deputados-e-46-vezes-mais-que-no-sus.shtml",
+      "publishedAt": "2026-08-15T09:00:00.000Z",
+      "score": 1
+    },
     {
       "source": "Poder360",
       "title": "STF viola direito constitucional e espírito de corpo prevalece",
@@ -24,6 +362,13 @@
       "title": "Mortes de crianças caem, mas violência policial avança, diz Unicef",
       "link": "https://www.poder360.com.br/poder-seguranca-publica/mortes-de-criancas-caem-mas-violencia-policial-avanca-diz-unicef/",
       "publishedAt": "2026-08-15T08:45:29.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "“Não entrem em pânico”: Terremoto assusta turistas em ilha na Indonésia",
+      "link": "https://www.cnnbrasil.com.br/noticias/nao-entrem-em-panico-terremoto-assusta-turistas-em-ilha-na-indonesia/",
+      "publishedAt": "2026-08-15T08:31:42.000Z",
       "score": 1
     },
     {
@@ -181,6 +526,13 @@
       "score": 1
     },
     {
+      "source": "Exame",
+      "title": "Marvel divulga novo trailer de 'Vingadores: Doutor Destino'; veja o vídeo",
+      "link": "https://exame.com/pop/marvel-divulga-novo-trailer-de-vingadores-doutor-destino-veja-o-video/",
+      "publishedAt": "2026-08-15T07:22:51.000Z",
+      "score": 1
+    },
+    {
       "source": "CNN Brasil",
       "title": "Veja o que aconteceu com países que retaliaram os EUA",
       "link": "https://www.cnnbrasil.com.br/economia/money/macroeconomia/veja-o-que-aconteceu-com-paises-que-retaliaram-os-eua/",
@@ -203,10 +555,24 @@
       "score": 1
     },
     {
+      "source": "Exame",
+      "title": "Novo ‘Judas’? Arsenal mira capitão do Tottenham e reabre ferida no futebol inglês",
+      "link": "https://exame.com/esporte/novo-judas-arsenal-mira-capitao-do-tottenham-e-reabre-ferida-no-futebol-ingles/",
+      "publishedAt": "2026-08-15T07:10:53.000Z",
+      "score": 1
+    },
+    {
       "source": "CNN Brasil",
       "title": "Alcolumbre destrava pautas, mas projetos do governo ficam para pós-eleições",
       "link": "https://www.cnnbrasil.com.br/politica/alcolumbre-destrava-pautas-mas-projetos-do-governo-ficam-para-pos-eleicoes/",
       "publishedAt": "2026-08-15T07:09:45.000Z",
+      "score": 1
+    },
+    {
+      "source": "Exame",
+      "title": "O cachorro de ‘O Fim da Rua’ morre? Anne Hathaway fala sobre polêmica",
+      "link": "https://exame.com/pop/o-cachorro-de-o-fim-da-rua-morre-anne-hathaway-fala-sobre-polemica/",
+      "publishedAt": "2026-08-15T07:09:10.000Z",
       "score": 1
     },
     {
@@ -221,6 +587,13 @@
       "title": "Fluminense x América-MG: horário e onde assistir ao Brasileirão Feminino",
       "link": "https://www.cnnbrasil.com.br/esportes/brasileirao/fluminense-x-america-mg-horario-e-onde-assistir-ao-brasileirao-feminino/",
       "publishedAt": "2026-08-15T07:06:42.000Z",
+      "score": 1
+    },
+    {
+      "source": "Exame",
+      "title": "4 formas de descobrir quais informações os chatbots têm sobre você",
+      "link": "https://exame.com/inteligencia-artificial/4-formas-de-descobrir-quais-informacoes-os-chatbots-tem-sobre-voce/",
+      "publishedAt": "2026-08-15T07:05:08.000Z",
       "score": 1
     },
     {
@@ -266,6 +639,13 @@
       "score": 1
     },
     {
+      "source": "Exame",
+      "title": "Os X-Men de 'Vingadores: Doutor Destino' são os mesmos dos filmes da Fox? Entenda",
+      "link": "https://exame.com/pop/os-x-men-de-vingadores-doutor-destino-sao-os-mesmos-dos-filmes-da-fox-entenda/",
+      "publishedAt": "2026-08-15T07:01:31.000Z",
+      "score": 1
+    },
+    {
       "source": "G1",
       "title": "Abandono de animais com carro pode virar infração gravíssima e levar à perda da CNH por 18 meses",
       "link": "https://g1.globo.com/carros/noticia/2026/08/15/abandono-de-animais-com-carro-pode-virar-infracao-gravissima-e-levar-a-perda-da-cnh-por-18-meses.ghtml",
@@ -304,6 +684,13 @@
       "source": "GE Globo Esporte",
       "title": "São Paulo x Coritiba: onde assistir ao vivo, horário e escalações",
       "link": "https://ge.globo.com/sp/futebol/brasileirao-serie-a/noticia/2026/08/15/sao-paulo-x-coritiba-onde-assistir-ao-vivo-horario-e-escalacoes.ghtml",
+      "publishedAt": "2026-08-15T07:01:01.000Z",
+      "score": 1
+    },
+    {
+      "source": "Exame",
+      "title": "'Camp Rock 3' é a prova do porquê a nostalgia nem sempre funciona",
+      "link": "https://exame.com/pop/camp-rock-3-e-a-prova-do-porque-a-nostalgia-nem-sempre-funciona/",
       "publishedAt": "2026-08-15T07:01:01.000Z",
       "score": 1
     },
@@ -347,6 +734,20 @@
       "title": "El Niño de 2026/2027 pode ser o mais intenso desde 1950, segundo NOAA",
       "link": "https://www.cnnbrasil.com.br/nacional/brasil/el-nino-de-2026-2027-pode-ser-o-mais-intenso-desde-1950-segundo-noaa/",
       "publishedAt": "2026-08-15T07:00:43.000Z",
+      "score": 1
+    },
+    {
+      "source": "Exame",
+      "title": "Opinião: É hora da reciclagem brasileira sair da retórica e entrar na governança",
+      "link": "https://exame.com/bussola/opiniao-e-hora-da-reciclagem-brasileira-sair-da-retorica-e-entrar-na-governanca/",
+      "publishedAt": "2026-08-15T07:00:31.000Z",
+      "score": 1
+    },
+    {
+      "source": "Exame",
+      "title": "Eleições levam dólar ao maior valor em 4 meses, mas alta não deve ser linear, dizem analistas",
+      "link": "https://exame.com/invest/mercados/eleicoes-levam-dolar-ao-maior-valor-em-4-meses-mas-alta-nao-deve-ser-linear-dizem-analistas/",
+      "publishedAt": "2026-08-15T07:00:18.000Z",
       "score": 1
     },
     {
@@ -399,6 +800,13 @@
       "score": 1
     },
     {
+      "source": "Exame",
+      "title": "Nasa registra pela primeira vez a Terra desaparecendo no céu de Marte",
+      "link": "https://exame.com/ciencia/nasa-registra-pela-primeira-vez-a-terra-desaparecendo-no-ceu-de-marte/",
+      "publishedAt": "2026-08-15T06:43:55.000Z",
+      "score": 1
+    },
+    {
       "source": "CNN Brasil",
       "title": "Cirurgia plástica melhora a autoestima mesmo ou é só uma ilusão?",
       "link": "https://www.cnnbrasil.com.br/saude/cirurgia-plastica-melhora-a-autoestima-mesmo-ou-e-so-uma-ilusao/",
@@ -438,6 +846,48 @@
       "title": "Saiba por que próximo eclipse solar total visível no Brasil será só em 2045",
       "link": "https://www.cnnbrasil.com.br/ciencia/saiba-por-que-proximo-eclipse-solar-total-visivel-no-brasil-sera-so-em-2045/",
       "publishedAt": "2026-08-15T06:33:05.000Z",
+      "score": 1
+    },
+    {
+      "source": "Exame",
+      "title": "Matthew McConaughey revela como ajudou a polícia a encontrar um assassino",
+      "link": "https://exame.com/pop/matthew-mcconaughey-revela-como-ajudou-a-policia-a-encontrar-um-assassino/",
+      "publishedAt": "2026-08-15T06:32:30.000Z",
+      "score": 1
+    },
+    {
+      "source": "Exame",
+      "title": "Os 35 anos de ‘A Bela e a Fera’: os segredos por trás do clássico da Disney",
+      "link": "https://exame.com/pop/a-bela-e-a-fera-completa-35-anos-como-o-filme-revolucionou-as-animacoes-da-disney/",
+      "publishedAt": "2026-08-15T06:15:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Exame",
+      "title": "Além dos chatbots: a ascensão da IA multimodal e dos agentes autônomos",
+      "link": "https://exame.com/inteligencia-artificial/alem-dos-chatbots-a-ascensao-da-ia-multimodal-e-dos-agentes-autonomos/",
+      "publishedAt": "2026-08-15T06:07:15.000Z",
+      "score": 1
+    },
+    {
+      "source": "Exame",
+      "title": "Investigação científica coloca em dúvida genes ligados à proteção contra o Alzheimer",
+      "link": "https://exame.com/ciencia/investigacao-cientifica-coloca-em-duvida-genes-ligados-a-protecao-contra-o-alzheimer/",
+      "publishedAt": "2026-08-15T06:02:05.000Z",
+      "score": 1
+    },
+    {
+      "source": "Exame",
+      "title": "Letícia Spiller vive 'Clarice Lispector' mais próxima de si em novo filme",
+      "link": "https://exame.com/casual/leticia-spiller-vive-clarice-lispector-mais-proxima-de-si-em-novo-filme/",
+      "publishedAt": "2026-08-15T06:01:45.000Z",
+      "score": 1
+    },
+    {
+      "source": "Exame",
+      "title": "De holografia a megatransmissões: com o Nubank Parque, Claro quer criar a arena do futuro",
+      "link": "https://exame.com/exame-in/de-holografia-a-megatransmissoes-com-o-nubank-parque-claro-quer-criar-a-arena-do-futuro/",
+      "publishedAt": "2026-08-15T06:00:52.000Z",
       "score": 1
     },
     {
