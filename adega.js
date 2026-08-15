@@ -1,5 +1,10 @@
-const STORAGE_KEY = "gaglidom_adega_wines";
+const STORAGE_KEY = "gaglidom_adega_wines"; // formato antigo: a lista inteira
+const EDITS_KEY = "gaglidom_adega_edicoes"; // formato atual: só as alterações
 const VIEW_KEY = "gaglidom_adega_view";
+
+// Lista do adega/wines.json publicado, sem as alterações locais. Serve de
+// base para saber o que o usuário mudou de fato.
+let publicados = [];
 
 // Abaixo disso a tabela de 9 colunas não cabe, então lista é o padrão —
 // mas a escolha do usuário, se houver, sempre vence.
@@ -414,8 +419,82 @@ function importTsv(text) {
   return { added, updated };
 }
 
+// Guardar a lista inteira no navegador fazia o arquivo publicado ser
+// ignorado por completo: quem tinha edições locais nunca via foto ou nota
+// nova, e quem limpava os dados do navegador perdia as edições. Agora só as
+// alterações são guardadas, e elas são reaplicadas sobre o arquivo publicado.
 function persist() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify({ updatedAt: new Date().toISOString(), wines }));
+  const base = new Map(publicados.map((w) => [w._chave, w]));
+  const edicoes = {};
+  const novos = [];
+  const presentes = new Set();
+
+  for (const w of wines) {
+    presentes.add(w._chave);
+    const original = base.get(w._chave);
+    if (!original) {
+      novos.push(w);
+      continue;
+    }
+    const dif = {};
+    for (const campo of [...Object.keys(EDITABLE_FIELDS), "priceBREstimado"]) {
+      if (w[campo] !== original[campo]) dif[campo] = w[campo];
+    }
+    if (Object.keys(dif).length) edicoes[w._chave] = dif;
+  }
+
+  const removidos = publicados.filter((w) => !presentes.has(w._chave)).map((w) => w._chave);
+
+  localStorage.setItem(
+    EDITS_KEY,
+    JSON.stringify({ updatedAt: new Date().toISOString(), edicoes, novos, removidos })
+  );
+}
+
+// Nomes se repetem no catálogo (duas Villa Antinori 2022, duas Sessantanni),
+// então a chave leva um contador para a edição cair na garrafa certa.
+function comChaves(lista) {
+  const vistos = new Map();
+  return lista.map((w) => {
+    const base = `${w.name}|${w.vintage ?? ""}`;
+    const n = (vistos.get(base) ?? 0) + 1;
+    vistos.set(base, n);
+    return { ...w, _chave: `${base}|${n}` };
+  });
+}
+
+function lerEdicoes() {
+  try {
+    const novo = JSON.parse(localStorage.getItem(EDITS_KEY) || "null");
+    if (novo) return { edicoes: {}, novos: [], removidos: [], ...novo };
+  } catch {
+    /* segue para o formato antigo */
+  }
+
+  // Formato antigo: a lista inteira. Converte para alterações comparando
+  // com o arquivo publicado, para ninguém perder o que já tinha editado.
+  try {
+    const antigo = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+    if (!antigo?.wines?.length) return null;
+    const base = new Map(publicados.map((w) => [w._chave, w]));
+    const edicoes = {};
+    const novos = [];
+    for (const w of comChaves(antigo.wines)) {
+      const original = base.get(w._chave);
+      if (!original) {
+        novos.push(w);
+        continue;
+      }
+      const dif = {};
+      for (const campo of [...Object.keys(EDITABLE_FIELDS), "priceBREstimado"]) {
+        if (w[campo] !== original[campo]) dif[campo] = w[campo];
+      }
+      if (Object.keys(dif).length) edicoes[w._chave] = dif;
+    }
+    return { edicoes, novos, removidos: [] };
+  } catch {
+    return null;
+  }
 }
 
 function flash(message, isError = false) {
@@ -430,27 +509,32 @@ async function load() {
     const res = await fetch("adega/wines.json", { cache: "no-store" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
-    wines = (data.wines || []).map((w) => ({
-      // priceBR substituiu o campo antigo "price"; mantido para não perder
-      // dado de arquivos gerados antes da mudança.
-      quantity: w.quantity ?? 1,
-      pricePaid: w.pricePaid ?? null,
-      priceBR: w.priceBR ?? w.price ?? null,
-      priceUSD: w.priceUSD ?? null,
-      rating: w.rating ?? null,
-      priceBREstimado: w.priceBREstimado ?? false,
-      ...w,
-    }));
+    publicados = comChaves(
+      (data.wines || []).map((w) => ({
+        // priceBR substituiu o campo antigo "price"; mantido para não perder
+        // dado de arquivos gerados antes da mudança.
+        quantity: w.quantity ?? 1,
+        pricePaid: w.pricePaid ?? null,
+        priceBR: w.priceBR ?? w.price ?? null,
+        priceUSD: w.priceUSD ?? null,
+        rating: w.rating ?? null,
+        priceBREstimado: w.priceBREstimado ?? false,
+        ...w,
+      }))
+    );
+    wines = publicados.map((w) => ({ ...w }));
   } catch (err) {
     document.getElementById("adega-empty").textContent = `Não foi possível carregar a adega (${err.message}).`;
   }
 
-  // Edições locais têm prioridade sobre o arquivo publicado.
-  try {
-    const local = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
-    if (local?.wines?.length) wines = local.wines;
-  } catch {
-    /* localStorage corrompido: segue com o arquivo publicado */
+  // O arquivo publicado é a base (fotos, notas, preços pesquisados) e as
+  // alterações feitas na tela entram por cima, campo a campo.
+  const guardado = lerEdicoes();
+  if (guardado) {
+    const removidos = new Set(guardado.removidos);
+    wines = wines.filter((w) => !removidos.has(w._chave));
+    for (const w of wines) Object.assign(w, guardado.edicoes[w._chave] || {});
+    wines.push(...comChaves(guardado.novos).map((w) => ({ ...w })));
   }
 
   fillFilterOptions();
@@ -579,7 +663,9 @@ document.getElementById("adega-export-tsv").addEventListener("click", async () =
 });
 
 document.getElementById("adega-export-json").addEventListener("click", () => {
-  const blob = new Blob([JSON.stringify({ updatedAt: new Date().toISOString(), wines }, null, 2)], {
+  // _chave é controle interno da tela, não entra no arquivo publicado.
+  const limpos = wines.map(({ _chave, ...w }) => w);
+  const blob = new Blob([JSON.stringify({ updatedAt: new Date().toISOString(), wines: limpos }, null, 2)], {
     type: "application/json",
   });
   const a = document.createElement("a");
