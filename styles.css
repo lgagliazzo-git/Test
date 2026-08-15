@@ -785,6 +785,13 @@ body.no-scroll {
   flex-shrink: 0;
 }
 
+/* Destaca em vermelho o que já está salvo, para bater o olho e saber
+   o que está valendo sem precisar conferir item a item. */
+.news-checkbox input:checked + span {
+  color: #ff8a8a;
+  font-weight: 600;
+}
+
 .keyword-input-row {
   display: flex;
   gap: 10px;
@@ -839,6 +846,29 @@ body.no-scroll {
   color: var(--color-accent);
   font-size: 0.9rem;
   text-align: center;
+}
+
+.news-export {
+  margin-top: 16px;
+  text-align: left;
+}
+
+.news-export-help {
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin-bottom: 8px;
+}
+
+.news-export-json {
+  width: 100%;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.8rem;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.15));
+  background: rgba(255, 255, 255, 0.05);
+  color: inherit;
+  margin-bottom: 8px;
 }
 
 /* News feed */

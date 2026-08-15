@@ -96,23 +96,38 @@ function addKeyword() {
   renderKeywordTags();
 }
 
-function loadConfig() {
+function applyConfig(config) {
+  (config.sources || []).forEach((s) => {
+    const el = document.getElementById(`source-${slug(s)}`);
+    if (el) el.checked = true;
+  });
+  (config.categories || []).forEach((c) => {
+    const el = document.getElementById(`category-${slug(c)}`);
+    if (el) el.checked = true;
+  });
+  if (config.frequency) document.getElementById("frequency").value = config.frequency;
+  if (config.quantity) document.getElementById("quantity").value = config.quantity;
+  keywords = config.keywords || [];
+  renderKeywordTags();
+}
+
+// O news-config.json publicado é a verdade: é ele que o robô lê para buscar
+// e enviar. O localStorage só entra como reserva quando o arquivo não carrega
+// (offline, por exemplo) — senão a tela mostraria um rascunho local que não
+// corresponde ao que está no ar, que foi exatamente o que confundiu antes.
+async function loadConfig() {
+  try {
+    const res = await fetch(`news-config.json?t=${Date.now()}`, { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    applyConfig(await res.json());
+    return;
+  } catch (e) {
+    /* cai para o rascunho local */
+  }
   const raw = localStorage.getItem(STORAGE_KEY);
   if (!raw) return;
   try {
-    const config = JSON.parse(raw);
-    (config.sources || []).forEach((s) => {
-      const el = document.getElementById(`source-${slug(s)}`);
-      if (el) el.checked = true;
-    });
-    (config.categories || []).forEach((c) => {
-      const el = document.getElementById(`category-${slug(c)}`);
-      if (el) el.checked = true;
-    });
-    if (config.frequency) document.getElementById("frequency").value = config.frequency;
-    if (config.quantity) document.getElementById("quantity").value = config.quantity;
-    keywords = config.keywords || [];
-    renderKeywordTags();
+    applyConfig(JSON.parse(raw));
   } catch (e) {
     /* ignore corrupted config */
   }
@@ -125,12 +140,36 @@ function saveConfig(e) {
   const frequency = document.getElementById("frequency").value;
   const quantity = document.getElementById("quantity").value;
 
-  const config = { sources, categories, frequency, quantity, keywords };
+  const config = {
+    sources,
+    categories,
+    keywords,
+    quantity: Number(quantity),
+    frequency: Number(frequency),
+  };
   localStorage.setItem(STORAGE_KEY, JSON.stringify(config));
 
   const msg = document.getElementById("news-saved-msg");
   msg.style.display = "block";
   setTimeout(() => (msg.style.display = "none"), 3000);
+
+  showExport(config);
+}
+
+function showExport(config) {
+  const box = document.getElementById("news-export");
+  const field = document.getElementById("news-export-json");
+  field.value = JSON.stringify(config, null, 2);
+  box.hidden = false;
+  copyExport();
+}
+
+function copyExport() {
+  const field = document.getElementById("news-export-json");
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(field.value).catch(() => {});
+  }
+  field.select();
 }
 
 renderCheckboxGrid("sources-grid", SOURCES, "source");
@@ -145,3 +184,4 @@ document.getElementById("keyword-input").addEventListener("keydown", (e) => {
   }
 });
 document.getElementById("news-form").addEventListener("submit", saveConfig);
+document.getElementById("news-export-copy").addEventListener("click", copyExport);

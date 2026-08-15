@@ -43,6 +43,9 @@
         <div class="form-field">
           <label for="quantity">Quantidade de notícias por envio</label>
           <select id="quantity">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
             <option value="5">5</option>
             <option value="10">10</option>
             <option value="15">15</option>
@@ -65,6 +68,17 @@
 
       <button type="submit" class="btn btn-primary btn-lg">Salvar configuração</button>
       <p class="news-saved-msg" id="news-saved-msg">Configuração salva neste navegador ✓</p>
+
+      <!-- O site é estático (GitHub Pages), então a página não consegue
+           gravar o news-config.json que o robô lê. O salvar copia o JSON
+           para a área de transferência: é só me mandar que eu publico. -->
+      <div class="news-export" id="news-export" hidden>
+        <p class="news-export-help">
+          Para valer no envio automático, me mande este JSON (já copiado):
+        </p>
+        <textarea class="news-export-json" id="news-export-json" rows="8" readonly></textarea>
+        <button type="button" class="btn-ghost-sm" id="news-export-copy">Copiar de novo</button>
+      </div>
     </form>
 
     <div class="news-feed">
