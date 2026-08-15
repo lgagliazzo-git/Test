@@ -55,10 +55,19 @@
       background: white;
       border-radius: 4px;
       cursor: pointer;
+      transition: background 0.2s, color 0.2s;
     }
     .source-checkbox input {
       width: auto;
       margin: 0;
+    }
+    .source-checkbox input:checked + * {
+      color: #d32f2f;
+      font-weight: bold;
+    }
+    .source-checkbox:has(input:checked) {
+      background: #ffebee;
+      border-left: 4px solid #d32f2f;
     }
     .button-group {
       display: flex;
@@ -110,6 +119,17 @@
       color: #666;
       margin-top: 0.5rem;
     }
+    .config-summary {
+      background: #fff3cd;
+      border: 2px solid #ffc107;
+      border-radius: 4px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+    .config-summary strong {
+      color: #d32f2f;
+    }
   </style>
 </head>
 <body>
@@ -118,6 +138,10 @@
     <p class="hub-page-title">📰 Configurar Notícias</p>
 
     <div class="config-container">
+      <div class="config-summary" id="configSummary">
+        Carregando configuração atual...
+      </div>
+
       <form id="configForm">
         <!-- Quantidade de notícias -->
         <div class="config-section">
@@ -215,18 +239,54 @@
       });
     }
 
+    function showConfigSummary(config) {
+      const summary = document.getElementById("configSummary");
+      const quantity = config.quantity || 2;
+      const frequency = config.frequency || 1;
+      const sources = config.sources || [];
+      const keywords = config.keywords || [];
+
+      summary.innerHTML = `
+        <strong>📋 Configuração Atual:</strong><br>
+        📊 Notícias por busca: <strong style="color: #d32f2f;">${quantity}</strong><br>
+        ⏱️ Frequência: A cada <strong style="color: #d32f2f;">${frequency} hora(s)</strong><br>
+        📡 Fontes ativas: <strong style="color: #d32f2f;">${sources.length}</strong><br>
+        🔍 Keywords: ${keywords.length > 0 ? '<strong style="color: #d32f2f;">' + keywords.join(", ") + "</strong>" : "nenhuma"}
+      `;
+    }
+
     async function loadConfig() {
       try {
         const response = await fetch(CONFIG_URL);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const config = await response.json();
 
-        document.getElementById("quantity").value = config.quantity || 2;
-        document.getElementById("frequency").value = config.frequency || 1;
+        console.log("Config carregada:", config);
+
+        // Mostrar resumo
+        showConfigSummary(config);
+
+        // Carregar valores
+        const quantity = config.quantity || 2;
+        const frequency = config.frequency || 1;
+
+        document.getElementById("quantity").value = quantity;
+        document.getElementById("frequency").value = frequency;
         document.getElementById("keywords").value = (config.keywords || []).join(", ");
 
         renderSources(config.sources || allSources);
+
+        // Trigger render para mostrar estilos
+        setTimeout(() => {
+          document.querySelectorAll(".source-checkbox input").forEach(input => {
+            input.dispatchEvent(new Event("change", { bubbles: true }));
+          });
+        }, 100);
       } catch (err) {
         console.error("Erro ao carregar configuração:", err);
+        document.getElementById("quantity").value = 2;
+        document.getElementById("frequency").value = 1;
+        showConfigSummary({ quantity: 2, frequency: 1, sources: allSources, keywords: [] });
         renderSources(allSources);
       }
     }
