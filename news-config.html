@@ -193,7 +193,7 @@
   </div>
 
   <script>
-    const CONFIG_URL = "news-config.json";
+    const CONFIG_URL = "news-config.json?" + Date.now();
     const allSources = [
       "InfoMoney",
       "G1",
@@ -257,11 +257,13 @@
 
     async function loadConfig() {
       try {
+        console.log("Tentando carregar de:", CONFIG_URL);
         const response = await fetch(CONFIG_URL);
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const config = await response.json();
 
-        console.log("Config carregada:", config);
+        console.log("✅ Config carregada:", config);
+        console.log("Quantidade:", config.quantity, "Frequência:", config.frequency);
 
         // Mostrar resumo
         showConfigSummary(config);
