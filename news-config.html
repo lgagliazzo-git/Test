@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gaglidom · Configurar Notícias</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="password-gate.js"></script>
+  <style>
+    .config-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .config-section {
+      background: var(--bg-secondary, #f5f5f5);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .config-section h3 {
+      margin-top: 0;
+      color: var(--color-primary, #0066cc);
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    .form-group input[type="number"] {
+      max-width: 150px;
+    }
+    .sources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .source-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      background: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .source-checkbox input {
+      width: auto;
+      margin: 0;
+    }
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .btn-primary {
+      background: var(--color-primary, #0066cc);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--color-primary-dark, #0052a3);
+    }
+    .btn-secondary {
+      background: #ddd;
+      color: #333;
+    }
+    .btn-secondary:hover {
+      background: #ccc;
+    }
+    .status {
+      padding: 1rem;
+      border-radius: 4px;
+      margin-top: 1rem;
+      display: none;
+    }
+    .status.success {
+      display: block;
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    .status.error {
+      display: block;
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+    .info-text {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="hub hub-full">
+    <a href="index.html" class="hub-logo">gagli<span>dom</span></a>
+    <p class="hub-page-title">📰 Configurar Notícias</p>
+
+    <div class="config-container">
+      <form id="configForm">
+        <!-- Quantidade de notícias -->
+        <div class="config-section">
+          <h3>📊 Quantidade de Notícias</h3>
+          <div class="form-group">
+            <label for="quantity">Notícias por busca:</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="20" value="2" />
+            <p class="info-text">Quantas notícias incluir a cada atualização</p>
+          </div>
+        </div>
+
+        <!-- Frequência -->
+        <div class="config-section">
+          <h3>⏱️ Frequência de Atualização</h3>
+          <div class="form-group">
+            <label for="frequency">Atualizar a cada (horas):</label>
+            <input type="number" id="frequency" name="frequency" min="0.5" step="0.5" max="24" value="1" />
+            <p class="info-text">Intervalo em horas (ex: 0.5 = 30 minutos, 1 = 1 hora)</p>
+          </div>
+        </div>
+
+        <!-- Fontes -->
+        <div class="config-section">
+          <h3>📡 Selecione as Fontes</h3>
+          <div id="sourcesContainer" class="sources-grid"></div>
+        </div>
+
+        <!-- Keywords -->
+        <div class="config-section">
+          <h3>🔍 Palavras-chave (opcional)</h3>
+          <div class="form-group">
+            <label for="keywords">Keywords (separadas por vírgula):</label>
+            <input type="text" id="keywords" name="keywords" placeholder="ex: economia, mercado, bolsa" />
+            <p class="info-text">Deixe em branco para incluir todas as notícias</p>
+          </div>
+        </div>
+
+        <!-- Botões -->
+        <div class="button-group">
+          <button type="submit" class="btn btn-primary">💾 Salvar Configurações</button>
+          <button type="reset" class="btn btn-secondary">🔄 Restaurar</button>
+        </div>
+
+        <div id="status" class="status"></div>
+      </form>
+    </div>
+
+    <a href="index.html" class="hub-back">&larr; Voltar</a>
+  </div>
+
+  <script>
+    const CONFIG_URL = "news-config.json";
+    const allSources = [
+      "InfoMoney",
+      "G1",
+      "CNN Brasil",
+      "Poder360",
+      "Tecmundo",
+      "Canaltech",
+      "Exame",
+      "Estadão",
+      "UOL",
+      "Valor Econômico",
+      "Money Times",
+      "Brazil Journal",
+      "Neofeed",
+      "Suno Notícias",
+      "Seu Dinheiro",
+      "Bloomberg Línea Brasil",
+      "Folha de S.Paulo",
+      "Quem (Globo)",
+      "Purepeople",
+      "Contigo",
+      "LeoDias",
+      "GE Globo Esporte",
+    ];
+
+    function renderSources(selectedSources) {
+      const container = document.getElementById("sourcesContainer");
+      container.innerHTML = "";
+
+      allSources.forEach((source) => {
+        const isSelected = selectedSources.includes(source);
+        const label = document.createElement("label");
+        label.className = "source-checkbox";
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.value = source;
+        checkbox.checked = isSelected;
+
+        label.appendChild(checkbox);
+        label.appendChild(document.createTextNode(source));
+        container.appendChild(label);
+      });
+    }
+
+    async function loadConfig() {
+      try {
+        const response = await fetch(CONFIG_URL);
+        const config = await response.json();
+
+        document.getElementById("quantity").value = config.quantity || 2;
+        document.getElementById("frequency").value = config.frequency || 1;
+        document.getElementById("keywords").value = (config.keywords || []).join(", ");
+
+        renderSources(config.sources || allSources);
+      } catch (err) {
+        console.error("Erro ao carregar configuração:", err);
+        renderSources(allSources);
+      }
+    }
+
+    document.getElementById("configForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const quantity = parseInt(document.getElementById("quantity").value) || 2;
+      const frequency = parseFloat(document.getElementById("frequency").value) || 1;
+      const keywords = document
+        .getElementById("keywords")
+        .value.split(",")
+        .map((k) => k.trim())
+        .filter((k) => k);
+
+      const selectedSources = Array.from(document.querySelectorAll(".source-checkbox input:checked")).map(
+        (input) => input.value
+      );
+
+      const config = {
+        sources: selectedSources,
+        categories: [],
+        keywords: keywords,
+        quantity: quantity,
+        frequency: frequency,
+      };
+
+      try {
+        const response = await fetch(CONFIG_URL, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(config),
+        });
+
+        const status = document.getElementById("status");
+        if (response.ok || response.status === 200) {
+          status.className = "status success";
+          status.textContent = `✅ Configuração salva! ${selectedSources.length} fontes, ${quantity} notícias a cada ${frequency}h`;
+          setTimeout(() => (status.style.display = "none"), 3000);
+        } else {
+          status.className = "status error";
+          status.textContent = "❌ Erro ao salvar. Tente novamente.";
+        }
+      } catch (err) {
+        const status = document.getElementById("status");
+        status.className = "status error";
+        status.textContent = `❌ Erro: ${err.message}`;
+      }
+    });
+
+    loadConfig();
+  </script>
+</body>
+</html>

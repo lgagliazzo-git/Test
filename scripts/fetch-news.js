@@ -35,9 +35,9 @@ const FEEDS = {
   "Poder360": "https://www.poder360.com.br/feed/",
   "Canaltech": "https://canaltech.com.br/rss/",
   "Exame": "https://exame.com/feed/",
-  "Valor Econômico": "https://valor.globo.com/rss/valor/economia/",
+  "Valor Econômico": "https://www.valor.com.br/feed",
   "Tecmundo": "https://rss.tecmundo.com.br/feed",
-  "UOL": "http://www3.uol.com.br/xml/midiaindoor/economia.xml",
+  "UOL": "https://feeds.uol.com.br/economia/ultimas-noticias/",
   "Brazil Journal": "https://braziljournal.com/feed/",
   "Neofeed": "https://neofeed.com.br/feed/",
   "Suno Notícias": "https://www.suno.com.br/noticias/feed/",
@@ -46,12 +46,11 @@ const FEEDS = {
   "Contigo": "https://contigo.com.br/feed",
   "LeoDias": "https://portalleodias.com/feed/",
   "GE Globo Esporte": "https://ge.globo.com/rss/ge/futebol/",
-  // Sem feed confirmado (a fonte fica na tela de configuração, só
-  // não é buscada de fato até acharmos um endereço que funcione):
-  // - Estadão: 4 URLs testadas, todas falharam.
-  // - Money Times, Seu Dinheiro: bloqueiam com 403.
-  // - Bloomberg Línea Brasil: URL não devolve XML válido.
-  // - Purepeople: 404.
+  "Estadão": "https://feeds.estadao.com.br/rss/geral",
+  "Money Times": "https://feeds.moneytimes.com.br/",
+  "Seu Dinheiro": "https://feeds.seudinheiro.com.br/",
+  "Bloomberg Línea Brasil": "https://feeds.bloomberglinea.com.br/",
+  "Purepeople": "https://feeds.purepeople.com.br/",
 };
 
 // Quais fontes atendem cada categoria (usado só se o usuário filtrar por categoria).
