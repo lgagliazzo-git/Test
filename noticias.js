@@ -111,65 +111,81 @@ function applyConfig(config) {
   renderKeywordTags();
 }
 
-// O news-config.json publicado é a verdade: é ele que o robô lê para buscar
-// e enviar. O localStorage só entra como reserva quando o arquivo não carrega
-// (offline, por exemplo) — senão a tela mostraria um rascunho local que não
-// corresponde ao que está no ar, que foi exatamente o que confundiu antes.
+// Config que está publicada e valendo no robô, para comparar com a escolha
+// salva na tela e avisar quando as duas estiverem diferentes.
+let publishedConfig = null;
+
+function currentConfig() {
+  return {
+    sources: Array.from(document.querySelectorAll('input[name="source"]:checked')).map((el) => el.value),
+    categories: Array.from(document.querySelectorAll('input[name="category"]:checked')).map((el) => el.value),
+    keywords: keywords.slice(),
+    quantity: Number(document.getElementById("quantity").value),
+    frequency: Number(document.getElementById("frequency").value),
+  };
+}
+
+function sameConfig(a, b) {
+  if (!a || !b) return false;
+  const norm = (c) => ({
+    sources: (c.sources || []).slice().sort(),
+    categories: (c.categories || []).slice().sort(),
+    keywords: (c.keywords || []).slice().sort(),
+    quantity: Number(c.quantity),
+    frequency: Number(c.frequency),
+  });
+  return JSON.stringify(norm(a)) === JSON.stringify(norm(b));
+}
+
+function updateSyncMsg() {
+  const el = document.getElementById("news-sync-msg");
+  if (!publishedConfig) {
+    el.textContent = "";
+    return;
+  }
+  if (sameConfig(currentConfig(), publishedConfig)) {
+    el.textContent = "✓ É esta configuração que está valendo no envio automático.";
+    el.classList.remove("is-pendente");
+  } else {
+    el.textContent = "⚠ Salvo neste navegador, mas ainda não está valendo no envio automático — me avise para publicar.";
+    el.classList.add("is-pendente");
+  }
+}
+
+// A escolha salva na tela (localStorage) é o que o usuário vê, porque foi a
+// última coisa que ele decidiu. O arquivo publicado entra quando ainda não há
+// escolha salva, e serve de comparação para o aviso de pendência.
 async function loadConfig() {
   try {
     const res = await fetch(`news-config.json?t=${Date.now()}`, { cache: "no-store" });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    applyConfig(await res.json());
-    return;
+    if (res.ok) publishedConfig = await res.json();
   } catch (e) {
-    /* cai para o rascunho local */
+    /* segue sem comparação */
   }
+
   const raw = localStorage.getItem(STORAGE_KEY);
-  if (!raw) return;
-  try {
-    applyConfig(JSON.parse(raw));
-  } catch (e) {
-    /* ignore corrupted config */
+  let saved = null;
+  if (raw) {
+    try {
+      saved = JSON.parse(raw);
+    } catch (e) {
+      /* ignore corrupted config */
+    }
   }
+
+  applyConfig(saved || publishedConfig || {});
+  updateSyncMsg();
 }
 
 function saveConfig(e) {
   e.preventDefault();
-  const sources = Array.from(document.querySelectorAll('input[name="source"]:checked')).map((el) => el.value);
-  const categories = Array.from(document.querySelectorAll('input[name="category"]:checked')).map((el) => el.value);
-  const frequency = document.getElementById("frequency").value;
-  const quantity = document.getElementById("quantity").value;
-
-  const config = {
-    sources,
-    categories,
-    keywords,
-    quantity: Number(quantity),
-    frequency: Number(frequency),
-  };
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(config));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(currentConfig()));
 
   const msg = document.getElementById("news-saved-msg");
   msg.style.display = "block";
   setTimeout(() => (msg.style.display = "none"), 3000);
 
-  showExport(config);
-}
-
-function showExport(config) {
-  const box = document.getElementById("news-export");
-  const field = document.getElementById("news-export-json");
-  field.value = JSON.stringify(config, null, 2);
-  box.hidden = false;
-  copyExport();
-}
-
-function copyExport() {
-  const field = document.getElementById("news-export-json");
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(field.value).catch(() => {});
-  }
-  field.select();
+  updateSyncMsg();
 }
 
 renderCheckboxGrid("sources-grid", SOURCES, "source");
@@ -184,4 +200,3 @@ document.getElementById("keyword-input").addEventListener("keydown", (e) => {
   }
 });
 document.getElementById("news-form").addEventListener("submit", saveConfig);
-document.getElementById("news-export-copy").addEventListener("click", copyExport);

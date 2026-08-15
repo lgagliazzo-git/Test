@@ -848,27 +848,16 @@ body.no-scroll {
   text-align: center;
 }
 
-.news-export {
-  margin-top: 16px;
-  text-align: left;
-}
-
-.news-export-help {
+.news-sync-msg {
   font-size: 0.85rem;
   opacity: 0.75;
-  margin-bottom: 8px;
+  text-align: center;
+  margin-top: 10px;
 }
 
-.news-export-json {
-  width: 100%;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.8rem;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.15));
-  background: rgba(255, 255, 255, 0.05);
-  color: inherit;
-  margin-bottom: 8px;
+.news-sync-msg.is-pendente {
+  color: #ff8a8a;
+  opacity: 1;
 }
 
 /* News feed */

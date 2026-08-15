@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>gaglidom · Notícias</title>
-  <link rel="stylesheet" href="styles.css?v=202608151123" />
-  <script src="password-gate.js?v=202608151123"></script>
+  <link rel="stylesheet" href="styles.css?v=202608151127" />
+  <script src="password-gate.js?v=202608151127"></script>
 </head>
 <body>
   <div class="hub hub-wide">
@@ -67,18 +67,11 @@
       </div>
 
       <button type="submit" class="btn btn-primary btn-lg">Salvar configuração</button>
-      <p class="news-saved-msg" id="news-saved-msg">Configuração salva neste navegador ✓</p>
-
-      <!-- O site é estático (GitHub Pages), então a página não consegue
-           gravar o news-config.json que o robô lê. O salvar copia o JSON
-           para a área de transferência: é só me mandar que eu publico. -->
-      <div class="news-export" id="news-export" hidden>
-        <p class="news-export-help">
-          Para valer no envio automático, me mande este JSON (já copiado):
-        </p>
-        <textarea class="news-export-json" id="news-export-json" rows="8" readonly></textarea>
-        <button type="button" class="btn-ghost-sm" id="news-export-copy">Copiar de novo</button>
-      </div>
+      <p class="news-saved-msg" id="news-saved-msg">Configuração salva ✓</p>
+      <!-- O site é estático, então a página não grava o news-config.json que
+           o robô lê. Esta linha avisa quando a escolha salva aqui ainda não
+           foi publicada, em vez de deixar parecer que já está valendo. -->
+      <p class="news-sync-msg" id="news-sync-msg"></p>
     </form>
 
     <div class="news-feed">
@@ -94,8 +87,8 @@
     <a href="index.html" class="hub-back">&larr; Voltar</a>
   </div>
   <footer class="hub-footer">&copy; <span id="year"></span> gaglidom</footer>
-  <script src="script.js?v=202608151123"></script>
-  <script src="noticias.js?v=202608151123"></script>
-  <script src="news-feed.js?v=202608151123"></script>
+  <script src="script.js?v=202608151127"></script>
+  <script src="noticias.js?v=202608151127"></script>
+  <script src="news-feed.js?v=202608151127"></script>
 </body>
 </html>
