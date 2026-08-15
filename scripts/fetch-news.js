@@ -35,9 +35,9 @@ const FEEDS = {
   "Poder360": "https://www.poder360.com.br/feed/",
   "Canaltech": "https://canaltech.com.br/rss/",
   "Exame": "https://exame.com/feed/",
-  "Valor Econômico": "https://www.valor.com.br/feed",
+  "Valor Econômico": "https://valor.globo.com/rss/valor/economia/",
   "Tecmundo": "https://rss.tecmundo.com.br/feed",
-  "UOL": "https://feeds.uol.com.br/economia/ultimas-noticias/",
+  "UOL": "http://www3.uol.com.br/xml/midiaindoor/economia.xml",
   "Brazil Journal": "https://braziljournal.com/feed/",
   "Neofeed": "https://neofeed.com.br/feed/",
   "Suno Notícias": "https://www.suno.com.br/noticias/feed/",
@@ -46,11 +46,9 @@ const FEEDS = {
   "Contigo": "https://contigo.com.br/feed",
   "LeoDias": "https://portalleodias.com/feed/",
   "GE Globo Esporte": "https://ge.globo.com/rss/ge/futebol/",
-  "Estadão": "https://feeds.estadao.com.br/rss/geral",
-  "Money Times": "https://feeds.moneytimes.com.br/",
-  "Seu Dinheiro": "https://feeds.seudinheiro.com.br/",
-  "Bloomberg Línea Brasil": "https://feeds.bloomberglinea.com.br/",
-  "Purepeople": "https://feeds.purepeople.com.br/",
+  // Sem feed RSS público disponível:
+  // - Estadão, Money Times, Seu Dinheiro, Bloomberg Línea Brasil, Purepeople
+  // Ficam na config apenas para referência
 };
 
 // Quais fontes atendem cada categoria (usado só se o usuário filtrar por categoria).
