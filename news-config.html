@@ -7,72 +7,79 @@
   <link rel="stylesheet" href="styles.css" />
   <script src="password-gate.js"></script>
   <style>
-    .config-container {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
     .config-section {
-      background: var(--bg-secondary, #f5f5f5);
-      border-radius: 8px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
     .config-section h3 {
       margin-top: 0;
-      color: var(--color-primary, #0066cc);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
     }
     .form-group {
-      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
     }
     .form-group label {
-      display: block;
+      font-size: 0.9rem;
       margin-bottom: 0.5rem;
-      font-weight: 500;
+      opacity: 0.8;
     }
     .form-group input,
     .form-group select {
-      width: 100%;
-      padding: 0.5rem;
-      border: 1px solid #ccc;
+      padding: 0.75rem;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
       border-radius: 4px;
+      color: white;
       font-size: 1rem;
     }
-    .form-group input[type="number"] {
-      max-width: 150px;
+    .form-group input::placeholder {
+      opacity: 0.5;
     }
-    .sources-grid {
+    .sources-list {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 0.5rem;
-      margin-top: 0.5rem;
+      margin-bottom: 1rem;
     }
-    .source-checkbox {
+    .source-item {
       display: flex;
       align-items: center;
       gap: 0.5rem;
       padding: 0.5rem;
-      background: white;
+      background: rgba(255,255,255,0.05);
       border-radius: 4px;
       cursor: pointer;
-      transition: background 0.2s, color 0.2s;
+      transition: all 0.2s;
     }
-    .source-checkbox input {
-      width: auto;
-      margin: 0;
+    .source-item input {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
     }
-    .source-checkbox input:checked + * {
-      color: #d32f2f;
+    .source-item input:checked ~ label {
+      color: #ff6b6b;
       font-weight: bold;
     }
-    .source-checkbox:has(input:checked) {
-      background: #ffebee;
-      border-left: 4px solid #d32f2f;
+    .source-item:has(input:checked) {
+      background: rgba(255, 107, 107, 0.15);
+      border-left: 3px solid #ff6b6b;
+    }
+    .source-item label {
+      cursor: pointer;
+      flex: 1;
+      margin: 0;
     }
     .button-group {
       display: flex;
       gap: 1rem;
-      margin-top: 1.5rem;
+      margin-top: 2rem;
     }
     .btn {
       padding: 0.75rem 1.5rem;
@@ -80,21 +87,22 @@
       border-radius: 4px;
       font-size: 1rem;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: all 0.3s;
     }
     .btn-primary {
-      background: var(--color-primary, #0066cc);
+      background: #0066cc;
       color: white;
     }
     .btn-primary:hover {
-      background: var(--color-primary-dark, #0052a3);
+      background: #0052a3;
     }
     .btn-secondary {
-      background: #ddd;
-      color: #333;
+      background: transparent;
+      color: #0066cc;
+      border: 1px solid #0066cc;
     }
     .btn-secondary:hover {
-      background: #ccc;
+      background: rgba(0,102,204,0.1);
     }
     .status {
       padding: 1rem;
@@ -104,31 +112,24 @@
     }
     .status.success {
       display: block;
-      background: #d4edda;
-      color: #155724;
-      border: 1px solid #c3e6cb;
+      background: rgba(76, 175, 80, 0.2);
+      color: #4CAF50;
+      border: 1px solid #4CAF50;
     }
     .status.error {
       display: block;
-      background: #f8d7da;
-      color: #721c24;
-      border: 1px solid #f5c6cb;
+      background: rgba(244, 67, 54, 0.2);
+      color: #f44336;
+      border: 1px solid #f44336;
     }
-    .info-text {
-      font-size: 0.9rem;
-      color: #666;
-      margin-top: 0.5rem;
-    }
-    .config-summary {
-      background: #fff3cd;
-      border: 2px solid #ffc107;
-      border-radius: 4px;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-      font-size: 0.95rem;
-    }
-    .config-summary strong {
-      color: #d32f2f;
+    @media (max-width: 600px) {
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .sources-list {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -137,57 +138,48 @@
     <a href="index.html" class="hub-logo">gagli<span>dom</span></a>
     <p class="hub-page-title">📰 Configurar Notícias</p>
 
-    <div class="config-container">
-      <div class="config-summary" id="configSummary">
-        Carregando configuração atual...
+    <form id="configForm" style="max-width: 100%;">
+      <!-- Quantidade e Frequência -->
+      <div class="config-section">
+        <h3>📊 Configurações de Busca</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Quantidade de notícias por busca</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="20" value="2" />
+          </div>
+          <div class="form-group">
+            <label>Frequência de atualização (horas)</label>
+            <input type="number" id="frequency" name="frequency" min="0.5" step="0.5" max="24" value="1" />
+          </div>
+        </div>
       </div>
 
-      <form id="configForm">
-        <!-- Quantidade de notícias -->
-        <div class="config-section">
-          <h3>📊 Quantidade de Notícias</h3>
-          <div class="form-group">
-            <label for="quantity">Notícias por busca:</label>
-            <input type="number" id="quantity" name="quantity" min="1" max="20" value="2" data-default="2" />
-            <p class="info-text">Quantas notícias incluir a cada atualização</p>
-          </div>
-        </div>
+      <!-- Fontes -->
+      <div class="config-section">
+        <h3>📡 Selecione as Fontes</h3>
+        <div class="sources-list" id="sourcesContainer"></div>
+      </div>
 
-        <!-- Frequência -->
-        <div class="config-section">
-          <h3>⏱️ Frequência de Atualização</h3>
-          <div class="form-group">
-            <label for="frequency">Atualizar a cada (horas):</label>
-            <input type="number" id="frequency" name="frequency" min="0.5" step="0.5" max="24" value="1" data-default="1" />
-            <p class="info-text">Intervalo em horas (ex: 0.5 = 30 minutos, 1 = 1 hora)</p>
-          </div>
+      <!-- Keywords -->
+      <div class="config-section">
+        <h3>🔍 Palavras-chave (opcional)</h3>
+        <div class="form-group">
+          <label>Separadas por vírgula</label>
+          <input type="text" id="keywords" name="keywords" placeholder="ex: economia, mercado" />
         </div>
+      </div>
 
-        <!-- Fontes -->
-        <div class="config-section">
-          <h3>📡 Selecione as Fontes</h3>
-          <div id="sourcesContainer" class="sources-grid"></div>
-        </div>
+      <!-- Botões -->
+      <div class="button-group">
+        <button type="submit" class="btn btn-primary">💾 Salvar Configuração</button>
+        <button type="reset" class="btn btn-secondary">🔄 Restaurar</button>
+      </div>
 
-        <!-- Keywords -->
-        <div class="config-section">
-          <h3>🔍 Palavras-chave (opcional)</h3>
-          <div class="form-group">
-            <label for="keywords">Keywords (separadas por vírgula):</label>
-            <input type="text" id="keywords" name="keywords" placeholder="ex: economia, mercado, bolsa" />
-            <p class="info-text">Deixe em branco para incluir todas as notícias</p>
-          </div>
-        </div>
+      <div id="status" class="status"></div>
+    </form>
 
-        <!-- Botões -->
-        <div class="button-group">
-          <button type="submit" class="btn btn-primary">💾 Salvar Configurações</button>
-          <button type="reset" class="btn btn-secondary">🔄 Restaurar</button>
-        </div>
-
-        <div id="status" class="status"></div>
-      </form>
-    </div>
+    <!-- Notícias coletadas -->
+    <div id="newsSection" style="margin-top: 3rem;"></div>
 
     <a href="index.html" class="hub-back">&larr; Voltar</a>
   </div>
@@ -195,28 +187,10 @@
   <script>
     const CONFIG_URL = "news-config.json?" + Date.now();
     const allSources = [
-      "InfoMoney",
-      "G1",
-      "CNN Brasil",
-      "Poder360",
-      "Tecmundo",
-      "Canaltech",
-      "Exame",
-      "Estadão",
-      "UOL",
-      "Valor Econômico",
-      "Money Times",
-      "Brazil Journal",
-      "Neofeed",
-      "Suno Notícias",
-      "Seu Dinheiro",
-      "Bloomberg Línea Brasil",
-      "Folha de S.Paulo",
-      "Quem (Globo)",
-      "Purepeople",
-      "Contigo",
-      "LeoDias",
-      "GE Globo Esporte",
+      "InfoMoney", "G1", "CNN Brasil", "Poder360", "Tecmundo", "Canaltech",
+      "Exame", "Estadão", "UOL", "Valor Econômico", "Money Times", "Brazil Journal",
+      "Neofeed", "Suno Notícias", "Seu Dinheiro", "Bloomberg Línea Brasil",
+      "Folha de S.Paulo", "Quem (Globo)", "Purepeople", "Contigo", "LeoDias", "GE Globo Esporte"
     ];
 
     function renderSources(selectedSources) {
@@ -225,94 +199,74 @@
 
       allSources.forEach((source) => {
         const isSelected = selectedSources.includes(source);
-        const label = document.createElement("label");
-        label.className = "source-checkbox";
+
+        const label = document.createElement("div");
+        label.className = "source-item";
 
         const checkbox = document.createElement("input");
         checkbox.type = "checkbox";
+        checkbox.id = `source-${source}`;
         checkbox.value = source;
         checkbox.checked = isSelected;
 
+        const labelEl = document.createElement("label");
+        labelEl.htmlFor = `source-${source}`;
+        labelEl.textContent = source;
+
         label.appendChild(checkbox);
-        label.appendChild(document.createTextNode(source));
+        label.appendChild(labelEl);
         container.appendChild(label);
       });
     }
 
-    function showConfigSummary(config) {
-      const summary = document.getElementById("configSummary");
-      const quantity = config.quantity || 2;
-      const frequency = config.frequency || 1;
-      const sources = config.sources || [];
-      const keywords = config.keywords || [];
-
-      summary.innerHTML = `
-        <strong>📋 Configuração Atual:</strong><br>
-        📊 Notícias por busca: <strong style="color: #d32f2f;">${quantity}</strong><br>
-        ⏱️ Frequência: A cada <strong style="color: #d32f2f;">${frequency} hora(s)</strong><br>
-        📡 Fontes ativas: <strong style="color: #d32f2f;">${sources.length}</strong><br>
-        🔍 Keywords: ${keywords.length > 0 ? '<strong style="color: #d32f2f;">' + keywords.join(", ") + "</strong>" : "nenhuma"}
-      `;
-    }
-
     async function loadConfig() {
-      const defaultConfig = {
-        quantity: 2,
-        frequency: 1,
-        sources: allSources,
-        keywords: []
-      };
-
       try {
-        console.log("Tentando carregar de:", CONFIG_URL);
         const response = await fetch(CONFIG_URL);
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const config = await response.json();
 
-        console.log("✅ Config carregada:", config);
-        console.log("Quantidade:", config.quantity, "Frequência:", config.frequency);
+        document.getElementById("quantity").value = config.quantity || 2;
+        document.getElementById("frequency").value = config.frequency || 1;
+        document.getElementById("keywords").value = (config.keywords || []).join(", ");
 
-        // Usar config carregada ou valores padrão
-        const finalConfig = {
-          quantity: config.quantity || 2,
-          frequency: config.frequency || 1,
-          sources: (config.sources && config.sources.length > 0) ? config.sources : allSources,
-          keywords: config.keywords || []
-        };
-
-        // Mostrar resumo
-        showConfigSummary(finalConfig);
-
-        // Carregar valores NO DOM
-        const qtyInput = document.getElementById("quantity");
-        const freqInput = document.getElementById("frequency");
-        const keyInput = document.getElementById("keywords");
-
-        qtyInput.value = finalConfig.quantity;
-        freqInput.value = finalConfig.frequency;
-        keyInput.value = finalConfig.keywords.join(", ");
-
-        console.log("✅ DOM atualizado - Qty:", qtyInput.value, "Freq:", freqInput.value);
-
-        renderSources(finalConfig.sources);
-
-        // Trigger render para mostrar estilos
-        setTimeout(() => {
-          document.querySelectorAll(".source-checkbox input").forEach(input => {
-            input.dispatchEvent(new Event("change", { bubbles: true }));
-          });
-        }, 100);
+        renderSources(config.sources || allSources);
       } catch (err) {
-        console.error("❌ Erro ao carregar:", err);
-        console.log("Usando valores padrão:", defaultConfig);
+        console.error("Erro:", err);
+        document.getElementById("quantity").value = 2;
+        document.getElementById("frequency").value = 1;
+        renderSources(allSources);
+      }
+    }
 
-        // Carregar valores padrão
-        document.getElementById("quantity").value = defaultConfig.quantity;
-        document.getElementById("frequency").value = defaultConfig.frequency;
-        document.getElementById("keywords").value = "";
+    async function loadNews() {
+      try {
+        const response = await fetch("news/news.json");
+        const data = await response.json();
 
-        showConfigSummary(defaultConfig);
-        renderSources(defaultConfig.sources);
+        const newsSection = document.getElementById("newsSection");
+        if (data.articles && data.articles.length > 0) {
+          let html = `<p><strong>Notícias coletadas (últimas 96h)</strong> — Atualizado há <span id="updateTime">-</span></p>`;
+
+          data.articles.slice(0, 5).forEach(article => {
+            html += `
+              <a href="${article.link}" target="_blank" class="hub-back" style="display: block; margin-bottom: 0.5rem;">
+                <span style="color: #0066cc;">${article.source}</span><br>
+                ${article.title}
+              </a>
+            `;
+          });
+
+          newsSection.innerHTML = html;
+
+          // Calcular tempo desde atualização
+          const lastUpdate = new Date(data.updatedAt);
+          const now = new Date();
+          const diffMin = Math.floor((now - lastUpdate) / 60000);
+          const timeStr = diffMin < 60 ? `${diffMin} min` : `${Math.floor(diffMin/60)}h`;
+          document.getElementById("updateTime").textContent = timeStr;
+        }
+      } catch (err) {
+        console.error("Erro ao carregar notícias:", err);
       }
     }
 
@@ -321,48 +275,45 @@
 
       const quantity = parseInt(document.getElementById("quantity").value) || 2;
       const frequency = parseFloat(document.getElementById("frequency").value) || 1;
-      const keywords = document
-        .getElementById("keywords")
-        .value.split(",")
-        .map((k) => k.trim())
-        .filter((k) => k);
+      const keywords = document.getElementById("keywords").value
+        .split(",").map(k => k.trim()).filter(k => k);
 
-      const selectedSources = Array.from(document.querySelectorAll(".source-checkbox input:checked")).map(
-        (input) => input.value
-      );
+      const selectedSources = Array.from(document.querySelectorAll(".source-item input:checked"))
+        .map(input => input.value);
 
       const config = {
         sources: selectedSources,
         categories: [],
         keywords: keywords,
         quantity: quantity,
-        frequency: frequency,
+        frequency: frequency
       };
 
       try {
-        const response = await fetch(CONFIG_URL, {
+        const response = await fetch(CONFIG_URL.split("?")[0], {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(config),
+          body: JSON.stringify(config)
         });
 
         const status = document.getElementById("status");
         if (response.ok || response.status === 200) {
           status.className = "status success";
-          status.textContent = `✅ Configuração salva! ${selectedSources.length} fontes, ${quantity} notícias a cada ${frequency}h`;
-          setTimeout(() => (status.style.display = "none"), 3000);
+          status.textContent = `✅ Salvo! ${quantity} notícia(s) a cada ${frequency}h com ${selectedSources.length} fontes`;
+          setTimeout(() => status.style.display = "none", 3000);
         } else {
           status.className = "status error";
-          status.textContent = "❌ Erro ao salvar. Tente novamente.";
+          status.textContent = "❌ Erro ao salvar";
         }
       } catch (err) {
         const status = document.getElementById("status");
         status.className = "status error";
-        status.textContent = `❌ Erro: ${err.message}`;
+        status.textContent = `❌ ${err.message}`;
       }
     });
 
     loadConfig();
+    loadNews();
   </script>
 </body>
 </html>
