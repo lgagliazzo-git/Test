@@ -424,6 +424,11 @@ function importTsv(text) {
 // nova, e quem limpava os dados do navegador perdia as edições. Agora só as
 // alterações são guardadas, e elas são reaplicadas sobre o arquivo publicado.
 function persist() {
+  gravarEdicoes();
+  atualizarEstadoSalvar();
+}
+
+function gravarEdicoes() {
   const base = new Map(publicados.map((w) => [w._chave, w]));
   const edicoes = {};
   const novos = [];
@@ -449,6 +454,134 @@ function persist() {
     EDITS_KEY,
     JSON.stringify({ updatedAt: new Date().toISOString(), edicoes, novos, removidos })
   );
+}
+
+// ---------- Salvar de verdade (grava o wines.json no repositório) ----------
+
+const REPO = {
+  owner: "lgagliazzo-git",
+  repo: "Test",
+  branch: "claude/landing-page-domain-esf6bn",
+  path: "adega/wines.json",
+};
+const TOKEN_KEY = "gaglidom_github_token";
+
+// btoa só aceita bytes; os nomes têm acento, então codifica em UTF-8 antes.
+function paraBase64(texto) {
+  const bytes = new TextEncoder().encode(texto);
+  let binario = "";
+  for (const b of bytes) binario += String.fromCharCode(b);
+  return btoa(binario);
+}
+
+function pedirToken(motivo) {
+  const atual = localStorage.getItem(TOKEN_KEY) || "";
+  const token = prompt(
+    `${motivo}\n\nCole aqui o token do GitHub (fica guardado só neste aparelho):`,
+    atual
+  );
+  if (token === null) return null;
+  const limpo = token.trim();
+  if (!limpo) return null;
+  localStorage.setItem(TOKEN_KEY, limpo);
+  return limpo;
+}
+
+async function chamarGitHub(caminho, opcoes, token) {
+  return fetch(`https://api.github.com/repos/${REPO.owner}/${REPO.repo}${caminho}`, {
+    ...opcoes,
+    headers: {
+      Accept: "application/vnd.github+json",
+      Authorization: `Bearer ${token}`,
+      ...(opcoes.headers || {}),
+    },
+  });
+}
+
+function estadoSalvar(texto, tipo = "") {
+  const el = document.getElementById("adega-save-estado");
+  el.textContent = texto;
+  el.className = `adega-salvar-estado${tipo ? ` is-${tipo}` : ""}`;
+}
+
+function temAlteracoes() {
+  try {
+    const g = JSON.parse(localStorage.getItem(EDITS_KEY) || "null");
+    if (!g) return false;
+    return Object.keys(g.edicoes || {}).length > 0 || (g.novos || []).length > 0 || (g.removidos || []).length > 0;
+  } catch {
+    return false;
+  }
+}
+
+function atualizarEstadoSalvar() {
+  const botao = document.getElementById("adega-save");
+  if (temAlteracoes()) {
+    botao.disabled = false;
+    estadoSalvar("Há alterações salvas só neste aparelho. Clique para publicar no site.", "pendente");
+  } else {
+    botao.disabled = true;
+    estadoSalvar("Nada para salvar — o que está na tela já é o que está publicado.");
+  }
+}
+
+async function salvarNoSite() {
+  const botao = document.getElementById("adega-save");
+  let token = localStorage.getItem(TOKEN_KEY);
+  if (!token) {
+    token = pedirToken("Para salvar no site é preciso um token do GitHub com permissão de escrita neste repositório.");
+    if (!token) return;
+  }
+
+  botao.disabled = true;
+  estadoSalvar("Salvando...");
+
+  const conteudo = JSON.stringify(
+    { updatedAt: new Date().toISOString(), wines: wines.map(({ _chave, ...w }) => w) },
+    null,
+    2
+  );
+
+  try {
+    // O sha da versão atual é obrigatório para o GitHub aceitar a gravação,
+    // e é o que impede sobrescrever uma alteração feita por outro aparelho.
+    const atual = await chamarGitHub(`/contents/${REPO.path}?ref=${REPO.branch}`, {}, token);
+    if (atual.status === 401) {
+      localStorage.removeItem(TOKEN_KEY);
+      estadoSalvar("Token inválido ou expirado. Clique de novo para informar outro.", "erro");
+      botao.disabled = false;
+      return;
+    }
+    if (!atual.ok) throw new Error(`não consegui ler o arquivo publicado (HTTP ${atual.status})`);
+    const { sha } = await atual.json();
+
+    const gravou = await chamarGitHub(
+      `/contents/${REPO.path}`,
+      {
+        method: "PUT",
+        body: JSON.stringify({
+          message: "Atualiza a adega pela tela",
+          content: paraBase64(conteudo),
+          sha,
+          branch: REPO.branch,
+        }),
+      },
+      token
+    );
+
+    if (gravou.status === 409) throw new Error("o arquivo mudou enquanto você editava; recarregue a página e tente de novo");
+    if (gravou.status === 403) throw new Error("o token não tem permissão de escrita neste repositório");
+    if (!gravou.ok) throw new Error(`HTTP ${gravou.status}`);
+
+    // Publicado: o que era alteração local agora é o próprio arquivo.
+    publicados = wines.map((w) => ({ ...w }));
+    localStorage.removeItem(EDITS_KEY);
+    localStorage.removeItem(STORAGE_KEY);
+    estadoSalvar("Salvo. Em cerca de um minuto aparece em qualquer aparelho.", "ok");
+  } catch (err) {
+    estadoSalvar(`Não consegui salvar: ${err.message}`, "erro");
+    botao.disabled = false;
+  }
 }
 
 // Nomes se repetem no catálogo (duas Villa Antinori 2022, duas Sessantanni),
@@ -539,7 +672,10 @@ async function load() {
 
   fillFilterOptions();
   render();
+  atualizarEstadoSalvar();
 }
+
+document.getElementById("adega-save").addEventListener("click", salvarNoSite);
 
 document.querySelectorAll("th[data-sort]").forEach((th) => {
   th.addEventListener("click", () => {

@@ -654,6 +654,32 @@ body.no-scroll {
   height: 74px;
 }
 
+.adega-salvar {
+  margin: 24px 0 8px;
+  text-align: center;
+}
+
+.adega-salvar-estado {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-top: 10px;
+}
+
+.adega-salvar-estado.is-pendente {
+  color: #ff8a8a;
+  opacity: 1;
+}
+
+.adega-salvar-estado.is-ok {
+  color: #6bd18a;
+  opacity: 1;
+}
+
+.adega-salvar-estado.is-erro {
+  color: #ff6b6b;
+  opacity: 1;
+}
+
 /* Rótulo lido por leitores de tela, invisível na página. */
 .sr-only {
   position: absolute;

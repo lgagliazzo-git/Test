@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>gaglidom · Adega</title>
-  <link rel="stylesheet" href="styles.css?v=202608152041" />
-  <script src="password-gate.js?v=202608152041"></script>
+  <link rel="stylesheet" href="styles.css?v=202608152047" />
+  <script src="password-gate.js?v=202608152047"></script>
 </head>
 <body>
   <div class="hub hub-full">
@@ -108,6 +108,13 @@
       </p>
     </div>
 
+    <!-- Salvar de verdade: grava o wines.json no repositório, então a
+         alteração passa a valer em qualquer aparelho, e não só neste. -->
+    <div class="adega-salvar">
+      <button type="button" id="adega-save" class="btn btn-primary btn-lg">Salvar alterações no site</button>
+      <p class="adega-salvar-estado" id="adega-save-estado"></p>
+    </div>
+
     <a href="index.html" class="hub-back">&larr; Voltar</a>
   </div>
 
@@ -117,7 +124,7 @@
     <p class="adega-zoom-caption" id="adega-zoom-caption"></p>
   </div>
   <footer class="hub-footer">&copy; <span id="year"></span> gaglidom</footer>
-  <script src="script.js?v=202608152041"></script>
-  <script src="adega.js?v=202608152041"></script>
+  <script src="script.js?v=202608152047"></script>
+  <script src="adega.js?v=202608152047"></script>
 </body>
 </html>
