@@ -654,6 +654,56 @@ body.no-scroll {
   height: 74px;
 }
 
+/* Rótulo lido por leitores de tela, invisível na página. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Coluna da lixeira: discreta na tabela, e no formato de cartão vira um
+   botão alinhado à direita, sem o rótulo que os outros campos exibem. */
+.adega-th-del {
+  width: 40px;
+}
+
+.adega-td-del {
+  text-align: center;
+}
+
+.adega-del-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 4px 6px;
+  border-radius: 6px;
+  opacity: 0.45;
+  transition: opacity 0.15s, background 0.15s;
+}
+
+.adega-del-btn:hover,
+.adega-del-btn:focus-visible {
+  opacity: 1;
+  background: rgba(180, 69, 63, 0.25);
+}
+
+.adega-table-wrap.is-list .adega-td-del {
+  justify-content: flex-end;
+  padding-top: 8px;
+}
+
+.adega-table-wrap.is-list .adega-td-del::before {
+  content: none;
+}
+
 .adega-view-switch {
   display: inline-flex;
   border: 1px solid var(--color-border);

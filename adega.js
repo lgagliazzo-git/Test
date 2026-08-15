@@ -247,7 +247,7 @@ function renderSummary(visible) {
          <td class="adega-td-num">${fmtMoney(totalPaid, "BRL")}</td>
          <td class="adega-td-num">—</td>
          <td class="adega-td-num">${avgRating || "—"}</td>
-         <td colspan="3">—</td>
+         <td colspan="4">—</td>
        </tr>`
     : "";
 }
@@ -301,6 +301,10 @@ function render() {
           <td data-label="Data de fabricação">${escapeHtml(w.vintage) || "—"}</td>
           <td class="adega-td-grape" data-label="Tipo de uva">${escapeHtml(w.grape) || "—"}</td>
           <td class="adega-td-origin" data-label="Origem">${escapeHtml(w.origin) || "—"}</td>
+          <td class="adega-td-del">
+            <button type="button" class="adega-del-btn" data-del="${escapeHtml(w.name)}"
+                    title="Excluir ${escapeHtml(w.name)}" aria-label="Excluir ${escapeHtml(w.name)}">🗑</button>
+          </td>
         </tr>`
     )
     .join("");
@@ -335,47 +339,7 @@ function render() {
 
 function applyView(view) {
   document.getElementById("adega-table-wrap").classList.toggle("is-list", view === "list");
-  // As fotos são recriadas a cada render, então o clique é escutado no
-// corpo da tabela em vez de em cada botão.
-document.getElementById("adega-body").addEventListener("click", (e) => {
-  const btn = e.target.closest(".adega-photo-btn");
-  if (btn) openZoom(btn.dataset.zoom, btn.dataset.name);
-});
-
-// Só o resumo é recalculado enquanto digita — um render completo
-// recriaria o input e o cursor sairia do campo.
-document.getElementById("adega-body").addEventListener("input", (e) => {
-  const input = e.target.closest(".adega-cell-input");
-  if (!input) return;
-  const wine = wines.find((w) => w.name === input.dataset.name);
-  if (!wine) return;
-  const campo = input.dataset.field;
-  wine[campo] = parseNumber(input.value);
-  // Valor digitado deixa de ser estimativa: tira o vermelho na hora, sem
-  // re-renderizar a linha (isso apagaria o cursor no meio da digitação).
-  if (campo === "priceBR" && wine.priceBREstimado) {
-    delete wine.priceBREstimado;
-    input.classList.remove("is-estimado");
-  }
-  renderSummary(wines.filter((w) => matches(w, document.getElementById("adega-search").value.trim().toLowerCase()) && passesFilters(w, currentFilters())));
-});
-
-document.getElementById("adega-body").addEventListener("change", (e) => {
-  if (e.target.closest(".adega-cell-input")) persist();
-});
-
-document.getElementById("adega-zoom-close").addEventListener("click", closeZoom);
-
-document.getElementById("adega-zoom").addEventListener("click", (e) => {
-  // Clicar fora da imagem fecha; clicar nela, não.
-  if (e.target.id === "adega-zoom") closeZoom();
-});
-
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && !document.getElementById("adega-zoom").hidden) closeZoom();
-});
-
-document.querySelectorAll(".adega-view-btn").forEach((btn) => {
+  document.querySelectorAll(".adega-view-btn").forEach((btn) => {
     btn.setAttribute("aria-pressed", String(btn.dataset.view === view));
   });
 }
@@ -530,6 +494,20 @@ document.getElementById("adega-search").addEventListener("input", render);
 document.getElementById("adega-body").addEventListener("click", (e) => {
   const btn = e.target.closest(".adega-photo-btn");
   if (btn) openZoom(btn.dataset.zoom, btn.dataset.name);
+
+  // Excluir é irreversível pelo site (o wines.json publicado não muda),
+  // então confirma antes de tirar a garrafa da lista.
+  const del = e.target.closest(".adega-del-btn");
+  if (del) {
+    const nome = del.dataset.del;
+    if (!confirm(`Excluir "${nome}" da adega?`)) return;
+    const i = wines.findIndex((w) => w.name === nome);
+    if (i === -1) return;
+    wines.splice(i, 1);
+    persist();
+    render();
+    flash(`"${nome}" excluído.`);
+  }
 });
 
 // Só o resumo é recalculado enquanto digita — um render completo
