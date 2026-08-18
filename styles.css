@@ -290,6 +290,20 @@ a.hub-bullet:hover {
   overflow-wrap: anywhere;
 }
 
+/* A harmonização é a coluna mais longa da tabela; sem largura máxima ela
+   sozinha estica a linha inteira. */
+.adega-table td.adega-td-pairing {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  max-width: 220px;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.adega-table-wrap.is-list .adega-td-pairing {
+  font-size: 0.85rem;
+}
+
 .adega-th-num,
 .adega-td-num {
   text-align: right;
