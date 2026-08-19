@@ -189,12 +189,15 @@ a.hub-bullet:hover {
   background: var(--color-surface);
 }
 
-/* table-layout fixed é o que faz o texto QUEBRAR em vez de vazar por cima
-   da coluna vizinha: com layout automático, max-width em célula é só uma
-   sugestão e o conteúdo transborda. Com layout fixo as larguras abaixo
-   valem de verdade e a tabela inteira cabe no card sem rolagem. */
+/* table-layout: fixed faz o texto QUEBRAR em vez de vazar por cima da
+   coluna vizinha, e é o que dá validade às larguras por coluna abaixo.
+   As larguras vão nos th porque, com layout fixo, é a primeira linha da
+   tabela que define as colunas. A soma delas é o min-width: assim a
+   tabela cabe inteira no container de 1200px do desktop e o wrapper rola
+   na horizontal no celular, em vez de espremer 13 colunas em 390px. */
 .adega-table {
   width: 100%;
+  min-width: 1150px; /* soma das larguras por coluna abaixo */
   table-layout: fixed;
   border-collapse: collapse;
   text-align: left;
@@ -202,16 +205,18 @@ a.hub-bullet:hover {
 }
 
 .adega-table th.adega-th-photo { width: 56px; }
-.adega-table th[data-sort="name"] { width: 170px; }
-.adega-table th[data-sort="country"] { width: 90px; }
-.adega-table th[data-sort="vintage"] { width: 110px; }
-.adega-table th[data-sort="grape"] { width: 130px; }
-.adega-table th[data-sort="origin"] { width: 150px; }
-.adega-table th[data-sort="quantity"] { width: 78px; }
-.adega-table th[data-sort="priceBR"] { width: 96px; }
-.adega-table th[data-sort="pricePaid"] { width: 96px; }
-.adega-table th[data-sort="priceUSD"] { width: 96px; }
-.adega-table th[data-sort="rating"] { width: 72px; }
+.adega-table th[data-sort="name"] { width: 138px; }
+.adega-table th[data-sort="country"] { width: 76px; }
+.adega-table th[data-sort="vintage"] { width: 100px; }
+.adega-table th[data-sort="grape"] { width: 106px; }
+.adega-table th[data-sort="origin"] { width: 98px; }
+.adega-table th[data-sort="quantity"] { width: 68px; }
+.adega-table th[data-sort="priceBR"] { width: 92px; }
+.adega-table th[data-sort="pricePaid"] { width: 92px; }
+.adega-table th[data-sort="priceUSD"] { width: 92px; }
+.adega-table th[data-sort="rating"] { width: 50px; }
+.adega-table th[data-sort="pairing"] { width: 142px; }
+.adega-table th.adega-th-del { width: 40px; }
 
 .adega-table th,
 .adega-table td {
@@ -290,12 +295,11 @@ a.hub-bullet:hover {
   overflow-wrap: anywhere;
 }
 
-/* A harmonização é a coluna mais longa da tabela; sem largura máxima ela
-   sozinha estica a linha inteira. */
+/* Quebra só entre palavras: "anywhere" partia "Frutos do mar" no meio das
+   letras quando a coluna era estreita. */
 .adega-table td.adega-td-pairing {
   white-space: normal;
-  overflow-wrap: anywhere;
-  max-width: 220px;
+  overflow-wrap: break-word;
   font-size: 0.85rem;
   color: var(--color-text-muted);
 }
@@ -606,6 +610,13 @@ body.no-scroll {
   width: 100%;
 }
 
+/* No cartão a linha empilha, então o min-width da tabela precisa sair —
+   senão o celular ganha rolagem horizontal. As larguras por coluna já são
+   anuladas pelo width: 100% da regra acima. */
+.adega-table-wrap.is-list .adega-table {
+  min-width: 0;
+}
+
 .adega-table-wrap.is-list thead {
   display: none;
 }
@@ -709,10 +720,6 @@ body.no-scroll {
 
 /* Coluna da lixeira: discreta na tabela, e no formato de cartão vira um
    botão alinhado à direita, sem o rótulo que os outros campos exibem. */
-.adega-th-del {
-  width: 40px;
-}
-
 .adega-td-del {
   text-align: center;
 }
@@ -1188,15 +1195,19 @@ body.no-scroll {
 
 /* Campos digitáveis dentro da linha (quantidade e preço pago). */
 .adega-cell-input {
-  width: 64px;
+  width: 76px;
   background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: 6px;
-  padding: 5px 8px;
+  padding: 5px 6px;
   color: var(--color-text);
   font-family: inherit;
   font-size: 0.9rem;
   text-align: right;
+}
+
+.adega-cell-input[data-field="quantity"] {
+  width: 44px;
 }
 
 .adega-cell-input:focus {
