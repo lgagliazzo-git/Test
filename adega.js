@@ -543,7 +543,10 @@ async function salvarNoSite() {
   const botao = document.getElementById("adega-save");
   let token = localStorage.getItem(TOKEN_KEY);
   if (!token) {
-    token = pedirToken("Para salvar no site é preciso um token do GitHub com permissão de escrita neste repositório.");
+    token = pedirToken(
+      "Para salvar é preciso um token do GitHub (fine-grained) com acesso ao " +
+        `repositório ${REPO.owner}/${REPO.repo} e permissão Contents: Read and write.`
+    );
     if (!token) return;
   }
 
