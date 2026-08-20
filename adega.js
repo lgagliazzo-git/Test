@@ -313,11 +313,11 @@ function render() {
           <td class="adega-td-num" data-label="Preço pago">${editableCell(w, "pricePaid")}</td>
           <td class="adega-td-num" data-label="Preço origem">${cellValue(w, "priceUSD")}</td>
           <td class="adega-td-num" data-label="Nota">${cellValue(w, "rating")}</td>
-          <td class="adega-td-num" data-label="Álcool">${editableCell(w, "abv")}</td>
           <td data-label="Data de fabricação">${escapeHtml(w.vintage) || "—"}</td>
           <td class="adega-td-grape" data-label="Tipo de uva">${escapeHtml(w.grape) || "—"}</td>
           <td class="adega-td-origin" data-label="Origem">${escapeHtml(w.origin) || "—"}</td>
           <td class="adega-td-pairing" data-label="Harmoniza com">${escapeHtml(w.pairing) || "—"}</td>
+          <td class="adega-td-num adega-td-abv" data-label="Álcool">${editableCell(w, "abv")}<span class="adega-abv-sufixo">%</span></td>
           <td class="adega-td-del">
             <button type="button" class="adega-del-btn" data-del="${escapeHtml(w.name)}"
                     title="Excluir ${escapeHtml(w.name)}" aria-label="Excluir ${escapeHtml(w.name)}">🗑</button>

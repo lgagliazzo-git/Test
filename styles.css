@@ -216,8 +216,8 @@ a.hub-bullet:hover {
 .adega-table th[data-sort="pricePaid"] { width: 92px; }
 .adega-table th[data-sort="priceUSD"] { width: 92px; }
 .adega-table th[data-sort="rating"] { width: 56px; }
-.adega-table th[data-sort="abv"] { width: 86px; }
-.adega-table th[data-sort="pairing"] { width: 141px; }
+.adega-table th[data-sort="abv"] { width: 100px; }
+.adega-table th[data-sort="pairing"] { width: 127px; }
 .adega-table th.adega-th-del { width: 40px; }
 
 .adega-table th,
@@ -1235,6 +1235,16 @@ body.no-scroll {
 
 .adega-cell-input.is-estimado:focus {
   border-color: var(--color-primary);
+}
+
+.adega-td-abv {
+  white-space: nowrap;
+}
+
+.adega-abv-sufixo {
+  margin-left: 4px;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
 }
 
 .hub-versao {
