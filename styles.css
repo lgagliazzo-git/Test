@@ -216,7 +216,7 @@ a.hub-bullet:hover {
 .adega-table th[data-sort="pricePaid"] { width: 92px; }
 .adega-table th[data-sort="priceUSD"] { width: 92px; }
 .adega-table th[data-sort="rating"] { width: 56px; }
-.adega-table th[data-sort="abv"] { width: 100px; }
+.adega-table th.adega-th-abv { width: 100px; }
 .adega-table th[data-sort="pairing"] { width: 127px; }
 .adega-table th.adega-th-del { width: 40px; }
 
@@ -1237,7 +1237,12 @@ body.no-scroll {
   border-color: var(--color-primary);
 }
 
-.adega-td-abv {
+/* Título e valor centralizados na mesma coluna: alinhado à direita, o
+   título "Álcool" ficava deslocado do campo e parecia pertencer à coluna
+   vizinha numa tela estreita. */
+.adega-table th.adega-th-abv,
+.adega-table td.adega-td-abv {
+  text-align: center;
   white-space: nowrap;
 }
 
