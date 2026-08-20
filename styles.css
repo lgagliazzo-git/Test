@@ -194,7 +194,7 @@ a.hub-bullet:hover {
    coluna vizinha, e é o que dá validade às larguras por coluna abaixo.
    As larguras vão nos th porque, com layout fixo, é a primeira linha da
    tabela que define as colunas. A soma delas é o min-width: assim a
-   tabela cabe inteira no container de 1200px do desktop e o wrapper rola
+   tabela cabe inteira no container do desktop e o wrapper rola
    na horizontal no celular, em vez de espremer 14 colunas em 390px. */
 .adega-table {
   width: 100%;
@@ -1235,4 +1235,9 @@ body.no-scroll {
 
 .adega-cell-input.is-estimado:focus {
   border-color: var(--color-primary);
+}
+
+.hub-versao {
+  opacity: 0.55;
+  font-variant-numeric: tabular-nums;
 }
