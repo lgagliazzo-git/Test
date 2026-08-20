@@ -512,6 +512,19 @@ async function chamarGitHub(caminho, opcoes, token) {
   });
 }
 
+// O corpo do erro do GitHub costuma dizer exatamente o que está errado
+// ("Resource not accessible by personal access token", "Branch not found").
+// Sem isso a tela mostrava só o código HTTP, que não ajuda a resolver.
+async function motivoDoErro(resposta) {
+  try {
+    const corpo = await resposta.json();
+    if (corpo && corpo.message) return `${corpo.message} (HTTP ${resposta.status})`;
+  } catch {
+    /* resposta sem JSON */
+  }
+  return `HTTP ${resposta.status}`;
+}
+
 function estadoSalvar(texto, tipo = "") {
   const el = document.getElementById("adega-save-estado");
   el.textContent = texto;
@@ -569,7 +582,13 @@ async function salvarNoSite() {
       botao.disabled = false;
       return;
     }
-    if (!atual.ok) throw new Error(`não consegui ler o arquivo publicado (HTTP ${atual.status})`);
+    if (atual.status === 404) {
+      throw new Error(
+        `o token não enxerga ${REPO.owner}/${REPO.repo}. Confira se ele foi criado para esse ` +
+          "repositório e com a permissão Contents: Read and write"
+      );
+    }
+    if (!atual.ok) throw new Error(`não consegui ler o arquivo publicado — ${await motivoDoErro(atual)}`);
     const { sha } = await atual.json();
 
     const gravou = await chamarGitHub(
@@ -587,8 +606,10 @@ async function salvarNoSite() {
     );
 
     if (gravou.status === 409) throw new Error("o arquivo mudou enquanto você editava; recarregue a página e tente de novo");
-    if (gravou.status === 403) throw new Error("o token não tem permissão de escrita neste repositório");
-    if (!gravou.ok) throw new Error(`HTTP ${gravou.status}`);
+    if (gravou.status === 403 || gravou.status === 404) {
+      throw new Error(`o token não tem permissão de escrita aqui — ${await motivoDoErro(gravou)}`);
+    }
+    if (!gravou.ok) throw new Error(await motivoDoErro(gravou));
 
     // Publicado: o que era alteração local agora é o próprio arquivo.
     publicados = wines.map((w) => ({ ...w }));
@@ -596,7 +617,11 @@ async function salvarNoSite() {
     localStorage.removeItem(STORAGE_KEY);
     estadoSalvar("Salvo. Em cerca de um minuto aparece em qualquer aparelho.", "ok");
   } catch (err) {
-    estadoSalvar(`Não consegui salvar: ${err.message}`, "erro");
+    const msg =
+      err instanceof TypeError
+        ? "não consegui falar com o GitHub (sem internet, ou a conexão foi bloqueada)"
+        : err.message;
+    estadoSalvar(`Não consegui salvar: ${msg}`, "erro");
     botao.disabled = false;
   }
 }
