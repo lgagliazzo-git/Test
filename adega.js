@@ -543,6 +543,9 @@ function temAlteracoes() {
 
 function atualizarEstadoSalvar() {
   const botao = document.getElementById("adega-save");
+  // Só faz sentido trocar o que já existe; sem token guardado, quem pede é
+  // o próprio botão de salvar.
+  document.getElementById("adega-trocar-token").hidden = !localStorage.getItem(TOKEN_KEY);
   if (temAlteracoes()) {
     botao.disabled = false;
     estadoSalvar("Há alterações salvas só neste aparelho. Clique para publicar no site.", "pendente");
@@ -718,6 +721,16 @@ async function load() {
 }
 
 document.getElementById("adega-save").addEventListener("click", salvarNoSite);
+
+document.getElementById("adega-trocar-token").addEventListener("click", () => {
+  localStorage.removeItem(TOKEN_KEY);
+  const novo = pedirToken(
+    "Informe outro token do GitHub (fine-grained) com acesso ao " +
+      `repositório ${REPO.owner}/${REPO.repo} e permissão Contents: Read and write.`
+  );
+  atualizarEstadoSalvar();
+  if (novo) estadoSalvar("Token trocado. Clique em salvar para tentar de novo.");
+});
 
 document.querySelectorAll("th[data-sort]").forEach((th) => {
   th.addEventListener("click", () => {
