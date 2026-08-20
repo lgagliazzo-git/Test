@@ -1251,3 +1251,23 @@ body.no-scroll {
   opacity: 0.55;
   font-variant-numeric: tabular-nums;
 }
+
+.aviso-versao {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  z-index: 50;
+  max-width: calc(100% - 32px);
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 0.9rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.aviso-versao a {
+  color: #fff;
+  font-weight: 700;
+}
