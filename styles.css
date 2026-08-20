@@ -1276,3 +1276,36 @@ body.no-scroll {
   color: #fff;
   font-weight: 700;
 }
+
+.adega-salvar-ajuda {
+  max-width: 620px;
+  margin: 12px auto 0;
+  text-align: left;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.adega-salvar-ajuda summary {
+  cursor: pointer;
+  color: var(--color-accent);
+  text-align: center;
+}
+
+.adega-salvar-ajuda p,
+.adega-salvar-ajuda ol {
+  margin-top: 10px;
+}
+
+.adega-salvar-ajuda ol {
+  padding-left: 20px;
+}
+
+.adega-salvar-ajuda li {
+  margin-bottom: 4px;
+}
+
+.adega-salvar-ajuda code {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1px 5px;
+  border-radius: 4px;
+}

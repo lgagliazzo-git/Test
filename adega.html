@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>gaglidom · Adega</title>
-  <link rel="stylesheet" href="styles.css?v=202608201601" />
-  <script src="password-gate.js?v=202608201601"></script>
+  <link rel="stylesheet" href="styles.css?v=202608201615" />
+  <script src="password-gate.js?v=202608201615"></script>
 </head>
 <body>
   <div class="hub hub-full">
@@ -117,6 +117,29 @@
     <div class="adega-salvar">
       <button type="button" id="adega-save" class="btn btn-primary btn-lg">Salvar alterações no site</button>
       <p class="adega-salvar-estado" id="adega-save-estado"></p>
+      <details class="adega-salvar-ajuda">
+        <summary>Como salvar de verdade (primeira vez em cada aparelho)</summary>
+        <p>
+          O site é estático, então a página só consegue gravar o catálogo usando um
+          token de acesso seu. Na primeira vez que você clicar em salvar neste aparelho,
+          ela vai pedir o token. Para criar:
+        </p>
+        <ol>
+          <li>
+            Abra
+            <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">
+              github.com/settings/personal-access-tokens/new</a>.
+          </li>
+          <li>Em <strong>Repository access</strong>, escolha <em>Only select repositories</em> e marque <code>lgagliazzo-git/Test</code>.</li>
+          <li>Em <strong>Permissions → Repository permissions → Contents</strong>, escolha <em>Read and write</em>.</li>
+          <li>Gere, copie o token e cole aqui quando a página pedir.</li>
+        </ol>
+        <p>
+          O token fica guardado só neste navegador — não vai para o site nem para o
+          repositório. Depois de salvar, leva cerca de um minuto para aparecer nos
+          outros aparelhos. Quando o token expirar, a página avisa e pede outro.
+        </p>
+      </details>
     </div>
 
     <a href="index.html" class="hub-back">&larr; Voltar</a>
@@ -128,7 +151,7 @@
     <p class="adega-zoom-caption" id="adega-zoom-caption"></p>
   </div>
   <footer class="hub-footer">&copy; <span id="year"></span> gaglidom</footer>
-  <script src="script.js?v=202608201601"></script>
-  <script src="adega.js?v=202608201601"></script>
+  <script src="script.js?v=202608201615"></script>
+  <script src="adega.js?v=202608201615"></script>
 </body>
 </html>
