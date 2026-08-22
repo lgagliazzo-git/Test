@@ -1340,3 +1340,34 @@ body.no-scroll {
   overflow-wrap: normal;
   overflow-x: auto;
 }
+
+/* Botões de tipo: filtro de um toque, ao lado do de uva. */
+.adega-tipo-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.adega-tipo-btn {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 7px 14px;
+  color: var(--color-text-muted);
+  font-family: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.adega-tipo-btn:hover {
+  color: var(--color-text);
+  border-color: var(--color-primary);
+}
+
+.adega-tipo-btn.is-ativo {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+  font-weight: 600;
+}

@@ -11,6 +11,8 @@ let publicados = [];
 const TABLE_MIN_WIDTH = 1330;
 
 let wines = [];
+// Tipo escolhido nos botões de filtro; vazio significa todos.
+let filtroTipo = "";
 let sortKey = "name";
 let sortAsc = true;
 
@@ -181,7 +183,7 @@ function grapesOf(wine) {
 
 function currentFilters() {
   return {
-    type: document.getElementById("filter-type").value,
+    type: filtroTipo,
     country: document.getElementById("filter-country").value,
     grape: document.getElementById("filter-grape").value,
     min: parseNumber(document.getElementById("filter-price-min").value),
@@ -206,11 +208,6 @@ function passesFilters(wine, f) {
 }
 
 function fillFilterOptions() {
-  // Ordem de adega, não alfabética: tinto primeiro por ser a maioria.
-  const ORDEM_TIPOS = ["Tinto", "Branco", "Rosé", "Espumante"];
-  const types = [...new Set(wines.map((w) => w.type).filter(Boolean))].sort(
-    (a, b) => ORDEM_TIPOS.indexOf(a) - ORDEM_TIPOS.indexOf(b)
-  );
   const countries = [...new Set(wines.map((w) => w.country).filter(Boolean))].sort(COLLATOR.compare);
   const grapes = [...new Set(wines.flatMap(grapesOf))].sort(COLLATOR.compare);
 
@@ -224,9 +221,29 @@ function fillFilterOptions() {
     if (values.includes(chosen)) select.value = chosen;
   };
 
-  fill("filter-type", types, "Todos");
   fill("filter-country", countries, "Todos");
   fill("filter-grape", grapes, "Todas");
+  renderBotoesTipo();
+}
+
+// Ordem de adega, não alfabética: tinto primeiro por ser a maioria.
+const ORDEM_TIPOS = ["Tinto", "Branco", "Rosé", "Espumante"];
+
+function renderBotoesTipo() {
+  const tipos = [...new Set(wines.map((w) => w.type).filter(Boolean))].sort(
+    (a, b) => ORDEM_TIPOS.indexOf(a) - ORDEM_TIPOS.indexOf(b)
+  );
+  // Se o tipo filtrado sumir do catálogo, o filtro fica preso num resultado
+  // vazio sem botão para desfazer.
+  if (filtroTipo && !tipos.includes(filtroTipo)) filtroTipo = "";
+
+  document.getElementById("filter-type").innerHTML = ["", ...tipos]
+    .map(
+      (t) =>
+        `<button type="button" class="adega-tipo-btn${t === filtroTipo ? " is-ativo" : ""}"
+           data-tipo="${escapeHtml(t)}" aria-pressed="${t === filtroTipo}">${t || "Todos"}</button>`
+    )
+    .join("");
 }
 
 function qtyOf(wine) {
@@ -812,14 +829,24 @@ document.getElementById("adega-sort").addEventListener("change", (e) => {
   render();
 });
 
-["filter-type", "filter-country", "filter-grape", "filter-price-min", "filter-price-max"].forEach((id) => {
+document.getElementById("filter-type").addEventListener("click", (e) => {
+  const btn = e.target.closest(".adega-tipo-btn");
+  if (!btn) return;
+  filtroTipo = btn.dataset.tipo;
+  renderBotoesTipo();
+  render();
+});
+
+["filter-country", "filter-grape", "filter-price-min", "filter-price-max"].forEach((id) => {
   document.getElementById(id).addEventListener("input", render);
 });
 
 document.getElementById("filter-clear").addEventListener("click", () => {
-  ["filter-type", "filter-country", "filter-grape", "filter-price-min", "filter-price-max"].forEach((id) => {
+  ["filter-country", "filter-grape", "filter-price-min", "filter-price-max"].forEach((id) => {
     document.getElementById(id).value = "";
   });
+  filtroTipo = "";
+  renderBotoesTipo();
   document.getElementById("adega-search").value = "";
   render();
 });

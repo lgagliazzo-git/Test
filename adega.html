@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>gaglidom · Adega</title>
-  <link rel="stylesheet" href="styles.css?v=202608221211" />
-  <script src="password-gate.js?v=202608221211"></script>
+  <link rel="stylesheet" href="styles.css?v=202608221218" />
+  <script src="password-gate.js?v=202608221218"></script>
 </head>
 <body>
   <div class="hub hub-full">
@@ -45,10 +45,6 @@
 
     <div class="adega-filters">
       <label class="adega-filter">
-        <span>Tipo</span>
-        <select id="filter-type"><option value="">Todos</option></select>
-      </label>
-      <label class="adega-filter">
         <span>País</span>
         <select id="filter-country"><option value="">Todos</option></select>
       </label>
@@ -56,6 +52,10 @@
         <span>Uva</span>
         <select id="filter-grape"><option value="">Todas</option></select>
       </label>
+      <div class="adega-filter">
+        <span>Tipo</span>
+        <div class="adega-tipo-botoes" id="filter-type" role="group" aria-label="Filtrar por tipo"></div>
+      </div>
       <label class="adega-filter">
         <span>Preço BR de</span>
         <input type="number" id="filter-price-min" inputmode="decimal" min="0" placeholder="R$ mín" />
@@ -156,7 +156,7 @@
     <p class="adega-zoom-caption" id="adega-zoom-caption"></p>
   </div>
   <footer class="hub-footer">&copy; <span id="year"></span> gaglidom</footer>
-  <script src="script.js?v=202608221211"></script>
-  <script src="adega.js?v=202608221211"></script>
+  <script src="script.js?v=202608221218"></script>
+  <script src="adega.js?v=202608221218"></script>
 </body>
 </html>
