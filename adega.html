@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>gaglidom · Adega</title>
-  <link rel="stylesheet" href="styles.css?v=202608221137" />
-  <script src="password-gate.js?v=202608221137"></script>
+  <link rel="stylesheet" href="styles.css?v=202608221149" />
+  <script src="password-gate.js?v=202608221149"></script>
 </head>
 <body>
   <div class="hub hub-full">
@@ -39,7 +39,7 @@
         <button type="button" class="adega-view-btn" data-view="table">Tabela</button>
       </div>
       <button type="button" id="adega-toggle-novo" class="btn btn-primary btn-sm">+ Adicionar vinho</button>
-      <button type="button" id="adega-toggle-bulk" class="btn-ghost-sm">Importar / exportar</button>
+      <button type="button" id="adega-toggle-export" class="btn-ghost-sm">Exportar tabela</button>
     </div>
 
     <div class="adega-filters">
@@ -88,24 +88,20 @@
       </div>
     </form>
 
-    <div class="adega-bulk" id="adega-bulk" hidden>
+    <div class="adega-bulk" id="adega-export" hidden>
       <p class="adega-bulk-help">
-        Cole aqui as colunas copiadas do Excel/Google Sheets (uma linha por vinho, separadas por tabulação).
-        A primeira linha deve ser o cabeçalho com os nomes das colunas:
-        <code>nome, pais, data, uva, origem, qtd, preco_br, preco_pago, preco_usd, nota</code>.
-        Vinhos com o mesmo <strong>nome</strong> são atualizados; os demais são adicionados.
+        Tabela em texto alinhado, pronta para colar no WhatsApp ou no e-mail.
+        Sai exatamente o que está filtrado na tela — dá para exportar só um país
+        ou uma faixa de preço.
       </p>
-      <textarea id="adega-bulk-input" class="adega-bulk-input" rows="6"
-        placeholder="nome&#9;pais&#9;data&#9;uva&#9;origem&#9;qtd&#9;preco_br&#9;preco_pago&#9;preco_usd&#9;nota"></textarea>
+      <textarea id="adega-export-texto" class="adega-bulk-input adega-export-texto" rows="12" readonly></textarea>
       <div class="adega-bulk-actions">
-        <button type="button" id="adega-import" class="btn btn-primary">Importar</button>
-        <button type="button" id="adega-export-tsv" class="btn-ghost-sm">Copiar tabela (Excel)</button>
-        <button type="button" id="adega-export-json" class="btn-ghost-sm">Baixar wines.json</button>
+        <button type="button" id="adega-export-copiar" class="btn btn-primary">Copiar</button>
         <span class="adega-bulk-msg" id="adega-bulk-msg"></span>
       </div>
       <p class="adega-bulk-help">
-        Alterações feitas aqui ficam salvas só neste navegador. Para publicá-las no site,
-        baixe o <code>wines.json</code> e me envie, ou suba o arquivo em <code>adega/</code> no repositório.
+        No WhatsApp as três crases fazem o texto sair em fonte de largura fixa,
+        que é o que mantém as colunas alinhadas.
       </p>
     </div>
 
@@ -156,7 +152,7 @@
     <p class="adega-zoom-caption" id="adega-zoom-caption"></p>
   </div>
   <footer class="hub-footer">&copy; <span id="year"></span> gaglidom</footer>
-  <script src="script.js?v=202608221137"></script>
-  <script src="adega.js?v=202608221137"></script>
+  <script src="script.js?v=202608221149"></script>
+  <script src="adega.js?v=202608221149"></script>
 </body>
 </html>

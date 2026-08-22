@@ -16,38 +16,6 @@ let sortAsc = true;
 
 const COLLATOR = new Intl.Collator("pt-BR", { sensitivity: "base", numeric: true });
 
-// Cabeçalhos aceitos na importação -> campo interno. Sem acento e em
-// minúsculas, porque planilha vem escrita de tudo quanto é jeito.
-const COLUMN_ALIASES = {
-  nome: "name",
-  vinho: "name",
-  pais: "country",
-  data: "vintage",
-  safra: "vintage",
-  ano: "vintage",
-  uva: "grape",
-  origem: "origin",
-  qtd: "quantity",
-  quantidade: "quantity",
-  garrafas: "quantity",
-  preco_pago: "pricePaid",
-  precopago: "pricePaid",
-  pago: "pricePaid",
-  preco_br: "priceBR",
-  precobr: "priceBR",
-  preco: "priceBR",
-  preco_usd: "priceUSD",
-  precousd: "priceUSD",
-  nota: "rating",
-  alcool: "abv",
-  teor: "abv",
-  abv: "abv",
-  harmoniza: "pairing",
-  harmonizacao: "pairing",
-  pratos: "pairing",
-  foto: "photo",
-};
-
 const NUMERIC_FIELDS = new Set(["quantity", "priceBR", "pricePaid", "priceUSD", "rating", "abv"]);
 // Campos digitáveis direto na linha.
 const EDITABLE_FIELDS = { quantity: "Qtd", priceBR: "Preço BR", pricePaid: "Preço pago", abv: "Teor alcoólico" };
@@ -409,73 +377,47 @@ function currentView() {
   return localStorage.getItem(VIEW_KEY) || (window.innerWidth > TABLE_MIN_WIDTH ? "table" : "list");
 }
 
-// ---------- Importar / exportar em massa ----------
+// ---------- Exportar como tabela de texto ----------
 
-const EXPORT_COLUMNS = [
-  ["nome", "name"],
-  ["pais", "country"],
-  ["data", "vintage"],
-  ["uva", "grape"],
-  ["origem", "origin"],
-  ["qtd", "quantity"],
-  ["preco_br", "priceBR"],
-  ["preco_pago", "pricePaid"],
-  ["preco_usd", "priceUSD"],
-  ["nota", "rating"],
-  ["alcool", "abv"],
-  ["harmoniza", "pairing"],
-  ["foto", "photo"],
+// Colunas da exportação: largura fixa, porque o alinhamento é o que faz a
+// tabela sobreviver ao copiar e colar. Nomes longos são cortados em vez de
+// quebrar a linha, senão a grade se desmancha.
+const EXPORT_TEXTO = [
+  { titulo: "Vinho", largura: 26, valor: (w) => w.name },
+  { titulo: "Safra", largura: 5, valor: (w) => w.vintage },
+  { titulo: "Qtd", largura: 3, valor: (w) => w.quantity, direita: true },
+  { titulo: "R$", largura: 9, valor: (w) => (isBlank(w.priceBR) ? null : Number(w.priceBR).toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })), direita: true },
+  { titulo: "Nota", largura: 4, valor: (w) => w.rating, direita: true },
+  { titulo: "Álc", largura: 5, valor: (w) => (isBlank(w.abv) ? null : `${String(w.abv).replace(".", ",")}%`), direita: true },
 ];
 
-function toTsv() {
-  const header = EXPORT_COLUMNS.map(([label]) => label).join("\t");
-  const rows = wines.map((w) => EXPORT_COLUMNS.map(([, field]) => (isBlank(w[field]) ? "" : w[field])).join("\t"));
-  return [header, ...rows].join("\n");
+function ajusta(texto, largura, direita) {
+  let t = isBlank(texto) ? "" : String(texto);
+  if (t.length > largura) t = t.slice(0, largura - 1) + "…";
+  return direita ? t.padStart(largura) : t.padEnd(largura);
 }
 
-function importTsv(text) {
-  const lines = text.trim().split(/\r?\n/).filter(Boolean);
-  if (lines.length < 2) throw new Error("cole o cabeçalho e pelo menos uma linha de vinho");
+function tabelaTexto(lista) {
+  const linha = (celulas) => celulas.join(" | ").trimEnd();
+  const cabecalho = linha(EXPORT_TEXTO.map((c) => ajusta(c.titulo, c.largura, c.direita)));
+  const separador = EXPORT_TEXTO.map((c) => "-".repeat(c.largura)).join("-+-");
+  const corpo = lista.map((w) => linha(EXPORT_TEXTO.map((c) => ajusta(c.valor(w), c.largura, c.direita))));
 
-  // Tabulação é o separador do Excel/Sheets; ponto e vírgula cobre CSV
-  // exportado em pt-BR. Vírgula não serve: os nomes dos vinhos têm vírgula.
-  const sep = lines[0].includes("\t") ? "\t" : ";";
-  const headers = lines[0].split(sep).map((h) => COLUMN_ALIASES[normalizeHeader(h)] || null);
-  if (!headers.includes("name")) throw new Error('falta a coluna "nome"');
+  const garrafas = lista.reduce((soma, w) => soma + qtyOf(w), 0);
+  const total = lista.reduce((soma, w) => soma + (isBlank(w.priceBR) ? 0 : Number(w.priceBR) * qtyOf(w)), 0);
+  const rodape = `${lista.length} rótulos · ${garrafas} garrafas · ${fmtMoney(total, "BRL")}`;
 
-  let added = 0;
-  let updated = 0;
-
-  for (const line of lines.slice(1)) {
-    const cells = line.split(sep);
-    const incoming = {};
-    headers.forEach((field, i) => {
-      if (!field) return;
-      const raw = (cells[i] ?? "").trim();
-      incoming[field] = NUMERIC_FIELDS.has(field) ? parseNumber(raw) : raw;
-    });
-    if (!incoming.name) continue;
-
-    const existing = wines.find((w) => w.name.toLowerCase() === incoming.name.toLowerCase());
-    if (existing) {
-      // Célula em branco na planilha não apaga o que já está catalogado.
-      for (const [field, val] of Object.entries(incoming)) {
-        if (!isBlank(val)) existing[field] = val;
-      }
-      updated += 1;
-    } else {
-      wines.push({ quantity: 1, priceBR: null, pricePaid: null, priceUSD: null, rating: null, photo: null, ...incoming });
-      added += 1;
-    }
-  }
-
-  return { added, updated };
+  // As crases fazem o WhatsApp usar fonte de largura fixa; sem isso as
+  // colunas desalinham na hora que a mensagem é enviada.
+  return ["```", cabecalho, separador, ...corpo, "```", rodape].join("\n");
 }
 
-// Guardar a lista inteira no navegador fazia o arquivo publicado ser
-// ignorado por completo: quem tinha edições locais nunca via foto ou nota
-// nova, e quem limpava os dados do navegador perdia as edições. Agora só as
-// alterações são guardadas, e elas são reaplicadas sobre o arquivo publicado.
+function visiveis() {
+  const termo = document.getElementById("adega-search").value.trim().toLowerCase();
+  const filtros = currentFilters();
+  return wines.filter((w) => matches(w, termo) && passesFilters(w, filtros)).sort(compare);
+}
+
 function persist() {
   gravarEdicoes();
   atualizarEstadoSalvar();
@@ -716,6 +658,7 @@ function lerEdicoes() {
 
 function flash(message, isError = false) {
   const el = document.getElementById("adega-bulk-msg");
+  if (!el) return;
   el.textContent = message;
   el.classList.toggle("adega-bulk-msg-error", isError);
   setTimeout(() => (el.textContent = ""), 5000);
@@ -758,6 +701,26 @@ async function load() {
   render();
   atualizarEstadoSalvar();
 }
+
+document.getElementById("adega-toggle-export").addEventListener("click", () => {
+  const painel = document.getElementById("adega-export");
+  painel.hidden = !painel.hidden;
+  if (!painel.hidden) {
+    document.getElementById("adega-export-texto").value = tabelaTexto(visiveis());
+  }
+});
+
+document.getElementById("adega-export-copiar").addEventListener("click", async () => {
+  const campo = document.getElementById("adega-export-texto");
+  try {
+    await navigator.clipboard.writeText(campo.value);
+    flash("Copiado. É só colar no WhatsApp ou no e-mail.");
+  } catch {
+    // clipboard exige contexto seguro; sem ele resta selecionar para o usuário
+    campo.select();
+    flash("Selecionado — use copiar do navegador.");
+  }
+});
 
 // ---------- Adicionar vinho ----------
 
@@ -920,50 +883,6 @@ document.querySelectorAll(".adega-view-btn").forEach((btn) => {
   btn.addEventListener("click", () => setView(btn.dataset.view));
 });
 
-document.getElementById("adega-toggle-bulk").addEventListener("click", () => {
-  const panel = document.getElementById("adega-bulk");
-  panel.hidden = !panel.hidden;
-});
-
-document.getElementById("adega-import").addEventListener("click", () => {
-  const input = document.getElementById("adega-bulk-input");
-  try {
-    const { added, updated } = importTsv(input.value);
-    persist();
-    fillFilterOptions();
-    render();
-    input.value = "";
-    flash(`${added} adicionado(s), ${updated} atualizado(s).`);
-  } catch (err) {
-    flash(err.message, true);
-  }
-});
-
-document.getElementById("adega-export-tsv").addEventListener("click", async () => {
-  const tsv = toTsv();
-  try {
-    await navigator.clipboard.writeText(tsv);
-    flash("Tabela copiada — cole no Excel.");
-  } catch {
-    // clipboard exige HTTPS/permissão; sem ele, mostra o texto para copiar à mão
-    document.getElementById("adega-bulk-input").value = tsv;
-    flash("Copie o texto da caixa acima.");
-  }
-});
-
-document.getElementById("adega-export-json").addEventListener("click", () => {
-  // _chave é controle interno da tela, não entra no arquivo publicado.
-  const limpos = wines.map(({ _chave, ...w }) => w);
-  const blob = new Blob([JSON.stringify({ updatedAt: new Date().toISOString(), wines: limpos }, null, 2)], {
-    type: "application/json",
-  });
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = "wines.json";
-  a.click();
-  URL.revokeObjectURL(a.href);
-  flash("wines.json baixado.");
-});
 
 applyView(currentView());
 load();

@@ -1348,3 +1348,11 @@ body.no-scroll {
   outline: none;
   border-color: var(--color-primary);
 }
+
+.adega-export-texto {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.78rem;
+  white-space: pre;
+  overflow-wrap: normal;
+  overflow-x: auto;
+}
