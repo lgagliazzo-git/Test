@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>gaglidom · Adega</title>
-  <link rel="stylesheet" href="styles.css?v=202608201811" />
-  <script src="password-gate.js?v=202608201811"></script>
+  <link rel="stylesheet" href="styles.css?v=202608221137" />
+  <script src="password-gate.js?v=202608221137"></script>
 </head>
 <body>
   <div class="hub hub-full">
@@ -38,6 +38,7 @@
         <button type="button" class="adega-view-btn" data-view="list">Lista</button>
         <button type="button" class="adega-view-btn" data-view="table">Tabela</button>
       </div>
+      <button type="button" id="adega-toggle-novo" class="btn btn-primary btn-sm">+ Adicionar vinho</button>
       <button type="button" id="adega-toggle-bulk" class="btn-ghost-sm">Importar / exportar</button>
     </div>
 
@@ -62,6 +63,30 @@
     </div>
 
     <div class="adega-summary" id="adega-summary"></div>
+
+    <form class="adega-bulk adega-novo" id="adega-novo" hidden>
+      <p class="adega-bulk-help">
+        Só o nome é obrigatório. O resto dá para preencher agora ou depois,
+        direto na linha. A harmonização é sugerida a partir da uva.
+      </p>
+      <div class="adega-novo-campos">
+        <label>Nome<input type="text" id="novo-name" required /></label>
+        <label>País<input type="text" id="novo-country" /></label>
+        <label>Data de fabricação<input type="text" id="novo-vintage" inputmode="numeric" placeholder="2020" /></label>
+        <label>Tipo de uva<input type="text" id="novo-grape" placeholder="Malbec" /></label>
+        <label>Origem<input type="text" id="novo-origin" /></label>
+        <label>Qtd<input type="number" id="novo-quantity" min="0" step="1" value="1" /></label>
+        <label>Preço BR<input type="text" inputmode="decimal" id="novo-priceBR" /></label>
+        <label>Preço pago<input type="text" inputmode="decimal" id="novo-pricePaid" /></label>
+        <label>Nota<input type="text" inputmode="decimal" id="novo-rating" /></label>
+        <label>Álcool %<input type="text" inputmode="decimal" id="novo-abv" /></label>
+      </div>
+      <div class="adega-bulk-actions">
+        <button type="submit" class="btn btn-primary">Adicionar à adega</button>
+        <button type="button" id="adega-novo-cancelar" class="btn-ghost-sm">Cancelar</button>
+        <span class="adega-bulk-msg" id="adega-novo-msg"></span>
+      </div>
+    </form>
 
     <div class="adega-bulk" id="adega-bulk" hidden>
       <p class="adega-bulk-help">
@@ -131,7 +156,7 @@
     <p class="adega-zoom-caption" id="adega-zoom-caption"></p>
   </div>
   <footer class="hub-footer">&copy; <span id="year"></span> gaglidom</footer>
-  <script src="script.js?v=202608201811"></script>
-  <script src="adega.js?v=202608201811"></script>
+  <script src="script.js?v=202608221137"></script>
+  <script src="adega.js?v=202608221137"></script>
 </body>
 </html>

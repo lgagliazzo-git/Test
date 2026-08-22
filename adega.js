@@ -52,6 +52,42 @@ const NUMERIC_FIELDS = new Set(["quantity", "priceBR", "pricePaid", "priceUSD", 
 // Campos digitáveis direto na linha.
 const EDITABLE_FIELDS = { quantity: "Qtd", priceBR: "Preço BR", pricePaid: "Preço pago", abv: "Teor alcoólico" };
 
+// Harmonização sugerida para vinho novo, pela uva principal do corte. É a
+// mesma referência usada para preencher o catálogo; serve de ponto de
+// partida e pode ser corrigida depois.
+const PAIRING_POR_UVA = {
+  sangiovese: "Massas com molho de tomate, pizza, parmesão",
+  "cabernet sauvignon": "Carnes vermelhas grelhadas, cordeiro, queijos curados",
+  tempranillo: "Cordeiro assado, presunto cru, paella de carne",
+  chardonnay: "Peixes assados, frango cremoso, risoto",
+  malbec: "Churrasco, picanha, empanadas",
+  primitivo: "Carnes de panela, embutidos, queijos maduros",
+  corvina: "Assados de longa cocção, risoto de funghi, queijos duros",
+  merlot: "Carnes suaves, aves assadas, massas com molho leve",
+  aglianico: "Cordeiro, carnes de caça, queijos picantes",
+  "sauvignon blanc": "Frutos do mar, saladas, queijo de cabra",
+  "pinot noir": "Salmão, pato, cogumelos",
+  syrah: "Carnes defumadas, costela, pimenta-do-reino",
+  gamay: "Charcutaria, aves, pratos leves",
+  negroamaro: "Carnes assadas, berinjela, queijos de ovelha",
+  glera: "Aperitivos, frituras, frutos do mar leves",
+  "touriga nacional": "Carnes vermelhas, feijoada, queijos curados",
+  grenache: "Cordeiro, cozidos, especiarias",
+  garnacha: "Cordeiro, cozidos, especiarias",
+  carmenère: "Carnes grelhadas, pimentão, comida apimentada",
+  "cabernet franc": "Carnes grelhadas, legumes assados, queijos médios",
+  nebbiolo: "Trufas, carnes de caça, risoto de funghi",
+  bonarda: "Carnes de panela, empanadas, queijos leves",
+};
+
+function harmonizaPorUva(uva) {
+  const principal = String(uva || "").split("/")[0].trim().toLowerCase();
+  if (!principal) return null;
+  if (PAIRING_POR_UVA[principal]) return PAIRING_POR_UVA[principal];
+  const parcial = Object.keys(PAIRING_POR_UVA).find((k) => principal.includes(k));
+  return parcial ? PAIRING_POR_UVA[parcial] : null;
+}
+
 function isBlank(v) {
   return v === null || v === undefined || v === "";
 }
@@ -107,7 +143,10 @@ function searchLink(wine, kind) {
 
 function editableCell(wine, field) {
   const raw = isBlank(wine[field]) ? "" : wine[field];
-  const step = field === "quantity" ? "1" : field === "abv" ? "0.1" : "0.01";
+  // type="number" recusa vírgula, e em pt-BR é assim que se digita preço.
+  // text + inputmode="decimal" aceita os dois separadores e mantém o teclado
+  // numérico no celular; parseNumber normaliza na leitura.
+  const tipo = field === "quantity" ? 'type="number" step="1"' : 'type="text"';
   // Vermelho = valor que eu estimei, não li de rótulo nem achei em loja:
   // preço convertido do dólar, ou teor alcoólico típico do estilo.
   // Some assim que o valor é digitado por cima (ver o handler de input).
@@ -115,7 +154,7 @@ function editableCell(wine, field) {
     (field === "priceBR" && wine.priceBREstimado) || (field === "abv" && wine.abvEstimado)
       ? " is-estimado"
       : "";
-  return `<input type="number" class="adega-cell-input${estimado}" inputmode="decimal" min="0" step="${step}"
+  return `<input ${tipo} class="adega-cell-input${estimado}" inputmode="decimal"
             value="${escapeHtml(raw)}" data-field="${field}" data-name="${escapeHtml(wine.name)}"
             aria-label="${EDITABLE_FIELDS[field]} de ${escapeHtml(wine.name)}" />`;
 }
@@ -719,6 +758,61 @@ async function load() {
   render();
   atualizarEstadoSalvar();
 }
+
+// ---------- Adicionar vinho ----------
+
+function alternarNovo(mostrar) {
+  const form = document.getElementById("adega-novo");
+  form.hidden = mostrar === undefined ? !form.hidden : !mostrar;
+  if (!form.hidden) document.getElementById("novo-name").focus();
+}
+
+document.getElementById("adega-toggle-novo").addEventListener("click", () => alternarNovo());
+document.getElementById("adega-novo-cancelar").addEventListener("click", () => {
+  document.getElementById("adega-novo").reset();
+  alternarNovo(false);
+});
+
+document.getElementById("adega-novo").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const campo = (id) => document.getElementById(`novo-${id}`).value.trim();
+  const nome = campo("name");
+  const msg = document.getElementById("adega-novo-msg");
+  if (!nome) return;
+
+  const grape = campo("grape");
+  const novo = {
+    name: nome,
+    country: campo("country") || null,
+    vintage: campo("vintage") || null,
+    grape: grape || null,
+    origin: campo("origin") || null,
+    quantity: parseNumber(campo("quantity")) ?? 1,
+    priceBR: parseNumber(campo("priceBR")),
+    pricePaid: parseNumber(campo("pricePaid")),
+    priceUSD: null,
+    rating: parseNumber(campo("rating")),
+    abv: parseNumber(campo("abv")),
+    pairing: harmonizaPorUva(grape),
+    photo: null,
+  };
+
+  // Chave própria: o vinho não existe no arquivo publicado, então entra como
+  // adição e não como alteração de uma linha existente.
+  novo._chave = `${novo.name}|${novo.vintage ?? ""}|novo-${Date.now()}`;
+  wines.push(novo);
+
+  persist();
+  fillFilterOptions();
+  render();
+
+  document.getElementById("adega-novo").reset();
+  alternarNovo(false);
+  // flash() escreve dentro do bloco de importação, que fica escondido; aqui
+  // o aviso vai para a linha do salvar, que está sempre visível.
+  msg.textContent = "";
+  estadoSalvar(`"${nome}" adicionado. Clique em salvar para publicar no site.`, "pendente");
+});
 
 document.getElementById("adega-save").addEventListener("click", salvarNoSite);
 

@@ -1313,3 +1313,38 @@ body.no-scroll {
 .adega-trocar-token {
   margin-top: 10px;
 }
+
+/* Formulário de vinho novo: os campos em grade para caber lado a lado no
+   desktop e empilhar no celular. */
+.adega-novo-campos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.adega-novo-campos label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+}
+
+.adega-novo-campos input {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 9px 12px;
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: 16px; /* abaixo de 16px o iPhone dá zoom ao focar */
+  text-transform: none;
+}
+
+.adega-novo-campos input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
