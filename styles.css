@@ -1371,3 +1371,23 @@ body.no-scroll {
   color: #fff;
   font-weight: 600;
 }
+
+/* Foto escolhida, antes de publicar */
+.adega-novo-foto {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.adega-novo-foto img {
+  width: 90px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+}
+
+/* Campo que ficou sem preencher ao importar a foto. */
+.adega-falta {
+  color: #ff8a8a;
+  font-size: 0.85em;
+}

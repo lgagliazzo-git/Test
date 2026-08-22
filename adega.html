@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>gaglidom · Adega</title>
-  <link rel="stylesheet" href="styles.css?v=202608221218" />
-  <script src="password-gate.js?v=202608221218"></script>
+  <link rel="stylesheet" href="styles.css?v=202608221227" />
+  <script src="password-gate.js?v=202608221227"></script>
 </head>
 <body>
   <div class="hub hub-full">
@@ -40,6 +40,9 @@
         <button type="button" class="adega-view-btn" data-view="table">Tabela</button>
       </div>
       <button type="button" id="adega-toggle-novo" class="btn btn-primary btn-sm">+ Adicionar vinho</button>
+      <button type="button" id="adega-importar-foto" class="btn btn-primary btn-sm">📷 Importar foto</button>
+      <!-- capture permite abrir a câmera direto no celular. -->
+      <input type="file" id="adega-arquivo-foto" accept="image/*" hidden />
       <button type="button" id="adega-toggle-export" class="btn-ghost-sm">Exportar tabela</button>
     </div>
 
@@ -72,6 +75,13 @@
         Só o nome é obrigatório. O resto dá para preencher agora ou depois,
         direto na linha. A harmonização é sugerida a partir da uva.
       </p>
+      <div class="adega-novo-foto" id="adega-novo-foto" hidden>
+        <img id="adega-novo-previa" alt="Foto do vinho a incluir" />
+        <p class="adega-bulk-help">
+          Preencha o que souber pelo rótulo. O que ficar em branco entra
+          marcado em vermelho na tabela, para você completar depois.
+        </p>
+      </div>
       <div class="adega-novo-campos">
         <label>Nome<input type="text" id="novo-name" required /></label>
         <label>País<input type="text" id="novo-country" /></label>
@@ -156,7 +166,7 @@
     <p class="adega-zoom-caption" id="adega-zoom-caption"></p>
   </div>
   <footer class="hub-footer">&copy; <span id="year"></span> gaglidom</footer>
-  <script src="script.js?v=202608221218"></script>
-  <script src="adega.js?v=202608221218"></script>
+  <script src="script.js?v=202608221227"></script>
+  <script src="adega.js?v=202608221227"></script>
 </body>
 </html>

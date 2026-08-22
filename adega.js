@@ -129,6 +129,16 @@ function editableCell(wine, field) {
             aria-label="${EDITABLE_FIELDS[field]} de ${escapeHtml(wine.name)}" />`;
 }
 
+// Campo que o usuário não soube preencher ao importar a foto: fica visível
+// em vermelho em vez de virar um travessão igual aos demais vazios.
+function textoCell(wine, campo) {
+  const bruto = wine[campo];
+  if (!isBlank(bruto)) return escapeHtml(bruto);
+  return (wine.faltando || []).includes(campo)
+    ? `<span class="adega-falta">a completar</span>`
+    : "—";
+}
+
 function cellValue(wine, kind) {
   const raw = wine[kind];
   if (isBlank(raw)) return searchLink(wine, kind);
@@ -284,11 +294,13 @@ function renderSummary(visible) {
 }
 
 function photoCell(wine) {
-  if (!wine.photo) return `<span class="adega-nophoto">—</span>`;
+  // photoNova é a foto escolhida na tela e ainda não gravada no repositório.
+  const src = wine.photo || wine.photoNova;
+  if (!src) return `<span class="adega-nophoto">—</span>`;
   const alt = escapeHtml(wine.name || "vinho");
-  return `<button type="button" class="adega-photo-btn" data-zoom="${escapeHtml(wine.photo)}"
+  return `<button type="button" class="adega-photo-btn" data-zoom="${escapeHtml(src)}"
             data-name="${alt}" aria-label="Ampliar foto de ${alt}">
-            <img class="adega-photo" src="${escapeHtml(wine.photo)}" alt="${alt}" loading="lazy" />
+            <img class="adega-photo" src="${escapeHtml(src)}" alt="${alt}" loading="lazy" />
           </button>`;
 }
 
@@ -323,16 +335,16 @@ function render() {
         <tr>
           <td class="adega-td-photo">${photoCell(w)}</td>
           <td class="adega-td-name" data-label="Vinho">${escapeHtml(w.name) || "—"}</td>
-          <td data-label="País">${escapeHtml(w.country) || "—"}</td>
+          <td data-label="País">${textoCell(w, "country")}</td>
           <td class="adega-td-num" data-label="Qtd">${editableCell(w, "quantity")}</td>
           <td class="adega-td-num" data-label="Preço BR">${editableCell(w, "priceBR")}</td>
           <td class="adega-td-num" data-label="Preço pago">${editableCell(w, "pricePaid")}</td>
           <td class="adega-td-num" data-label="Preço origem">${cellValue(w, "priceUSD")}</td>
           <td class="adega-td-num" data-label="Nota">${cellValue(w, "rating")}</td>
-          <td data-label="Data de fabricação">${escapeHtml(w.vintage) || "—"}</td>
-          <td class="adega-td-grape" data-label="Tipo de uva">${escapeHtml(w.grape) || "—"}</td>
-          <td class="adega-td-origin" data-label="Origem">${escapeHtml(w.origin) || "—"}</td>
-          <td class="adega-td-pairing" data-label="Harmoniza com">${escapeHtml(w.pairing) || "—"}</td>
+          <td data-label="Data de fabricação">${textoCell(w, "vintage")}</td>
+          <td class="adega-td-grape" data-label="Tipo de uva">${textoCell(w, "grape")}</td>
+          <td class="adega-td-origin" data-label="Origem">${textoCell(w, "origin")}</td>
+          <td class="adega-td-pairing" data-label="Harmoniza com">${textoCell(w, "pairing")}</td>
           <td class="adega-td-abv" data-label="Álcool">${editableCell(w, "abv")}<span class="adega-abv-sufixo">%</span></td>
           <td class="adega-td-tipo" data-label="Tipo">${escapeHtml(w.type) || "—"}</td>
           <td class="adega-td-del">
@@ -558,6 +570,45 @@ function atualizarEstadoSalvar() {
   }
 }
 
+function apelidoArquivo(nome) {
+  return (
+    String(nome)
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(new RegExp("[\u0300-\u036f]", "g"), "")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "")
+      .slice(0, 40) || "vinho"
+  );
+}
+
+// A foto escolhida na tela vive como data URL. Publicar é gravá-la como
+// arquivo em adega/fotos/ e deixar no vinho só o caminho — senão a imagem
+// inteira iria parar dentro do wines.json, que engordaria a cada garrafa.
+async function publicarFotos(token) {
+  const pendentes = wines.filter((w) => w.photoNova);
+  for (const w of pendentes) {
+    const caminho = `adega/fotos/${apelidoArquivo(w.name)}-${Date.now().toString(36)}.jpg`;
+    const base64 = w.photoNova.split(",")[1];
+    const res = await chamarGitHub(
+      `/contents/${caminho}`,
+      {
+        method: "PUT",
+        body: JSON.stringify({
+          message: `Adiciona foto de ${w.name}`,
+          content: base64,
+          branch: REPO.branch,
+        }),
+      },
+      token
+    );
+    if (!res.ok) throw new Error(`não consegui enviar a foto — ${await motivoDoErro(res)}`);
+    w.photo = caminho;
+    delete w.photoNova;
+  }
+  return pendentes.length;
+}
+
 async function salvarNoSite() {
   const botao = document.getElementById("adega-save");
   let token = localStorage.getItem(TOKEN_KEY);
@@ -572,8 +623,17 @@ async function salvarNoSite() {
   botao.disabled = true;
   estadoSalvar("Salvando...");
 
+  try {
+    const enviadas = await publicarFotos(token);
+    if (enviadas) estadoSalvar(`${enviadas} foto(s) enviada(s), salvando a tabela...`);
+  } catch (err) {
+    estadoSalvar(`Não consegui salvar: ${err.message}`, "erro");
+    botao.disabled = false;
+    return;
+  }
+
   const conteudo = JSON.stringify(
-    { updatedAt: new Date().toISOString(), wines: wines.map(({ _chave, ...w }) => w) },
+    { updatedAt: new Date().toISOString(), wines: wines.map(({ _chave, photoNova, ...w }) => w) },
     null,
     2
   );
@@ -744,6 +804,54 @@ document.getElementById("adega-export-copiar").addEventListener("click", async (
   }
 });
 
+// ---------- Importar foto ----------
+
+// Foto escolhida e ainda não publicada, como data URL. Fica no vinho até o
+// "Salvar no site", que aí sim grava o arquivo em adega/fotos/.
+let fotoPendente = null;
+
+// A foto do celular tem uns 4000px e 3 MB. Sem reduzir, o localStorage
+// estoura já na segunda garrafa e o commit no repositório fica enorme.
+function reduzirFoto(arquivo, larguraMax = 520) {
+  return new Promise((resolve, reject) => {
+    const leitor = new FileReader();
+    leitor.onerror = () => reject(new Error("não consegui ler o arquivo"));
+    leitor.onload = () => {
+      const img = new Image();
+      img.onerror = () => reject(new Error("arquivo não é uma imagem"));
+      img.onload = () => {
+        const escala = Math.min(1, larguraMax / img.width);
+        const tela = document.createElement("canvas");
+        tela.width = Math.round(img.width * escala);
+        tela.height = Math.round(img.height * escala);
+        tela.getContext("2d").drawImage(img, 0, 0, tela.width, tela.height);
+        resolve(tela.toDataURL("image/jpeg", 0.82));
+      };
+      img.src = leitor.result;
+    };
+    leitor.readAsDataURL(arquivo);
+  });
+}
+
+document.getElementById("adega-importar-foto").addEventListener("click", () => {
+  document.getElementById("adega-arquivo-foto").click();
+});
+
+document.getElementById("adega-arquivo-foto").addEventListener("change", async (e) => {
+  const arquivo = e.target.files && e.target.files[0];
+  e.target.value = ""; // permite escolher a mesma foto de novo
+  if (!arquivo) return;
+  try {
+    fotoPendente = await reduzirFoto(arquivo);
+  } catch (err) {
+    estadoSalvar(`Não consegui usar essa foto: ${err.message}`, "erro");
+    return;
+  }
+  document.getElementById("adega-novo-previa").src = fotoPendente;
+  document.getElementById("adega-novo-foto").hidden = false;
+  alternarNovo(true);
+});
+
 // ---------- Adicionar vinho ----------
 
 function alternarNovo(mostrar) {
@@ -755,6 +863,8 @@ function alternarNovo(mostrar) {
 document.getElementById("adega-toggle-novo").addEventListener("click", () => alternarNovo());
 document.getElementById("adega-novo-cancelar").addEventListener("click", () => {
   document.getElementById("adega-novo").reset();
+  fotoPendente = null;
+  document.getElementById("adega-novo-foto").hidden = true;
   alternarNovo(false);
 });
 
@@ -780,7 +890,14 @@ document.getElementById("adega-novo").addEventListener("submit", (e) => {
     abv: parseNumber(campo("abv")),
     pairing: harmonizaPorUva(grape),
     photo: null,
+    photoNova: fotoPendente,
   };
+
+  // Marca o que não foi informado, para aparecer em vermelho na tabela.
+  novo.faltando = ["country", "vintage", "grape", "origin", "priceBR", "rating", "abv", "pairing"].filter((c) =>
+    isBlank(novo[c])
+  );
+  if (!novo.faltando.length) delete novo.faltando;
 
   // Chave própria: o vinho não existe no arquivo publicado, então entra como
   // adição e não como alteração de uma linha existente.
@@ -792,6 +909,8 @@ document.getElementById("adega-novo").addEventListener("submit", (e) => {
   render();
 
   document.getElementById("adega-novo").reset();
+  fotoPendente = null;
+  document.getElementById("adega-novo-foto").hidden = true;
   alternarNovo(false);
   // flash() escreve dentro do bloco de importação, que fica escondido; aqui
   // o aviso vai para a linha do salvar, que está sempre visível.
@@ -892,6 +1011,10 @@ document.getElementById("adega-body").addEventListener("input", (e) => {
   if (campo === "abv" && wine.abvEstimado) {
     delete wine.abvEstimado;
     input.classList.remove("is-estimado");
+  }
+  if (wine.faltando && wine.faltando.includes(campo) && !isBlank(input.value)) {
+    wine.faltando = wine.faltando.filter((c) => c !== campo);
+    if (!wine.faltando.length) delete wine.faltando;
   }
   renderSummary(wines.filter((w) => matches(w, document.getElementById("adega-search").value.trim().toLowerCase()) && passesFilters(w, currentFilters())));
 });
