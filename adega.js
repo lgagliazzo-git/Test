@@ -163,7 +163,7 @@ function compare(a, b) {
 
 function matches(wine, term) {
   if (!term) return true;
-  return [wine.name, wine.country, wine.vintage, wine.grape, wine.origin, wine.pairing]
+  return [wine.name, wine.type, wine.country, wine.vintage, wine.grape, wine.origin, wine.pairing]
     .filter(Boolean)
     .join(" ")
     .toLowerCase()
@@ -181,6 +181,7 @@ function grapesOf(wine) {
 
 function currentFilters() {
   return {
+    type: document.getElementById("filter-type").value,
     country: document.getElementById("filter-country").value,
     grape: document.getElementById("filter-grape").value,
     min: parseNumber(document.getElementById("filter-price-min").value),
@@ -189,6 +190,7 @@ function currentFilters() {
 }
 
 function passesFilters(wine, f) {
+  if (f.type && wine.type !== f.type) return false;
   if (f.country && wine.country !== f.country) return false;
   if (f.grape && !grapesOf(wine).includes(f.grape)) return false;
 
@@ -204,6 +206,11 @@ function passesFilters(wine, f) {
 }
 
 function fillFilterOptions() {
+  // Ordem de adega, não alfabética: tinto primeiro por ser a maioria.
+  const ORDEM_TIPOS = ["Tinto", "Branco", "Rosé", "Espumante"];
+  const types = [...new Set(wines.map((w) => w.type).filter(Boolean))].sort(
+    (a, b) => ORDEM_TIPOS.indexOf(a) - ORDEM_TIPOS.indexOf(b)
+  );
   const countries = [...new Set(wines.map((w) => w.country).filter(Boolean))].sort(COLLATOR.compare);
   const grapes = [...new Set(wines.flatMap(grapesOf))].sort(COLLATOR.compare);
 
@@ -217,6 +224,7 @@ function fillFilterOptions() {
     if (values.includes(chosen)) select.value = chosen;
   };
 
+  fill("filter-type", types, "Todos");
   fill("filter-country", countries, "Todos");
   fill("filter-grape", grapes, "Todas");
 }
@@ -803,12 +811,12 @@ document.getElementById("adega-sort").addEventListener("change", (e) => {
   render();
 });
 
-["filter-country", "filter-grape", "filter-price-min", "filter-price-max"].forEach((id) => {
+["filter-type", "filter-country", "filter-grape", "filter-price-min", "filter-price-max"].forEach((id) => {
   document.getElementById(id).addEventListener("input", render);
 });
 
 document.getElementById("filter-clear").addEventListener("click", () => {
-  ["filter-country", "filter-grape", "filter-price-min", "filter-price-max"].forEach((id) => {
+  ["filter-type", "filter-country", "filter-grape", "filter-price-min", "filter-price-max"].forEach((id) => {
     document.getElementById(id).value = "";
   });
   document.getElementById("adega-search").value = "";
