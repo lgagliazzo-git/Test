@@ -384,12 +384,24 @@ function currentView() {
 // quebrar a linha, senão a grade se desmancha.
 const EXPORT_TEXTO = [
   { titulo: "Vinho", largura: 26, valor: (w) => w.name },
+  { titulo: "País", largura: 12, valor: (w) => w.country },
   { titulo: "Safra", largura: 5, valor: (w) => w.vintage },
+  { titulo: "Uva", largura: 20, valor: (w) => w.grape },
+  { titulo: "Origem", largura: 18, valor: (w) => w.origin },
   { titulo: "Qtd", largura: 3, valor: (w) => w.quantity, direita: true },
-  { titulo: "R$", largura: 9, valor: (w) => (isBlank(w.priceBR) ? null : Number(w.priceBR).toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })), direita: true },
+  { titulo: "R$", largura: 9, valor: (w) => moedaTexto(w.priceBR), direita: true },
+  { titulo: "Pago", largura: 9, valor: (w) => moedaTexto(w.pricePaid), direita: true },
+  { titulo: "US$", largura: 8, valor: (w) => moedaTexto(w.priceUSD), direita: true },
   { titulo: "Nota", largura: 4, valor: (w) => w.rating, direita: true },
   { titulo: "Álc", largura: 5, valor: (w) => (isBlank(w.abv) ? null : `${String(w.abv).replace(".", ",")}%`), direita: true },
 ];
+
+// Sem símbolo de moeda: a coluna já diz qual é, e cada caractere conta na
+// largura total da linha.
+function moedaTexto(valor) {
+  if (isBlank(valor)) return null;
+  return Number(valor).toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
 
 function ajusta(texto, largura, direita) {
   let t = isBlank(texto) ? "" : String(texto);
