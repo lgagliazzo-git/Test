@@ -206,18 +206,19 @@ a.hub-bullet:hover {
 }
 
 .adega-table th.adega-th-photo { width: 54px; }
-.adega-table th[data-sort="name"] { width: 165px; }
-.adega-table th[data-sort="country"] { width: 86px; }
-.adega-table th[data-sort="vintage"] { width: 108px; }
-.adega-table th[data-sort="grape"] { width: 130px; }
-.adega-table th[data-sort="origin"] { width: 120px; }
+.adega-table th[data-sort="name"] { width: 150px; }
+.adega-table th[data-sort="country"] { width: 76px; }
+.adega-table th[data-sort="vintage"] { width: 100px; }
+.adega-table th[data-sort="grape"] { width: 118px; }
+.adega-table th[data-sort="origin"] { width: 106px; }
 .adega-table th[data-sort="quantity"] { width: 68px; }
 .adega-table th[data-sort="priceBR"] { width: 92px; }
 .adega-table th[data-sort="pricePaid"] { width: 92px; }
 .adega-table th[data-sort="priceUSD"] { width: 92px; }
 .adega-table th[data-sort="rating"] { width: 56px; }
 .adega-table th.adega-th-abv { width: 100px; }
-.adega-table th[data-sort="pairing"] { width: 127px; }
+.adega-table th[data-sort="type"] { width: 86px; }
+.adega-table th[data-sort="pairing"] { width: 100px; }
 .adega-table th.adega-th-del { width: 40px; }
 
 .adega-table th,
