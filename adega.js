@@ -233,10 +233,8 @@ function renderSummary(visible) {
 
   const withPrice = visible.filter((w) => !isBlank(w.priceBR));
   const total = withPrice.reduce((sum, w) => sum + Number(w.priceBR) * qtyOf(w), 0);
-  const missing = visible.length - withPrice.length;
 
-  const withPaid = visible.filter((w) => !isBlank(w.pricePaid));
-  const totalPaid = withPaid.reduce((sum, w) => sum + Number(w.pricePaid) * qtyOf(w), 0);
+  const totalPaid = visible.reduce((sum, w) => sum + (isBlank(w.pricePaid) ? 0 : Number(w.pricePaid) * qtyOf(w)), 0);
 
   const rated = visible.filter((w) => !isBlank(w.rating));
   const avgRating = rated.length
@@ -245,20 +243,6 @@ function renderSummary(visible) {
         maximumFractionDigits: 1,
       })
     : null;
-
-  const parts = [
-    `<strong>Pago ${fmtMoney(totalPaid, "BRL") || "R$ 0,00"}</strong>`,
-    `mercado ${fmtMoney(total, "BRL") || "R$ 0,00"}`,
-    `${bottles} garrafa${bottles === 1 ? "" : "s"} em ${visible.length} rótulo${visible.length === 1 ? "" : "s"}`,
-  ];
-  // Sem esses avisos os totais parecem cobrir a adega inteira quando não cobrem.
-  if (withPaid.length < visible.length) {
-    parts.push(`${visible.length - withPaid.length} sem preço pago`);
-  }
-  if (missing > 0) parts.push(`${missing} sem preço de mercado`);
-  if (avgRating) parts.push(`nota média ${avgRating}`);
-
-  document.getElementById("adega-summary").innerHTML = parts.join(" · ");
 
   const foot = document.getElementById("adega-foot");
   foot.innerHTML = visible.length

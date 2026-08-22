@@ -448,23 +448,6 @@ body.no-scroll {
   border-color: var(--color-primary);
 }
 
-.adega-summary {
-  width: 100%;
-  text-align: left;
-  font-size: 0.9rem;
-  color: var(--color-text-muted);
-  padding: 10px 14px;
-  margin-bottom: 12px;
-  background: var(--color-bg-alt);
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
-}
-
-.adega-summary strong {
-  color: var(--color-text);
-  font-size: 1.05rem;
-}
-
 .adega-table tfoot td {
   border-top: 1px solid var(--color-border);
   border-bottom: none;
