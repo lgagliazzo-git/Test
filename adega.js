@@ -6,9 +6,13 @@ const VIEW_KEY = "gaglidom_adega_view";
 // base para saber o que o usuário mudou de fato.
 let publicados = [];
 
-// Abaixo disso as 14 colunas não cabem, então lista é o padrão — mas a
+// Wine Enthusiast 2023 Vintage Chart, carregado junto com a adega. É o que
+// alimenta a coluna Maturidade.
+let vintageChart = null;
+
+// Abaixo disso as 16 colunas não cabem, então lista é o padrão — mas a
 // escolha do usuário, se houver, sempre vence.
-const TABLE_MIN_WIDTH = 1330;
+const TABLE_MIN_WIDTH = 1414;
 
 let wines = [];
 // Tipo escolhido nos botões de filtro; vazio significa todos.
@@ -239,6 +243,52 @@ function fillFilterOptions() {
 // Ordem de adega, não alfabética: tinto primeiro por ser a maioria.
 const ORDEM_TIPOS = ["Tinto", "Branco", "Rosé", "Espumante"];
 
+// Repete a regra de adega/maturidade.js. São arquivos separados porque um
+// roda no navegador e o outro no script que preenche o wines.json.
+const REGRAS_MATURIDADE = [
+  { faixa: "IT-Brunello", pais: "Itália", origem: /montalcino/i, nome: /brunello/i },
+  { faixa: "IT-ChiantiClassico", pais: "Itália", origem: /chianti/i },
+  { faixa: "IT-Barolo", pais: "Itália", nome: /barolo|barbaresco/i },
+  { faixa: "IT-Amarone", pais: "Itália", origem: /vêneto|veneto|valpolicella|veronese/i },
+  { faixa: "IT-Puglia", pais: "Itália", origem: /puglia|manduria|salento/i },
+  { faixa: "IT-Sicilia", pais: "Itália", origem: /sicília|sicilia|etna/i },
+  { faixa: "IT-Campania", pais: "Itália", origem: /campânia|campania|irpinia|taurasi/i },
+  { faixa: "IT-Sardenha", pais: "Itália", origem: /sardenha|sulcis/i },
+  { faixa: "IT-Bolgheri", pais: "Itália", origem: /bolgheri/i },
+  { faixa: "IT-ChiantiClassico", pais: "Itália", origem: /toscana/i },
+  { faixa: "ES-Rioja", pais: "Espanha", origem: /rioja|haro|sonsierra/i },
+  { faixa: "FR-PomerolStEmilion", pais: "França", origem: /saint-émilion|st-émilion|pomerol/i },
+  { faixa: "FR-GravesTinto", pais: "França", origem: /pessac|graves/i },
+  { faixa: "FR-Chablis", pais: "França", origem: /chablis/i },
+  { faixa: "PT-BrancoMesa", pais: "Portugal", tipo: "Branco" },
+  { faixa: "PT-TintoMesa", pais: "Portugal" },
+  { faixa: "US-NapaCabernet", pais: "EUA", origem: /napa/i },
+  { faixa: "US-RRVPinotNoir", pais: "EUA", origem: /russian river/i },
+  { faixa: "US-ColumbiaCabMer", pais: "EUA", origem: /columbia/i },
+  { faixa: "US-WillamettePinot", pais: "EUA", origem: /oregon|willamette/i },
+  { faixa: "AR-Mendoza", pais: "Argentina" },
+  { faixa: "CL-Colchagua", pais: "Chile", origem: /colchagua|cachapoal|curicó|sagrada familia/i },
+  { faixa: "CL-Maipo", pais: "Chile", origem: /maipo|puente alto/i },
+];
+
+function aplicarMaturidade(w) {
+  delete w.maturity;
+  if (!vintageChart || !w.vintage) return;
+  const ano = Number(String(w.vintage).slice(0, 4));
+  const i = vintageChart.primeiroAno - ano;
+  if (!Number.isFinite(ano) || i < 0 || i >= 26) return;
+  const alvo = `${w.origin || ""} ${w.name || ""}`;
+  for (const r of REGRAS_MATURIDADE) {
+    if (r.pais && w.country !== r.pais) continue;
+    if (r.tipo && w.type !== r.tipo) continue;
+    if (r.nome && !r.nome.test(w.name || "")) continue;
+    if (r.origem && !r.origem.test(alvo)) continue;
+    const letra = (vintageChart.faixas[r.faixa] || "")[i];
+    if (letra && letra !== " ") w.maturity = letra;
+    return;
+  }
+}
+
 function renderBotoesTipo() {
   const tipos = [...new Set(wines.map((w) => w.type).filter(Boolean))].sort(
     (a, b) => ORDEM_TIPOS.indexOf(a) - ORDEM_TIPOS.indexOf(b)
@@ -288,9 +338,17 @@ function renderSummary(visible) {
          <td class="adega-td-num">${fmtMoney(totalPaid, "BRL")}</td>
          <td class="adega-td-num">—</td>
          <td class="adega-td-num">${avgRating || "—"}</td>
-         <td colspan="7">—</td>
+         <td colspan="8">—</td>
        </tr>`
     : "";
+}
+
+// Sem cruzamento a célula fica vazia de propósito: a tabela não cobre o
+// país, a safra está fora do período dela, ou o vinho não tem safra.
+function maturidadeCell(w) {
+  if (!w.maturity || !vintageChart) return "";
+  const texto = vintageChart.legenda[w.maturity] || "";
+  return `<span class="adega-mat adega-mat-${w.maturity}">${escapeHtml(texto)}</span>`;
 }
 
 function photoCell(wine) {
@@ -347,6 +405,7 @@ function render() {
           <td class="adega-td-pairing" data-label="Harmoniza com">${textoCell(w, "pairing")}</td>
           <td class="adega-td-abv" data-label="Álcool">${editableCell(w, "abv")}<span class="adega-abv-sufixo">%</span></td>
           <td class="adega-td-tipo" data-label="Tipo">${escapeHtml(w.type) || "—"}</td>
+          <td class="adega-td-maturidade" data-label="Maturidade">${maturidadeCell(w)}</td>
           <td class="adega-td-del">
             <button type="button" class="adega-del-btn" data-del="${escapeHtml(w.name)}"
                     title="Excluir ${escapeHtml(w.name)}" aria-label="Excluir ${escapeHtml(w.name)}">🗑</button>
@@ -771,6 +830,13 @@ async function load() {
 
   // O arquivo publicado é a base (fotos, notas, preços pesquisados) e as
   // alterações feitas na tela entram por cima, campo a campo.
+  try {
+    const res = await fetch("adega/vintage-chart.json", { cache: "no-store" });
+    if (res.ok) vintageChart = await res.json();
+  } catch {
+    /* sem a tabela a coluna fica vazia, o resto da adega funciona igual */
+  }
+
   const guardado = lerEdicoes();
   if (guardado) {
     const removidos = new Set(guardado.removidos);
@@ -904,6 +970,10 @@ document.getElementById("adega-novo").addEventListener("submit", (e) => {
   novo._chave = `${novo.name}|${novo.vintage ?? ""}|novo-${Date.now()}`;
   wines.push(novo);
 
+  // Cruza com o Vintage Chart na hora, para o vinho novo já nascer
+  // classificado como os outros.
+  aplicarMaturidade(novo);
+
   persist();
   fillFilterOptions();
   render();
@@ -1021,6 +1091,23 @@ document.getElementById("adega-body").addEventListener("input", (e) => {
 
 document.getElementById("adega-body").addEventListener("change", (e) => {
   if (e.target.closest(".adega-cell-input")) persist();
+});
+
+document.getElementById("adega-ver-chart").addEventListener("click", () => {
+  const painel = document.getElementById("adega-chart");
+  // Só carrega a imagem no primeiro clique: são 330 KB que a maioria das
+  // visitas não precisa.
+  const img = document.getElementById("adega-chart-img");
+  if (!img.src) img.src = (vintageChart && vintageChart.imagem) || "adega/vintage-chart.jpg";
+  painel.hidden = false;
+});
+
+document.getElementById("adega-chart-close").addEventListener("click", () => {
+  document.getElementById("adega-chart").hidden = true;
+});
+
+document.getElementById("adega-chart").addEventListener("click", (e) => {
+  if (e.target.id === "adega-chart") document.getElementById("adega-chart").hidden = true;
 });
 
 document.getElementById("adega-zoom-close").addEventListener("click", closeZoom);

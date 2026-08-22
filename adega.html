@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>gaglidom · Adega</title>
-  <link rel="stylesheet" href="styles.css?v=202608221227" />
-  <script src="password-gate.js?v=202608221227"></script>
+  <link rel="stylesheet" href="styles.css?v=202608222227" />
+  <script src="password-gate.js?v=202608222227"></script>
 </head>
 <body>
   <div class="hub hub-full">
@@ -33,6 +33,7 @@
         <option value="pairing">Harmoniza com</option>
         <option value="abv">Álcool</option>
         <option value="type">Tipo</option>
+        <option value="maturity">Maturidade</option>
       </select>
       <span class="adega-count" id="adega-count"></span>
       <div class="adega-view-switch" role="group" aria-label="Formato de exibição">
@@ -44,6 +45,7 @@
       <!-- capture permite abrir a câmera direto no celular. -->
       <input type="file" id="adega-arquivo-foto" accept="image/*" hidden />
       <button type="button" id="adega-toggle-export" class="btn-ghost-sm">Exportar tabela</button>
+      <button type="button" id="adega-ver-chart" class="btn-ghost-sm">Vintage Chart</button>
     </div>
 
     <div class="adega-filters">
@@ -136,6 +138,7 @@
             <th data-sort="pairing">Harmoniza com</th>
             <th data-sort="abv" class="adega-th-abv">Álcool</th>
             <th data-sort="type">Tipo</th>
+            <th data-sort="maturity">Maturidade</th>
             <th class="adega-th-del"><span class="sr-only">Excluir</span></th>
           </tr>
         </thead>
@@ -160,13 +163,19 @@
     <a href="index.html" class="hub-back">&larr; Voltar</a>
   </div>
 
+  <div class="adega-zoom" id="adega-chart" hidden>
+    <button type="button" class="adega-zoom-close" id="adega-chart-close" aria-label="Fechar">&times;</button>
+    <img id="adega-chart-img" alt="Wine Enthusiast 2023 Vintage Chart" />
+    <p class="adega-zoom-caption">Wine Enthusiast · 2023 Vintage Chart — origem da coluna Maturidade</p>
+  </div>
+
   <div class="adega-zoom" id="adega-zoom" hidden>
     <button type="button" class="adega-zoom-close" id="adega-zoom-close" aria-label="Fechar">&times;</button>
     <img id="adega-zoom-img" alt="" />
     <p class="adega-zoom-caption" id="adega-zoom-caption"></p>
   </div>
   <footer class="hub-footer">&copy; <span id="year"></span> gaglidom</footer>
-  <script src="script.js?v=202608221227"></script>
-  <script src="adega.js?v=202608221227"></script>
+  <script src="script.js?v=202608222227"></script>
+  <script src="adega.js?v=202608222227"></script>
 </body>
 </html>

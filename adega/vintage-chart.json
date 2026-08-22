@@ -1,0 +1,36 @@
+{
+  "fonte": "Wine Enthusiast — 2023 Vintage Chart",
+  "imagem": "adega/vintage-chart.jpg",
+  "legenda": {
+    "H": "Aguardar",
+    "N": "Pode beber, antes do auge",
+    "R": "Pronto, no auge",
+    "P": "Pode beber, passando do auge",
+    "D": "Em declínio"
+  },
+  "primeiroAno": 2021,
+  "faixas": {
+    "IT-Barolo": "HHHHHHHNHHNHNNNHNNPPNRRRRN",
+    "IT-Amarone": "HHHHHHHNHHHNNNNNNNRDRRRRRD",
+    "IT-ChiantiClassico": "HHHHHHHHHHNNRRRNRRPDRPRRRP",
+    "IT-Brunello": "HHHHHHHHHHHHHNNHNNPDRPRRRD",
+    "IT-Bolgheri": "HHHHHHHHHHHHNNRNNRRDRRRRRP",
+    "IT-Puglia": "HHHHNNNRNRRPPPPPPPPDPPDDDD",
+    "IT-Sicilia": "HHHHHHHHHNPPPRRRPPPDDDDDDD",
+    "IT-Campania": "HHHHHHHNHHNNNNNNRRDDPPPPPP",
+    "IT-Sardenha": "HHHHHHHHHHNRRPPPPPDDDDDDDD",
+    "ES-Rioja": "HHHHNRNNNNNNPPPPPPDDPDPDDP",
+    "FR-PomerolStEmilion": "HHHHNHHNRRRHNNRRNRRRRRPRPP",
+    "FR-GravesTinto": "HHHHHHHHNNNHHPRRNRRRRRPRPP",
+    "FR-Chablis": "NRNNNRRNRRRRRRRRRRPRRRPDDP",
+    "PT-TintoMesa": "HHHHHHNNNNRRRNPPDDDRPRPPPP",
+    "PT-BrancoMesa": "HHNNNRNNNNNNPPPPDDDDPPPPPP",
+    "US-NapaCabernet": "HHHHHHNNNNPPPPPPPPPPPDPDPP",
+    "US-RRVPinotNoir": "HHHHHNRRRRPPPPPPPPPPPPPPPP",
+    "US-ColumbiaCabMer": "HHHHHHHHNNRRRRRRPPPPPPPPPP",
+    "US-WillamettePinot": "HRHHNNRRNRRRRRPPPPPPPPPPPP",
+    "AR-Mendoza": "HHHNNRRRRRPPPPPPPPPPPPPPPP",
+    "CL-Maipo": "HRRHNRRRRPPPPPRPPPPPPPPDPD",
+    "CL-Colchagua": "HRRNRRRRRPRPPPPPPPPPPPPPPP"
+  }
+}
