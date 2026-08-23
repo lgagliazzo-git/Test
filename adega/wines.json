@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-22T12:04:41.294Z",
+  "updatedAt": "2026-08-23T11:12:04.325Z",
   "wines": [
     {
       "quantity": 1,
@@ -1847,6 +1847,21 @@
       "abvEstimado": true,
       "type": "Tinto",
       "maturity": "N"
+    },
+    {
+      "name": "LA HORMIGA Antidolo",
+      "country": "Espanha",
+      "vintage": "2022",
+      "grape": "Tempranillo",
+      "origin": "Ribera del Duero",
+      "quantity": 0,
+      "priceBR": 500,
+      "pricePaid": 280,
+      "priceUSD": null,
+      "rating": 9.2,
+      "abv": 14.5,
+      "pairing": "Cordeiro assado, presunto cru, paella de carne",
+      "photo": "adega/fotos/la-hormiga-antidolo-mt5pjdjd.jpg"
     }
   ]
 }
