@@ -1093,13 +1093,25 @@ document.getElementById("adega-body").addEventListener("change", (e) => {
   if (e.target.closest(".adega-cell-input")) persist();
 });
 
+// O gráfico tem duas páginas: Europa e Américas. Só carrega a imagem
+// quando a aba é aberta — são alguns MB que a maioria das visitas não usa.
+function mostrarPaginaChart(i) {
+  const paginas = (vintageChart && vintageChart.imagens) || [];
+  if (!paginas[i]) return;
+  document.getElementById("adega-chart-img").src = paginas[i];
+  document.querySelectorAll("#adega-chart-abas .adega-tipo-btn").forEach((b) =>
+    b.classList.toggle("is-ativo", Number(b.dataset.pagina) === i)
+  );
+}
+
 document.getElementById("adega-ver-chart").addEventListener("click", () => {
-  const painel = document.getElementById("adega-chart");
-  // Só carrega a imagem no primeiro clique: são 330 KB que a maioria das
-  // visitas não precisa.
-  const img = document.getElementById("adega-chart-img");
-  if (!img.src) img.src = (vintageChart && vintageChart.imagem) || "adega/vintage-chart.jpg";
-  painel.hidden = false;
+  mostrarPaginaChart(0);
+  document.getElementById("adega-chart").hidden = false;
+});
+
+document.getElementById("adega-chart-abas").addEventListener("click", (e) => {
+  const btn = e.target.closest(".adega-tipo-btn");
+  if (btn) mostrarPaginaChart(Number(btn.dataset.pagina));
 });
 
 document.getElementById("adega-chart-close").addEventListener("click", () => {

@@ -1418,3 +1418,9 @@ body.no-scroll {
   max-height: 82vh;
   width: auto;
 }
+
+.adega-chart-abas {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
