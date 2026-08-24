@@ -147,7 +147,7 @@ function updateSyncMsg() {
     el.textContent = "✓ É esta configuração que está valendo no envio automático.";
     el.classList.remove("is-pendente");
   } else {
-    el.textContent = "⚠ Salvo neste navegador, mas ainda não está valendo no envio automático — me avise para publicar.";
+    el.textContent = "⚠ Salvo neste navegador, mas ainda não publicado. Clique em salvar para publicar.";
     el.classList.add("is-pendente");
   }
 }
@@ -177,15 +177,44 @@ async function loadConfig() {
   updateSyncMsg();
 }
 
-function saveConfig(e) {
+async function saveConfig(e) {
   e.preventDefault();
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(currentConfig()));
+  const config = currentConfig();
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(config));
 
   const msg = document.getElementById("news-saved-msg");
   msg.style.display = "block";
   setTimeout(() => (msg.style.display = "none"), 3000);
 
+  // Guardar no navegador não muda nada para o robô: quem ele lê é o
+  // news-config.json do repositório. Publicar é o que faz a escolha valer.
+  await publicarConfig(config);
   updateSyncMsg();
+}
+
+async function publicarConfig(config) {
+  const aviso = document.getElementById("news-sync-msg");
+  let token = ghToken();
+  if (!token) {
+    token = ghPedirToken("Para a escolha valer no envio automático, ela precisa ser publicada.");
+    if (!token) return;
+  }
+
+  aviso.textContent = "Publicando...";
+  aviso.classList.remove("is-pendente");
+  try {
+    await ghGravarArquivo(
+      "news-config.json",
+      JSON.stringify(config, null, 2) + "\n",
+      "Atualiza a configuração de notícias pela tela",
+      token
+    );
+    publishedConfig = config;
+    aviso.textContent = "Publicado. Vale a partir da próxima busca.";
+  } catch (err) {
+    aviso.textContent = `Não consegui publicar: ${err.message}`;
+    aviso.classList.add("is-pendente");
+  }
 }
 
 renderCheckboxGrid("sources-grid", SOURCES, "source");

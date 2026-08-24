@@ -20,11 +20,27 @@ async function main() {
   const data = JSON.parse(fs.readFileSync(NEWS_PATH, "utf-8"));
   const articles = data.articles || [];
 
-  const perSend = (() => {
-    if (!fs.existsSync(CONFIG_PATH)) return 1;
-    const cfg = JSON.parse(fs.readFileSync(CONFIG_PATH, "utf-8"));
-    return cfg.quantity && cfg.quantity > 0 ? cfg.quantity : 1;
-  })();
+  const cfg = fs.existsSync(CONFIG_PATH) ? JSON.parse(fs.readFileSync(CONFIG_PATH, "utf-8")) : {};
+  const perSend = cfg.quantity && cfg.quantity > 0 ? cfg.quantity : 1;
+
+  // O agendamento do GitHub Actions é fixo e não lê arquivo, então ele roda
+  // de hora em hora e o intervalo escolhido na tela é respeitado aqui:
+  // se ainda não passou o tempo desde o último envio, este ciclo não envia.
+  const horas = cfg.frequency && cfg.frequency > 0 ? Number(cfg.frequency) : 1;
+  const ultimoEnvio = articles
+    .map((a) => a.sentAt)
+    .filter(Boolean)
+    .sort()
+    .pop();
+  if (ultimoEnvio) {
+    const decorridas = (Date.now() - new Date(ultimoEnvio).getTime()) / 3600000;
+    if (decorridas < horas - 0.1) {
+      console.log(
+        `Último envio há ${decorridas.toFixed(1)}h; o intervalo configurado é ${horas}h. Nada a enviar.`
+      );
+      return;
+    }
+  }
 
   // O acervo já vem ordenado por relevância (score) e depois por data.
   const pending = articles.filter((a) => !a.sentAt).slice(0, perSend);
