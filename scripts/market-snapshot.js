@@ -266,6 +266,10 @@ async function main() {
     const screenshotPath = await captureSnapshot(stampText);
     console.log(`Print gerado em ${screenshotPath}`);
     if (dryRun) {
+      // A legenda é a única parte do envio que não aparece no print, então
+      // sem isso não há como conferir as taxas sem mandar mensagem de
+      // verdade pro celular.
+      console.log(`Legenda:\n${caption}`);
       console.log("DRY_RUN ativo — print gerado, nada enviado ao WhatsApp.");
       return;
     }
