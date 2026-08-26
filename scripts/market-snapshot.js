@@ -13,7 +13,16 @@ const BCB_CDI_SERIES = 4389; // Taxa CDI anualizada, base 252
 // serve o mesmo arquivo, então usa essa pra não depender do domínio custom.
 const LOG_PATH = path.join(__dirname, "..", "news", "market-log.json");
 const TESOURO_URL =
-  "https://www.tesourodireto.com.br/json/br/com/b3/tesourodireto/service/api/treasurybondsinfo.json";
+  "https://www.tesourotransparente.gov.br/ckan/dataset/df56aa42-484a-4a59-8184-7676580c81e3" +
+  "/resource/796d2059-14e9-44e3-80c9-2d9e30b405c1/download/precotaxatesourodireto.csv";
+// O Prefixado 01/01/2032 vence exatamente na data do DI jan/32, então a taxa
+// dele é a taxa pré até 2032 — é o número que o futuro de DI daria.
+const PRE_2032 = ["Tesouro Prefixado", "01/01/2032"];
+// NTN-C 2032 não existe: a série NTN-C ("Tesouro IGPM+ com Juros Semestrais"
+// no arquivo) nunca teve vencimento em 2032 — foi emitida para 2021, 2024 e
+// 2031, e o probe confirmou que não há linha de 2032 para ela. O papel
+// indexado à inflação com cupom semestral que vence em 2032 é a NTN-B.
+const NTNB_2032 = ["Tesouro IPCA+ com Juros Semestrais", "15/08/2032"];
 const WIDGET_URL = "https://lgagliazzo-git.github.io/Test/market-widget.html";
 
 const BROWSER_UA =
@@ -63,25 +72,46 @@ async function fetchCdi() {
   return Number(String(raw).replace(",", "."));
 }
 
-// NTN-C 2032 e a taxa longa até 2032 não existem como símbolo no widget de
-// mercado — o teste com BMFBOVESPA:DI1F32 voltou com a linha vazia, o widget
-// gratuito não serve futuro de DI. São títulos públicos, e o preço deles é
-// publicado pelo próprio Tesouro Direto, então vêm por API junto com o CDI.
+// Taxa de título público não existe como símbolo no widget de mercado — o
+// teste com BMFBOVESPA:DI1F32 voltou com a linha vazia, o widget gratuito
+// não serve futuro de DI. E a API que o Tesouro Direto publicava saiu do ar
+// (HTTP 410), o arquivo diário da ANBIMA mudou de lugar (404) e
+// tesourodireto.com.br está atrás de Cloudflare (403). O que restou de pé é
+// este CSV do Tesouro Transparente: histórico inteiro em um arquivo só, sem
+// consulta filtrada, mas são 13,8 MB e ~20s, o que cabe de sobra numa
+// execução por dia.
 async function fetchTesouro() {
-  const json = await withRetry(() => getJson(TESOURO_URL));
-  const lista = json?.response?.TrsrBdTradgList || [];
-  return lista
-    .map((item) => ({
-      nome: item?.TrsrBd?.nm,
-      // anulInvstmtRate é a taxa de compra; quando o título não está à venda
-      // ela vem zerada e só a de recompra (anulRedRate) tem valor.
-      taxa: Number(item?.TrsrBd?.anulInvstmtRate) || Number(item?.TrsrBd?.anulRedRate) || null,
-    }))
-    .filter((b) => b.nome);
+  const res = await withTimeout(
+    fetch(TESOURO_URL, { headers: { "User-Agent": BROWSER_UA } }),
+    120000,
+    "csv do Tesouro"
+  );
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  // O arquivo vem em latin1; lido como utf-8 os nomes com acento quebram.
+  const texto = Buffer.from(await res.arrayBuffer()).toString("latin1");
+
+  // Colunas: Tipo Titulo;Data Vencimento;Data Base;Taxa Compra Manha;...
+  // Guarda, por papel, só a linha da data base mais recente — o arquivo é
+  // histórico e traz uma linha por dia desde 2002.
+  const recentes = new Map();
+  for (const linha of texto.split("\n").slice(1)) {
+    const col = linha.split(";");
+    if (col.length < 5) continue;
+    const [tipo, venc, base, taxaCompra] = col;
+    const chave = `${tipo}|${venc}`;
+    const [d, m, a] = base.split("/");
+    const iso = `${a}-${m}-${d}`;
+    const atual = recentes.get(chave);
+    if (!atual || iso > atual.iso) {
+      recentes.set(chave, { iso, base, taxa: Number(taxaCompra.replace(",", ".")) });
+    }
+  }
+  return recentes;
 }
 
-function acharTitulo(lista, padrao) {
-  return lista.find((b) => padrao.test(b.nome) && b.taxa !== null) || null;
+function acharTitulo(recentes, tipo, vencimento) {
+  const achado = recentes.get(`${tipo}|${vencimento}`);
+  return achado && Number.isFinite(achado.taxa) ? achado : null;
 }
 
 // Sem isso não há como saber, no dia seguinte, se o envio aconteceu:
@@ -205,23 +235,28 @@ async function main() {
   // WhatsApp. Cada execução de teste chegava como mensagem real no celular.
   const dryRun = process.env.DRY_RUN === "true";
 
-  let titulos = [];
+  let titulos = new Map();
   try {
-    titulos = await fetchTesouro();
-    if (dryRun) console.log(`Títulos do Tesouro: ${titulos.map((b) => `${b.nome} = ${b.taxa}`).join(" | ")}`);
+    titulos = await withRetry(fetchTesouro, { attempts: 2 });
   } catch (err) {
     console.error(`Falha no Tesouro: ${err.message}`);
   }
 
-  const ntnc = acharTitulo(titulos, /IGPM.*2032/i);
-  const longa2032 = acharTitulo(titulos, /Prefixado.*2032/i);
+  const pre = acharTitulo(titulos, ...PRE_2032);
+  const ntnb = acharTitulo(titulos, ...NTNB_2032);
+  // O arquivo do Tesouro fecha com alguns dias de defasagem, então a data
+  // base vai junto: sem ela a taxa parece de hoje e não é.
+  const emDia = pre || ntnb;
 
   const caption = [
     `⚡ *GAGLIDOM CLOSE — ${stampText}*`,
     `CDI hoje: ${cdi === null ? "—" : `${fmtNumber(cdi)}% a.a.`}`,
-    `Taxa até 2032: ${longa2032 === null ? "—" : `${fmtNumber(longa2032.taxa)}% a.a.`}`,
-    `NTN-C 2032: ${ntnc === null ? "—" : `IGP-M + ${fmtNumber(ntnc.taxa)}% a.a.`}`,
-  ].join("\n");
+    `Pré 2032: ${pre === null ? "—" : `${fmtNumber(pre.taxa)}% a.a.`}`,
+    `NTN-B 2032: ${ntnb === null ? "—" : `IPCA + ${fmtNumber(ntnb.taxa)}% a.a.`}`,
+    emDia ? `_Tesouro em ${emDia.base.slice(0, 5)}_` : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
 
   try {
     const screenshotPath = await captureSnapshot(stampText);
