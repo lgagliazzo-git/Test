@@ -35,6 +35,29 @@
     width: 340px;
     zoom: 1.5;
   }
+  /* Taxas de título público entram aqui, e não na legenda da imagem: o
+     WhatsApp corta legenda longa atrás de um "Ler mais", e foi assim que a
+     NTN-B sumiu da tela do celular mesmo sendo enviada. Dentro do print não
+     tem como cortar. Preenchido pelo script antes da captura. */
+  #taxas {
+    margin-top: 14px;
+    border-top: 1px solid #1e293b;
+    padding-top: 12px;
+  }
+  .taxa {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 7px 0;
+    font-size: 19px;
+  }
+  .taxa-nome { color: #94a3b8; }
+  .taxa-valor { color: #f8fafc; font-weight: 600; }
+  #taxas-base {
+    color: #64748b;
+    font-size: 15px;
+    margin: 8px 0 0;
+  }
 </style>
 </head>
 <body>
@@ -86,6 +109,7 @@
   }
       </script>
     </div>
+    <div id="taxas"></div>
   </div>
 </body>
 </html>

@@ -156,7 +156,7 @@ function stamp() {
 // — confirmado nos dois testes anteriores. market-widget.html por isso
 // mora na raiz do site, publicado em gaglidom.cloud como qualquer outra
 // página, sem o gate de senha (não tem informação nenhuma do usuário).
-async function captureSnapshot(stampText) {
+async function captureSnapshot(stampText, taxas, baseTexto) {
   const browser = await chromium.launch();
   try {
     // A checagem "sheriff" do widget bloqueou tanto localhost quanto o
@@ -188,9 +188,33 @@ async function captureSnapshot(stampText) {
       }
     });
     await page.goto(WIDGET_URL, { waitUntil: "domcontentloaded" });
-    await page.evaluate((text) => {
-      document.getElementById("stamp").textContent = `Snapshot ${text} BRT`;
-    }, stampText);
+    await page.evaluate(
+      ({ text, linhas, base }) => {
+        document.getElementById("stamp").textContent = `Snapshot ${text} BRT`;
+        // textContent e não innerHTML: os valores vêm de fora (BCB, Tesouro)
+        // e não têm por que virar marcação.
+        const alvo = document.getElementById("taxas");
+        for (const { nome, valor } of linhas) {
+          const linha = document.createElement("div");
+          linha.className = "taxa";
+          const esq = document.createElement("span");
+          esq.className = "taxa-nome";
+          esq.textContent = nome;
+          const dir = document.createElement("span");
+          dir.className = "taxa-valor";
+          dir.textContent = valor;
+          linha.append(esq, dir);
+          alvo.append(linha);
+        }
+        if (base) {
+          const nota = document.createElement("p");
+          nota.id = "taxas-base";
+          nota.textContent = base;
+          alvo.append(nota);
+        }
+      },
+      { text: stampText, linhas: taxas, base: baseTexto }
+    );
 
     // Agora que o <script> está dentro do container, o iframe do widget é
     // criado lá dentro e esse seletor finalmente casa.
@@ -258,23 +282,32 @@ async function main() {
   // base vai junto: sem ela a taxa parece de hoje e não é.
   const emDia = pre || ntnb;
 
-  const caption = [
-    `⚡ *GAGLIDOM CLOSE — ${stampText}*`,
-    `CDI hoje: ${cdi === null ? "—" : `${fmtNumber(cdi)}% a.a.`}`,
-    `Pré 2032: ${pre === null ? "—" : `${fmtNumber(pre.taxa)}% a.a.`}`,
-    `NTN-B 2032: ${ntnb === null ? "—" : `IPCA + ${fmtNumber(ntnb.taxa)}% a.a.`}`,
-    emDia ? `_Tesouro em ${emDia.base.slice(0, 5)}_` : "",
-  ]
-    .filter(Boolean)
-    .join("\n");
+  // As taxas vão dentro do print, não na legenda: o WhatsApp esconde legenda
+  // longa atrás de um "Ler mais", e foi exatamente assim que a NTN-B deixou
+  // de aparecer no celular mesmo tendo sido enviada. A legenda fica com uma
+  // linha só, que o app mostra inteira.
+  const taxas = [
+    { nome: "CDI hoje", valor: cdi === null ? "—" : `${fmtNumber(cdi)}% a.a.` },
+    { nome: "Pré 2032", valor: pre === null ? "—" : `${fmtNumber(pre.taxa)}% a.a.` },
+    {
+      nome: "NTN-B 2032",
+      valor: ntnb === null ? "—" : `IPCA + ${fmtNumber(ntnb.taxa)}%`,
+    },
+  ];
+  const baseTexto = emDia ? `Tesouro em ${emDia.base.slice(0, 5)}` : "";
+
+  const caption = `⚡ *GAGLIDOM CLOSE — ${stampText}*`;
 
   // Antes do print de propósito: a legenda é a única parte do envio que não
   // aparece na imagem, e logar aqui mostra as taxas mesmo quando o print
   // falha — que é justamente quando se quer saber o que teria sido enviado.
-  if (dryRun) console.log(`Legenda:\n${caption}`);
+  if (dryRun) {
+    console.log(`Legenda: ${caption}`);
+    console.log(`Taxas no card: ${taxas.map((t) => `${t.nome} = ${t.valor}`).join(" | ")} (${baseTexto})`);
+  }
 
   try {
-    const screenshotPath = await captureSnapshot(stampText);
+    const screenshotPath = await captureSnapshot(stampText, taxas, baseTexto);
     console.log(`Print gerado em ${screenshotPath}`);
     if (dryRun) {
       console.log("DRY_RUN ativo — print gerado, nada enviado ao WhatsApp.");
@@ -298,7 +331,16 @@ async function main() {
     // (CDI) em texto, em vez de não mandar nada.
     console.error(`Falha ao gerar/enviar o print: ${err.message}`);
     try {
-      const alt = await sendText(`${caption}\n\n_(print do mercado indisponível hoje)_`, { previewUrl: false });
+      // Sem o print, as taxas não têm onde aparecer — voltam para o texto.
+      const alt = await sendText(
+        [
+          caption,
+          ...taxas.map((t) => `${t.nome}: ${t.valor}`),
+          "",
+          "_(print do mercado indisponível hoje)_",
+        ].join("\n"),
+        { previewUrl: false }
+      );
       registrarResultado("enviado_sem_print", alt.messages?.[0]?.id || null);
     } catch (fallbackErr) {
       if (fallbackErr instanceof WindowClosedError) {
