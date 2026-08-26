@@ -12,6 +12,8 @@ const BCB_CDI_SERIES = 4389; // Taxa CDI anualizada, base 252
 // A URL github.io do próprio GitHub Pages tem certificado sempre válido e
 // serve o mesmo arquivo, então usa essa pra não depender do domínio custom.
 const LOG_PATH = path.join(__dirname, "..", "news", "market-log.json");
+const TESOURO_URL =
+  "https://www.tesourodireto.com.br/json/br/com/b3/tesourodireto/service/api/treasurybondsinfo.json";
 const WIDGET_URL = "https://lgagliazzo-git.github.io/Test/market-widget.html";
 
 const BROWSER_UA =
@@ -59,6 +61,27 @@ async function fetchCdi() {
   const raw = json?.[0]?.valor;
   if (raw === undefined) throw new Error("série sem valor");
   return Number(String(raw).replace(",", "."));
+}
+
+// NTN-C 2032 e a taxa longa até 2032 não existem como símbolo no widget de
+// mercado — o teste com BMFBOVESPA:DI1F32 voltou com a linha vazia, o widget
+// gratuito não serve futuro de DI. São títulos públicos, e o preço deles é
+// publicado pelo próprio Tesouro Direto, então vêm por API junto com o CDI.
+async function fetchTesouro() {
+  const json = await withRetry(() => getJson(TESOURO_URL));
+  const lista = json?.response?.TrsrBdTradgList || [];
+  return lista
+    .map((item) => ({
+      nome: item?.TrsrBd?.nm,
+      // anulInvstmtRate é a taxa de compra; quando o título não está à venda
+      // ela vem zerada e só a de recompra (anulRedRate) tem valor.
+      taxa: Number(item?.TrsrBd?.anulInvstmtRate) || Number(item?.TrsrBd?.anulRedRate) || null,
+    }))
+    .filter((b) => b.nome);
+}
+
+function acharTitulo(lista, padrao) {
+  return lista.find((b) => padrao.test(b.nome) && b.taxa !== null) || null;
 }
 
 // Sem isso não há como saber, no dia seguinte, se o envio aconteceu:
@@ -178,14 +201,27 @@ async function main() {
     console.error(`Falha no CDI: ${err.message}`);
   }
 
-  const caption = [
-    `⚡ *GAGLIDOM CLOSE — ${stampText}*`,
-    `CDI: ${cdi === null ? "—" : `${fmtNumber(cdi)}% a.a.`}`,
-  ].join("\n");
-
   // Modo de teste: gera o print e loga o diagnóstico, mas não manda nada pro
   // WhatsApp. Cada execução de teste chegava como mensagem real no celular.
   const dryRun = process.env.DRY_RUN === "true";
+
+  let titulos = [];
+  try {
+    titulos = await fetchTesouro();
+    if (dryRun) console.log(`Títulos do Tesouro: ${titulos.map((b) => `${b.nome} = ${b.taxa}`).join(" | ")}`);
+  } catch (err) {
+    console.error(`Falha no Tesouro: ${err.message}`);
+  }
+
+  const ntnc = acharTitulo(titulos, /IGPM.*2032/i);
+  const longa2032 = acharTitulo(titulos, /Prefixado.*2032/i);
+
+  const caption = [
+    `⚡ *GAGLIDOM CLOSE — ${stampText}*`,
+    `CDI hoje: ${cdi === null ? "—" : `${fmtNumber(cdi)}% a.a.`}`,
+    `Taxa até 2032: ${longa2032 === null ? "—" : `${fmtNumber(longa2032.taxa)}% a.a.`}`,
+    `NTN-C 2032: ${ntnc === null ? "—" : `IGP-M + ${fmtNumber(ntnc.taxa)}% a.a.`}`,
+  ].join("\n");
 
   try {
     const screenshotPath = await captureSnapshot(stampText);
