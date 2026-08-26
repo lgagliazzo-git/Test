@@ -178,8 +178,14 @@ async function captureSnapshot(stampText) {
     page.on("requestfailed", (req) =>
       console.error(`Requisição falhou: ${req.url()} — ${req.failure()?.errorText}`)
     );
+    // Só o que dá problema. Logar toda resposta do widget era útil quando ele
+    // não renderizava, mas isso já foi resolvido: hoje são ~45 linhas de
+    // "Resposta 200" por execução, que empurram a legenda e o conteúdo do
+    // widget para fora do trecho de log que dá para ler depois.
     page.on("response", (res) => {
-      if (res.url().includes("tradingview")) console.log(`Resposta ${res.status()} — ${res.url()}`);
+      if (res.url().includes("tradingview") && !res.ok()) {
+        console.error(`Resposta ${res.status()} — ${res.url()}`);
+      }
     });
     await page.goto(WIDGET_URL, { waitUntil: "domcontentloaded" });
     await page.evaluate((text) => {
