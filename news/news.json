@@ -1,9 +1,249 @@
 {
-  "updatedAt": "2026-08-26T06:41:14.098Z",
+  "updatedAt": "2026-08-26T07:41:52.566Z",
   "windowHours": 96,
   "perSend": 2,
-  "count": 4077,
+  "count": 4076,
   "articles": [
+    {
+      "source": "CNN Brasil",
+      "title": "STF deve retomar nesta quarta julgamento sobre poder de requisição do MP",
+      "link": "https://www.cnnbrasil.com.br/politica/stf-deve-retomar-nesta-quarta-julgamento-sobre-poder-de-requisicao-do-mp/",
+      "publishedAt": "2026-08-26T07:15:48.000Z",
+      "score": 1,
+      "sentAt": "2026-08-26T07:41:54.183Z"
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Minist�rio P�blico quer multa di�ria de R$ 100 mil a Nunes por contrato de ilumina��o considerado irregular",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/cotidiano/2026/08/ministerio-publico-quer-multa-diaria-de-r-100-mil-a-nunes-por-contrato-de-iluminacao-considerado-irregular.shtml",
+      "publishedAt": "2026-08-26T07:15:00.000Z",
+      "score": 1,
+      "sentAt": "2026-08-26T07:41:54.868Z"
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Fl�vio Bolsonaro faz primeira visita ao Nordeste com centr�o ausente e aposta em apoio no 2� turno",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/08/flavio-bolsonaro-faz-primeira-visita-ao-nordeste-com-centrao-ausente-e-aposta-em-apoio-no-2o-turno.shtml",
+      "publishedAt": "2026-08-26T07:07:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Lula deve se reunir com Alcolumbre e Motta para avançar taxa das blusinhas",
+      "link": "https://www.cnnbrasil.com.br/politica/lula-deve-se-reunir-com-alcolumbre-e-motta-para-avancar-taxa-das-blusinhas/",
+      "publishedAt": "2026-08-26T07:05:46.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Partidos têm até hoje para indicar responsáveis por propaganda eleitoral",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/partidos-tem-ate-hoje-para-indicar-responsaveis-por-propaganda-eleitoral/",
+      "publishedAt": "2026-08-26T07:03:06.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Corinthians evita risco e monitora dores no joelho de Hugo Souza até jogo contra o Santos",
+      "link": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/08/26/corinthians-evita-risco-e-monitora-dores-no-joelho-de-hugo-souza-ate-jogo-contra-o-santos.ghtml",
+      "publishedAt": "2026-08-26T07:02:15.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Ferroviária x São Paulo no Paulista Feminino: onde assistir ao vivo e horário",
+      "link": "https://ge.globo.com/sp/ribeirao-preto-e-regiao/futebol/futebol-feminino/paulista-feminino/noticia/2026/08/26/ferroviaria-x-sao-paulo-no-paulista-feminino-onde-assistir-ao-vivo-e-horario.ghtml",
+      "publishedAt": "2026-08-26T07:02:14.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Quem joga? Veja as opções de Dorival caso Calleri seja desfalque do São Paulo contra o Bragantino",
+      "link": "https://ge.globo.com/futebol/times/sao-paulo/noticia/2026/08/26/quem-joga-veja-as-opcoes-de-dorival-caso-calleri-seja-desfalque-do-sao-paulo-contra-o-bragantino.ghtml",
+      "publishedAt": "2026-08-26T07:02:11.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Amiga de Lulinha concentrou lobby em órgãos de tecnologia e saúde, diz PF",
+      "link": "https://www.cnnbrasil.com.br/politica/amiga-de-lulinha-concentrou-lobby-em-orgaos-de-tecnologia-e-saude-diz-pf/",
+      "publishedAt": "2026-08-26T07:01:47.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Pedro disputa com Viveros artilharia que ainda busca no Flamengo",
+      "link": "https://ge.globo.com/futebol/times/flamengo/noticia/2026/08/26/pedro-disputa-com-viveros-artilharia-que-ainda-busca-no-flamengo.ghtml",
+      "publishedAt": "2026-08-26T07:01:47.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Saiba o que mudou na comissão técnica do Fluminense após efetivação de Marcão",
+      "link": "https://ge.globo.com/futebol/times/fluminense/noticia/2026/08/26/saiba-o-que-mudou-na-comissao-tecnica-do-fluminense-apos-efetivacao-de-marcao.ghtml",
+      "publishedAt": "2026-08-26T07:01:26.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Palmeiras x Santos: onde assistir ao vivo, horário e escalações",
+      "link": "https://ge.globo.com/sp/futebol/copa-do-brasil/noticia/2026/08/26/palmeiras-x-santos-onde-assistir-ao-vivo-horario-e-escalacoes.ghtml",
+      "publishedAt": "2026-08-26T07:01:20.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "São José-RS x Goiatuba: onde assistir ao vivo, horário e escalações",
+      "link": "https://ge.globo.com/go/futebol/brasileirao-serie-d/noticia/2026/08/26/sao-jose-rs-x-goiatuba-onde-assistir-ao-vivo-horario-e-escalacoes.ghtml",
+      "publishedAt": "2026-08-26T07:01:05.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Vietnã quer vender menos commodity e mais café processado",
+      "link": "https://www.cnnbrasil.com.br/agro/vietna-quer-vender-menos-commodity-e-mais-cafe-processado/",
+      "publishedAt": "2026-08-26T07:00:40.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Tottenham x Charlton: horário e onde assistir a Copa da Liga Inglesa",
+      "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/futebol-ingles/tottenham-x-charlton-horario-e-onde-assistir-a-copa-da-liga-inglesa/",
+      "publishedAt": "2026-08-26T07:00:24.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Análise: Cruzeiro vive espiral preocupante e perde boa chance de abrir vantagem contra rival",
+      "link": "https://ge.globo.com/futebol/times/cruzeiro/noticia/2026/08/26/analise-cruzeiro-vive-espiral-preocupante-e-perde-boa-chance-de-abrir-vantagem-contra-rival.ghtml",
+      "publishedAt": "2026-08-26T07:00:18.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Chances Série B: Juventude vira líder e tem 55% de possibilidades de acesso direto",
+      "link": "https://ge.globo.com/gato-mestre/noticia/2026/08/26/chances-serie-b-juventude-vira-lider-e-tem-55percent-de-possibilidades-de-acesso-direto.ghtml",
+      "publishedAt": "2026-08-26T07:00:16.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Anna Maria Maiolino ganha exposi��o em que usa a arte para radiografar o corpo",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/ilustrada/2026/08/anna-maria-maiolino-ganha-exposicao-em-que-usa-a-arte-para-radiografar-o-corpo.shtml",
+      "publishedAt": "2026-08-26T07:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Gamescom come�a com grandes lan�amentos e trailer de 'GTA 6' no radar",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/tec/2026/08/gamescom-comeca-com-grandes-lancamentos-e-trailer-de-gta-6-no-radar.shtml",
+      "publishedAt": "2026-08-26T07:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Meta mandou apagar evid�ncias sobre abuso sexual infantil, diz ex-funcion�rio",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/tec/2026/08/meta-mandou-apagar-evidencias-sobre-abuso-sexual-infantil-diz-ex-funcionario.shtml",
+      "publishedAt": "2026-08-26T07:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Fiesp lan�a simulador da reforma tribut�ria",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/blogs/que-imposto-e-esse/2026/08/fiesp-lanca-simulador-da-reforma-tributaria.shtml",
+      "publishedAt": "2026-08-26T07:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Estudo em Porto Alegre mostra que diagn�stico tardio de HIV ocorre mais em heterossexuais casados",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/equilibrioesaude/2026/08/estudo-em-porto-alegre-mostra-que-diagnostico-tardio-de-hiv-ocorre-mais-em-heterossexuais-casados.shtml",
+      "publishedAt": "2026-08-26T07:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Kassio avalia desistir de selo para instituto de pesquisas na elei��o de 2026 ap�s cr�ticas",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/08/kassio-avalia-desistir-de-selo-para-instituto-de-pesquisas-na-eleicao-de-2026-apos-criticas.shtml",
+      "publishedAt": "2026-08-26T07:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Veja como evoluiu a renda m�dia do trabalho no seu e nos outros estados desde 2012",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mercado/2026/08/veja-como-evoluiu-a-renda-media-do-trabalho-no-seu-e-nos-outros-estados-desde-2012.shtml",
+      "publishedAt": "2026-08-26T07:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Centros de deten��o nos EUA t�m condi��es deplor�veis, diz prefeito preso pelo ICE",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mundo/2026/08/centros-de-detencao-nos-eua-tem-condicoes-deploraveis-diz-prefeito-preso-pelo-ice.shtml",
+      "publishedAt": "2026-08-26T07:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Amigos e vizinhos tamb�m ajudam a cuidar de idosos, mostram pesquisas nos EUA",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/equilibrio/2026/08/amigos-e-vizinhos-tambem-ajudam-a-cuidar-de-idosos-mostram-pesquisas-nos-eua.shtml",
+      "publishedAt": "2026-08-26T07:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Renda fica est�vel ap�s recorde no governo Lula; alta desde 2022 � de 13%",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mercado/2026/08/renda-fica-estavel-apos-recorde-no-governo-lula-alta-desde-2022-e-de-13.shtml",
+      "publishedAt": "2026-08-26T07:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Entenda regras do TSE sobre IA e propaganda eleitoral na internet",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/08/entenda-regras-do-tse-sobre-ia-e-propaganda-eleitoral-na-internet.shtml",
+      "publishedAt": "2026-08-26T07:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Inc�ndio em hospital no Paquist�o mata 15 beb�s",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mundo/2026/08/incendio-em-hospital-no-paquistao-mata-15-bebes.shtml",
+      "publishedAt": "2026-08-26T06:59:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Seis chineses estão entre sete mortos após incêndio em usina na Rússia",
+      "link": "https://www.cnnbrasil.com.br/internacional/seis-chineses-estao-entre-sete-mortos-apos-incendio-em-usina-na-russia/",
+      "publishedAt": "2026-08-26T06:57:39.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "20 Exoplanetas começam a ser observados pela Nasa para possível habitação",
+      "link": "https://www.cnnbrasil.com.br/ciencia/missao-pandora-da-nasa-vai-determinar-a-presenca-de-agua-em-exoplanetas/",
+      "publishedAt": "2026-08-26T06:37:56.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Embraer certifica jato que pousa sozinho em caso de incapacitação do piloto",
+      "link": "https://www.cnnbrasil.com.br/infra/embraer-certifica-jato-que-pousa-sozinho-em-caso-de-incapacitacao-do-piloto/",
+      "publishedAt": "2026-08-26T06:36:26.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Febre do Nilo Ocidental é rara no Brasil, apesar da disseminação global",
+      "link": "https://www.cnnbrasil.com.br/saude/febre-do-nilo-ocidental-e-rara-no-brasil-apesar-da-disseminacao-global/",
+      "publishedAt": "2026-08-26T06:35:11.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Pacientes com TOC levam quase 7 anos para buscar ajuda; psiquiatra explica",
+      "link": "https://www.cnnbrasil.com.br/saude/pacientes-com-toc-levam-quase-7-anos-para-buscar-ajuda-psiquiatra-explica/",
+      "publishedAt": "2026-08-26T06:33:30.000Z",
+      "score": 1
+    },
     {
       "source": "CNN Brasil",
       "title": "Perfume causa câncer de tireoide? Veja o que diz especialista",
@@ -28434,253 +28674,6 @@
       "title": "Reforma tributária cria janela bilionária para finanças sustentáveis no Brasil, diz WWF",
       "link": "https://exame.com/esg/reforma-tributaria-cria-janela-bilionaria-para-financas-sustentaveis-no-brasil-diz-wwf/",
       "publishedAt": "2026-08-22T07:51:49.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Hoje é Dia do Folclore: relembre as principais lendas brasileiras",
-      "link": "https://www.cnnbrasil.com.br/nacional/brasil/hoje-e-dia-do-folclore-relembre-as-principais-lendas-brasileiras/",
-      "publishedAt": "2026-08-22T07:30:39.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Irã autoriza passagem de petroleiros do Iraque pelo Estreito de Ormuz",
-      "link": "https://www.cnnbrasil.com.br/internacional/ira-autoriza-passagem-de-petroleiros-do-iraque-pelo-estreito-de-ormuz/",
-      "publishedAt": "2026-08-22T07:20:19.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Borussia Dortmund x Bayern: horário e onde assistir à Supercopa alemã",
-      "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/borussia-dortmund-x-bayern-horario-e-onde-assistir-a-supercopa-alema/",
-      "publishedAt": "2026-08-22T07:15:07.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Inquéritos sobre Lulinha e Master só devem ser concluídos após eleições",
-      "link": "https://www.cnnbrasil.com.br/politica/inqueritos-sobre-lulinha-e-master-so-devem-ser-concluidos-apos-eleicoes/",
-      "publishedAt": "2026-08-22T07:12:40.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "TSE avalia mecanismo para fiscalizar inserções eleitorais em rádio e TV",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/tse-avalia-mecanismo-para-fiscalizar-insercoes-eleitorais-em-radio-e-tv/",
-      "publishedAt": "2026-08-22T07:06:12.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Bolsa dá sinais de recuperação, mas analistas veem apenas “repique técnico”",
-      "link": "https://www.cnnbrasil.com.br/economia/money/mercado/bolsa-da-sinais-de-recuperacao-mas-analistas-veem-apenas-repique-tecnico/",
-      "publishedAt": "2026-08-22T07:04:21.000Z",
-      "score": 1
-    },
-    {
-      "source": "Exame",
-      "title": "Runway: desbloqueie todo potencial da ferramenta na criação de vídeos profissionais",
-      "link": "https://exame.com/inteligencia-artificial/runway-desbloqueie-todo-potencial-da-ferramenta-na-criacao-de-videos-profissionais/",
-      "publishedAt": "2026-08-22T07:04:03.000Z",
-      "score": 1
-    },
-    {
-      "source": "G1",
-      "title": "As 10 empresas em que os jovens mais sonham em trabalhar; veja ranking e o que eles valorizam",
-      "link": "https://g1.globo.com/trabalho-e-carreira/noticia/2026/08/22/as-10-empresas-em-que-os-jovens-mais-sonham-em-trabalhar-veja-ranking-e-o-que-eles-valorizam.ghtml",
-      "publishedAt": "2026-08-22T07:02:02.000Z",
-      "score": 1,
-      "sentAt": "2026-08-22T07:28:11.052Z"
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "De fã de Ronaldo a protagonista no Coxa: ex-atacante Bill revive fatos especiais por Corinthians e Coritiba",
-      "link": "https://ge.globo.com/pr/futebol/times/coritiba/noticia/2026/08/22/de-fa-de-ronaldo-a-protagonista-no-coxa-ex-atacante-bill-revive-fatos-especiais-por-corinthians-e-coritiba.ghtml",
-      "publishedAt": "2026-08-22T07:01:33.000Z",
-      "score": 1,
-      "sentAt": "2026-08-22T07:28:11.540Z"
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Nubank Parque: por que painel de LED ainda não foi instalado em fachada de estádio do Palmeiras",
-      "link": "https://ge.globo.com/futebol/times/palmeiras/noticia/2026/08/22/nubank-parque-por-que-painel-de-led-ainda-nao-foi-instalado-em-fachada-de-estadio-do-palmeiras.ghtml",
-      "publishedAt": "2026-08-22T07:01:28.000Z",
-      "score": 1
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Ferroviária x Fluminense no Brasileiro Feminino: onde assistir ao vivo e horário",
-      "link": "https://ge.globo.com/sp/ribeirao-preto-e-regiao/futebol/futebol-feminino/brasileiro-feminino/noticia/2026/08/22/ferroviaria-x-fluminense-no-brasileiro-feminino-onde-assistir-ao-vivo-e-horario.ghtml",
-      "publishedAt": "2026-08-22T07:01:24.000Z",
-      "score": 1
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Internacional x Atlético-MG: onde assistir ao vivo, horário e escalações",
-      "link": "https://ge.globo.com/rs/futebol/brasileirao-serie-a/noticia/2026/08/22/internacional-x-atletico-mg-onde-assistir-ao-vivo-horario-e-escalacoes.ghtml",
-      "publishedAt": "2026-08-22T07:01:21.000Z",
-      "score": 1
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Brasileirão 2026: veja onde assistir ao vivo aos jogos da 24ª rodada",
-      "link": "https://ge.globo.com/ba/futebol/brasileirao-serie-a/noticia/2026/08/22/brasileirao-2026-veja-onde-assistir-ao-vivo-aos-jogos-da-24a-rodada.ghtml",
-      "publishedAt": "2026-08-22T07:01:16.000Z",
-      "score": 1
-    },
-    {
-      "source": "Exame",
-      "title": "EXCLUSIVO: Como a Globo usa inteligência artificial para pagar direitos de imagem de 340 novelas",
-      "link": "https://exame.com/inteligencia-artificial/exclusivo-como-a-globo-usa-inteligencia-artificial-para-pagar-direitos-de-imagem-de-340-novelas/",
-      "publishedAt": "2026-08-22T07:01:13.000Z",
-      "score": 1
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Sem dinheiro para derrubar transfer bans, Corinthians descarta contratações até fim da janela",
-      "link": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/08/22/sem-dinheiro-para-derrubar-transfer-bans-corinthians-descarta-contratacoes-ate-fim-da-janela.ghtml",
-      "publishedAt": "2026-08-22T07:01:12.000Z",
-      "score": 1
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Vardy? Bakambu? Fim da janela aquece mercado no São Paulo; veja o que clube ainda busca",
-      "link": "https://ge.globo.com/futebol/times/sao-paulo/noticia/2026/08/22/vardy-bakambu-fim-da-janela-aquece-mercado-no-sao-paulo-veja-o-que-clube-ainda-busca.ghtml",
-      "publishedAt": "2026-08-22T07:01:10.000Z",
-      "score": 1
-    },
-    {
-      "source": "G1",
-      "title": "Como será o supercomputador brasileiro de IA com investimento de R$ 1 bilhão",
-      "link": "https://g1.globo.com/inovacao/noticia/2026/08/22/como-sera-o-supercomputador-brasileiro-de-ia-com-investimento-de-r-1-bilhao.ghtml",
-      "publishedAt": "2026-08-22T07:01:06.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Espanyol x Real Madrid: horário e onde assistir ao jogo de LaLiga",
-      "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/futebol-espanhol/espanyol-x-real-madrid-horario-e-onde-assistir-ao-jogo-de-laliga-2/",
-      "publishedAt": "2026-08-22T07:00:58.000Z",
-      "score": 1
-    },
-    {
-      "source": "Exame",
-      "title": "Como o Brasil virou alternativa à Índia em projetos globais de tecnologia",
-      "link": "https://exame.com/bussola/como-o-brasil-virou-alternativa-a-india-em-projetos-globais-de-tecnologia/",
-      "publishedAt": "2026-08-22T07:00:58.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Cruzeiro x Flamengo: horário e onde assistir ao jogo do Brasileirão",
-      "link": "https://www.cnnbrasil.com.br/esportes/brasileirao/cruzeiro-x-flamengo-horario-e-onde-assistir-ao-jogo-do-brasileirao-3/",
-      "publishedAt": "2026-08-22T07:00:55.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Cuiabá x Goiás: horário e onde assistir ao jogo da Série B",
-      "link": "https://www.cnnbrasil.com.br/esportes/brasileirao/cuiaba-x-goias-horario-e-onde-assistir-ao-jogo-da-serie-b-2/",
-      "publishedAt": "2026-08-22T07:00:47.000Z",
-      "score": 1
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Reformulação? Veja como mudanças no Botafogo apontam para novo momento do ataque",
-      "link": "https://ge.globo.com/futebol/times/botafogo/noticia/2026/08/22/reformulacao-veja-como-mudancas-no-botafogo-apontam-para-novo-momento-do-ataque.ghtml",
-      "publishedAt": "2026-08-22T07:00:43.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Flamengo x Atlético-MG: horário e onde assistir ao Brasileirão Feminino",
-      "link": "https://www.cnnbrasil.com.br/noticias/flamengo-x-atletico-mg-horario-e-onde-assistir-ao-brasileirao-feminino/",
-      "publishedAt": "2026-08-22T07:00:35.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "De olho em mercado halal, VPJ quer vender mais carne de cordeiro",
-      "link": "https://www.cnnbrasil.com.br/agro/vpj-estrutura-cadeia-de-cordeiros-e-mira-exportacao-para-o-mercado-halal/",
-      "publishedAt": "2026-08-22T07:00:34.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Internacional x Atlético-MG: horário e onde assistir ao jogo do Brasileirão",
-      "link": "https://www.cnnbrasil.com.br/esportes/brasileirao/internacional-x-atletico-mg-horario-e-onde-assistir-ao-jogo-do-brasileirao-2/",
-      "publishedAt": "2026-08-22T07:00:29.000Z",
-      "score": 1
-    },
-    {
-      "source": "Exame",
-      "title": "Quer mudar o Brasil? Mude o brasileiro",
-      "link": "https://exame.com/exame-in/quer-mudar-o-brasil-mude-o-brasileiro/",
-      "publishedAt": "2026-08-22T07:00:25.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "50 anos da morte de JK tem perseguição política da ditadura em destaque",
-      "link": "https://www.cnnbrasil.com.br/nacional/brasil/50-anos-da-morte-de-jk-tem-perseguicao-politica-da-ditadura-em-destaque/",
-      "publishedAt": "2026-08-22T07:00:22.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Ceará x Londrina: horário e onde assistir ao jogo da Série B",
-      "link": "https://www.cnnbrasil.com.br/esportes/brasileirao/ceara-x-londrina-horario-e-onde-assistir-ao-jogo-da-serie-b/",
-      "publishedAt": "2026-08-22T07:00:19.000Z",
-      "score": 1
-    },
-    {
-      "source": "Exame",
-      "title": "Por que o PIB de Taiwan deve crescer 11% em 2026? A resposta pode estar na IA",
-      "link": "https://exame.com/mundo/por-que-o-pib-de-taiwan-deve-crescer-11-em-2026-a-resposta-pode-estar-na-ia/",
-      "publishedAt": "2026-08-22T07:00:08.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Embaixador Gusttavo Lima retorna a Barretos após 3 anos; entenda ausência",
-      "link": "https://www.cnnbrasil.com.br/pop/musica/embaixador-gusttavo-lima-retorna-a-barretos-apos-3-anos-entenda-ausencia/",
-      "publishedAt": "2026-08-22T07:00:01.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Ca� do s�timo andar, perdi a vis�o e parte da perna ap�s uso de zolpidem, diz m�dico",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/equilibrioesaude/2026/08/cai-do-setimo-andar-perdi-a-visao-e-parte-da-perna-apos-uso-de-zolpidem-diz-medico.shtml",
-      "publishedAt": "2026-08-22T07:00:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Cinemas ampliam uso de filmes mais curtos e antigos para alcan�ar a Cota de Tela",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/ilustrada/2026/08/cinemas-ampliam-uso-de-filmes-mais-curtos-e-antigos-para-alcancar-a-cota-de-tela.shtml",
-      "publishedAt": "2026-08-22T07:00:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Saiba como usar 5 produtos de k-beauty virais, como o shot de retinal",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/equilibrio/2026/08/saiba-como-usar-5-produtos-de-k-beauty-virais-como-o-shot-de-retinal.shtml",
-      "publishedAt": "2026-08-22T07:00:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "S�o Paulo deve ter temperaturas de 12�C a 22�C neste s�bado (22)",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/cotidiano/2026/08/sao-paulo-deve-ter-temperaturas-de-12c-a-22c-neste-sabado-22.shtml",
-      "publishedAt": "2026-08-22T07:00:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Autismo pode ser um efeito colateral da evolução do cérebro humano; entenda",
-      "link": "https://www.cnnbrasil.com.br/saude/autismo-pode-ser-um-efeito-colateral-da-evolucao-do-cerebro-humano-entenda/",
-      "publishedAt": "2026-08-22T06:40:49.000Z",
       "score": 1
     }
   ]
