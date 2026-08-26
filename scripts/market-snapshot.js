@@ -81,11 +81,15 @@ async function fetchCdi() {
 // consulta filtrada, mas são 13,8 MB e ~20s, o que cabe de sobra numa
 // execução por dia.
 async function fetchTesouro() {
-  const res = await withTimeout(
-    fetch(TESOURO_URL, { headers: { "User-Agent": BROWSER_UA } }),
-    120000,
-    "csv do Tesouro"
-  );
+  // AbortSignal.timeout e não withTimeout: withTimeout só corre contra a
+  // promessa do fetch, que resolve nos cabeçalhos. A leitura dos 13,8 MB do
+  // corpo ficava sem prazo nenhum, e numa execução o download travou no meio
+  // e segurou o job inteiro por mais de quinze minutos — o print nem chegou
+  // a ser tirado. O signal aborta a requisição inteira, corpo incluído.
+  const res = await fetch(TESOURO_URL, {
+    headers: { "User-Agent": BROWSER_UA },
+    signal: AbortSignal.timeout(90000),
+  });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   // O arquivo vem em latin1; lido como utf-8 os nomes com acento quebram.
   const texto = Buffer.from(await res.arrayBuffer()).toString("latin1");
