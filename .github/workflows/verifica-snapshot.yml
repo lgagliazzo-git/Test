@@ -1,0 +1,22 @@
+name: Verifica snapshot
+
+# Roda de manhã e falha se o snapshot da véspera não tiver saído. É o que
+# transforma um silêncio em aviso: o GitHub manda e-mail quando um workflow
+# agendado falha, e sem isso um envio perdido passa despercebido.
+on:
+  schedule:
+    # 9h BRT = 12h UTC
+    - cron: "0 12 * * *"
+  workflow_dispatch:
+
+jobs:
+  verifica:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: claude/landing-page-domain-esf6bn
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: node scripts/verifica-snapshot.js

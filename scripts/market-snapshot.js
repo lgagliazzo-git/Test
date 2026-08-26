@@ -11,6 +11,7 @@ const BCB_CDI_SERIES = 4389; // Taxa CDI anualizada, base 252
 // problema de infraestrutura do domínio custom, sem relação com o widget.
 // A URL github.io do próprio GitHub Pages tem certificado sempre válido e
 // serve o mesmo arquivo, então usa essa pra não depender do domínio custom.
+const LOG_PATH = path.join(__dirname, "..", "news", "market-log.json");
 const WIDGET_URL = "https://lgagliazzo-git.github.io/Test/market-widget.html";
 
 const BROWSER_UA =
@@ -60,6 +61,25 @@ async function fetchCdi() {
   return Number(String(raw).replace(",", "."));
 }
 
+// Sem isso não há como saber, no dia seguinte, se o envio aconteceu:
+// o log do Actions expira e "sucesso" do job não significa entregue.
+function registrarResultado(status, detalhe) {
+  let historico = [];
+  try {
+    if (fs.existsSync(LOG_PATH)) historico = JSON.parse(fs.readFileSync(LOG_PATH, "utf-8")).envios || [];
+  } catch {
+    /* log corrompido: começa um novo */
+  }
+  historico.push({
+    quando: new Date().toISOString(),
+    dia: new Date().toLocaleDateString("sv-SE", { timeZone: "America/Sao_Paulo" }),
+    status,
+    detalhe: detalhe || null,
+  });
+  fs.mkdirSync(path.dirname(LOG_PATH), { recursive: true });
+  fs.writeFileSync(LOG_PATH, JSON.stringify({ envios: historico.slice(-60) }, null, 2) + "\n");
+}
+
 function fmtNumber(value) {
   return value.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
@@ -90,7 +110,7 @@ async function captureSnapshot(stampText) {
     // deviceScaleFactor 2: o widget é ampliado por zoom no CSS, e sem dobrar
     // a densidade de pixels o texto sairia serrilhado no print.
     const page = await browser.newPage({
-      viewport: { width: 960, height: 900 },
+      viewport: { width: 960, height: 1200 },
       deviceScaleFactor: 2,
       userAgent: BROWSER_UA,
     });
@@ -175,23 +195,33 @@ async function main() {
       return;
     }
     const result = await sendImage(screenshotPath, caption);
-    console.log(`Enviado. id: ${result.messages?.[0]?.id || "(sem id)"}`);
+    const id = result.messages?.[0]?.id || "(sem id)";
+    console.log(`Enviado. id: ${id}`);
+    registrarResultado("enviado", id);
   } catch (err) {
     if (dryRun) throw err;
     if (err instanceof WindowClosedError) {
-      console.log("Janela de 24h fechada — mande qualquer mensagem ao bot para reabrir.");
-      return;
+      // Antes isso era um return silencioso: o job ficava verde sem ter
+      // enviado nada, e no dia seguinte não havia como saber.
+      registrarResultado("nao_enviado", "janela de 24h fechada");
+      throw new Error(
+        "Janela de 24h do WhatsApp fechada — mande qualquer mensagem ao bot para reabrir."
+      );
     }
     // Se o print falhar por algum motivo, ainda vale mandar o que se tem
     // (CDI) em texto, em vez de não mandar nada.
     console.error(`Falha ao gerar/enviar o print: ${err.message}`);
     try {
-      await sendText(`${caption}\n\n_(print do mercado indisponível hoje)_`, { previewUrl: false });
+      const alt = await sendText(`${caption}\n\n_(print do mercado indisponível hoje)_`, { previewUrl: false });
+      registrarResultado("enviado_sem_print", alt.messages?.[0]?.id || null);
     } catch (fallbackErr) {
       if (fallbackErr instanceof WindowClosedError) {
-        console.log("Janela de 24h fechada — mande qualquer mensagem ao bot para reabrir.");
-        return;
+        registrarResultado("nao_enviado", "janela de 24h fechada");
+        throw new Error(
+          "Janela de 24h do WhatsApp fechada — mande qualquer mensagem ao bot para reabrir."
+        );
       }
+      registrarResultado("nao_enviado", fallbackErr.message);
       throw fallbackErr;
     }
   }
