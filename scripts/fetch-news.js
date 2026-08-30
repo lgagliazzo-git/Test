@@ -23,7 +23,7 @@ function withTimeout(promise, ms, label) {
 const CONFIG_PATH = path.join(__dirname, "..", "news-config.json");
 const OUTPUT_DIR = path.join(__dirname, "..", "news");
 const OUTPUT_PATH = path.join(OUTPUT_DIR, "news.json");
-const WINDOW_HOURS = 96;
+const WINDOW_HOURS = 48;
 
 const GOOGLE_TRENDS_URL = "https://trends.google.com/trends/api/dailytrends?hl=pt-BR&tz=180&geo=BR&ns=15";
 const TREND_SIMILARITY_THRESHOLD = 0.5;
