@@ -73,8 +73,33 @@ async function main() {
   }
 
   if (sent > 0) {
+    // A partir de agora, o site não guarda mais o acervo inteiro: a cada
+    // envio ele fica só com o que foi mandado + 10 sugestões (5 pelo score
+    // de relevância/keywords, 5 pelo score de trending), pra não acumular
+    // notícia velha só porque ainda está dentro da janela de horas.
+    const sentLinks = new Set(pending.map((a) => a.link));
+    const sentArticles = articles.filter((a) => sentLinks.has(a.link));
+    const rest = articles.filter((a) => !sentLinks.has(a.link));
+
+    const topKeyword = [...rest]
+      .sort((a, b) => (b.keywordScore || 0) - (a.keywordScore || 0) || new Date(b.publishedAt) - new Date(a.publishedAt))
+      .slice(0, 5);
+    const topKeywordLinks = new Set(topKeyword.map((a) => a.link));
+
+    const topTrend = rest
+      .filter((a) => !topKeywordLinks.has(a.link))
+      .sort((a, b) => (b.trendScore || 0) - (a.trendScore || 0) || new Date(b.publishedAt) - new Date(a.publishedAt))
+      .slice(0, 5);
+
+    data.articles = [...sentArticles, ...topKeyword, ...topTrend].sort(
+      (a, b) => (b.score || 0) - (a.score || 0) || new Date(b.publishedAt) - new Date(a.publishedAt)
+    );
+    data.count = data.articles.length;
+
     fs.writeFileSync(NEWS_PATH, JSON.stringify(data, null, 2));
-    console.log(`${sent} notícia(s) enviada(s) e marcada(s) no acervo.`);
+    console.log(
+      `${sent} notícia(s) enviada(s) e marcada(s). Acervo publicado reduzido para ${data.count} (${sentArticles.length} enviada(s) + ${topKeyword.length} por keywords + ${topTrend.length} por trends).`
+    );
   }
 }
 
