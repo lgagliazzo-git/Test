@@ -42,8 +42,15 @@ async function main() {
     }
   }
 
-  // O acervo já vem ordenado por relevância (score) e depois por data.
-  const pending = articles.filter((a) => !a.sentAt).slice(0, perSend);
+  const hasKeywords = cfg.keywords && cfg.keywords.length > 0;
+
+  // O acervo já vem ordenado por relevância (score) e depois por data. O
+  // envio pelo WhatsApp continua só com notícias que batem a keyword quando
+  // ela existe — o "como se a keyword não existisse" é só pra sugestão no
+  // site (ver o corte lá embaixo), não pro que é enviado de fato.
+  let pendingPool = articles.filter((a) => !a.sentAt);
+  if (hasKeywords) pendingPool = pendingPool.filter((a) => (a.keywordScore || 0) > 0);
+  const pending = pendingPool.slice(0, perSend);
 
   if (pending.length === 0) {
     console.log("Nenhuma notícia nova para enviar neste ciclo.");
@@ -74,31 +81,50 @@ async function main() {
 
   if (sent > 0) {
     // A partir de agora, o site não guarda mais o acervo inteiro: a cada
-    // envio ele fica só com o que foi mandado + 10 sugestões (5 pelo score
-    // de relevância/keywords, 5 pelo score de trending), pra não acumular
-    // notícia velha só porque ainda está dentro da janela de horas.
+    // envio ele fica só com o que foi mandado + 10 sugestões, pra não
+    // acumular notícia velha só porque ainda está dentro da janela de horas.
     const sentLinks = new Set(pending.map((a) => a.link));
     const sentArticles = articles.filter((a) => sentLinks.has(a.link));
     const rest = articles.filter((a) => !sentLinks.has(a.link));
 
-    const topKeyword = [...rest]
-      .sort((a, b) => (b.keywordScore || 0) - (a.keywordScore || 0) || new Date(b.publishedAt) - new Date(a.publishedAt))
-      .slice(0, 5);
-    const topKeywordLinks = new Set(topKeyword.map((a) => a.link));
+    let bucketA, bucketB, bucketALabel, bucketBLabel;
+    if (hasKeywords) {
+      // Com keyword configurada: 66% relacionado à keyword (ranqueado por
+      // trend) + 34% ignorando a keyword por completo, como se ela não
+      // existisse (ranqueado só por trend, do acervo inteiro).
+      const matching = rest.filter((a) => (a.keywordScore || 0) > 0);
+      bucketA = [...matching]
+        .sort((a, b) => (b.trendScore || 0) - (a.trendScore || 0) || new Date(b.publishedAt) - new Date(a.publishedAt))
+        .slice(0, Math.round(10 * 0.66));
+      const bucketALinks = new Set(bucketA.map((a) => a.link));
+      bucketB = rest
+        .filter((a) => !bucketALinks.has(a.link))
+        .sort((a, b) => (b.trendScore || 0) - (a.trendScore || 0) || new Date(b.publishedAt) - new Date(a.publishedAt))
+        .slice(0, Math.round(10 * 0.34));
+      bucketALabel = "por keyword+trend";
+      bucketBLabel = "só por trend (ignorando keyword)";
+    } else {
+      // Sem keyword configurada, mantém o corte 5/5 de antes.
+      bucketA = [...rest]
+        .sort((a, b) => (b.keywordScore || 0) - (a.keywordScore || 0) || new Date(b.publishedAt) - new Date(a.publishedAt))
+        .slice(0, 5);
+      const bucketALinks = new Set(bucketA.map((a) => a.link));
+      bucketB = rest
+        .filter((a) => !bucketALinks.has(a.link))
+        .sort((a, b) => (b.trendScore || 0) - (a.trendScore || 0) || new Date(b.publishedAt) - new Date(a.publishedAt))
+        .slice(0, 5);
+      bucketALabel = "por keywords";
+      bucketBLabel = "por trends";
+    }
 
-    const topTrend = rest
-      .filter((a) => !topKeywordLinks.has(a.link))
-      .sort((a, b) => (b.trendScore || 0) - (a.trendScore || 0) || new Date(b.publishedAt) - new Date(a.publishedAt))
-      .slice(0, 5);
-
-    data.articles = [...sentArticles, ...topKeyword, ...topTrend].sort(
+    data.articles = [...sentArticles, ...bucketA, ...bucketB].sort(
       (a, b) => (b.score || 0) - (a.score || 0) || new Date(b.publishedAt) - new Date(a.publishedAt)
     );
     data.count = data.articles.length;
 
     fs.writeFileSync(NEWS_PATH, JSON.stringify(data, null, 2));
     console.log(
-      `${sent} notícia(s) enviada(s) e marcada(s). Acervo publicado reduzido para ${data.count} (${sentArticles.length} enviada(s) + ${topKeyword.length} por keywords + ${topTrend.length} por trends).`
+      `${sent} notícia(s) enviada(s) e marcada(s). Acervo publicado reduzido para ${data.count} (${sentArticles.length} enviada(s) + ${bucketA.length} ${bucketALabel} + ${bucketB.length} ${bucketBLabel}).`
     );
   }
 }
