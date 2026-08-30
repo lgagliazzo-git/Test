@@ -217,8 +217,10 @@ async function main() {
         const publishedTime = publishedAt ? new Date(publishedAt).getTime() : now;
         if (Number.isNaN(publishedTime) || publishedTime < windowStart) continue;
 
+        // Não descarta mais quem não bate com keyword: o acervo precisa ter
+        // as duas coisas disponíveis, porque a publicação mistura notícias
+        // relacionadas à keyword com notícias só por trend (ver send-whatsapp.js).
         const keywordScore = scoreArticle(item, config.keywords);
-        if (config.keywords && config.keywords.length > 0 && keywordScore === 0) continue;
 
         collected.push({
           source: sourceName,
