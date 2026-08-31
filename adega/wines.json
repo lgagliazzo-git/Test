@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-23T11:12:04.325Z",
+  "updatedAt": "2026-08-31T10:53:45.957Z",
   "wines": [
     {
       "quantity": 1,
@@ -1862,6 +1862,78 @@
       "abv": 14.5,
       "pairing": "Cordeiro assado, presunto cru, paella de carne",
       "photo": "adega/fotos/la-hormiga-antidolo-mt5pjdjd.jpg"
+    },
+    {
+      "quantity": 0,
+      "pricePaid": null,
+      "priceBR": 450,
+      "priceUSD": 80,
+      "rating": 96,
+      "priceBREstimado": true,
+      "name": "Echo de Lynch-Bages",
+      "country": "França",
+      "vintage": "2010",
+      "grape": "Cabernet Sauvignon / Merlot / Cabernet Franc",
+      "origin": "Pauillac, Bordeaux",
+      "photo": "adega/fotos/echo-lynch-bages-2010.jpg",
+      "pairing": "Cordeiro, carnes vermelhas grelhadas, queijos maduros",
+      "abv": 13.5,
+      "abvEstimado": true,
+      "type": "Tinto"
+    },
+    {
+      "quantity": 0,
+      "pricePaid": null,
+      "priceBR": 140,
+      "priceUSD": null,
+      "rating": 88,
+      "priceBREstimado": true,
+      "name": "Centenero Valpolicella Ripasso",
+      "country": "Itália",
+      "vintage": "2017",
+      "grape": "Corvina / Rondinella / Molinara",
+      "origin": "Valpolicella, Vêneto",
+      "photo": "adega/fotos/centenero-valpolicella-ripasso-2017.jpg",
+      "pairing": "Carnes assadas, risotos, queijos curados",
+      "abv": 14,
+      "abvEstimado": false,
+      "type": "Tinto"
+    },
+    {
+      "quantity": 0,
+      "pricePaid": null,
+      "priceBR": 115,
+      "priceUSD": 20,
+      "rating": 89,
+      "priceBREstimado": true,
+      "name": "Castello Vicchiomaggio Guado Alto",
+      "country": "Itália",
+      "vintage": "2017",
+      "grape": "Sangiovese",
+      "origin": "Chianti Classico, Toscana",
+      "photo": "adega/fotos/vicchiomaggio-guado-alto-2017.jpg",
+      "pairing": "Massas com molho de tomate, carnes grelhadas, queijos",
+      "abv": 13.5,
+      "abvEstimado": true,
+      "type": "Tinto"
+    },
+    {
+      "quantity": 0,
+      "pricePaid": null,
+      "priceBR": 65,
+      "priceUSD": 12,
+      "rating": 85,
+      "priceBREstimado": true,
+      "name": "Anciano Crianza Tempranillo",
+      "country": "Espanha",
+      "vintage": "2015",
+      "grape": "Tempranillo",
+      "origin": "Valdepeñas, Castilla-La Mancha",
+      "photo": "adega/fotos/anciano-crianza-tempranillo-2015.jpg",
+      "pairing": "Tapas, queijos, carnes grelhadas",
+      "abv": 13,
+      "abvEstimado": true,
+      "type": "Tinto"
     }
   ]
 }
