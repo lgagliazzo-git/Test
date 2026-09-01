@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-01T01:32:20.901Z",
+  "updatedAt": "2026-09-01T08:01:42.557Z",
   "wines": [
     {
       "quantity": 1,
@@ -2545,6 +2545,60 @@
       "pairing": "Carnes vermelhas, cordeiro, queijos maduros",
       "abv": 13.5,
       "abvEstimado": true,
+      "type": "Tinto"
+    },
+    {
+      "quantity": 0,
+      "pricePaid": null,
+      "priceBR": 500,
+      "priceUSD": 86,
+      "rating": 95,
+      "priceBREstimado": true,
+      "name": "Pêra-Manca Branco",
+      "country": "Portugal",
+      "vintage": "2021",
+      "grape": "Antão Vaz / Arinto",
+      "origin": "Évora, Alentejo",
+      "photo": "adega/fotos/pera-manca-branco-2021.jpg",
+      "pairing": "Peixes nobres, frutos do mar, queijos curados",
+      "abv": 13,
+      "abvEstimado": true,
+      "type": "Branco"
+    },
+    {
+      "quantity": 0,
+      "pricePaid": null,
+      "priceBR": 95,
+      "priceUSD": null,
+      "rating": 93,
+      "priceBREstimado": false,
+      "name": "Casa Perini Fração Única Merlot",
+      "country": "Brasil",
+      "vintage": "2020",
+      "grape": "Merlot",
+      "origin": "Vale Trentino, Serra Gaúcha, RS",
+      "photo": "adega/fotos/casa-perini-fracao-unica-merlot-2020.jpg",
+      "pairing": "Carnes vermelhas, massas, queijos",
+      "abv": 13.5,
+      "abvEstimado": true,
+      "type": "Tinto"
+    },
+    {
+      "quantity": 0,
+      "pricePaid": null,
+      "priceBR": 130,
+      "priceUSD": 22,
+      "rating": 87,
+      "priceBREstimado": true,
+      "name": "Banfi Chianti Classico Riserva",
+      "country": "Itália",
+      "vintage": "2022",
+      "grape": "Sangiovese",
+      "origin": "Chianti Classico, Toscana",
+      "photo": "adega/fotos/banfi-chianti-classico-riserva-2022.jpg",
+      "pairing": "Massas com molho de tomate, carnes grelhadas, queijos",
+      "abv": 13.5,
+      "abvEstimado": false,
       "type": "Tinto"
     }
   ]
