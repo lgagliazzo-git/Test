@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-31T22:24:12.115Z",
+  "updatedAt": "2026-09-01T00:32:04.782Z",
   "wines": [
     {
       "quantity": 1,
@@ -2132,6 +2132,78 @@
       "abv": 14.5,
       "abvEstimado": true,
       "type": "Tinto"
+    },
+    {
+      "quantity": 0,
+      "pricePaid": null,
+      "priceBR": 380,
+      "priceUSD": 65,
+      "rating": 91,
+      "priceBREstimado": true,
+      "name": "Jordan Cabernet Sauvignon",
+      "country": "EUA",
+      "vintage": "2018",
+      "grape": "Cabernet Sauvignon / Merlot / Petit Verdot / Malbec",
+      "origin": "Alexander Valley, Sonoma County, Califórnia",
+      "photo": "adega/fotos/jordan-cabernet-sauvignon-2018.jpg",
+      "pairing": "Carnes vermelhas grelhadas, cordeiro, queijos maduros",
+      "abv": 14.5,
+      "abvEstimado": true,
+      "type": "Tinto"
+    },
+    {
+      "quantity": 0,
+      "pricePaid": null,
+      "priceBR": 340,
+      "priceUSD": 60,
+      "rating": 94,
+      "priceBREstimado": true,
+      "name": "La Rioja Alta Viña Arana Gran Reserva",
+      "country": "Espanha",
+      "vintage": "2016",
+      "grape": "Tempranillo / Graciano",
+      "origin": "Rioja Alta, La Rioja",
+      "photo": "adega/fotos/rioja-alta-vina-arana-gran-reserva-2016.jpg",
+      "pairing": "Cordeiro, carnes vermelhas assadas, queijos curados",
+      "abv": 13.5,
+      "abvEstimado": true,
+      "type": "Tinto"
+    },
+    {
+      "quantity": 0,
+      "pricePaid": null,
+      "priceBR": 300,
+      "priceUSD": 52,
+      "rating": 93,
+      "priceBREstimado": true,
+      "name": "Tenuta La Fuga Brunello di Montalcino",
+      "country": "Itália",
+      "vintage": "2019",
+      "grape": "Sangiovese",
+      "origin": "Montalcino, Toscana",
+      "photo": "adega/fotos/tenuta-la-fuga-brunello-2019.jpg",
+      "pairing": "Carnes vermelhas assadas, caça, queijos duros envelhecidos",
+      "abv": 14,
+      "abvEstimado": true,
+      "type": "Tinto"
+    },
+    {
+      "quantity": 0,
+      "pricePaid": null,
+      "priceBR": 75,
+      "priceUSD": 15,
+      "rating": 90,
+      "priceBREstimado": true,
+      "name": "Italo Cescon Pinot Grigio",
+      "country": "Itália",
+      "vintage": "2022",
+      "grape": "Pinot Grigio",
+      "origin": "Veneto",
+      "photo": "adega/fotos/italo-cescon-pinot-grigio-2022.jpg",
+      "pairing": "Frutos do mar, peixes leves, saladas",
+      "abv": 12.5,
+      "abvEstimado": true,
+      "type": "Branco"
     }
   ]
 }
