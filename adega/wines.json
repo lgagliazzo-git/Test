@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-01T00:32:04.782Z",
+  "updatedAt": "2026-09-01T00:52:16.350Z",
   "wines": [
     {
       "quantity": 1,
@@ -2204,6 +2204,24 @@
       "abv": 12.5,
       "abvEstimado": true,
       "type": "Branco"
+    },
+    {
+      "quantity": 0,
+      "pricePaid": null,
+      "priceBR": 300,
+      "priceUSD": 45,
+      "rating": 96,
+      "priceBREstimado": true,
+      "name": "Ventisquero Tara Atacama Pinot Noir",
+      "country": "Chile",
+      "vintage": null,
+      "grape": "Pinot Noir",
+      "origin": "Valle del Huasco, Atacama",
+      "photo": "adega/fotos/tara-atacama-pinot-noir.jpg",
+      "pairing": "Salmão grelhado, aves, queijos macios",
+      "abv": 13.5,
+      "abvEstimado": true,
+      "type": "Tinto"
     }
   ]
 }
