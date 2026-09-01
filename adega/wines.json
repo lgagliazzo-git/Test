@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-01T08:21:02.372Z",
+  "updatedAt": "2026-09-01T08:29:09.945Z",
   "wines": [
     {
       "quantity": 1,
@@ -2690,6 +2690,78 @@
       "abv": 12.5,
       "abvEstimado": true,
       "type": "Branco"
+    },
+    {
+      "quantity": 0,
+      "pricePaid": null,
+      "priceBR": 110,
+      "priceUSD": 20,
+      "rating": 90,
+      "priceBREstimado": true,
+      "name": "Ellena Giuseppe Barbera d'Alba",
+      "country": "Itália",
+      "vintage": "2021",
+      "grape": "Barbera",
+      "origin": "La Morra, Piemonte",
+      "photo": "adega/fotos/ellena-giuseppe-barbera-dalba-2021.jpg",
+      "pairing": "Massas, carnes grelhadas, queijos",
+      "abv": 13.5,
+      "abvEstimado": true,
+      "type": "Tinto"
+    },
+    {
+      "quantity": 0,
+      "pricePaid": null,
+      "priceBR": 450,
+      "priceUSD": 75,
+      "rating": 91,
+      "priceBREstimado": true,
+      "name": "Domaine Maillard Père & Fils Pommard La Chanière",
+      "country": "França",
+      "vintage": "2020",
+      "grape": "Pinot Noir",
+      "origin": "Pommard, Côte de Beaune, Borgonha",
+      "photo": "adega/fotos/maillard-pommard-la-chaniere-2020.jpg",
+      "pairing": "Aves, cogumelos, queijos macios, carnes magras",
+      "abv": 13,
+      "abvEstimado": true,
+      "type": "Tinto"
+    },
+    {
+      "quantity": 0,
+      "pricePaid": null,
+      "priceBR": 230,
+      "priceUSD": 39,
+      "rating": 89,
+      "priceBREstimado": true,
+      "name": "Château d'Aiguilhe",
+      "country": "França",
+      "vintage": "2001",
+      "grape": "Merlot / Cabernet Franc",
+      "origin": "Côtes de Castillon, Bordeaux",
+      "photo": "adega/fotos/chateau-daiguilhe-2001.jpg",
+      "pairing": "Carnes vermelhas, queijos maduros, massas",
+      "abv": 13,
+      "abvEstimado": false,
+      "type": "Tinto"
+    },
+    {
+      "quantity": 0,
+      "pricePaid": null,
+      "priceBR": 380,
+      "priceUSD": 65,
+      "rating": 90,
+      "priceBREstimado": true,
+      "name": "Château Plince",
+      "country": "França",
+      "vintage": "2009",
+      "grape": "Merlot / Cabernet Franc",
+      "origin": "Pomerol, Bordeaux",
+      "photo": "adega/fotos/chateau-plince-2009.jpg",
+      "pairing": "Carnes vermelhas, cordeiro, queijos maduros",
+      "abv": 13.5,
+      "abvEstimado": true,
+      "type": "Tinto"
     }
   ]
 }
