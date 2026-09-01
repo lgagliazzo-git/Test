@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-01T08:30:26.276Z",
+  "updatedAt": "2026-09-01T08:31:56.261Z",
   "wines": [
     {
       "quantity": 1,
@@ -2779,6 +2779,24 @@
       "pairing": "Salmão, aves, queijos macios, carnes magras",
       "abv": 14,
       "abvEstimado": true,
+      "type": "Tinto"
+    },
+    {
+      "quantity": 0,
+      "pricePaid": null,
+      "priceBR": 350,
+      "priceUSD": 59,
+      "rating": 90,
+      "priceBREstimado": true,
+      "name": "Promis — Ca'Marcanda (Gaja)",
+      "country": "Itália",
+      "vintage": "2022",
+      "grape": "Merlot / Syrah / Sangiovese",
+      "origin": "Bolgheri, Toscana",
+      "photo": "adega/fotos/promis-ca-marcanda-2022.jpg",
+      "pairing": "Carnes vermelhas grelhadas, queijos maduros, massas com molho encorpado",
+      "abv": 14.5,
+      "abvEstimado": false,
       "type": "Tinto"
     }
   ]
