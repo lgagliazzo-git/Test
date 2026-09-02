@@ -1,13 +1,20 @@
 name: Baileys login
 
 # Dispara isso manualmente (aba Actions) sempre que precisar (re)conectar
-# o número de WhatsApp que envia as notícias. Ao rodar, acompanhe o log
-# desta execução AO VIVO — o QR code aparece em ASCII direto nele e dá
-# pra escanear na tela. Depois de conectar, baixe o artefato gerado
-# ("baileys-auth") e cole o conteúdo do arquivo baileys-auth.b64.txt no
-# secret WHATSAPP_BAILEYS_AUTH do repositório.
+# o número de WhatsApp que envia as notícias. Informe o número na caixa
+# de diálogo do "Run workflow" e acompanhe o log desta execução AO VIVO —
+# um código de pareamento de 8 caracteres aparece nele (não é QR: dá pra
+# digitar direto no aparelho, sem precisar de câmera nem de tela grande).
+# Depois de conectar, baixe o artefato gerado ("baileys-auth") e cole o
+# conteúdo do arquivo baileys-auth.b64.txt no secret WHATSAPP_BAILEYS_AUTH
+# do repositório.
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      phone_number:
+        description: "Número que vai virar o remetente — só dígitos, com código do país (ex: 5511999999999)"
+        required: true
+        type: string
 
 jobs:
   login:
@@ -22,7 +29,10 @@ jobs:
 
       - run: npm install
 
-      - run: npm run baileys-login
+      - name: Pedir código de pareamento e aguardar conexão
+        env:
+          PAIRING_PHONE_NUMBER: ${{ inputs.phone_number }}
+        run: npm run baileys-login
 
       - name: Empacotar a sessão gerada
         if: always()
