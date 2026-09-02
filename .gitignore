@@ -1,1 +1,7 @@
 node_modules/
+
+# Sessão do WhatsApp Web (Baileys) — nunca deve ir pro repositório, é
+# equivalente a um token de sessão logada. Vive só como secret no GitHub.
+.baileys_auth/
+baileys-auth.tar.gz
+baileys-auth.b64.txt

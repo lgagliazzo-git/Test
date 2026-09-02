@@ -22,8 +22,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
-      WHATSAPP_TOKEN: ${{ secrets.WHATSAPP_TOKEN }}
-      WHATSAPP_PHONE_NUMBER_ID: ${{ secrets.WHATSAPP_PHONE_NUMBER_ID }}
+      # Envio via WhatsApp Web (Baileys), não mais a Cloud API da Meta — ver
+      # scripts/baileys-login.js e o workflow "Baileys login" para gerar
+      # WHATSAPP_BAILEYS_AUTH.
+      WHATSAPP_BAILEYS_AUTH: ${{ secrets.WHATSAPP_BAILEYS_AUTH }}
       WHATSAPP_TO: ${{ secrets.WHATSAPP_TO }}
       DRY_RUN: ${{ inputs.dry_run }}
     steps:
@@ -40,7 +42,7 @@ jobs:
       - run: npx playwright install --with-deps chromium
 
       - name: Send market snapshot
-        if: env.WHATSAPP_TOKEN != ''
+        if: env.WHATSAPP_BAILEYS_AUTH != ''
         run: npm run market-snapshot
 
       - name: Registra o resultado do dia

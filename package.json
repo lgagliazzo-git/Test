@@ -6,10 +6,14 @@
   "scripts": {
     "fetch-news": "node scripts/fetch-news.js",
     "send-whatsapp": "node scripts/send-whatsapp.js",
-    "market-snapshot": "node scripts/market-snapshot.js"
+    "market-snapshot": "node scripts/market-snapshot.js",
+    "baileys-login": "node scripts/baileys-login.js"
   },
   "dependencies": {
+    "@whiskeysockets/baileys": "^7.0.0-rc14",
+    "pino": "^10.3.1",
     "playwright": "^1.47.0",
+    "qrcode-terminal": "^0.12.0",
     "rss-parser": "^3.13.0"
   }
 }
