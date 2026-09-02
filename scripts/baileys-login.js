@@ -55,7 +55,7 @@ async function main() {
     console.log("===================================\n");
     console.log("No WhatsApp do número que vai enviar as notícias:");
     console.log("Aparelhos conectados > Conectar um aparelho > Conectar com número de telefone");
-    console.log("Digite esse código lá — ele expira em poucos minutos.\n");
+    console.log("Digite esse código lá AGORA — ele vale só pra esta conexão específica.\n");
   }
 
   sock.ev.on("connection.update", (update) => {
@@ -67,13 +67,20 @@ async function main() {
     }
 
     if (connection === "close") {
+      // Antes disso aqui chamava main() de novo pra "tentar de novo", mas
+      // isso pedia um código NOVO a cada queda — invalidando o código
+      // anterior antes de dar tempo de digitar no celular. Um código só
+      // vale pra a conexão que o gerou, então se ela cair o jeito é
+      // recomeçar do zero (rodar o workflow de novo), não tentar de novo
+      // sozinho no mesmo processo.
       const statusCode = lastDisconnect?.error?.output?.statusCode;
+      const motivo = lastDisconnect?.error?.message || "motivo desconhecido";
+      console.log(`\nConexão encerrada (status ${statusCode || "?"}): ${motivo}`);
       if (statusCode === DisconnectReason.loggedOut) {
-        console.log("Sessão deslogada — rode de novo do zero pra gerar um código novo.");
-        process.exit(1);
+        console.log("Sessão deslogada.");
       }
-      console.log("Conexão caiu, tentando de novo...");
-      main();
+      console.log("Rode o workflow de novo do zero pra gerar um código novo e digite assim que ele aparecer.");
+      process.exit(1);
     }
   });
 }
