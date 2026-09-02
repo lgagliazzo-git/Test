@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { sendText, requireEnv, WindowClosedError } = require("./whatsapp");
+const { sendText, requireEnv, disconnect, WindowClosedError } = require("./whatsapp");
 
 const NEWS_PATH = path.join(__dirname, "..", "news", "news.json");
 const CONFIG_PATH = path.join(__dirname, "..", "news-config.json");
@@ -78,7 +78,10 @@ async function main() {
   }
 }
 
-main().catch((err) => {
-  console.error(err.message);
-  process.exit(1);
-});
+main()
+  .finally(() => disconnect())
+  .then(() => process.exit(0))
+  .catch((err) => {
+    console.error(err.message);
+    process.exit(1);
+  });

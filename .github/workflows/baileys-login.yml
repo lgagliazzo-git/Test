@@ -1,0 +1,42 @@
+name: Baileys login
+
+# Dispara isso manualmente (aba Actions) sempre que precisar (re)conectar
+# o número de WhatsApp que envia as notícias. Ao rodar, acompanhe o log
+# desta execução AO VIVO — o QR code aparece em ASCII direto nele e dá
+# pra escanear na tela. Depois de conectar, baixe o artefato gerado
+# ("baileys-auth") e cole o conteúdo do arquivo baileys-auth.b64.txt no
+# secret WHATSAPP_BAILEYS_AUTH do repositório.
+on:
+  workflow_dispatch: {}
+
+jobs:
+  login:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - run: npm install
+
+      - run: npm run baileys-login
+
+      - name: Empacotar a sessão gerada
+        if: always()
+        run: |
+          if [ -d .baileys_auth ]; then
+            tar czf baileys-auth.tar.gz .baileys_auth
+            base64 -w0 baileys-auth.tar.gz > baileys-auth.b64.txt
+          else
+            echo "Ninguém escaneou o QR a tempo — nenhuma sessão foi gerada." > baileys-auth.b64.txt
+          fi
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: baileys-auth
+          path: baileys-auth.b64.txt
+          retention-days: 1

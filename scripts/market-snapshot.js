@@ -2,7 +2,7 @@ const path = require("path");
 const os = require("os");
 const fs = require("fs");
 const { chromium } = require("playwright");
-const { sendText, sendImage, requireEnv, WindowClosedError } = require("./whatsapp");
+const { sendText, sendImage, requireEnv, disconnect, WindowClosedError } = require("./whatsapp");
 
 const TIMEOUT_MS = 15000;
 const BCB_CDI_SERIES = 4389; // Taxa CDI anualizada, base 252
@@ -355,7 +355,10 @@ async function main() {
   }
 }
 
-main().catch((err) => {
-  console.error(err.message);
-  process.exit(1);
-});
+main()
+  .finally(() => disconnect())
+  .then(() => process.exit(0))
+  .catch((err) => {
+    console.error(err.message);
+    process.exit(1);
+  });

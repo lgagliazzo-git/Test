@@ -13,8 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 8
     env:
-      WHATSAPP_TOKEN: ${{ secrets.WHATSAPP_TOKEN }}
-      WHATSAPP_PHONE_NUMBER_ID: ${{ secrets.WHATSAPP_PHONE_NUMBER_ID }}
+      # Envio via WhatsApp Web (Baileys), não mais a Cloud API da Meta — ver
+      # scripts/baileys-login.js e o workflow "Baileys login" para gerar
+      # WHATSAPP_BAILEYS_AUTH.
+      WHATSAPP_BAILEYS_AUTH: ${{ secrets.WHATSAPP_BAILEYS_AUTH }}
       WHATSAPP_TO: ${{ secrets.WHATSAPP_TO }}
     steps:
       - uses: actions/checkout@v4
@@ -29,15 +31,15 @@ jobs:
 
       - run: npm run fetch-news
 
-      # Só envia se o token estiver configurado nos secrets do repositório.
-      # Sem ele o passo é pulado e a coleta segue funcionando normalmente.
+      # Só envia se a sessão estiver configurada nos secrets do repositório.
+      # Sem ela o passo é pulado e a coleta segue funcionando normalmente.
       # (o contexto `secrets` não é permitido em `if`, por isso o teste é no env)
       #
-      # continue-on-error: se o WhatsApp falhar (token expirado, rate limit,
+      # continue-on-error: se o WhatsApp falhar (sessão dessincronizada,
       # etc.) isso não pode travar o commit da coleta — sem isso, um problema
       # só no envio também parava as notícias de aparecerem no site.
       - name: Send top story to WhatsApp
-        if: env.WHATSAPP_TOKEN != ''
+        if: env.WHATSAPP_BAILEYS_AUTH != ''
         continue-on-error: true
         run: npm run send-whatsapp
 
