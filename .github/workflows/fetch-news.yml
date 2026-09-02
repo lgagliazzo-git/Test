@@ -32,8 +32,13 @@ jobs:
       # Só envia se o token estiver configurado nos secrets do repositório.
       # Sem ele o passo é pulado e a coleta segue funcionando normalmente.
       # (o contexto `secrets` não é permitido em `if`, por isso o teste é no env)
+      #
+      # continue-on-error: se o WhatsApp falhar (token expirado, rate limit,
+      # etc.) isso não pode travar o commit da coleta — sem isso, um problema
+      # só no envio também parava as notícias de aparecerem no site.
       - name: Send top story to WhatsApp
         if: env.WHATSAPP_TOKEN != ''
+        continue-on-error: true
         run: npm run send-whatsapp
 
       - name: Commit updated news
