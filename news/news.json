@@ -1,14 +1,854 @@
 {
-  "updatedAt": "2026-09-08T23:08:46.882Z",
+  "updatedAt": "2026-09-09T02:50:48.064Z",
   "windowHours": 96,
   "perSend": 2,
-  "count": 2862,
+  "count": 2871,
   "articles": [
+    {
+      "source": "CNN Brasil",
+      "title": "Cebolinha veste a camisa do Santos após desembarque em aeroporto",
+      "link": "https://www.cnnbrasil.com.br/esportes/futebol/santos/cebolinha-veste-a-camisa-do-santos-apos-desembarque-em-aeroporto/",
+      "publishedAt": "2026-09-09T02:33:32.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Thiago Silva, do Fluminense, critica reformulação de Ancelotti na Seleção: \"Aqui não funciona assim\"",
+      "link": "https://ge.globo.com/futebol/times/fluminense/noticia/2026/09/08/thiago-silva-do-fluminense-critica-reformulacao-de-ancelotti-na-selecao-aqui-nao-funciona-assim.ghtml",
+      "publishedAt": "2026-09-09T02:33:17.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Atuações: Arboleda é o melhor em derrota do São Paulo para o Boca; dê suas notas",
+      "link": "https://ge.globo.com/futebol/times/sao-paulo/noticia/2026/09/08/atuacoes-arboleda-e-o-melhor-em-derrota-do-sao-paulo-para-o-boca-de-suas-notas.ghtml",
+      "publishedAt": "2026-09-09T02:30:55.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Banco argentino controlado pelo BB compra neg�cio de varejo do rival Bind",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mercado/2026/09/banco-argentino-controlado-pelo-bb-compra-negocio-de-varejo-do-rival-bind.shtml",
+      "publishedAt": "2026-09-09T02:30:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Regina Silveira cobre museu em Bras�lia com enorme costura de vinil",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/plastico/2026/09/regina-silveira-cobre-museu-em-brasilia-com-enorme-costura-de-vinil.shtml",
+      "publishedAt": "2026-09-09T02:30:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "São Paulo perde do Boca e larga em desvantagem nas quartas da Sul-Americana",
+      "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/sulamericana/sao-paulo-perde-do-boca-e-larga-em-desvantagem-nas-quartas-da-sul-americana/",
+      "publishedAt": "2026-09-09T02:27:30.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Boca abre vantagem m�nima sobre S�o Paulo nas quartas de final da Sul-Americana",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/esporte/2026/09/boca-abre-vantagem-minima-sobre-sao-paulo-nas-quartas-de-final-da-sul-americana.shtml",
+      "publishedAt": "2026-09-09T02:27:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Veja o que o São Paulo precisa fazer para avançar na Sul-Americana",
+      "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/sulamericana/veja-o-que-o-sao-paulo-precisa-fazer-para-avancar-na-sul-americana/",
+      "publishedAt": "2026-09-09T02:26:51.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Atuações do Cuiabá: Fábio Gomes, Lorenzo e Jean Dias marcam; dê suas notas",
+      "link": "https://ge.globo.com/mt/futebol/times/cuiaba/noticia/2026/09/08/atuacoes-do-cuiaba-fabio-gomes-lorenzo-e-jean-dias-marcam-de-suas-notas.ghtml",
+      "publishedAt": "2026-09-09T02:19:17.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Trump pro�be importa��o de latic�nios, bebidas alco�licas e motocicletas do Canad�",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mercado/2026/09/trump-proibe-importacao-de-laticinios-bebidas-alcoolicas-e-motocicletas-do-canada.shtml",
+      "publishedAt": "2026-09-09T02:12:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Léo Jardim celebra postura do Vasco na Sul-Americana: “Jogamos bola”",
+      "link": "https://www.cnnbrasil.com.br/esportes/futebol/vasco-da-gama/leo-jardim-celebra-postura-do-vasco-na-sul-americana-jogamos-bola/",
+      "publishedAt": "2026-09-09T02:08:23.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Thiago Silva, do Fluminense, relata dores no joelho: \"Estou à base de anti-inflamatórios\"",
+      "link": "https://ge.globo.com/futebol/times/fluminense/noticia/2026/09/08/thiago-silva-do-fluminense-relata-dores-no-joelho-estou-a-base-de-anti-inflamatorios.ghtml",
+      "publishedAt": "2026-09-09T02:03:50.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Com AfD no poder, Alemanha entra em territ�rio desconhecido, diz professor de hist�ria alem�",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mundo/2026/09/com-afd-no-poder-alemanha-entra-em-territorio-desconhecido-diz-professor-de-historia-alema.shtml",
+      "publishedAt": "2026-09-09T02:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Mendon�a acirra crise institucional ao afastar diretor da PF e colocar Lula sob press�o",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/09/mendonca-acirra-crise-institucional-ao-afastar-diretor-da-pf-e-colocar-lula-sob-pressao.shtml",
+      "publishedAt": "2026-09-09T02:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Banco Central prepara normas para coibir abusos na oferta digital de cr�dito",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mercado/2026/09/banco-central-prepara-normas-para-coibir-abusos-na-oferta-digital-de-credito.shtml",
+      "publishedAt": "2026-09-09T02:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Em elei��o com menos jovens, 70+ tem maior interesse em pol�tica e prefere Lula, mostra Datafolha",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/09/em-eleicao-com-menos-jovens-70-tem-maior-interesse-em-politica-e-prefere-lula-mostra-datafolha.shtml",
+      "publishedAt": "2026-09-09T02:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Milei escolhe Malvinas em batalha contra queda de popularidade",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mundo/2026/09/milei-escolhe-malvinas-em-batalha-contra-queda-de-popularidade.shtml",
+      "publishedAt": "2026-09-09T02:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Entre presidenci�veis, 4 prop�em veto a bets sem compensar R$ 12,2 bi em impacto fiscal; veja planos",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mercado/2026/09/entre-presidenciaveis-4-propoem-veto-a-bets-sem-compensar-r-122-bi-em-impacto-fiscal-veja-planos.shtml",
+      "publishedAt": "2026-09-09T02:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Vit�ria da extrema direita na Alemanha confronta a Europa com os seus fantasmas",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/rui-tavares/2026/09/vitoria-da-extrema-direita-na-alemanha-confronta-a-europa-com-os-seus-fantasmas.shtml",
+      "publishedAt": "2026-09-09T02:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Pe�a com Roger Gobeth adapta 'O Alienista', conto de Machado de Assis, em SP",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://guia.folha.uol.com.br/teatro/2026/09/peca-com-roger-gobeth-adapta-o-alienista-conto-de-machado-de-assis-em-sp.shtml",
+      "publishedAt": "2026-09-09T02:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "50 anos ap�s morte de Mao, mem�ria do l�der chin�s � transformada em nostalgia",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mundo/2026/09/50-anos-apos-morte-de-mao-memoria-do-lider-chines-e-transformada-em-nostalgia.shtml",
+      "publishedAt": "2026-09-09T02:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Afastamento de Andrei Rodrigues por Mendon�a remete a interfer�ncias de Bolsonaro na PF",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/09/afastamento-de-andrei-rodrigues-por-mendonca-remete-a-interferencias-de-bolsonaro-na-pf.shtml",
+      "publishedAt": "2026-09-09T02:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Blue Note abre nova sala para ampliar programa��o de shows e receber eventos",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://guia.folha.uol.com.br/shows/2026/09/blue-note-abre-nova-sala-para-ampliar-programacao-de-shows-e-receber-eventos.shtml",
+      "publishedAt": "2026-09-09T02:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Aperto de regras do BC para capital de bancos entra no radar para conter endividamento",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mercado/2026/09/aperto-de-regras-do-bc-para-capital-de-bancos-entra-no-radar-para-conter-endividamento.shtml",
+      "publishedAt": "2026-09-09T02:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "O Sputnik e a matem�tica",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/marceloviana/2026/09/o-sputnik-e-a-matematica.shtml",
+      "publishedAt": "2026-09-09T02:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Campanha de Fl�vio descarta pedir pris�o de Andrei ap�s afastamento",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/painel/2026/09/campanha-de-flavio-descarta-pedir-prisao-de-andrei-apos-afastamento.shtml",
+      "publishedAt": "2026-09-09T02:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Marcão explica preferência por Ganso no time titular do Fluminense",
+      "link": "https://www.cnnbrasil.com.br/esportes/futebol/fluminense/marcao-explica-preferencia-por-ganso-no-time-titular-do-fluminense/",
+      "publishedAt": "2026-09-09T01:54:43.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Queda de helicóptero de serviço médico deixa cinco mortos na Malásia",
+      "link": "https://www.cnnbrasil.com.br/internacional/queda-de-helicoptero-de-servico-medico-deixa-mortos-na-malasia/",
+      "publishedAt": "2026-09-09T01:45:34.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Decis�o de Mendon�a para afastar chefe da PF � criticada por especialistas",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/09/decisao-de-mendonca-para-afastar-chefe-da-pf-e-criticada-por-especialistas.shtml",
+      "publishedAt": "2026-09-09T01:31:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "À CNN, Douglas Ruas elogia cortes de gastos de Couto no governo do Rio",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/a-cnn-douglas-ruas-elogia-cortes-de-gastos-de-couto-no-governo-do-rio/",
+      "publishedAt": "2026-09-09T01:29:39.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Nonato dedica vitória e gol do Fluminense ao diretor Paulo Angioni, que está internado",
+      "link": "https://ge.globo.com/futebol/times/fluminense/noticia/2026/09/08/nonato-dedica-gol-e-vitoria-do-fluminense-ao-diretor-paulo-angioni-que-esta-internado.ghtml",
+      "publishedAt": "2026-09-09T01:29:31.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Câmeras em policiais não podem ser “caça às bruxas”, diz Douglas Ruas à CNN",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/cameras-em-policiais-nao-podem-ser-caca-as-bruxas-diz-douglas-ruas-a-cnn/",
+      "publishedAt": "2026-09-09T01:22:16.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Corvo aprende a beber água sozinho; ave pode ser criada como animal de estimação no Brasil?",
+      "link": "https://www.cnnbrasil.com.br/curiosidades/corvo-aprende-a-beber-agua-sozinho-ave-pode-ser-criada-como-animal-de-estimacao-no-brasil/",
+      "publishedAt": "2026-09-09T01:22:06.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "OAB-DF abre processo �tico-disciplinar contra escrit�rio de mulher de Moraes",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/blogs/brasilia-hoje/2026/09/oab-df-abre-processo-etico-disciplinar-contra-escritorio-de-mulher-de-moraes.shtml",
+      "publishedAt": "2026-09-09T01:22:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Morre Jim Geoghan, criador de “Zack & Cody: Gêmeos em Ação”",
+      "link": "https://www.cnnbrasil.com.br/pop/celebridades/morre-jim-geoghan-criador-de-zack-cody-gemeos-em-acao/",
+      "publishedAt": "2026-09-09T01:19:54.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Bienal d� palco a fic��o cient�fica brasileira e 'romances p�prica' em dia tranquilo",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/ilustrada/2026/09/bienal-da-palco-a-ficcao-cientifica-brasileira-e-romances-paprica-em-dia-tranquilo.shtml",
+      "publishedAt": "2026-09-09T01:17:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Zema diz que Mendon�a n�o cometeu excesso e que esquerda e direita se omitem em caso Master",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/blogs/brasilia-hoje/2026/09/zema-diz-que-mendonca-nao-cometeu-excesso-e-que-esquerda-e-direita-se-omitem-em-caso-master.shtml",
+      "publishedAt": "2026-09-09T01:06:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "ONU pede mais ajuda para evitar crise humanitária em Gaza antes do inverno",
+      "link": "https://www.cnnbrasil.com.br/internacional/onu-pede-mais-ajuda-para-evitar-crise-humanitaria-em-gaza-antes-do-inverno/",
+      "publishedAt": "2026-09-09T01:04:30.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Brasil atropela Venezuela e estreia com vitória no Sul-Americano de Vôlei",
+      "link": "https://www.cnnbrasil.com.br/esportes/volei/brasil-atropela-venezuela-e-estreia-com-vitoria-no-sul-americano-de-volei/",
+      "publishedAt": "2026-09-09T01:03:55.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Waack: Incapaz de agir, STF arrasta Lula na crise",
+      "link": "https://www.cnnbrasil.com.br/politica/waack-incapaz-de-agir-stf-arrasta-lula-na-crise/",
+      "publishedAt": "2026-09-09T01:03:26.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Educa��o mal parada",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/opiniao/2026/09/educacao-mal-parada.shtml",
+      "publishedAt": "2026-09-09T01:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "'Pesa sobre Mendon�a a seletividade', diz leitor sobre afastamento de chefe da PF",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/paineldoleitor/2026/09/pesa-sobre-mendonca-a-seletividade-diz-leitor-sobre-afastamento-de-chefe-da-pf.shtml",
+      "publishedAt": "2026-09-09T01:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "O que impede o Brasil de melhorar",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/opiniao/2026/09/o-que-impede-o-brasil-de-melhorar.shtml",
+      "publishedAt": "2026-09-09T01:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Fl�vio explora crise no STF com leviandade e cinismo",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/opiniao/2026/09/flavio-explora-crise-no-stf-com-leviandade-e-cinismo.shtml",
+      "publishedAt": "2026-09-09T01:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Autor de 'Avenida Brasil' escreve pe�a para o marido, Carmo Dalla Vecchia",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/monicabergamo/2026/09/autor-de-avenida-brasil-escreve-peca-para-o-marido-carmo-dalla-vecchia.shtml",
+      "publishedAt": "2026-09-09T01:00:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Jimmy Kimmel pode deixar TV ap�s 24 anos no comando de talk show, diz site",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://f5.folha.uol.com.br/televisao/2026/09/jimmy-kimmel-pode-deixar-tv-apos-24-anos-no-comando-de-talk-show-diz-site.shtml",
+      "publishedAt": "2026-09-09T00:54:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Ziyech chega ao Rio e é recebido por torcedores do Botafogo: \"País número 1 do futebol\"",
+      "link": "https://ge.globo.com/futebol/times/botafogo/noticia/2026/09/08/ziyech-chega-ao-rio-de-janeiro-e-e-recebido-por-torcedores-do-botafogo-no-aeroporto.ghtml",
+      "publishedAt": "2026-09-09T00:51:30.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Rubio diz que há “muito trabalho pela frente” em conversas Rússia-Ucrânia",
+      "link": "https://www.cnnbrasil.com.br/internacional/rubio-diz-que-ha-muito-trabalho-pela-frente-em-conversas-russia-ucrania/",
+      "publishedAt": "2026-09-09T00:48:39.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Em manifesto liderado pela Fiesp, empresários pedem que STF examine ‘fatos’",
+      "link": "https://www.cnnbrasil.com.br/politica/em-manifesto-liderado-pela-fiesp-empresariado-pede-que-plenario-do-stf-examine-fatos/",
+      "publishedAt": "2026-09-09T00:43:56.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Delegados da PF criticam afastamento de Andrei e dizem que decis�o de Mendon�a caberia ao plen�rio do STF",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/blogs/brasilia-hoje/2026/09/delegados-da-pf-criticam-afastamento-de-andrei-e-dizem-que-decisao-de-mendonca-caberia-ao-plenario-do-stf.shtml",
+      "publishedAt": "2026-09-09T00:42:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Poliana é pressionada sobre falta de Leonardo em festa de filho de Virginia",
+      "link": "https://www.cnnbrasil.com.br/pop/celebridades/poliana-e-pressionada-sobre-falta-de-leonardo-em-festa-de-filho-de-virginia/",
+      "publishedAt": "2026-09-09T00:41:48.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Independiente Santa Fe 0 x 0 Vasco: os melhores momentos pela Sul-Americana",
+      "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/sulamericana/independiente-santa-fe-0-x-0-vasco-os-melhores-momentos-pela-sul-americana/",
+      "publishedAt": "2026-09-09T00:39:19.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Mexicanos são presos suspeitos de vender celulares furtados no Rock in Rio",
+      "link": "https://www.cnnbrasil.com.br/nacional/sudeste/rj/mexicanos-sao-presos-suspeitos-de-vender-celulares-furtados-no-rock-in-rio/",
+      "publishedAt": "2026-09-09T00:36:43.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Luisa Stefani e Dabrowski chegam à quarta semifinal de Grand Slam no ano",
+      "link": "https://www.cnnbrasil.com.br/esportes/tenis/luisa-stefani-e-dabrowski-chegam-a-quarta-semifinal-de-grand-slam-no-ano/",
+      "publishedAt": "2026-09-09T00:35:47.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Papa Leão XIV nomeia dois novos bispos no Brasil; saiba quem são",
+      "link": "https://www.cnnbrasil.com.br/nacional/brasil/papa-leao-xiv-nomeia-dois-novos-bispos-no-brasil-saiba-quem-sao/",
+      "publishedAt": "2026-09-09T00:35:10.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Mendon�a manda soltar suspeitos de desvios no INSS em meio a discuss�es sobre mudan�a de relator no STF",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mercado/2026/09/mendonca-manda-soltar-suspeitos-de-desvios-no-inss-em-meio-a-discussoes-sobre-mudanca-de-relator-no-stf.shtml",
+      "publishedAt": "2026-09-09T00:33:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "InfoMoney",
+      "title": "Rubio diz que EUA querem fechar acordos comerciais com Colômbia, Peru e Equador",
+      "link": "https://www.infomoney.com.br/mundo/rubio-diz-que-eua-querem-fechar-acordos-comerciais-com-colombia-peru-e-equador/",
+      "publishedAt": "2026-09-09T00:30:30.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Anac aprova voos após as 23h em Congonhas em casos de exceção",
+      "link": "https://www.cnnbrasil.com.br/infra/anac-aprova-voos-apos-as-23h-em-congonhas-em-casos-de-excecao/",
+      "publishedAt": "2026-09-09T00:28:36.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Quem são os candidatos ao Senado Federal por Goiás em 2026",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/quem-sao-os-candidatos-ao-senado-federal-por-goias-em-2026/",
+      "publishedAt": "2026-09-09T00:28:20.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Confut Sudamericana leva participantes ao museu e sede do Flamengo",
+      "link": "https://www.cnnbrasil.com.br/esportes/confut-sudamericana-leva-participantes-ao-museu-e-sede-do-flamengo/",
+      "publishedAt": "2026-09-09T00:27:41.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Trump atribui vitória eleitoral da AfD na Alemanha a políticas de imigração",
+      "link": "https://www.cnnbrasil.com.br/internacional/trump-atribui-vitoria-eleitoral-da-afd-na-alemanha-a-politicas-de-imigracao/",
+      "publishedAt": "2026-09-09T00:27:04.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Marcão prega cautela ao Fluminense em jogo na Argentina e elogia atuação de Ganso: \"Decisivo\"",
+      "link": "https://ge.globo.com/futebol/times/fluminense/noticia/2026/09/08/marcao-analisa-vitoria-do-fluminense-sobre-o-platense.ghtml",
+      "publishedAt": "2026-09-09T00:26:50.000Z",
+      "score": 1
+    },
+    {
+      "source": "InfoMoney",
+      "title": "Dia de Sorte hoje, concurso 1292: Confira o resultado sorteado nesta terça-feira (8)",
+      "link": "https://www.infomoney.com.br/consumo/dia-de-sorte-hoje-concurso-1292-confira-o-resultado-sorteado-nesta-terca-feira-8/",
+      "publishedAt": "2026-09-09T00:24:15.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Ênio deixa a Chapecoense e tem transferência encaminhada para o futebol árabe",
+      "link": "https://ge.globo.com/sc/futebol/times/chapecoense/noticia/2026/09/08/enio-deixa-a-chapecoense-e-tem-transferencia-encaminhada-para-o-futebol-arabe.ghtml",
+      "publishedAt": "2026-09-09T00:23:08.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Fluminense 2 x 0 Platense: veja os melhores momentos pela Libertadores",
+      "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/libertadores-da-america/fluminense-2-x-0-platense-veja-os-melhores-momentos-pela-libertadores/",
+      "publishedAt": "2026-09-09T00:23:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "G1",
+      "title": "EUA vão proibir importação de laticínios, bebidas alcoólicas e motocicletas do Canadá",
+      "link": "https://g1.globo.com/economia/noticia/2026/09/08/eua-canada-importacao.ghtml",
+      "publishedAt": "2026-09-09T00:22:30.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Pedro Emanuel valoriza empate do Vasco e deixa Richarlison de lado: \"Trabalho com quem tenho aqui\"",
+      "link": "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/08/pedro-emanuel-valoriza-empate-na-sul-americana-e-deixa-richarlison-de-lado-nao-faz-parte-da-nossa-realidade.ghtml",
+      "publishedAt": "2026-09-09T00:22:24.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Amacia, conserva e dá brilho: a arma secreta para a limpeza de camurça e vidro que você já tem em casa",
+      "link": "https://www.cnnbrasil.com.br/curiosidades/amacia-conserva-e-da-brilho-a-arma-secreta-para-a-limpeza-de-camurca-e-vidro-que-voce-ja-tem-em-casa/",
+      "publishedAt": "2026-09-09T00:21:32.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Importações de soja e farelo pela UE recuam no início da safra 2026/27",
+      "link": "https://www.cnnbrasil.com.br/agro/importacoes-de-soja-e/",
+      "publishedAt": "2026-09-09T00:20:03.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Justi�a nega pedido de Tarc�sio contra v�deo de Haddad que liga campanha a doa��o de Vorcaro",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/painel/2026/09/justica-nega-pedido-de-tarcisio-contra-video-de-haddad-que-liga-campanha-a-doacao-de-vorcaro.shtml",
+      "publishedAt": "2026-09-09T00:16:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Penélope Cruz se emociona ao ter segunda maior ovação do Festival de Veneza",
+      "link": "https://www.cnnbrasil.com.br/pop/cinema/penelope-cruz-se-emociona-ao-ter-segunda-maior-ovacao-do-festival-de-veneza/",
+      "publishedAt": "2026-09-09T00:15:26.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Veja o que o Vasco precisa fazer para avançar na Sul-Americana",
+      "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/sulamericana/veja-o-que-o-vasco-precisa-fazer-para-avancar-na-sul-americana/",
+      "publishedAt": "2026-09-09T00:13:39.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Representantes de empresas e da sociedade civil lan�am manifestos e cobram �tica e urg�ncia do STF",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mercado/2026/09/representantes-de-empresas-e-da-sociedade-civil-lancam-manifestos-e-cobram-etica-e-urgencia-do-stf.shtml",
+      "publishedAt": "2026-09-09T00:13:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Aquecimento global: planeta pode ultrapassar 1,5 °C até 2030, alerta ONU",
+      "link": "https://www.cnnbrasil.com.br/ciencia/aquecimento-global-planeta-pode-ultrapassar-15-c-ate-2030-alerta-onu/",
+      "publishedAt": "2026-09-09T00:12:33.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Santa Fe 0 x 0 Vasco: veja os melhores momentos",
+      "link": "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/08/santa-fe-0-x-0-vasco-veja-os-melhores-momentos.ghtml",
+      "publishedAt": "2026-09-09T00:12:08.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Harvard recebe inscri��es de jornalistas para bolsas de estudo",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/blogs/novo-em-folha/2026/09/harvard-recebe-inscricoes-de-jornalistas-para-bolsas-de-estudo.shtml",
+      "publishedAt": "2026-09-09T00:10:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "InfoMoney",
+      "title": "Quina hoje, concurso 7112: confira o resultado sorteado nesta terça-feira (8)",
+      "link": "https://www.infomoney.com.br/consumo/quina-hoje-concurso-7112-confira-o-resultado-sorteado-nesta-terca-feira-8/",
+      "publishedAt": "2026-09-09T00:06:04.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Governo Lula notifica YouTube sobre v�deos de m�dicos falsos gerados por IA",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/equilibrioesaude/2026/09/agu-notifica-youtube-sobre-videos-de-medicos-falsos-gerados-por-ia.shtml",
+      "publishedAt": "2026-09-09T00:06:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Fachin dá 72 horas para Mendonça se manifestar sobre afastamento de Andrei",
+      "link": "https://www.cnnbrasil.com.br/politica/fachin-da-72-horas-para-mendonca-se-manifestar-sobre-afastamento-de-andrei/",
+      "publishedAt": "2026-09-09T00:05:23.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Atuações do Vasco: Léo Jardim salva em outra noite infeliz de Spinelli; dê suas notas",
+      "link": "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/08/atuacoes-do-vasco-leo-jardim-salva-em-outra-noite-infeliz-de-spinelli-de-suas-notas.ghtml",
+      "publishedAt": "2026-09-09T00:05:18.000Z",
+      "score": 1
+    },
+    {
+      "source": "InfoMoney",
+      "title": "Mega-Sena hoje, concurso 3055: Confira o resultado sorteado nesta terça-feira (8)",
+      "link": "https://www.infomoney.com.br/consumo/mega-sena-hoje-concurso-3055-confira-o-resultado-sorteado-nesta-terca-feira-8/",
+      "publishedAt": "2026-09-09T00:04:27.000Z",
+      "score": 1
+    },
+    {
+      "source": "Canaltech",
+      "title": "WhatsApp libera o dobro de áudio no Status para Android e iPhone",
+      "link": "https://canaltech.com.br/apps/whatsapp-libera-o-dobro-de-audio-no-status-para-android-e-iphone/",
+      "publishedAt": "2026-09-09T00:03:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "G1",
+      "title": "Mega-Sena 3055 acumula e prêmio vai a R$ 76 milhões; confira os números sorteados",
+      "link": "https://g1.globo.com/loterias/mega-sena/noticia/2026/09/08/mega-sena-concurso-3055-confira-os-numeros-sorteados.ghtml",
+      "publishedAt": "2026-09-09T00:02:53.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Atuações do Fluminense: Ganso rege vitória na Libertadores e é o melhor; dê suas notas",
+      "link": "https://ge.globo.com/futebol/times/fluminense/noticia/2026/09/08/atuacoes-do-fluminense-ganso-rege-vitoria-na-libertadores-e-e-o-melhor-de-suas-notas.ghtml",
+      "publishedAt": "2026-09-09T00:00:06.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Vasco empata com Santa Fe e deixa decisão aberta na Copa Sul-Americana",
+      "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/sulamericana/vasco-empata-com-santa-fe-e-deixa-decisao-aberta-na-copa-sul-americana/",
+      "publishedAt": "2026-09-08T23:56:05.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Guarda Revolucionária do Irã diz que atacou base dos EUA na Jordânia",
+      "link": "https://www.cnnbrasil.com.br/internacional/guarda-revolucionaria-do-ira-diz-que-atacou-base-dos-eua-na-jordania/",
+      "publishedAt": "2026-09-08T23:55:30.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Fluminense larga na frente do Platense por vaga na semi da Libertadores",
+      "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/libertadores-da-america/fluminense-larga-na-frente-do-platense-por-vaga-na-semi-da-libertadores/",
+      "publishedAt": "2026-09-08T23:54:49.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Veja o que o Fluminense precisa fazer para avançar na Libertadores",
+      "link": "https://www.cnnbrasil.com.br/esportes/futebol/fluminense/veja-o-que-o-fluminense-precisa-fazer-para-avancar-na-libertadores/",
+      "publishedAt": "2026-09-08T23:54:23.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Diamante no dente: quais os riscos de procedimento de Virginia Fonseca após fazer um ‘V’ de Vini Jr.",
+      "link": "https://www.cnnbrasil.com.br/saude/diamante-no-dente-quais-os-riscos-de-procedimento-de-virginia-fonseca-apos-fazer-um-v-de-vini-jr/",
+      "publishedAt": "2026-09-08T23:53:53.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "StoneX reduz estimativa de produtividade do milho nos EUA e mantém projeção",
+      "link": "https://www.cnnbrasil.com.br/agro/stonex-reduz-estimativa-de/",
+      "publishedAt": "2026-09-08T23:53:38.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Diretor diz que Everton Cebolinha “se excluiu” do Flamengo: “Fim de ciclo”",
+      "link": "https://www.cnnbrasil.com.br/esportes/futebol/flamengo/diretor-diz-que-everton-cebolinha-se-excluiu-do-flamengo-fim-de-ciclo/",
+      "publishedAt": "2026-09-08T23:49:47.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Brasileiro jogará segunda Champions e vive expectativa por Seleção",
+      "link": "https://www.cnnbrasil.com.br/esportes/futebol/selecao-brasileira/brasileiro-jogara-segunda-champions-e-vive-expectativa-por-selecao/",
+      "publishedAt": "2026-09-08T23:48:13.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Esposa de PM não tinha costume de manusear arma do agente, diz testemunha",
+      "link": "https://www.cnnbrasil.com.br/nacional/sudeste/sp/esposa-de-pm-nao-tinha-costume-de-manusear-arma-do-agente-diz-testemunha/",
+      "publishedAt": "2026-09-08T23:48:11.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Incêndio florestal no norte da Colômbia queima cerca de três mil hectares",
+      "link": "https://www.cnnbrasil.com.br/internacional/incendio-florestal-no-norte-da-colombia-queima-cerca-de-tres-mil-hectares/",
+      "publishedAt": "2026-09-08T23:45:13.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "'Quem Ama Cuida': Ademir flagra Dora na cama com Andr�; veja fotos",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://f5.folha.uol.com.br/televisao/2026/09/quem-ama-cuida-ademir-flagra-dora-na-cama-com-andre-veja-fotos.shtml",
+      "publishedAt": "2026-09-08T23:40:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "TSE acata ação contra Flávio por suposto abuso de poder econômico",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/tse-acata-acao-contra-flavio-por-suposto-abuso-de-poder-economico/",
+      "publishedAt": "2026-09-08T23:39:24.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Quaest: Lula tem 57% no 2º turno em PE; Flávio, 26%",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/quaest-lula-tem-57-no-2o-turno-em-pe-flavio-26/",
+      "publishedAt": "2026-09-08T23:35:48.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Quem é Danilo Sanfoneiro, namorado de Margareth Serrão, mãe de Virginia",
+      "link": "https://www.cnnbrasil.com.br/pop/celebridades/quem-e-danilo-sanfoneiro-namorado-de-margareth-serrao-mae-de-virginia/",
+      "publishedAt": "2026-09-08T23:33:56.000Z",
+      "score": 1
+    },
+    {
+      "source": "G1",
+      "title": "iPhone 18: Apple deve lançar celular dobrável nesta quarta",
+      "link": "https://g1.globo.com/tecnologia/ao-vivo/apple-lancamento-iphone-18.ghtml",
+      "publishedAt": "2026-09-08T23:33:39.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Deixe a economia funcionar",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/deirdre-nansen-mccloskey/2026/09/deixe-a-economia-funcionar.shtml",
+      "publishedAt": "2026-09-08T23:32:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Brazil Journal",
+      "title": "A OpenAI pode estar fazendo história na matemática",
+      "link": "https://braziljournal.com/a-openai-pode-estar-fazendo-historia-na-matematica/",
+      "publishedAt": "2026-09-08T23:31:26.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "CVM multa Daniel Vorcaro em R$ 20 milhões por fraude em fundo imobiliário",
+      "link": "https://www.cnnbrasil.com.br/economia/money/negocios/cvm-multa-daniel-vorcaro-em-r-20-milhoes-por-fraude-em-fundo-imobiliario/",
+      "publishedAt": "2026-09-08T23:29:36.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Trump diz que US$ 50 bi em produtos canadenses perderão acesso aos EUA",
+      "link": "https://www.cnnbrasil.com.br/economia/money/macroeconomia/trump-diz-que-us-50-bi-em-produtos-canadenses-perderao-acesso-aos-eua/",
+      "publishedAt": "2026-09-08T23:28:40.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "CEO da Oncorp critica intervenção da ANP em contratos de terminais de GNL",
+      "link": "https://www.cnnbrasil.com.br/infra/ceo-da-oncorp-critica-intervencao-da-anp-em-contratos-de-terminais-de-gnl/",
+      "publishedAt": "2026-09-08T23:25:33.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "BTG recomenda compra t�tica de CSN e aposta em efeito Schvartsman no curto prazo",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/painelsa/2026/09/btg-recomenda-compra-tatica-de-csn-e-aposta-em-efeito-schvartsman-no-curto-prazo.shtml",
+      "publishedAt": "2026-09-08T23:25:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "EUA anunciam taxa adicional de 50% sobre produtos canadenses",
+      "link": "https://www.cnnbrasil.com.br/economia/money/macroeconomia/eua-anunciam-taxa-adicional-de-50-sobre-produtos-canadenses/",
+      "publishedAt": "2026-09-08T23:21:18.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "US Open: Luisa Stefani e Dabrowski batem chinesas e avançam à semifinal",
+      "link": "https://www.cnnbrasil.com.br/esportes/tenis/us-open-luisa-stefani-e-dabrowski-batem-chinesas-e-avancam-a-semifinal/",
+      "publishedAt": "2026-09-08T23:20:53.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Guilherme, Henrique e Isabel: por que traduzimos nomes da realeza para o português?",
+      "link": "https://www.cnnbrasil.com.br/curiosidades/guilherme-henrique-e-isabel-por-que-traduzimos-nomes-da-realeza-para-o-portugues/",
+      "publishedAt": "2026-09-08T23:20:13.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Pisa 2025: A nota aos 15 anos come�a muito antes",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/educacao/2026/09/pisa-2025-a-nota-aos-15-anos-comeca-muito-antes.shtml",
+      "publishedAt": "2026-09-08T23:20:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Canaltech",
+      "title": "Leis do Brasil impedem XBOX de limitar horas de uso do Cloud Gaming; entenda",
+      "link": "https://canaltech.com.br/games/leis-do-brasil-impedem-xbox-de-limitar-horas-de-uso-do-cloud-gaming-entenda/",
+      "publishedAt": "2026-09-08T23:20:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Moraes autoriza cobrança de R$ 7 milhões dos condenados no caso Marielle",
+      "link": "https://www.cnnbrasil.com.br/politica/moraes-autoriza-cobranca-de-r-7-milhoes-dos-condenados-no-caso-marielle/",
+      "publishedAt": "2026-09-08T23:18:35.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Boca Juniors x São Paulo: escalações e onde assistir à Copa Sul-Americana",
+      "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/sulamericana/boca-juniors-x-sao-paulo-escalacoes-e-onde-assistir-a-copa-sul-americana/",
+      "publishedAt": "2026-09-08T23:17:04.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Guerras elevam investimento no terminal de GNL de Suape em 50%, a R$ 3 bi",
+      "link": "https://www.cnnbrasil.com.br/infra/guerras-elevam-investimento-no-terminal-de-gnl-de-suape-em-50-a-r-3-bi/",
+      "publishedAt": "2026-09-08T23:15:55.000Z",
+      "score": 1
+    },
+    {
+      "source": "InfoMoney",
+      "title": "Cerca de US$ 50 bi em produtos do Canadá não terão mais acesso ao mercado dos EUA",
+      "link": "https://www.infomoney.com.br/mundo/cerca-de-us-50-bi-em-produtos-do-canada-nao-terao-mais-acesso-ao-mercado-dos-eua/",
+      "publishedAt": "2026-09-08T23:15:38.000Z",
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "A caminho do Vasco, Gabriel Pereira faz post acompanhando jogo contra Santa Fe",
+      "link": "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/08/antes-de-ser-anunciado-pelo-vasco-gabriel-pereira-faz-post-na-torcida-contra-o-santa-fe.ghtml",
+      "publishedAt": "2026-09-08T23:14:14.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Terminal de Suape (PE) pode baixar preço do gás em dois dígitos, diz Oncorp",
+      "link": "https://www.cnnbrasil.com.br/infra/terminal-de-suape-pe-pode-baixar-preco-do-gas-em-dois-digitos-diz-oncorp/",
+      "publishedAt": "2026-09-08T23:10:55.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "À CNN, Ruas cita relação “institucional” com Castro e territórios retomados",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/a-cnn-ruas-cita-relacao-institucional-com-castro-e-territorios-retomados/",
+      "publishedAt": "2026-09-08T23:10:52.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "São Paulo é 2º no Pisa 2025 em média por estados; Paraná lidera",
+      "link": "https://www.cnnbrasil.com.br/educacao/sao-paulo-e-2o-no-pisa-2025-em-media-por-estados-parana-lidera/",
+      "publishedAt": "2026-09-08T23:06:55.000Z",
+      "score": 1
+    },
     {
       "source": "Canaltech",
       "title": "Google Tradutor ganha atualização que muda jeito de usar o app no celular; veja",
       "link": "https://canaltech.com.br/apps/google-tradutor-ganha-atualizacao-que-muda-jeito-de-usar-o-app-no-celular-veja/",
       "publishedAt": "2026-09-08T23:06:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Vídeo: EUA dizem ter destruído cinco petroleiros do Irã",
+      "link": "https://www.cnnbrasil.com.br/internacional/video-eua-dizem-ter-destruido-cinco-petroleiros-do-ira/",
+      "publishedAt": "2026-09-08T23:04:03.000Z",
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Mendon�a usa caos como estrat�gia eleitoral",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/thiago-amparo/2026/09/mendonca-usa-caos-como-estrategia-eleitoral.shtml",
+      "publishedAt": "2026-09-08T23:03:00.000Z",
       "score": 1
     },
     {
@@ -44,6 +884,27 @@
       "title": "AGU pede ao presidente do STF suspensão de decisão que afastou diretor-geral da PF",
       "link": "https://www.infomoney.com.br/politica/agu-pede-ao-presidente-do-stf-suspensao-de-decisao-que-afastou-diretor-geral-da-pf/",
       "publishedAt": "2026-09-08T22:51:40.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Violência das gangues escala e força milhares a deixarem casas no Equador",
+      "link": "https://www.cnnbrasil.com.br/internacional/violencia-das-gangues-escala-e-forca-milhares-a-deixarem-casas-no-equador/",
+      "publishedAt": "2026-09-08T22:49:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Botafogo e Vasco disputam contratação de Matheus Gonçalves, ex-Flamengo",
+      "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/futebol-saudita/botafogo-e-vasco-disputam-contratacao-de-matheus-goncalves-ex-flamengo/",
+      "publishedAt": "2026-09-08T22:43:19.000Z",
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Rubio diz que Irã perderá petroleiros se tentar atingir navios dos EUA",
+      "link": "https://www.cnnbrasil.com.br/internacional/rubio-diz-que-ira-perdera-petroleiros-se-tentar-atingir-navios-dos-eua/",
+      "publishedAt": "2026-09-08T22:42:09.000Z",
       "score": 1
     },
     {
@@ -754,6 +1615,13 @@
       "score": 1
     },
     {
+      "source": "Exame",
+      "title": "Fachin intima Mendonça a responder sobre recurso da AGU contra afastamento de diretores da PF",
+      "link": "https://exame.com/brasil/fachin-intima-mendonca-a-responder-sobre-recurso-da-agu-contra-afastamento-de-diretores-da-pf/",
+      "publishedAt": "2026-09-08T21:09:24.000Z",
+      "score": 1
+    },
+    {
       "source": "Folha de S.Paulo",
       "title": "� para roubar para o nosso time?",
       "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/bernardo-guimaraes/2026/09/e-para-roubar-para-o-nosso-time.shtml",
@@ -877,6 +1745,13 @@
       "title": "Pare de usar Popper para justificar sua intoler�ncia",
       "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/wilson-gomes/2026/09/pare-de-usar-popper-para-justificar-sua-intolerancia.shtml",
       "publishedAt": "2026-09-08T20:52:00.000Z",
+      "score": 1
+    },
+    {
+      "source": "Exame",
+      "title": "Pais de Celeste Rivas pedem pena de morte para D4vd caso cantor seja condenado",
+      "link": "https://exame.com/pop/pais-de-celeste-rivas-pedem-pena-de-morte-para-d4vd-caso-cantor-seja-condenado/",
+      "publishedAt": "2026-09-08T20:51:31.000Z",
       "score": 1
     },
     {
@@ -19224,818 +20099,6 @@
       "title": "Presidente da Colômbia exibe corpos ao celebrar sucesso em operação",
       "link": "https://www.cnnbrasil.com.br/internacional/presidente-da-colombia-exibe-corpos-ao-celebrar-sucesso-em-operacao/",
       "publishedAt": "2026-09-05T02:50:38.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "João quer IPVA zero para motoristas de app; Raquel destaca ações em Caruaru",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/joao-quer-ipva-zero-para-motoristas-de-app-raquel-destaca-acoes-em-caruaru/",
-      "publishedAt": "2026-09-05T02:28:52.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Plataforma usa IA e dados públicos para medir afinidade com candidatos",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/plataforma-usa-ia-e-dados-publicos-para-medir-afinidade-com-candidatos/",
-      "publishedAt": "2026-09-05T02:23:11.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "PGR investigar� relat�rio da PF que revelou mensagens de Vorcaro a Moraes",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/09/pgr-investigara-relatorio-da-pf-que-revelou-mensagens-de-vorcaro-a-moraes.shtml",
-      "publishedAt": "2026-09-05T02:17:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Rock in Rio 2026: Otaviano Costa fala sobre cenas quentes de Fl�via Alessandra em Quem Ama Cuida",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://f5.folha.uol.com.br/celebridades/2026/09/rock-in-rio-2026-otaviano-costa-fala-sobre-cenas-quentes-de-flavia-alessandra-em-quem-ama-cuida.shtml",
-      "publishedAt": "2026-09-05T02:16:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Trump concede clemência a 30 pessoas, diz autoridade da Casa Branca",
-      "link": "https://www.cnnbrasil.com.br/internacional/trump-concede-clemencia-a-30-pessoas-diz-autoridade-da-casa-branca/",
-      "publishedAt": "2026-09-05T02:05:56.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Perna quebrada e “sofá” improvisado: o que rolou no 1º dia do Rock in Rio",
-      "link": "https://www.cnnbrasil.com.br/pop/musica/perna-quebrada-e-sofa-improvisado-o-que-rolou-no-1o-dia-do-rock-in-rio/",
-      "publishedAt": "2026-09-05T02:05:56.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Brasil conquista quatro medalhas de ouro na 19ª Olimpíada Ibero-americana",
-      "link": "https://www.cnnbrasil.com.br/ciencia/brasil-conquista-quatro-medalhas-de-ouro-na-19a-olimpiada-ibero-americana/",
-      "publishedAt": "2026-09-05T02:03:36.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Procuradoria investiga atua��o de big techs e pede informa��es ao TSE sobre reuni�es com plataformas de IA",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/09/procuradoria-investiga-atuacao-de-big-techs-e-pede-informacoes-ao-tse-sobre-reunioes-com-plataformas-de-ia.shtml",
-      "publishedAt": "2026-09-05T02:03:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Lula restringe n�cleo de campanha e planeja refor�o ap�s se queixar de resultados",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/09/lula-restringe-nucleo-de-campanha-e-planeja-reforco-apos-se-queixar-de-resultados.shtml",
-      "publishedAt": "2026-09-05T02:00:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Festa com Marina Lima arrecada R$ 2 milh�es para o Museu de Arte Moderna",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/plastico/2026/09/festa-com-marina-lima-arrecada-r-2-milhoes-para-o-museu-de-arte-moderna.shtml",
-      "publishedAt": "2026-09-05T02:00:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Luana Vitra reflete a disputa por metais de terras raras em instala��o na Pinacoteca",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/ilustrada/2026/09/luana-vitra-reflete-a-disputa-por-metais-de-terras-raras-em-instalacao-na-pinacoteca.shtml",
-      "publishedAt": "2026-09-05T02:00:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Ala pr�-Mendon�a v� tentativa de Moraes de contaminar todo o STF para se blindar",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/09/ala-pro-mendonca-ve-tentativa-de-moraes-de-contaminar-todo-o-stf-para-se-blindar.shtml",
-      "publishedAt": "2026-09-05T02:00:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "China come�a a regular atendimento ao consumidor feito por IA",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/igor-patrick/2026/09/china-comeca-a-regular-atendimento-ao-consumidor-feito-por-ia.shtml",
-      "publishedAt": "2026-09-05T02:00:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Projeto parado no Congresso pro�be uso de relat�rios de intelig�ncia em investiga��es criminais",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/painel/2026/09/projeto-parado-no-congresso-proibe-uso-de-relatorios-de-inteligencia-em-investigacoes-criminais.shtml",
-      "publishedAt": "2026-09-05T02:00:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Candidata do PT-RN aciona PF por emails com amea�as de morte e viol�ncia sexual",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/monicabergamo/2026/09/candidata-do-pt-rn-aciona-pf-por-emails-com-ameacas-de-morte-e-violencia-sexual.shtml",
-      "publishedAt": "2026-09-05T02:00:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Um m�s ap�s revoga��o de visto, embaixadora do Brasil nos EUA trabalha em Washington fora dos holofotes",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mundo/2026/09/um-mes-apos-revogacao-de-visto-embaixadora-do-brasil-nos-eua-trabalha-em-washington-fora-dos-holofotes.shtml",
-      "publishedAt": "2026-09-05T02:00:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Juros altos e risco fiscal reacendem debate sobre t�tulos isentos",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mercado/2026/09/juros-altos-e-risco-fiscal-reacendem-debate-sobre-titulos-isentos.shtml",
-      "publishedAt": "2026-09-05T02:00:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Livro explora paradoxo do baixo crescimento com avan�o social desde a redemocratiza��o",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mercado/2026/09/livro-explora-paradoxo-do-baixo-crescimento-com-avanco-social-desde-a-redemocratizacao.shtml",
-      "publishedAt": "2026-09-05T02:00:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Maroon 5, Demi Lovato e Milo J: veja quais artistas do Rock in Rio tamb�m fazem shows em SP",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://guia.folha.uol.com.br/shows/2026/09/maroon-5-demi-lovato-e-milo-j-veja-quais-artistas-do-rock-in-rio-tambem-fazem-shows-em-sp.shtml",
-      "publishedAt": "2026-09-05T02:00:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Foro especial no Brasil para ministros do STF destoa de modelos dos EUA e Europa",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/09/foro-especial-no-brasil-para-ministros-do-stf-destoa-de-modelos-dos-eua-e-europa.shtml",
-      "publishedAt": "2026-09-05T02:00:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Três dias quase sem comida ou água: jogador argentino detalha prisão do ICE",
-      "link": "https://www.cnnbrasil.com.br/internacional/tres-dias-quase-sem-comida-ou-agua-jogador-argentino-detalha-prisao-do-ice/",
-      "publishedAt": "2026-09-05T01:52:04.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Viúvo de Isabel Veloso mostra novas fotos do filho, Arthur",
-      "link": "https://www.cnnbrasil.com.br/pop/celebridades/viuvo-de-isabel-veloso-mostra-novas-fotos-do-filho-arthur/",
-      "publishedAt": "2026-09-05T01:45:13.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Rise Against se apresenta no Rock in Rio em show sem instrumentos pr�prios",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/ilustrada/2026/09/rise-against-se-apresenta-no-rock-in-rio-em-show-sem-instrumentos-proprios.shtml",
-      "publishedAt": "2026-09-05T01:40:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "A ascensão de um simples repolho: como uma relíquia imperial se tornou um dos tesouros mais emblemáticos da Cidade Proibida e agora está em Taiwan",
-      "link": "https://www.cnnbrasil.com.br/curiosidades/a-ascensao-de-um-simples-repolho-como-uma-reliquia-imperial-se-tornou-um-dos-tesouros-mais-emblematicos-da-cidade-proibida-e-agora-esta-em-taiwan/",
-      "publishedAt": "2026-09-05T01:38:09.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Explosão em base militar na Bolívia mata 10 pessoas, diz autoridade",
-      "link": "https://www.cnnbrasil.com.br/internacional/explosao-em-base-militar-na-bolivia-deixa-mortos-diz-autoridade/",
-      "publishedAt": "2026-09-05T01:34:36.000Z",
-      "score": 1
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Plata posta foto em Dubai após ter venda ao Dínamo Moscou anulada e só volta ao Flamengo domingo",
-      "link": "https://ge.globo.com/futebol/times/flamengo/noticia/2026/09/04/plata-posta-foto-em-dubai-apos-ter-venda-ao-dinamo-moscou-anulada-e-so-volta-ao-flamengo-domingo.ghtml",
-      "publishedAt": "2026-09-05T01:33:19.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Chico Pinheiro faz 11� semana de quimioterapia e brinca sobre fim do tratamento: 'Vou farmar aura'",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://f5.folha.uol.com.br/celebridades/2026/09/chico-pinheiro-faz-11a-semana-de-quimioterapia-e-brinca-sobre-fim-do-tratamento-vou-farmar-aura.shtml",
-      "publishedAt": "2026-09-05T01:33:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Fachin conversa com Lula e indica que levar� casos de Moraes e Mendon�a ao plen�rio do STF",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/09/fachin-conversa-com-lula-e-indica-que-levara-casos-de-moraes-e-mendonca-ao-plenario-do-stf.shtml",
-      "publishedAt": "2026-09-05T01:31:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Zema diz à CNN que trabalhadores de app devem ser formalizados por MEI",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/zema-diz-a-cnn-que-trabalhadores-de-app-devem-ser-formalizados-por-mei/",
-      "publishedAt": "2026-09-05T01:28:30.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Líder do Comando Vermelho na Bahia é preso no Rio",
-      "link": "https://www.cnnbrasil.com.br/nacional/sudeste/rj/lider-do-comando-vermelho-na-bahia-e-preso-no-rio/",
-      "publishedAt": "2026-09-05T01:26:46.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Zema defende recolher morador de “chiqueiro” na rua que negue tratamento",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/zema-defende-recolher-morador-de-chiqueiro-na-rua-que-negue-tratamento/",
-      "publishedAt": "2026-09-05T01:26:20.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Ney Matogrosso relembra 1ª apresentação no Rock in Rio em vídeo emocionante",
-      "link": "https://www.cnnbrasil.com.br/pop/musica/ney-matogrosso-relembra-1a-apresentacao-no-rock-in-rio-em-video-emocionante/",
-      "publishedAt": "2026-09-05T01:24:22.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Avi�o monomotor faz pouso de barriga e fecha aeroporto de Sorocaba (SP) por duas horas",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/cotidiano/2026/09/aviao-monomotor-faz-pouso-de-barriga-e-fecha-aeroporto-de-sorocaba-sp-por-duas-horas.shtml",
-      "publishedAt": "2026-09-05T01:23:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Com 11 indicações ao Emmy, “Spider-Noir” é cancelada após 1ª temporada",
-      "link": "https://www.cnnbrasil.com.br/pop/streaming/com-11-indicacoes-ao-emmy-spider-noir-e-cancelada-apos-1a-temporada/",
-      "publishedAt": "2026-09-05T01:21:06.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Paolla Oliveira participa de mesa sobre novo filme na Bienal do Livro de S�o Paulo",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://f5.folha.uol.com.br/celebridades/2026/09/paolla-oliveira-participa-de-mesa-sobre-novo-filme-na-bienal-do-livro-de-sao-paulo.shtml",
-      "publishedAt": "2026-09-05T01:20:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Rock in Rio 2026: 'Ningu�m casa pensando em separar', diz Pedro Scooby sobre fim de casamento",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://f5.folha.uol.com.br/celebridades/2026/09/pedro-scooby-sobre-fim-do-casamento-ninguem-casa-pensando-em-separar.shtml",
-      "publishedAt": "2026-09-05T01:12:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Governo precisa atacar gastos para reduzir juros a 6%, diz Zema à CNN",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/governo-precisa-atacar-gastos-para-reduzir-juros-a-6-diz-zema-a-cnn/",
-      "publishedAt": "2026-09-05T01:11:35.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Lula citar� petr�leo e terras raras em discurso do 7 de Setembro, que vai abordar soberania",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mercado/2026/09/lula-citara-petroleo-e-terras-raras-em-discurso-do-7-de-setembro-que-vai-abordar-soberania.shtml",
-      "publishedAt": "2026-09-05T01:10:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Caso Gisele: Justiça adia interrogatório do tenente-coronel",
-      "link": "https://www.cnnbrasil.com.br/nacional/sudeste/sp/caso-gisele-justica-adia-interrogatorio-do-tenente-coronel/",
-      "publishedAt": "2026-09-05T01:09:45.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Equador diz que ataques dos EUA contra barcos fazem parte de ação conjunta",
-      "link": "https://www.cnnbrasil.com.br/internacional/equador-diz-que-ataques-dos-eua-contra-barcos-fazem-parte-de-acao-conjunta/",
-      "publishedAt": "2026-09-05T01:08:46.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Eleições 2026: veja quais documentos levar no dia da votação",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/eleicoes-2026-veja-quais-documentos-levar-no-dia-da-votacao/",
-      "publishedAt": "2026-09-05T01:07:50.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Botafogo anuncia a contratação de zagueiro que estava em time alemão",
-      "link": "https://www.cnnbrasil.com.br/esportes/futebol/botafogo/botafogo-anuncia-a-contratacao-de-zagueiro-que-estava-em-time-alemao/",
-      "publishedAt": "2026-09-05T01:04:12.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Casal vai a júri popular por assassinato de bebê e adolescentes no RS",
-      "link": "https://www.cnnbrasil.com.br/nacional/sul/rs/casal-vai-a-juri-popular-por-assassinato-de-bebe-e-adolescentes-no-rs/",
-      "publishedAt": "2026-09-05T01:02:07.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "O Brasil tem urg�ncia em fazer uma nova reforma da Previd�ncia? N�O",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/opiniao/2026/09/o-brasil-tem-urgencia-em-fazer-uma-nova-reforma-da-previdencia-nao.shtml",
-      "publishedAt": "2026-09-05T01:00:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "O Brasil tem urg�ncia em fazer uma nova reforma da Previd�ncia? SIM",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/opiniao/2026/09/o-brasil-tem-urgencia-em-fazer-uma-nova-reforma-da-previdencia-sim.shtml",
-      "publishedAt": "2026-09-05T01:00:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "'Estamos diante de uma das maiores, sen�o a maior, crise de reputa��o dos poderes', diz leitor",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/paineldoleitor/2026/09/estamos-diante-de-uma-das-maiores-senao-a-maior-crise-de-reputacao-dos-poderes-diz-leitor.shtml",
-      "publishedAt": "2026-09-05T01:00:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Trump e Venezuela fazem acordo esdr�xulo por petr�leo",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/opiniao/2026/09/trump-e-venezuela-fazem-acordo-esdruxulo-por-petroleo.shtml",
-      "publishedAt": "2026-09-05T01:00:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "InfoMoney",
-      "title": "Partido Novo pede arquivamento de investigação contra Mendonça",
-      "link": "https://www.infomoney.com.br/politica/partido-novo-pede-arquivamento-de-investigacao-contra-mendonca/",
-      "publishedAt": "2026-09-05T00:59:40.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Colocar uma esponja na gaveta de legumes e frutas da geladeira ajuda a absorver umidade e conservar alimentos",
-      "link": "https://www.cnnbrasil.com.br/curiosidades/colocar-uma-esponja-na-gaveta-de-legumes-e-frutas-da-geladeira-ajuda-a-absorver-umidade-e-conservar-alimentos/",
-      "publishedAt": "2026-09-05T00:58:16.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Laudo liga morte de professora a falha no diagn�stico em hospital do Rio de Janeiro",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/equilibrioesaude/2026/09/laudo-liga-morte-de-professora-a-falha-no-diagnostico-em-hospital-do-rio.shtml",
-      "publishedAt": "2026-09-05T00:57:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "CVC Corp renegocia dívida de R$ 400 milhões e alonga prazo até 2029",
-      "link": "https://www.cnnbrasil.com.br/economia/money/negocios/cvc-corp-renegocia-divida-de-r-400-milhoes-e-alonga-prazo-ate-2029/",
-      "publishedAt": "2026-09-05T00:56:34.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Homem � preso ap�s companheira pedir socorro por bilhetes enviados pelo filho a escola na Bahia",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/cotidiano/2026/09/homem-e-preso-apos-companheira-pedir-socorro-por-bilhetes-enviados-pelo-filho-a-escola-na-bahia.shtml",
-      "publishedAt": "2026-09-05T00:55:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Atuações do Cuiabá: ataque cria pouco perigo, e João Basso faz gol contra; dê suas notas",
-      "link": "https://ge.globo.com/mt/futebol/times/cuiaba/noticia/2026/09/04/atuacoes-do-cuiaba-ataque-cria-pouco-perigo-e-joao-basso-faz-gol-contra-de-suas-notas.ghtml",
-      "publishedAt": "2026-09-05T00:54:44.000Z",
-      "score": 1
-    },
-    {
-      "source": "InfoMoney",
-      "title": "Em 7 de setembro, Lula mandará recado aos EUA e citará petróleo na Margem Equatorial",
-      "link": "https://www.infomoney.com.br/politica/em-7-de-setembro-lula-mandara-recado-aos-eua-e-citara-petroleo-na-margem-equatorial/",
-      "publishedAt": "2026-09-05T00:54:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Uso de emagrecedores em crianças menores de 12 anos sobe 300 vezes nos EUA",
-      "link": "https://www.cnnbrasil.com.br/saude/uso-de-emagrecedores-em-criancas-menores-de-12-anos-sobe-300-vezes-nos-eua/",
-      "publishedAt": "2026-09-05T00:52:05.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Água e atividade nuclear costumam atrair Ovnis, diz ex-oficial do Pentágono",
-      "link": "https://www.cnnbrasil.com.br/curiosidades/agua-e-atividade-nuclear-costumam-atrair-ovnis-diz-ex-oficial-do-pentagono/",
-      "publishedAt": "2026-09-05T00:48:27.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Quero privatizar e fatiar a Petrobras em até cinco empresas, diz Zema à CNN",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/quero-fatiar-a-petrobras-em-ate-cinco-empresas-diz-zema-a-cnn/",
-      "publishedAt": "2026-09-05T00:47:29.000Z",
-      "score": 1
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Destaque do Vasco no título brasileiro sub-20, Andrey espera chance de Pedro Emanuel: \"Estou pronto\"",
-      "link": "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/04/destaque-do-vasco-no-titulo-brasileiro-sub-20-andrey-espera-chance-de-pedro-emanuel-estou-pronto.ghtml",
-      "publishedAt": "2026-09-05T00:45:46.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Nunes Marques autoriza a exibição do discurso de Lula de 7 de Setembro",
-      "link": "https://www.cnnbrasil.com.br/politica/nunes-marques-autoriza-a-exibicao-do-discurso-de-lula-de-7-de-setembro/",
-      "publishedAt": "2026-09-05T00:45:36.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Bebê falando com 3 meses? Especialista explica vídeo de recém-nascido conversando: “Linguagem acontece antes mesmo do nascimento”",
-      "link": "https://www.cnnbrasil.com.br/curiosidades/bebe-falando-com-3-meses-especialista-explica-video-de-recem-nascido-conversando-linguagem-acontece-antes-mesmo-do-nascimento/",
-      "publishedAt": "2026-09-05T00:45:13.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Explos�o mata ao menos 2 e fere 59 em instala��o militar na Bol�via",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mundo/2026/09/explosao-deixa-ao-menos-58-feridos-em-instalacao-militar-na-bolivia.shtml",
-      "publishedAt": "2026-09-05T00:44:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "InfoMoney",
-      "title": "Dia de Sorte: confira o resultado do concurso 1290 sorteado nesta sexta-feira (4)",
-      "link": "https://www.infomoney.com.br/consumo/dia-de-sorte-confira-o-resultado-do-concurso-1290-sorteado-nesta-sexta-feira-4/",
-      "publishedAt": "2026-09-05T00:42:11.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Quem está na direita tem que ser punido também, diz Zema sobre Master à CNN",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/quem-esta-na-direita-tem-que-ser-punido-tambem-diz-zema-sobre-master-a-cnn/",
-      "publishedAt": "2026-09-05T00:40:19.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Jay-Z surpreende Beyoncé com “parabéns” e fogos durante show em Londres",
-      "link": "https://www.cnnbrasil.com.br/pop/celebridades/jay-z-surpreende-beyonce-com-parabens-e-fogos-durante-show-em-londres/",
-      "publishedAt": "2026-09-05T00:38:13.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Análise: Fachin promete rigor e age para esfriar crise no Supremo",
-      "link": "https://www.cnnbrasil.com.br/politica/analise-fachin-promete-rigor-e-age-para-esfriar-crise-no-supremo/",
-      "publishedAt": "2026-09-05T00:37:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Diogo Defante zomba de rob�s humanoides e diverte o Rock in Rio com besteirol",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/ilustrada/2026/09/diogo-defante-zomba-de-robos-humanoides-e-diverte-o-rock-in-rio-com-besteirol.shtml",
-      "publishedAt": "2026-09-05T00:36:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "PGR apura possível interferência de Mendonça em relatório da PF",
-      "link": "https://www.cnnbrasil.com.br/politica/pgr-apura-possivel-interferencia-em-relatorio-da-pf-pedido-por-mendonca/",
-      "publishedAt": "2026-09-05T00:35:36.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Reflorestar matas e mentes",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/txai-surui/2026/09/reflorestar-matas-e-mentes.shtml",
-      "publishedAt": "2026-09-05T00:32:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Análise: Crise no STF pode deixar marcas profundas na política brasileira",
-      "link": "https://www.cnnbrasil.com.br/politica/analise-crise-no-stf-pode-deixar-marcas-profundas-na-politica-brasileira/",
-      "publishedAt": "2026-09-05T00:30:08.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Les�o na coxa deve tirar Neymar de a��o por ao menos um m�s",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/esporte/2026/09/lesao-na-coxa-deve-tirar-neymar-de-acao-por-ao-menos-um-mes.shtml",
-      "publishedAt": "2026-09-05T00:27:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Equador defende ataques dos EUA a supostos barcos de traficantes de drogas",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mundo/2026/09/equador-defende-ataques-dos-eua-a-supostos-barcos-de-traficantes-de-drogas.shtml",
-      "publishedAt": "2026-09-05T00:25:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "AGU chama pedido da PF contra medidas de Mendon�a de 'interven��o processual' sem precedente",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/09/agu-chama-pedido-da-pf-contra-medidas-de-mendonca-de-intervencao-processual-sem-precedente.shtml",
-      "publishedAt": "2026-09-05T00:23:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "É muito grave ministro ser consultor jurídico de Vorcaro, diz Zema à CNN",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/e-muito-grave-ministro-ser-consultor-juridico-de-vorcaro-diz-zema-a-cnn/",
-      "publishedAt": "2026-09-05T00:18:35.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Justiça condena Samarco por rompimento de barragem em Mariana",
-      "link": "https://www.cnnbrasil.com.br/infra/justica-condena-samarco-por-rompimento-de-barragem-em-mariana/",
-      "publishedAt": "2026-09-05T00:12:32.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Maiara e Maraisa têm mansão de luxo na calmaria do interior; veja fotos",
-      "link": "https://www.cnnbrasil.com.br/pop/celebridades/maiara-e-maraisa-tem-mansao-de-luxo-na-calmaria-do-interior-veja-fotos/",
-      "publishedAt": "2026-09-05T00:11:14.000Z",
-      "score": 1
-    },
-    {
-      "source": "InfoMoney",
-      "title": "Lotomania: confira o resultado do concurso 2972 sorteado nesta sexta-feira (4)",
-      "link": "https://www.infomoney.com.br/consumo/lotomania-confira-o-resultado-do-concurso-2972-sorteado-nesta-sexta-feira-3/",
-      "publishedAt": "2026-09-05T00:10:31.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Trump comemora payroll e atribui alta do emprego às tarifas",
-      "link": "https://www.cnnbrasil.com.br/economia/money/macroeconomia/trump-comemora-payroll-e-atribui-alta-do-emprego-as-tarifas/",
-      "publishedAt": "2026-09-05T00:10:31.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Rock in Rio 2026: buf� da �rea VIP faz os olhos comerem primeiro",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://f5.folha.uol.com.br/voceviu/2026/09/rock-in-rio-2026-bufe-da-area-vip-faz-os-olhos-comerem-primeiro.shtml",
-      "publishedAt": "2026-09-05T00:07:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Rafa Justus posta fotos e pais, Ticiane e Roberto, tietam: “Saiu de mim”",
-      "link": "https://www.cnnbrasil.com.br/pop/celebridades/rafa-justus-posta-fotos-e-pais-ticiane-e-roberto-tietam-saiu-de-mim/",
-      "publishedAt": "2026-09-05T00:04:58.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Lula: “Pode vir americano que quiser, jamais ganhará de um pernambucano”",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/lula-pode-vir-americano-que-quiser-jamais-ganhara-de-um-pernambucano/",
-      "publishedAt": "2026-09-05T00:04:55.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Filipe Luis atinge feito histórico no Monaco e é elogiado por Luis Enrique",
-      "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/filipe-luis-atinge-feito-historico-no-monaco-e-e-elogiado-por-luis-enrique/",
-      "publishedAt": "2026-09-05T00:04:02.000Z",
-      "score": 1
-    },
-    {
-      "source": "InfoMoney",
-      "title": "Quina hoje, concurso 7110: confira o resultado sorteado nesta sexta-feira (4)",
-      "link": "https://www.infomoney.com.br/consumo/quina-hoje-concurso-7110-confira-o-resultado-sorteado-nesta-sexta-feira-4/",
-      "publishedAt": "2026-09-05T00:03:39.000Z",
-      "score": 1
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Vasco é campeão do Brasileiro Sub-20 pela primeira vez; veja lista de vencedores",
-      "link": "https://ge.globo.com/sp/ribeirao-preto-e-regiao/futebol/brasileirao-sub-20/noticia/2026/09/04/vasco-e-campeao-do-brasileiro-sub-20-pela-primeira-vez-veja-lista-de-vencedores.ghtml",
-      "publishedAt": "2026-09-05T00:02:59.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Raphael Montes e Concei��o Evaristo agitam multid�o no in�cio da Bienal do Livro",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/ilustrada/2026/09/raphael-montes-e-conceicao-evaristo-agitam-multidao-no-inicio-da-bienal-do-livro.shtml",
-      "publishedAt": "2026-09-05T00:01:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Feriado da Independência: 31 praias de SP estão impróprias para banho",
-      "link": "https://www.cnnbrasil.com.br/nacional/sudeste/sp/feriado-da-independencia-31-praias-de-sp-estao-improprias-para-banho/",
-      "publishedAt": "2026-09-05T00:00:09.000Z",
-      "score": 1
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Palmeiras bate recorde de público em jogos da base no Nubank Parque",
-      "link": "https://ge.globo.com/futebol/times/palmeiras/noticia/2026/09/04/palmeiras-bate-recorde-de-publico-em-jogos-da-base-no-nubank-parque.ghtml",
-      "publishedAt": "2026-09-04T23:59:25.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Andrey brilha, Vasco vence Palmeiras e conquista o Brasileirão Sub-20",
-      "link": "https://www.cnnbrasil.com.br/esportes/brasileirao/andrey-brilha-vasco-vence-palmeiras-e-conquista-o-brasileirao-sub-20/",
-      "publishedAt": "2026-09-04T23:58:10.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Justiça manda PF apurar origem de cartaz que cita marido de Raquel Lyra",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/justica-manda-pf-apurar-origem-de-cartaz-que-cita-marido-de-raquel-lyra/",
-      "publishedAt": "2026-09-04T23:56:12.000Z",
-      "score": 1
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Administração Judicial, Watchdog e Gatekeeper dão aval a novo empréstimo e à venda da SAF do Vasco",
-      "link": "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/04/administracao-judicial-watchdog-e-gatekeeper-dao-aval-a-novo-emprestimo-e-a-venda-da-saf-do-vasco.ghtml",
-      "publishedAt": "2026-09-04T23:54:53.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "PT vê crise no STF pautar eleição e busca contraponto entre Lula e Flávio",
-      "link": "https://www.cnnbrasil.com.br/politica/pt-ve-crise-no-stf-pautar-eleicao-e-busca-contraponto-entre-lula-e-flavio/",
-      "publishedAt": "2026-09-04T23:53:51.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Parlamentar do partido governista do México é encontrado morto",
-      "link": "https://www.cnnbrasil.com.br/internacional/parlamentar-do-partido-governista-do-mexico-e-encontrado-morto/",
-      "publishedAt": "2026-09-04T23:42:53.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Bilheteria de Hollywood retoma níveis pré-pandemia com público mais jovem",
-      "link": "https://www.cnnbrasil.com.br/pop/cinema/bilheteria-de-hollywood-retoma-niveis-pre-pandemia-com-publico-mais-jovem/",
-      "publishedAt": "2026-09-04T23:41:36.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "ANP: gás de cozinha sobe, diesel fica estável e gasolina recua",
-      "link": "https://www.cnnbrasil.com.br/economia/money/macroeconomia/anp-gas-de-cozinha-sobe-diesel-fica-estavel-e-gasolina-recua/",
-      "publishedAt": "2026-09-04T23:30:36.000Z",
-      "score": 1
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Escalação do São Paulo: Dorival ganha opção no meio-campo para enfrentar o Atlético-MG",
-      "link": "https://ge.globo.com/futebol/times/sao-paulo/noticia/2026/09/04/escalacao-do-sao-paulo-dorival-ganha-opcao-para-enfrentar-o-atletico-mg.ghtml",
-      "publishedAt": "2026-09-04T23:30:27.000Z",
-      "score": 1
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Favoritismos #26: dicas, palpites e chances no Brasileirão",
-      "link": "https://ge.globo.com/gato-mestre/dicas/noticia/2026/09/04/favoritismos-26-dicas-palpites-e-chances-no-brasileirao.ghtml",
-      "publishedAt": "2026-09-04T23:29:29.000Z",
-      "score": 1
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Palpites e dicas para São Paulo x Atlético-MG pelo Brasileirão",
-      "link": "https://ge.globo.com/gato-mestre/dicas/noticia/2026/09/04/palpites-e-dicas-para-sao-paulo-x-atletico-mg-pelo-brasileirao.ghtml",
-      "publishedAt": "2026-09-04T23:28:45.000Z",
-      "score": 1
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Palpites e dicas para Fluminense x Vasco pelo Brasileirão",
-      "link": "https://ge.globo.com/gato-mestre/dicas/noticia/2026/09/04/palpites-e-dicas-para-fluminense-x-vasco-pelo-brasileirao.ghtml",
-      "publishedAt": "2026-09-04T23:28:20.000Z",
-      "score": 1
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Palpites e dicas para Cruzeiro x Athletico-PR pelo Brasileirão",
-      "link": "https://ge.globo.com/gato-mestre/dicas/noticia/2026/09/04/palpites-e-dicas-para-cruzeiro-x-athletico-pr-pelo-brasileirao.ghtml",
-      "publishedAt": "2026-09-04T23:27:28.000Z",
-      "score": 1
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Palpites e dicas para Remo x Flamengo pelo Brasileirão",
-      "link": "https://ge.globo.com/gato-mestre/dicas/noticia/2026/09/04/palpites-e-dicas-para-remo-x-flamengo-pelo-brasileirao.ghtml",
-      "publishedAt": "2026-09-04T23:26:05.000Z",
-      "score": 1
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Palpites e dicas para Botafogo x Palmeiras pelo Brasileirão",
-      "link": "https://ge.globo.com/gato-mestre/dicas/noticia/2026/09/04/palpites-e-dicas-para-botafogo-x-palmeiras-pelo-brasileirao.ghtml",
-      "publishedAt": "2026-09-04T23:25:22.000Z",
-      "score": 1
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Palpites e dicas para Corinthians x Chapecoense pelo Brasileirão",
-      "link": "https://ge.globo.com/gato-mestre/dicas/noticia/2026/09/04/palpites-e-dicas-para-corinthians-x-chapecoense-pelo-brasileirao.ghtml",
-      "publishedAt": "2026-09-04T23:24:46.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Forças terrestres dos EUA ajudariam na segurança nacional, diz Costa Rica",
-      "link": "https://www.cnnbrasil.com.br/internacional/forcas-terrestres-dos-eua-ajudariam-na-seguranca-nacional-diz-costa-rica/",
-      "publishedAt": "2026-09-04T23:23:58.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "En�rgica, The Hives ganha p�blico com humor auto-celebrat�rio no Rock in Rio",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/ilustrada/2026/09/sem-rodeios-the-hives-ganha-publico-com-humor-auto-celebratorio-no-rock-in-rio.shtml",
-      "publishedAt": "2026-09-04T23:22:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Pedreiro que fez a pr�pria defesa em tribunal come�a a estudar direito ap�s ganhar bolsa",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/cotidiano/2026/09/pedreiro-que-fez-a-propria-defesa-em-tribunal-comeca-a-estudar-direito-apos-ganhar-bolsa.shtml",
-      "publishedAt": "2026-09-04T23:21:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Netflix prepara reencontro de participantes do reality Sua M�e Te Conhece?",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://f5.folha.uol.com.br/televisao/2026/09/netflix-prepara-reencontro-de-participantes-do-reality-sua-mae-te-conhece.shtml",
-      "publishedAt": "2026-09-04T23:21:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Bienal do Livro: Conceição Evaristo aconselha nova geração de autores",
-      "link": "https://www.cnnbrasil.com.br/pop/bienal-do-livro-conceicao-evaristo-aconselha-nova-geracao-de-autores/",
-      "publishedAt": "2026-09-04T23:20:16.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Fitch eleva rating de Portugal para “A+” e mantém perspectiva estável",
-      "link": "https://www.cnnbrasil.com.br/economia/money/macroeconomia/fitch-eleva-rating-de-portugal-para-a-e-mantem-perspectiva-estavel/",
-      "publishedAt": "2026-09-04T23:20:08.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Sucesso do Spotify enche palco do Rock in Rio, mas faz baile funk sem calor",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/ilustrada/2026/09/sucesso-do-spotify-enche-palco-do-rock-in-rio-mas-faz-baile-funk-sem-calor.shtml",
-      "publishedAt": "2026-09-04T23:17:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "Tecmundo",
-      "title": "GTA 6 faz vendas de consoles PS5 e Xbox Series X|S dispararem pelo mundo",
-      "link": "https://www.tecmundo.com.br/voxel/505345-gta-6-faz-vendas-de-consoles-ps5-e-xbox-series-xs-dispararem-pelo-mundo.htm",
-      "publishedAt": "2026-09-04T23:15:42.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Isabelle Drummond se apaixona por herdeiro bilion�rio em primeira s�rie na Netflix",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://f5.folha.uol.com.br/cinema-e-series/2026/09/isabelle-drummond-se-apaixona-por-herdeiro-bilionario-em-primeira-serie-na-netflix.shtml",
-      "publishedAt": "2026-09-04T23:15:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Fachin busca consenso para mudar relatorias de Banco Master e INSS",
-      "link": "https://www.cnnbrasil.com.br/politica/fachin-busca-consenso-para-mudar-relatorias-de-banco-master-e-inss/",
-      "publishedAt": "2026-09-04T23:14:16.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Moraes vai pra debaixo do tapete?",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/blogs/claudio-hebdo/2026/09/moraes-vai-pra-debaixo-do-tapete.shtml",
-      "publishedAt": "2026-09-04T23:14:00.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "UE aprova controles sanitários da cadeia do mel apresentados por São Paulo",
-      "link": "https://www.cnnbrasil.com.br/agro/ue-aprova-controles-sanitarios-da-cadeia-do-mel-apresentados-por-sao-paulo/",
-      "publishedAt": "2026-09-04T23:13:42.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Feijão sem gases: nutricionista explica que deixar o grão de molho de 8 a 12 horas é o segredo do sucesso",
-      "link": "https://www.cnnbrasil.com.br/curiosidades/feijao-sem-gases-nutricionista-explica-que-deixar-o-grao-de-molho-de-8-a-12-horas-e-o-segredo-do-sucesso/",
-      "publishedAt": "2026-09-04T23:12:39.000Z",
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Mavie se veste de cowgirl e dança ao som de “Peão Todo Tatuado”; veja vídeo",
-      "link": "https://www.cnnbrasil.com.br/pop/celebridades/mavie-se-veste-de-cowgirl-e-danca-ao-som-de-peao-todo-tatuado-veja-video/",
-      "publishedAt": "2026-09-04T23:10:07.000Z",
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Tati Oliva lan�a livro em S�o Paulo e re�ne empres�rias no evento",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/monicabergamo/2026/09/tati-oliva-lanca-livro-em-sao-paulo-e-reune-empresarias-no-evento.shtml",
-      "publishedAt": "2026-09-04T23:10:00.000Z",
       "score": 1
     }
   ]
