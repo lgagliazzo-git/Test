@@ -307,10 +307,12 @@ function renderBotoesTipo() {
 }
 
 function qtyOf(wine) {
+  // Quantidade em branco não pode zerar o valor do vinho no total — aí sim
+  // assume 1. Mas 0 é um valor válido (vinho catalogado que você não tem
+  // garrafa em casa) e precisa contar como zero mesmo, não como 1.
+  if (isBlank(wine.quantity)) return 1;
   const n = Number(wine.quantity);
-  // Um vinho catalogado é ao menos uma garrafa; quantidade em branco não
-  // pode zerar o valor dele no total.
-  return Number.isFinite(n) && n > 0 ? n : 1;
+  return Number.isFinite(n) ? n : 1;
 }
 
 function renderSummary(visible) {
