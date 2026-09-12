@@ -424,12 +424,13 @@ function render() {
   }
 
   const count = document.getElementById("adega-count");
+  const estoqueVisivel = visible.reduce((sum, w) => sum + qtyOf(w), 0);
   count.textContent =
     wines.length === 0
       ? ""
       : visible.length === wines.length
-        ? `${wines.length} vinho${wines.length === 1 ? "" : "s"}`
-        : `${visible.length} de ${wines.length}`;
+        ? `${wines.length} catalogado${wines.length === 1 ? "" : "s"} · ${estoqueVisivel} estoque`
+        : `${visible.length} de ${wines.length} catalogados · ${estoqueVisivel} estoque`;
 
   document.querySelectorAll("th[data-sort]").forEach((th) => {
     const active = th.dataset.sort === sortKey;
