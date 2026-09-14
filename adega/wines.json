@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-12T11:17:09.771Z",
+  "updatedAt": "2026-09-14T01:16:47.042Z",
   "wines": [
     {
       "quantity": 1,
@@ -2027,9 +2027,9 @@
       "type": "Tinto"
     },
     {
-      "quantity": 0,
-      "pricePaid": null,
-      "priceBR": 190,
+      "quantity": 2,
+      "pricePaid": 156,
+      "priceBR": 220,
       "priceUSD": null,
       "rating": 91,
       "priceBREstimado": false,
@@ -2878,6 +2878,7 @@
       "priceBR": 145,
       "priceUSD": 12,
       "rating": 85,
+      "priceBREstimado": false,
       "name": "Le Tufare Cabernet Sauvignon — Cantine Settesoli",
       "country": "Itália",
       "vintage": "2024",
