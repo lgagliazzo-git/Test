@@ -1,9 +1,9 @@
 name: Market snapshot
 
+# Agendamento automático desligado: o envio via Baileys (WHATSAPP_BAILEYS_AUTH)
+# nunca foi pareado, então essa execução só ficava rodando à toa todo dia.
+# Reative o "schedule" abaixo quando o pareamento estiver feito.
 on:
-  schedule:
-    # 18h00 BRT = 21h00 UTC (o Brasil não usa mais horário de verão)
-    - cron: "0 21 * * *"
   workflow_dispatch:
     inputs:
       dry_run:
