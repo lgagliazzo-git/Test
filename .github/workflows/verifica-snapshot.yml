@@ -3,10 +3,11 @@ name: Verifica snapshot
 # Roda de manhã e falha se o snapshot da véspera não tiver saído. É o que
 # transforma um silêncio em aviso: o GitHub manda e-mail quando um workflow
 # agendado falha, e sem isso um envio perdido passa despercebido.
+#
+# Agendamento automático desligado: o envio via Baileys (WHATSAPP_BAILEYS_AUTH)
+# nunca foi pareado, então essa conferência falhava todo dia só avisando o
+# óbvio. Reative o "schedule" abaixo quando o envio voltar a funcionar.
 on:
-  schedule:
-    # 9h BRT = 12h UTC
-    - cron: "0 12 * * *"
   workflow_dispatch:
 
 jobs:
