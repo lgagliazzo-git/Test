@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-21T18:47:17.180Z",
+  "updatedAt": "2026-10-21T20:11:41.000Z",
   "wines": [
     {
       "quantity": 1,
@@ -2907,6 +2907,24 @@
       "abv": 13,
       "abvEstimado": true,
       "type": "Tinto"
+    },
+    {
+      "quantity": 0,
+      "pricePaid": null,
+      "priceBR": 468,
+      "priceUSD": 60,
+      "rating": 92,
+      "priceBREstimado": true,
+      "name": "Laroche Le Domaine d'Henri Chablis Premier Cru Fourchaume",
+      "country": "França",
+      "vintage": "2021",
+      "grape": "Chardonnay",
+      "origin": "Chablis Premier Cru Fourchaume, Borgonha",
+      "photo": "adega/fotos/laroche-domaine-dhenri-fourchaume-2021.jpg",
+      "pairing": "Ostras, frutos do mar, peixes grelhados, queijos de cabra",
+      "abv": 13,
+      "abvEstimado": true,
+      "type": "Branco"
     }
   ]
 }
