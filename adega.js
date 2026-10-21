@@ -177,13 +177,16 @@ function compare(a, b) {
   return sortAsc ? result : -result;
 }
 
+// Busca sem acento: "tali" precisa achar "Talì" e "chateau", "Château".
+function semAcento(texto) {
+  return String(texto).toLowerCase().normalize("NFD").replace(new RegExp("[\u0300-\u036f]", "g"), "");
+}
+
 function matches(wine, term) {
   if (!term) return true;
-  return [wine.name, wine.type, wine.country, wine.vintage, wine.grape, wine.origin, wine.pairing]
-    .filter(Boolean)
-    .join(" ")
-    .toLowerCase()
-    .includes(term);
+  return semAcento(
+    [wine.name, wine.type, wine.country, wine.vintage, wine.grape, wine.origin, wine.pairing].filter(Boolean).join(" ")
+  ).includes(semAcento(term));
 }
 
 // "Primitivo / Negroamaro" precisa aparecer ao filtrar por qualquer uma
