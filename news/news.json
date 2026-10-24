@@ -1,9 +1,18 @@
 {
-  "updatedAt": "2026-10-24T20:08:24.585Z",
+  "updatedAt": "2026-10-24T22:51:30.081Z",
   "windowHours": 48,
   "perSend": 2,
-  "count": 1713,
+  "count": 1697,
   "articles": [
+    {
+      "source": "CNN Brasil",
+      "title": "CNT/MDA: Lula é rejeitado por 47,4%; Flávio, por 47,3%",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/cnt-mda-lula-e-rejeitado-por-474-flavio-por-473/",
+      "publishedAt": "2026-10-24T14:24:42.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.35,
+      "score": 1.35
+    },
     {
       "source": "CNN Brasil",
       "title": "CNT/MDA: Flávio tem 50,7% dos votos válidos; Lula, 49,3%",
@@ -23,10 +32,19 @@
       "score": 1.35
     },
     {
+      "source": "Folha de S.Paulo",
+      "title": "Datafolha: Lula � rejeitado por 46%, e Fl�vio Bolsonaro, por 45%",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/datafolha-lula-e-rejeitado-por-46-e-flavio-bolsonaro-por-45.shtml",
+      "publishedAt": "2026-10-24T21:30:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.3,
+      "score": 1.3
+    },
+    {
       "source": "CNN Brasil",
-      "title": "CNT/MDA: Lula é rejeitado por 47,4%; Flávio, por 47,3%",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/cnt-mda-lula-e-rejeitado-por-474-flavio-por-473/",
-      "publishedAt": "2026-10-24T14:24:42.000Z",
+      "title": "Gerp: Lula tem 48% de rejeição; Flávio, 45%",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/gerp-lula-tem-48-de-rejeicao-flavio-45/",
+      "publishedAt": "2026-10-24T21:00:09.000Z",
       "keywordScore": 1,
       "trendScore": 0.3,
       "score": 1.3
@@ -41,24 +59,6 @@
       "score": 1.3
     },
     {
-      "source": "Folha de S.Paulo",
-      "title": "TSE e Ex�rcito de Bolsonaro",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/blogs/claudio-hebdo/2026/10/tse-e-exercito-de-bolsonaro.shtml",
-      "publishedAt": "2026-10-23T22:26:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.3,
-      "score": 1.3
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Sustentabilidade: o que Flávio Bolsonaro e Lula propõem",
-      "link": "https://www.cnnbrasil.com.br/agro/sustentabilidade-o-que-flavio-bolsonaro-e-lula-propoem/",
-      "publishedAt": "2026-10-23T07:00:29.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.3,
-      "score": 1.3
-    },
-    {
       "source": "CNN Brasil",
       "title": "O que acontece se Flávio Bolsonaro e Lula empatarem no 2º turno?",
       "link": "https://www.cnnbrasil.com.br/eleicoes/o-que-acontece-se-lula-e-flavio-bolsonaro-empatarem-no-2o-turno/",
@@ -68,22 +68,67 @@
       "score": 1.3
     },
     {
-      "source": "CNN Brasil",
-      "title": "Datafolha: 46% rejeitam Flávio Bolsonaro e Lula é rejeitado por 45%",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/datafolha-46-rejeitam-flavio-bolsonaro-e-lula-e-rejeitado-por-45/",
-      "publishedAt": "2026-10-22T22:34:41.000Z",
+      "source": "Exame",
+      "title": "Pesquisa para presidente BTG/Nexus: Flávio Bolsonaro tem 50,5% e Lula, 49,5%",
+      "link": "https://exame.com/brasil/pesquisa-para-presidente-btg-nexus-flavio-bolsonaro-tem-505-e-lula-495/",
+      "publishedAt": "2026-10-24T18:20:21.000Z",
       "keywordScore": 1,
-      "trendScore": 0.3,
-      "score": 1.3
+      "trendScore": 0.25,
+      "score": 1.25
     },
     {
       "source": "Folha de S.Paulo",
-      "title": "Datafolha: 46% rejeitam s� Fl�vio Bolsonaro, e 45%, s� Lula",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/datafolha-48-rejeitam-lula-e-flavio-bolsonaro.shtml",
-      "publishedAt": "2026-10-22T22:06:00.000Z",
+      "title": "TSE e Ex�rcito de Bolsonaro",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/blogs/claudio-hebdo/2026/10/tse-e-exercito-de-bolsonaro.shtml",
+      "publishedAt": "2026-10-23T22:26:00.000Z",
       "keywordScore": 1,
-      "trendScore": 0.3,
-      "score": 1.3
+      "trendScore": 0.25,
+      "score": 1.25
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Sustentabilidade: o que Flávio Bolsonaro e Lula propõem",
+      "link": "https://www.cnnbrasil.com.br/agro/sustentabilidade-o-que-flavio-bolsonaro-e-lula-propoem/",
+      "publishedAt": "2026-10-23T07:00:29.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.25,
+      "score": 1.25
+    },
+    {
+      "source": "Exame",
+      "title": "Pesquisa AtlasIntel: Flávio Bolsonaro tem 50,8% e Lula, 49,2% na véspera do 2º turno",
+      "link": "https://exame.com/brasil/pesquisa-atlasintel-flavio-bolsonaro-tem-508-e-lula-492-na-vespera-do-2o-turno/",
+      "publishedAt": "2026-10-24T19:30:07.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.2,
+      "score": 1.2
+    },
+    {
+      "source": "Exame",
+      "title": "Pesquisa Quaest: na véspera do 2º turno, Flávio Bolsonaro tem 51% e Lula, 49%",
+      "link": "https://exame.com/brasil/pesquisa-quaest-na-vespera-do-2o-turno-flavio-bolsonaro-tem-51-e-lula-49/",
+      "publishedAt": "2026-10-24T19:09:39.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.2,
+      "score": 1.2
+    },
+    {
+      "source": "Exame",
+      "title": "Pesquisa Datafolha: Flávio Bolsonaro tem 51% e Lula, 49%, dos votos válidos",
+      "link": "https://exame.com/brasil/pesquisa-datafolha-flavio-bolsonaro-tem-51-e-lula-49-dos-votos-validos/",
+      "publishedAt": "2026-10-24T18:38:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.2,
+      "score": 1.2
+    },
+    {
+      "source": "Exame",
+      "title": "Pesquisa Gerp para presidente: Flávio Bolsonaro tem 52% e Lula, 48%, dos votos válidos",
+      "link": "https://exame.com/brasil/pesquisa-gerp-para-presidente-flavio-bolsonaro-tem-52-e-lula-48-dos-votos-validos/",
+      "publishedAt": "2026-10-24T18:00:46.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.2,
+      "score": 1.2
     },
     {
       "source": "Exame",
@@ -158,10 +203,28 @@
       "score": 1.2
     },
     {
+      "source": "Neofeed",
+      "title": "Brasil não escapa da correção de ativos (vença Flávio Bolsonaro ou Lula)",
+      "link": "https://neofeed.com.br/experts/brasil-nao-escapa-da-correcao-de-ativos-venca-flavio-bolsonaro-ou-lula/",
+      "publishedAt": "2026-10-23T16:38:53.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.2,
+      "score": 1.2
+    },
+    {
       "source": "Folha de S.Paulo",
       "title": "Marmelada fiscal",
       "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/helioschwartsman/2026/10/marmelada-fiscal.shtml",
       "publishedAt": "2026-10-23T16:19:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.2,
+      "score": 1.2
+    },
+    {
+      "source": "Exame",
+      "title": "Pesquisa Veritá: Flávio Bolsonaro tem 51,3% e Lula, 48,7%, dos votos válidos",
+      "link": "https://exame.com/brasil/pesquisa-verita-flavio-bolsonaro-tem-513-e-lula-487-dos-votos-validos/",
+      "publishedAt": "2026-10-23T16:17:32.000Z",
       "keywordScore": 1,
       "trendScore": 0.2,
       "score": 1.2
@@ -176,28 +239,118 @@
       "score": 1.2
     },
     {
-      "source": "InfoMoney",
-      "title": "Datafolha: Flávio Bolsonaro tem 47%, e Lula, 46%, a três dias do 2º turno",
-      "link": "https://www.infomoney.com.br/politica/datafolha-flavio-bolsonaro-tem-47-lula-46-a-tres-dias-segundo-turno/",
-      "publishedAt": "2026-10-22T22:11:32.000Z",
+      "source": "CNN Brasil",
+      "title": "Quaest: Flávio tem 51% dos votos válidos no 2º turno; Lula, 49%",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/quaest-flavio-tem-51-dos-votos-validos-lula-49/",
+      "publishedAt": "2026-10-24T22:03:04.000Z",
       "keywordScore": 1,
-      "trendScore": 0.2,
-      "score": 1.2
+      "trendScore": 0.15,
+      "score": 1.15
+    },
+    {
+      "source": "InfoMoney",
+      "title": "Datafolha: Lula lidera entre menos propensos a votar; Flávio, entre os mais propensos",
+      "link": "https://www.infomoney.com.br/politica/datafolha-lula-lidera-entre-menos-propensos-a-votar-flavio-entre-os-mais-propensos/",
+      "publishedAt": "2026-10-24T21:54:48.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.15,
+      "score": 1.15
+    },
+    {
+      "source": "InfoMoney",
+      "title": "Santos x Bahia: Veja onde assistir ao jogo do Brasileirão",
+      "link": "https://www.infomoney.com.br/esportes/santos-bahia-onde-assistir-brasileirao-2026/",
+      "publishedAt": "2026-10-24T21:45:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.15,
+      "score": 1.15
     },
     {
       "source": "CNN Brasil",
-      "title": "Bradesco tem lucro de R$ 7,1 bilhões no 3º tri, alta de 14,6%",
-      "link": "https://www.cnnbrasil.com.br/economia/money/negocios/bradesco-tem-lucro-de-r-71-bilhoes-no-3o-tri-alta-de-146/",
-      "publishedAt": "2026-10-22T21:28:33.000Z",
+      "title": "Datafolha: 46% rejeitam Lula; Flávio é rejeitado por 45%",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/datafolha-46-rejeitam-lula-flavio-e-rejeitado-por-45/",
+      "publishedAt": "2026-10-24T21:44:57.000Z",
       "keywordScore": 1,
-      "trendScore": 0.2,
-      "score": 1.2
+      "trendScore": 0.15,
+      "score": 1.15
+    },
+    {
+      "source": "InfoMoney",
+      "title": "Datafolha: Flávio 51%, Lula 49% em votos válidos; empate técnico permanece",
+      "link": "https://www.infomoney.com.br/politica/datafolha-final-flavio-51-lula-49-em-votos-validos-empate-tecnico-permanece/",
+      "publishedAt": "2026-10-24T21:42:26.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.15,
+      "score": 1.15
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Datafolha: Flávio tem 51% dos votos válidos no 2º turno; Lula, 49%",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/datafolha-flavio-tem-51-dos-votos-validos-lula-49/",
+      "publishedAt": "2026-10-24T21:32:45.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.15,
+      "score": 1.15
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Datafolha: Fl�vio Bolsonaro tem 51% dos votos v�lidos e Lula, 49%, em empate t�cnico",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/datafolha-flavio-bolsonaro-tem-51-dos-votos-validos-e-lula-49-em-empate-tecnico.shtml",
+      "publishedAt": "2026-10-24T21:30:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.15,
+      "score": 1.15
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Datafolha DF: Celina tem 59% dos votos válidos no 2º turno; Grass, 41%",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/datafolha-df-celina-tem-59-dos-votos-validos-no-2o-turno-grass-41/",
+      "publishedAt": "2026-10-24T21:20:43.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.15,
+      "score": 1.15
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Atlas no DF: Flávio tem 56,9% dos votos válidos no 2º turno; Lula, 43,1%",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/atlas-no-df-flavio-tem-569-dos-votos-validos-no-2o-turno-lula-431/",
+      "publishedAt": "2026-10-24T21:04:38.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.15,
+      "score": 1.15
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Gerp: Flávio tem 52% dos votos válidos no 2º turno; Lula, 48%",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/gerp-flavio-tem-52-dos-votos-validos-no-2o-turno-lula-48-2/",
+      "publishedAt": "2026-10-24T20:59:32.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.15,
+      "score": 1.15
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Nexus/BTG: Flávio tem 50,5% de votos válidos no 2º turno; Lula, 49,5%",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/nexus-btg-flavio-tem-505-de-votos-validos-no-2o-turno-lula-495/",
+      "publishedAt": "2026-10-24T20:45:04.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.15,
+      "score": 1.15
     },
     {
       "source": "InfoMoney",
       "title": "Vasco x Corinthians: Onde assistir ao Brasileirão?",
       "link": "https://www.infomoney.com.br/esportes/vasco-corinthians-onde-assistir-brasileirao/",
       "publishedAt": "2026-10-24T19:00:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.15,
+      "score": 1.15
+    },
+    {
+      "source": "Exame",
+      "title": "Pesquisa para presidente Palver: Flávio Bolsonaro tem 50% e Lula, 49%, no 2º turno",
+      "link": "https://exame.com/brasil/pesquisa-para-presidente-palver-flavio-bolsonaro-tem-50-e-lula-49-no-2o-turno/",
+      "publishedAt": "2026-10-24T18:00:32.000Z",
       "keywordScore": 1,
       "trendScore": 0.15,
       "score": 1.15
@@ -243,6 +396,15 @@
       "title": "Rebeca Andrade conquista tricampeonato mundial no salto e faz história na ginástica",
       "link": "https://exame.com/esporte/rebeca-andrade-conquista-tricampeonato-mundial-no-salto-e-faz-historia-na-ginastica/",
       "publishedAt": "2026-10-24T12:10:06.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.15,
+      "score": 1.15
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "CRB x Londrina: horário e onde assistir ao jogo da Série B",
+      "link": "https://www.cnnbrasil.com.br/esportes/brasileirao/crb-x-londrina-horario-e-onde-assistir-ao-jogo-da-serie-b/",
+      "publishedAt": "2026-10-24T11:30:33.000Z",
       "keywordScore": 1,
       "trendScore": 0.15,
       "score": 1.15
@@ -320,42 +482,6 @@
       "score": 1.15
     },
     {
-      "source": "GE Globo Esporte",
-      "title": "Flamengo não faz gol, perde para o Estudiantes nos pênaltis e cai na Libertadores",
-      "link": "https://ge.globo.com/futebol/libertadores/jogo/22-10-2026/flamengo-estudiantes.ghtml",
-      "publishedAt": "2026-10-23T20:20:41.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.15,
-      "score": 1.15
-    },
-    {
-      "source": "Exame",
-      "title": "Chance de vitória de Flávio Bolsonaro cai de 70% para 60% a dois dias do 2º turno, diz Eurasia",
-      "link": "https://exame.com/brasil/chance-de-vitoria-de-flavio-bolsonaro-cai-de-70-para-60-a-dois-dias-do-2o-turno-diz-eurasia/",
-      "publishedAt": "2026-10-23T18:42:23.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.15,
-      "score": 1.15
-    },
-    {
-      "source": "Neofeed",
-      "title": "Brasil não escapa da correção de ativos (vença Flávio Bolsonaro ou Lula)",
-      "link": "https://neofeed.com.br/experts/brasil-nao-escapa-da-correcao-de-ativos-venca-flavio-bolsonaro-ou-lula/",
-      "publishedAt": "2026-10-23T16:38:53.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.15,
-      "score": 1.15
-    },
-    {
-      "source": "Exame",
-      "title": "Pesquisa Veritá: Flávio Bolsonaro tem 51,3% e Lula, 48,7%, dos votos válidos",
-      "link": "https://exame.com/brasil/pesquisa-verita-flavio-bolsonaro-tem-513-e-lula-487-dos-votos-validos/",
-      "publishedAt": "2026-10-23T16:17:32.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.15,
-      "score": 1.15
-    },
-    {
       "source": "Exame",
       "title": "Ministro do TSE dá liminar e impede retirada do ar de canal 'Exército do Lula' no WhatsApp",
       "link": "https://exame.com/brasil/ministro-do-tse-da-liminar-e-impede-retirada-do-ar-de-canal-exercito-do-lula-no-whatsapp/",
@@ -392,10 +518,10 @@
       "score": 1.15
     },
     {
-      "source": "GE Globo Esporte",
-      "title": "Libertadores Feminina: veja jogos, datas, horários e onde assistir às quartas de final",
-      "link": "https://ge.globo.com/sp/campinas-e-regiao/futebol/futebol-feminino/libertadores-feminina/noticia/2026/10/23/libertadores-feminina-veja-jogos-datas-horarios-e-onde-assistir-as-quartas-de-final.ghtml",
-      "publishedAt": "2026-10-23T13:02:22.000Z",
+      "source": "CNN Brasil",
+      "title": "Ipespe/Abrapel: Flávio tem 50,5% dos votos válidos; Lula, 49,5%",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/ipespe-abrapel-flavio-tem-505-dos-votos-validos-lula-495/",
+      "publishedAt": "2026-10-23T13:00:54.000Z",
       "keywordScore": 1,
       "trendScore": 0.15,
       "score": 1.15
@@ -410,10 +536,10 @@
       "score": 1.15
     },
     {
-      "source": "GE Globo Esporte",
-      "title": "Flamengo levou uma aula de Libertadores do Estudiantes",
-      "link": "https://ge.globo.com/blogs/meia-encarnada/post/2026/10/23/flamengo-levou-uma-aula-de-libertadores-do-estudiantes.ghtml",
-      "publishedAt": "2026-10-23T10:00:00.000Z",
+      "source": "Exame",
+      "title": "Ibovespa e dólar operam estáveis no último pregão antes do segundo turno das eleições",
+      "link": "https://exame.com/invest/mercados/ibovespa-e-dolar-operam-estaveis-no-ultimo-pregao-antes-do-segundo-turno-das-eleicoes/",
+      "publishedAt": "2026-10-23T11:13:34.000Z",
       "keywordScore": 1,
       "trendScore": 0.15,
       "score": 1.15
@@ -429,57 +555,129 @@
     },
     {
       "source": "Folha de S.Paulo",
-      "title": "Estudiantes elimina o Flamengo e encara o Palmeiras na final da Libertadores",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/esporte/2026/10/estudiantes-elimina-o-flamengo-e-encara-o-palmeiras-na-final-da-libertadores.shtml",
-      "publishedAt": "2026-10-23T02:44:00.000Z",
+      "title": "BTG/Nexus: Fl�vio Bolsonaro tem 50,5% dos votos v�lidos, e Lula, 49,5%",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/btgnexus-flavio-bolsonaro-tem-505-dos-votos-validos-e-lula-495.shtml",
+      "publishedAt": "2026-10-24T22:46:00.000Z",
       "keywordScore": 1,
-      "trendScore": 0.15,
-      "score": 1.15
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Muslera brilha nos pênaltis, e Estudiantes elimina Flamengo da Libertadores",
-      "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/libertadores-da-america/muslera-brilha-nos-penaltis-e-estudiantes-elimina-flamengo-da-libertadores/",
-      "publishedAt": "2026-10-23T02:39:19.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.15,
-      "score": 1.15
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Estudiantes elimina o Flamengo e iguala São Paulo com seis finais de Libertadores; veja o ranking",
-      "link": "https://ge.globo.com/gato-mestre/noticia/2026/10/22/estudiantes-elimina-o-flamengo-e-iguala-sao-paulo-com-seis-finais-de-libertadores-veja-o-ranking.ghtml",
-      "publishedAt": "2026-10-23T02:38:30.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.15,
-      "score": 1.15
+      "trendScore": 0.1,
+      "score": 1.1
     },
     {
       "source": "InfoMoney",
-      "title": "Datafolha: Flávio Bolsonaro é rejeitado por 46%, enquanto Lula, por 45% dos eleitores",
-      "link": "https://www.infomoney.com.br/politica/datafolha-flavio-bolsonaro-e-rejeitado-por-46-enquanto-lula-por-45-dos-eleitores/",
-      "publishedAt": "2026-10-22T22:24:14.000Z",
+      "title": "Flávio tem 49,9% e Lula, 48,4%, na última AtlasIntel antes das urnas",
+      "link": "https://www.infomoney.com.br/politica/flavio-tem-499-e-lula-484-na-ultima-atlasintel-antes-das-urnas/",
+      "publishedAt": "2026-10-24T22:30:00.000Z",
       "keywordScore": 1,
-      "trendScore": 0.15,
-      "score": 1.15
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Datafolha: Flávio e Lula empatam em 50% de votos válidos no 2º turno",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/datafolha-flavio-e-lula-empatam-em-50-de-votos-validos-no-2o-turno/",
-      "publishedAt": "2026-10-22T22:07:02.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.15,
-      "score": 1.15
+      "trendScore": 0.1,
+      "score": 1.1
     },
     {
       "source": "InfoMoney",
-      "title": "Flamengo x Estudiantes: Onde assistir à semifinal Libertadores?",
-      "link": "https://www.infomoney.com.br/esportes/flamengo-estudiantes-onde-assistir-libertadores-4/",
-      "publishedAt": "2026-10-22T22:00:00.000Z",
+      "title": "Na véspera da eleição, Quaest mostra Flávio 46% e Lula 45%",
+      "link": "https://www.infomoney.com.br/politica/na-vespera-da-eleicao-quaest-mostra-flavio-46-e-lula-45/",
+      "publishedAt": "2026-10-24T22:21:07.000Z",
       "keywordScore": 1,
-      "trendScore": 0.15,
-      "score": 1.15
+      "trendScore": 0.1,
+      "score": 1.1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Trem do monotrilho que bateu em guindaste teve danos na carenagem frontal",
+      "link": "https://www.cnnbrasil.com.br/nacional/sudeste/sp/trem-do-monotrilho-que-bateu-em-guindaste-teve-danos-na-carenagem-frontal/",
+      "publishedAt": "2026-10-24T22:16:52.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.1,
+      "score": 1.1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Chapecoense x Fluminense: escalações e onde assistir ao jogo do Brasileirão",
+      "link": "https://www.cnnbrasil.com.br/esportes/brasileirao/chapecoense-x-fluminense-escalacoes-e-onde-assistir-ao-jogo-do-brasileirao/",
+      "publishedAt": "2026-10-24T21:31:23.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.1,
+      "score": 1.1
+    },
+    {
+      "source": "InfoMoney",
+      "title": "Na véspera do 2º turno, Gerp mostra 49% para Flávio contra 46% de Lula",
+      "link": "https://www.infomoney.com.br/politica/na-vespera-do-2o-turno-gerp-mostra-49-para-flavio-contra-46-de-lula/",
+      "publishedAt": "2026-10-24T21:13:58.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.1,
+      "score": 1.1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Urnas são abertas no exterior para o segundo turno das eleições",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/urnas-sao-abertas-no-exterior-para-o-segundo-turno-das-eleicoes/",
+      "publishedAt": "2026-10-24T21:13:54.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.1,
+      "score": 1.1
+    },
+    {
+      "source": "InfoMoney",
+      "title": "Quem está na frente no 2º turno no Acre?",
+      "link": "https://www.infomoney.com.br/politica/quem-esta-na-frente-no-2o-turno-no-acre/",
+      "publishedAt": "2026-10-24T20:59:41.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.1,
+      "score": 1.1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "AtlasIntel no DF: Celina tem 57,9% dos votos válidos; Grass, 42,1%",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/atlasintel-no-df-celina-tem-579-dos-votos-validos-grass-421/",
+      "publishedAt": "2026-10-24T20:55:20.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.1,
+      "score": 1.1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Atlas: Lula tem 53,5% de votos válidos no Amazonas; Flávio, 46,5%",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/atlas-lula-tem-535-de-votos-validos-no-amazonas-flavio-465/",
+      "publishedAt": "2026-10-24T20:51:08.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.1,
+      "score": 1.1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Atlas: Aziz tem 56,9% de votos válidos no AM; Maria do Carmo, 43,1%",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/atlas-aziz-tem-569-de-votos-validos-no-am-maria-do-carmo-431/",
+      "publishedAt": "2026-10-24T20:48:28.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.1,
+      "score": 1.1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Palmeiras x Red Bull Bragantino: escalações e onde assistir ao Brasileirão",
+      "link": "https://www.cnnbrasil.com.br/esportes/brasileirao/palmeiras-x-red-bull-bragantino-escalacoes-e-onde-assistir-ao-brasileirao-2/",
+      "publishedAt": "2026-10-24T20:33:47.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.1,
+      "score": 1.1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Vasco x Corinthians: escalações e onde assistir ao jogo do Brasileirão",
+      "link": "https://www.cnnbrasil.com.br/esportes/brasileirao/vasco-x-corinthians-escalacoes-e-onde-assistir-ao-jogo-do-brasileirao-2/",
+      "publishedAt": "2026-10-24T20:31:47.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.1,
+      "score": 1.1
+    },
+    {
+      "source": "Exame",
+      "title": "Pesquisa AtlasIntel: Omar Aziz tem 56,9% e Maria do Carmo, 43,1%, no Amazonas",
+      "link": "https://exame.com/brasil/pesquisa-atlasintel-omar-aziz-tem-569-e-maria-do-carmo-431-no-amazonas/",
+      "publishedAt": "2026-10-24T19:41:04.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.1,
+      "score": 1.1
     },
     {
       "source": "Folha de S.Paulo",
@@ -522,6 +720,15 @@
       "title": "Após bater em guindaste, trem do monotrilho será recolhido para manutenção",
       "link": "https://www.cnnbrasil.com.br/nacional/sudeste/sp/apos-bater-em-guindaste-trem-do-monotrilho-sera-recolhido-para-manutencao/",
       "publishedAt": "2026-10-24T17:21:42.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.1,
+      "score": 1.1
+    },
+    {
+      "source": "Exame",
+      "title": "Flávio Bolsonaro encerra campanha do segundo turno com ato na Barra da Tijuca",
+      "link": "https://exame.com/brasil/flavio-bolsonaro-encerra-campanha-do-segundo-turno-com-ato-na-barra-da-tijuca/",
+      "publishedAt": "2026-10-24T17:14:13.000Z",
       "keywordScore": 1,
       "trendScore": 0.1,
       "score": 1.1
@@ -576,6 +783,15 @@
       "title": "MP Eleitoral pede ao TSE que barre candidatura de Márcio Canella no RJ",
       "link": "https://exame.com/brasil/mp-eleitoral-pede-ao-tse-que-barre-candidatura-de-marcio-canella-no-rj/",
       "publishedAt": "2026-10-24T15:03:55.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.1,
+      "score": 1.1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Contas: veja como uma vitória sobre o Corinthians pode dar tranquilidade ao Vasco no Brasileirão",
+      "link": "https://ge.globo.com/futebol/times/vasco/noticia/2026/10/24/contas-veja-como-uma-vitoria-sobre-o-corinthians-pode-dar-tranquilidade-ao-vasco-no-brasileirao.ghtml",
+      "publishedAt": "2026-10-24T15:00:00.000Z",
       "keywordScore": 1,
       "trendScore": 0.1,
       "score": 1.1
@@ -671,15 +887,6 @@
       "score": 1.1
     },
     {
-      "source": "CNN Brasil",
-      "title": "CRB x Londrina: horário e onde assistir ao jogo da Série B",
-      "link": "https://www.cnnbrasil.com.br/esportes/brasileirao/crb-x-londrina-horario-e-onde-assistir-ao-jogo-da-serie-b/",
-      "publishedAt": "2026-10-24T11:30:33.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.1,
-      "score": 1.1
-    },
-    {
       "source": "GE Globo Esporte",
       "title": "Corinthians tenta encerrar jejum no Brasileirão e repetir reação do primeiro turno contra o Vasco",
       "link": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/24/corinthians-tenta-encerrar-jejum-no-brasileirao-e-repetir-reacao-do-primeiro-turno-contra-o-vasco.ghtml",
@@ -747,15 +954,6 @@
       "title": "Mega-Sena 3074: sorteio deste sábado (24) pode pagar R$ 230 milhões",
       "link": "https://www.cnnbrasil.com.br/economia/seu-bolso/loterias/mega-sena-3074/",
       "publishedAt": "2026-10-24T06:00:12.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.1,
-      "score": 1.1
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Palmeiras x Santa Fe na Libertadores Feminina: onde assistir ao vivo e horário",
-      "link": "https://ge.globo.com/sp/campinas-e-regiao/futebol/futebol-feminino/libertadores-feminina/noticia/2026/10/24/palmeiras-x-santa-fe-na-libertadores-feminina-onde-assistir-ao-vivo-e-horario.ghtml",
-      "publishedAt": "2026-10-24T05:11:00.000Z",
       "keywordScore": 1,
       "trendScore": 0.1,
       "score": 1.1
@@ -861,9 +1059,27 @@
     },
     {
       "source": "CNN Brasil",
+      "title": "Trump retira tarifas de 50% sobre produtos agrícolas do Canadá",
+      "link": "https://www.cnnbrasil.com.br/agro/trump-retira-tarifas-de-50-sobre-produtos-agricolas-do-canada/",
+      "publishedAt": "2026-10-23T21:51:50.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.1,
+      "score": 1.1
+    },
+    {
+      "source": "CNN Brasil",
       "title": "Campanha de Lula diz que Janones não irá ao debate da Globo",
       "link": "https://www.cnnbrasil.com.br/eleicoes/campanha-de-lula-diz-que-janones-nao-ira-ao-debate-da-globo/",
       "publishedAt": "2026-10-23T20:25:13.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.1,
+      "score": 1.1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Flamengo não faz gol, perde para o Estudiantes nos pênaltis e cai na Libertadores",
+      "link": "https://ge.globo.com/futebol/libertadores/jogo/22-10-2026/flamengo-estudiantes.ghtml",
+      "publishedAt": "2026-10-23T20:20:41.000Z",
       "keywordScore": 1,
       "trendScore": 0.1,
       "score": 1.1
@@ -882,6 +1098,15 @@
       "title": "Los Angeles Lakers x Los Angeles Clippers: horário e onde assistir à NBA",
       "link": "https://www.cnnbrasil.com.br/esportes/basquete/los-angeles-lakers-x-los-angeles-clippers-horario-e-onde-assistir-a-nba/",
       "publishedAt": "2026-10-23T19:00:39.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.1,
+      "score": 1.1
+    },
+    {
+      "source": "Exame",
+      "title": "Chance de vitória de Flávio Bolsonaro cai de 70% para 60% a dois dias do 2º turno, diz Eurasia",
+      "link": "https://exame.com/brasil/chance-de-vitoria-de-flavio-bolsonaro-cai-de-70-para-60-a-dois-dias-do-2o-turno-diz-eurasia/",
+      "publishedAt": "2026-10-23T18:42:23.000Z",
       "keywordScore": 1,
       "trendScore": 0.1,
       "score": 1.1
@@ -986,19 +1211,10 @@
       "score": 1.1
     },
     {
-      "source": "CNN Brasil",
-      "title": "Ipespe/Abrapel: Flávio é rejeitado por 48%; Lula, por 47%",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/ipespe-abrapel-flavio-e-rejeitado-por-48-lula-por-47/",
-      "publishedAt": "2026-10-23T13:01:50.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.1,
-      "score": 1.1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Ipespe/Abrapel: Flávio tem 50,5% dos votos válidos; Lula, 49,5%",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/ipespe-abrapel-flavio-tem-505-dos-votos-validos-lula-495/",
-      "publishedAt": "2026-10-23T13:00:54.000Z",
+      "source": "GE Globo Esporte",
+      "title": "Libertadores Feminina: veja jogos, datas, horários e onde assistir às quartas de final",
+      "link": "https://ge.globo.com/sp/campinas-e-regiao/futebol/futebol-feminino/libertadores-feminina/noticia/2026/10/23/libertadores-feminina-veja-jogos-datas-horarios-e-onde-assistir-as-quartas-de-final.ghtml",
+      "publishedAt": "2026-10-23T13:02:22.000Z",
       "keywordScore": 1,
       "trendScore": 0.1,
       "score": 1.1
@@ -1077,15 +1293,6 @@
     },
     {
       "source": "Exame",
-      "title": "Ibovespa e dólar operam estáveis no último pregão antes do segundo turno das eleições",
-      "link": "https://exame.com/invest/mercados/ibovespa-e-dolar-operam-estaveis-no-ultimo-pregao-antes-do-segundo-turno-das-eleicoes/",
-      "publishedAt": "2026-10-23T11:13:34.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.1,
-      "score": 1.1
-    },
-    {
-      "source": "Exame",
       "title": "'Magnatas do Crime': Bruna Marquezine entra para elenco da 3ª temporada da série da Netflix",
       "link": "https://exame.com/pop/magnatas-do-crime-bruna-marquezine-entra-para-elenco-da-3a-temporada-da-serie-da-netflix/",
       "publishedAt": "2026-10-23T10:52:58.000Z",
@@ -1098,6 +1305,24 @@
       "title": "Plano de governo de Flávio Bolsonaro: entenda as propostas dos 9 eixos",
       "link": "https://exame.com/brasil/plano-de-governo-de-flavio-bolsonaro-entenda-as-propostas-dos-9-eixos/",
       "publishedAt": "2026-10-23T10:00:45.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.1,
+      "score": 1.1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Flamengo levou uma aula de Libertadores do Estudiantes",
+      "link": "https://ge.globo.com/blogs/meia-encarnada/post/2026/10/23/flamengo-levou-uma-aula-de-libertadores-do-estudiantes.ghtml",
+      "publishedAt": "2026-10-23T10:00:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.1,
+      "score": 1.1
+    },
+    {
+      "source": "InfoMoney",
+      "title": "O que aconteceu com a Bolsa e dólar após o segundo turno, nas últimas eleições?",
+      "link": "https://www.infomoney.com.br/mercados/o-que-aconteceu-com-a-bolsa-e-dolar-apos-o-segundo-turno-nas-ultimas-eleicoes/",
+      "publishedAt": "2026-10-23T09:00:00.000Z",
       "keywordScore": 1,
       "trendScore": 0.1,
       "score": 1.1
@@ -1116,6 +1341,15 @@
       "title": "Brasileirão 2026: veja onde assistir ao vivo aos jogos da 32ª rodada",
       "link": "https://ge.globo.com/ba/futebol/brasileirao-serie-a/noticia/2026/10/23/brasileirao-2026-veja-onde-assistir-ao-vivo-aos-jogos-da-32a-rodada.ghtml",
       "publishedAt": "2026-10-23T06:00:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.1,
+      "score": 1.1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Datafolha: Veja como Flávio e Lula pontuam por renda, gênero e religião",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/datafolha-veja-como-flavio-e-lula-pontuam-por-renda-genero-e-religiao/",
+      "publishedAt": "2026-10-23T05:23:59.000Z",
       "keywordScore": 1,
       "trendScore": 0.1,
       "score": 1.1
@@ -1148,6 +1382,15 @@
       "score": 1.1
     },
     {
+      "source": "Folha de S.Paulo",
+      "title": "Veja os n�meros de Omar Aziz e Maria do Carmo, candidatos ao governo do Amazonas",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/veja-os-numeros-de-omar-aziz-e-maria-do-carmo-candidatos-ao-governo-do-amazonas.shtml",
+      "publishedAt": "2026-10-23T03:30:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.1,
+      "score": 1.1
+    },
+    {
       "source": "CNN Brasil",
       "title": "Palmeiras x Estudiantes na final da Libertadores: veja data e local",
       "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/libertadores-da-america/palmeiras-x-estudiantes-na-final-da-libertadores-veja-data-e-local/",
@@ -1166,10 +1409,28 @@
       "score": 1.1
     },
     {
+      "source": "Folha de S.Paulo",
+      "title": "Estudiantes elimina o Flamengo e encara o Palmeiras na final da Libertadores",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/esporte/2026/10/estudiantes-elimina-o-flamengo-e-encara-o-palmeiras-na-final-da-libertadores.shtml",
+      "publishedAt": "2026-10-23T02:44:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.1,
+      "score": 1.1
+    },
+    {
       "source": "CNN Brasil",
-      "title": "Libertadores: Flamengo x Estudiantes bate recorde de público no Brasil",
-      "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/libertadores-da-america/libertadores-flamengo-x-estudiantes-bate-recorde-de-publico-no-brasil/",
-      "publishedAt": "2026-10-23T02:49:54.000Z",
+      "title": "Muslera brilha nos pênaltis, e Estudiantes elimina Flamengo da Libertadores",
+      "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/libertadores-da-america/muslera-brilha-nos-penaltis-e-estudiantes-elimina-flamengo-da-libertadores/",
+      "publishedAt": "2026-10-23T02:39:19.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.1,
+      "score": 1.1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Estudiantes elimina o Flamengo e iguala São Paulo com seis finais de Libertadores; veja o ranking",
+      "link": "https://ge.globo.com/gato-mestre/noticia/2026/10/22/estudiantes-elimina-o-flamengo-e-iguala-sao-paulo-com-seis-finais-de-libertadores-veja-o-ranking.ghtml",
+      "publishedAt": "2026-10-23T02:38:30.000Z",
       "keywordScore": 1,
       "trendScore": 0.1,
       "score": 1.1
@@ -1179,6 +1440,15 @@
       "title": "Estudiantes x Palmeiras na final da Libertadores 2026: veja data e local",
       "link": "https://ge.globo.com/futebol/libertadores/noticia/2026/10/22/estudiantes-x-palmeiras-veja-data-e-local-da-final-da-libertadores-2026.ghtml",
       "publishedAt": "2026-10-23T02:37:56.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.1,
+      "score": 1.1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Veja quem Renan Santos apoia no 2º turno entre Flávio e Lula",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/veja-quem-renan-santos-apoia-no-2o-turno-entre-flavio-e-lula/",
+      "publishedAt": "2026-10-22T23:58:14.000Z",
       "keywordScore": 1,
       "trendScore": 0.1,
       "score": 1.1
@@ -1211,67 +1481,130 @@
       "score": 1.1
     },
     {
-      "source": "CNN Brasil",
-      "title": "Flamengo x Estudiantes: escalações e onde assistir ao jogo da Libertadores",
-      "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/libertadores-da-america/flamengo-x-estudiantes-escalacoes-e-onde-assistir-ao-jogo-da-libertadores-2/",
-      "publishedAt": "2026-10-22T23:01:44.000Z",
+      "source": "Folha de S.Paulo",
+      "title": "Fl�vio Bolsonaro tem vantagem entre mais propensos a votar, diz an�lise do Datafolha",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/flavio-bolsonaro-tem-vantagem-entre-mais-propensos-a-votar-diz-analise-do-datafolha.shtml",
+      "publishedAt": "2026-10-24T22:26:00.000Z",
       "keywordScore": 1,
-      "trendScore": 0.1,
-      "score": 1.1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Michael Gray, ator de “Shazam!”, morre aos 75 anos, diz site",
-      "link": "https://www.cnnbrasil.com.br/pop/streaming/michael-gray-ator-de-shazam-morre-aos-75-anos-diz-site/",
-      "publishedAt": "2026-10-22T22:56:49.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.1,
-      "score": 1.1
-    },
-    {
-      "source": "InfoMoney",
-      "title": "Mendonça diz que Lula e Flávio podem abrir sigilos sem autorização do TSE",
-      "link": "https://www.infomoney.com.br/politica/mendonca-diz-que-lula-e-flavio-podem-abrir-sigilos-sem-autorizacao-do-tse/",
-      "publishedAt": "2026-10-22T22:44:49.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.1,
-      "score": 1.1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Datafolha: 49% dos eleitores aprovam Lula; 48% desaprovam",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/datafolha-49-dos-eleitores-aprovam-lula-48-desaprovam/",
-      "publishedAt": "2026-10-22T22:41:46.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.1,
-      "score": 1.1
+      "trendScore": 0.05,
+      "score": 1.05
     },
     {
       "source": "Folha de S.Paulo",
-      "title": "Datafolha: Avalia��o negativa do governo Lula � de 39%, e positiva, de 36%",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/datafolha-avaliacao-negativa-do-governo-lula-e-de-39-e-positiva-de-36.shtml",
-      "publishedAt": "2026-10-22T22:05:00.000Z",
+      "title": "Cerca de 1.200 palestinos s�o deslocados ap�s opera��o do Ex�rcito de Israel",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mundo/2026/10/cerca-de-1200-palestinos-sao-deslocados-em-hebron-apos-israel-iniciar-operacao-militar.shtml",
+      "publishedAt": "2026-10-24T22:24:00.000Z",
       "keywordScore": 1,
-      "trendScore": 0.1,
-      "score": 1.1
+      "trendScore": 0.05,
+      "score": 1.05
     },
     {
-      "source": "InfoMoney",
-      "title": "Tom Skerritt, ator de “Alien”, “Top Gun” e “M.A.S.H.”, morre aos 93 anos",
-      "link": "https://www.infomoney.com.br/mundo/tom-skerritt-astro-de-alien-top-gun-e-m-a-s-h-morre-aos-93-anos/",
-      "publishedAt": "2026-10-22T21:44:47.000Z",
+      "source": "CNN Brasil",
+      "title": "Mirassol 1 x 1 São Paulo: veja os melhores momentos do Brasileirão",
+      "link": "https://www.cnnbrasil.com.br/esportes/brasileirao/mirassol-1-x-1-sao-paulo-veja-os-melhores-momentos-do-brasileirao/",
+      "publishedAt": "2026-10-24T22:13:21.000Z",
       "keywordScore": 1,
-      "trendScore": 0.1,
-      "score": 1.1
+      "trendScore": 0.05,
+      "score": 1.05
     },
     {
       "source": "Folha de S.Paulo",
-      "title": "Morre Tom Skerritt, ator que trabalhou em 'Alien' e 'Top Gun', aos 93 anos",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/ilustrada/2026/10/morre-tom-skerritt-ator-que-trabalhou-em-alien-e-top-gun-aos-93-anos.shtml",
-      "publishedAt": "2026-10-22T21:40:00.000Z",
+      "title": "Quaest: Fl�vio Bolsonaro marca 51% dos votos v�lidos, e Lula tem 49% na v�spera da elei��o",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/quaest-flavio-bolsonaro-marca-51-dos-votos-validos-e-lula-tem-49-na-vespera-da-eleicao.shtml",
+      "publishedAt": "2026-10-24T22:13:00.000Z",
       "keywordScore": 1,
-      "trendScore": 0.1,
-      "score": 1.1
+      "trendScore": 0.05,
+      "score": 1.05
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "'Fl�vio me preocupa tanto ou mais que pai dele', diz Jo�o Amo�do sobre voto em Lula",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/flavio-me-preocupa-tanto-ou-mais-que-pai-dele-diz-joao-amoedo-sobre-voto-em-lula.shtml",
+      "publishedAt": "2026-10-24T22:12:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.05,
+      "score": 1.05
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Vitória 1 x 1 Athletico-PR: veja os melhores momentos do Brasileirão",
+      "link": "https://www.cnnbrasil.com.br/esportes/brasileirao/vitoria-1-x-1-athletico-pr-veja-os-melhores-momentos-do-brasileirao/",
+      "publishedAt": "2026-10-24T22:06:58.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.05,
+      "score": 1.05
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Flamengo não tem chance de anular semifinal da Libertadores, diz jornalista",
+      "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/libertadores-da-america/flamengo-nao-tem-chance-de-anular-semifinal-da-libertadores-diz-jornalista/",
+      "publishedAt": "2026-10-24T21:41:25.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.05,
+      "score": 1.05
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "S�o Paulo empata com Mirassol e mant�m jejum como visitante",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/esporte/2026/10/sao-paulo-empata-com-mirassol-e-mantem-jejum-como-visitante.shtml",
+      "publishedAt": "2026-10-24T21:39:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.05,
+      "score": 1.05
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Em jogo morno, São Paulo empata com Mirassol e freia sequência de vitórias",
+      "link": "https://www.cnnbrasil.com.br/esportes/brasileirao/em-jogo-morno-sao-paulo-empata-com-mirassol-e-freia-sequencia-de-vitorias/",
+      "publishedAt": "2026-10-24T21:32:44.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.05,
+      "score": 1.05
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Leila Pereira critica Flamengo por tentar mudar classificação à final da Libertadores: \"Ridículo\"",
+      "link": "https://ge.globo.com/futebol/times/palmeiras/noticia/2026/10/24/leila-pereira-critica-flamengo-por-tentar-mudar-classificacao-a-final-da-libertadores-ridiculo.ghtml",
+      "publishedAt": "2026-10-24T21:23:39.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.05,
+      "score": 1.05
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Datafolha: Celina Le�o lidera no DF com 59% dos votos v�lidos, ante 41% de Grass na v�spera do 2� turno",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/datafolha-celina-leao-lidera-no-df-com-59-dos-votos-validos-ante-41-de-grass-na-vespera-do-2o-turno.shtml",
+      "publishedAt": "2026-10-24T21:03:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.05,
+      "score": 1.05
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Donald Trump reduzir� tarifas sobre produtos canadenses ap�s press�o de republicanos",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/donald-trump-reduzira-tarifas-sobre-produtos-canadenses-apos-pressao-de-republicanos.shtml",
+      "publishedAt": "2026-10-24T21:02:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.05,
+      "score": 1.05
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Quaest no DF: Celina Leão tem 61% dos votos válidos; Leandro Grass, 39%",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/quaest-no-df-celina-leao-tem-61-dos-votos-validos-leandro-grass-39/",
+      "publishedAt": "2026-10-24T20:52:15.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.05,
+      "score": 1.05
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Vasco x Flamengo: venda de ingressos começa com “acordo quebrado”",
+      "link": "https://www.cnnbrasil.com.br/esportes/brasileirao/vasco-x-flamengo-venda-de-ingressos-comeca-com-acordo-quebrado/",
+      "publishedAt": "2026-10-24T20:10:29.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.05,
+      "score": 1.05
     },
     {
       "source": "GE Globo Esporte",
@@ -1287,6 +1620,15 @@
       "title": "Defesa Civil do Paraná emite alerta vermelho para temporais severos",
       "link": "https://www.cnnbrasil.com.br/nacional/sul/pr/defesa-civil-do-parana-emite-alerta-vermelho-para-temporais-severos/",
       "publishedAt": "2026-10-24T19:49:11.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.05,
+      "score": 1.05
+    },
+    {
+      "source": "Exame",
+      "title": "Pesquisa AtlasIntel: no DF, Celina Leão tem 57,9% e Leandro Grass 42,1% no 2º turno",
+      "link": "https://exame.com/brasil/pesquisa-atlas-no-df-celina-leao-tem-579-e-leandro-grass-421-no-2o-turno/",
+      "publishedAt": "2026-10-24T19:30:38.000Z",
       "keywordScore": 1,
       "trendScore": 0.05,
       "score": 1.05
@@ -1328,10 +1670,46 @@
       "score": 1.05
     },
     {
+      "source": "GE Globo Esporte",
+      "title": "Vasco abre venda de ingressos para jogo contra o Flamengo no Nilton Santos e indica público 90/10",
+      "link": "https://ge.globo.com/futebol/times/vasco/noticia/2026/10/24/vasco-abre-venda-de-ingressos-contra-no-flamengo-no-nilton-santos-e-indica-publico-9010-no-classico.ghtml",
+      "publishedAt": "2026-10-24T18:36:24.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.05,
+      "score": 1.05
+    },
+    {
+      "source": "InfoMoney",
+      "title": "Cerca de 1.200 palestinos são deslocados em Hebron com início de operação israelense",
+      "link": "https://www.infomoney.com.br/mundo/cerca-de-1-200-palestinos-sao-deslocados-em-hebron-com-inicio-de-operacao-israelense/",
+      "publishedAt": "2026-10-24T18:05:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.05,
+      "score": 1.05
+    },
+    {
       "source": "Folha de S.Paulo",
       "title": "Confira a partir das 21h deste s�bado (24) o resultado do concurso 3074 da Mega-Sena",
       "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/cotidiano/2026/10/confira-a-partir-das-21h-deste-sabado-24-o-resultado-do-concurso-3074-da-mega-sena.shtml",
       "publishedAt": "2026-10-24T17:47:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.05,
+      "score": 1.05
+    },
+    {
+      "source": "Exame",
+      "title": "Pesquisas para presidente hoje: veja quem está na frente nos levantamentos deste sábado",
+      "link": "https://exame.com/brasil/pesquisas-para-presidente-hoje-veja-os-levantamentos-divulgados-neste-sabado/",
+      "publishedAt": "2026-10-24T17:40:55.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.05,
+      "score": 1.05
+    },
+    {
+      "source": "Exame",
+      "title": "Lula em SP: milhares de pessoas vão à Avenida Paulista na última comitiva do candidato",
+      "link": "https://exame.com/brasil/lula-em-sp-milhares-de-pessoas-vao-a-avenida-paulista-na-ultima-comitiva-do-candidato/",
+      "publishedAt": "2026-10-24T17:16:00.000Z",
       "keywordScore": 1,
       "trendScore": 0.05,
       "score": 1.05
@@ -1364,10 +1742,28 @@
       "score": 1.05
     },
     {
+      "source": "Folha de S.Paulo",
+      "title": "Apoiadores chegam para ato de Lula na avenida Paulista",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/apoiadores-chegam-para-ato-de-lula-na-avenida-paulista.shtml",
+      "publishedAt": "2026-10-24T16:48:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.05,
+      "score": 1.05
+    },
+    {
       "source": "Exame",
       "title": "Mãe de Ana Clara acusa Flávio Bolsonaro de falta de empatia: 'Não tive respostas'",
       "link": "https://exame.com/brasil/mae-de-ana-clara-acusa-flavio-bolsonaro-de-falta-de-empatia-nao-tive-respostas/",
       "publishedAt": "2026-10-24T16:44:09.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.05,
+      "score": 1.05
+    },
+    {
+      "source": "Exame",
+      "title": "Segundo turno das eleições começa no exterior; Nova Zelândia abre urnas",
+      "link": "https://exame.com/mundo/segundo-turno-das-eleicoes-comeca-no-exterior-nova-zelandia-abre-urnas/",
+      "publishedAt": "2026-10-24T16:34:41.000Z",
       "keywordScore": 1,
       "trendScore": 0.05,
       "score": 1.05
@@ -1391,19 +1787,19 @@
       "score": 1.05
     },
     {
-      "source": "CNN Brasil",
-      "title": "Quanto tempo de forno para assar meia receita? E o dobro? Este erro de cálculo pode estar fazendo seu bolo queimar",
-      "link": "https://www.cnnbrasil.com.br/curiosidades/quanto-tempo-de-forno-para-assar-receita-dobrar-erro-cozinha/",
-      "publishedAt": "2026-10-24T16:05:05.000Z",
+      "source": "Exame",
+      "title": "OMS inicia testes de vacina contra cepa do Ebola, responsável por surto no Congo",
+      "link": "https://exame.com/mundo/oms-inicia-testes-de-vacina-contra-cepa-do-ebola-responsavel-por-surto-no-congo/",
+      "publishedAt": "2026-10-24T16:01:32.000Z",
       "keywordScore": 1,
       "trendScore": 0.05,
       "score": 1.05
     },
     {
       "source": "Exame",
-      "title": "OMS inicia testes de vacina contra cepa do Ebola, responsável por surto no Congo",
-      "link": "https://exame.com/mundo/oms-inicia-testes-de-vacina-contra-cepa-do-ebola-responsavel-por-surto-no-congo/",
-      "publishedAt": "2026-10-24T16:01:32.000Z",
+      "title": "Quem está na frente em 2026 na pesquisa que se aproximou da diferença da eleição de 2022",
+      "link": "https://exame.com/brasil/quem-esta-na-frente-em-2026-na-pesquisa-que-se-aproximou-da-diferenca-da-eleicao-de-2022/",
+      "publishedAt": "2026-10-24T15:50:21.000Z",
       "keywordScore": 1,
       "trendScore": 0.05,
       "score": 1.05
@@ -1454,15 +1850,6 @@
       "score": 1.05
     },
     {
-      "source": "GE Globo Esporte",
-      "title": "Contas: veja como uma vitória sobre o Corinthians pode dar tranquilidade ao Vasco no Brasileirão",
-      "link": "https://ge.globo.com/futebol/times/vasco/noticia/2026/10/24/contas-veja-como-uma-vitoria-sobre-o-corinthians-pode-dar-tranquilidade-ao-vasco-no-brasileirao.ghtml",
-      "publishedAt": "2026-10-24T15:00:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
-    },
-    {
       "source": "CNN Brasil",
       "title": "Aston Villa vence e impõe primeira derrota do Manchester City no Inglês",
       "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/futebol-ingles/aston-villa-vence-e-impoe-primeira-derrota-do-manchester-city-no-ingles/",
@@ -1476,15 +1863,6 @@
       "title": "Carlos Alberto de N�brega tem alta hospitalar ap�s implante de marcapasso",
       "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/ilustrada/2026/10/carlos-alberto-de-nobrega-tem-alta-hospitalar-apos-implante-de-marcapasso.shtml",
       "publishedAt": "2026-10-24T14:57:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Escalação do Vasco: Puma será titular contra o Corinthians, e Marino pode ganhar chance",
-      "link": "https://ge.globo.com/futebol/times/vasco/noticia/2026/10/24/escalacao-do-vasco-puma-sera-titular-contra-o-corinthians-e-marino-pode-ganhar-chance.ghtml",
-      "publishedAt": "2026-10-24T14:54:45.000Z",
       "keywordScore": 1,
       "trendScore": 0.05,
       "score": 1.05
@@ -1512,6 +1890,15 @@
       "title": "Rep�blica Democr�tica do Congo inicia teste de vacina contra ebola",
       "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/equilibrioesaude/2026/10/republica-democratica-do-congo-inicia-teste-de-vacina-contra-ebola.shtml",
       "publishedAt": "2026-10-24T14:22:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.05,
+      "score": 1.05
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Eliminação na Libertadores afeta finanças do Flamengo e impede chance de cobrir déficits em 2026",
+      "link": "https://ge.globo.com/futebol/times/flamengo/noticia/2026/10/24/eliminacao-na-libertadores-afeta-financas-do-flamengo-e-impede-chance-de-cobrir-deficits-em-2026.ghtml",
+      "publishedAt": "2026-10-24T14:00:00.000Z",
       "keywordScore": 1,
       "trendScore": 0.05,
       "score": 1.05
@@ -1602,15 +1989,6 @@
       "title": "Vitória x Athletico-PR: horário e onde assistir ao jogo do Brasileirão",
       "link": "https://www.cnnbrasil.com.br/esportes/brasileirao/vitoria-x-athletico-pr-horario-e-onde-assistir-ao-jogo-do-brasileirao-2/",
       "publishedAt": "2026-10-24T13:00:05.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
-    },
-    {
-      "source": "Exame",
-      "title": "CNT/MDA: Lula chega ao 2º turno melhor que Jair, mas com avaliação negativa e positiva empatadas",
-      "link": "https://exame.com/brasil/cnt-mda-lula-chega-ao-2o-turno-melhor-que-jair-mas-com-avaliacao-negativa-e-positiva-empatadas/",
-      "publishedAt": "2026-10-24T12:45:38.000Z",
       "keywordScore": 1,
       "trendScore": 0.05,
       "score": 1.05
@@ -1896,6 +2274,15 @@
     },
     {
       "source": "GE Globo Esporte",
+      "title": "Palmeiras x Santa Fe na Libertadores Feminina: onde assistir ao vivo e horário",
+      "link": "https://ge.globo.com/sp/campinas-e-regiao/futebol/futebol-feminino/libertadores-feminina/noticia/2026/10/24/palmeiras-x-santa-fe-na-libertadores-feminina-onde-assistir-ao-vivo-e-horario.ghtml",
+      "publishedAt": "2026-10-24T05:11:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.05,
+      "score": 1.05
+    },
+    {
+      "source": "GE Globo Esporte",
       "title": "Barcelona x Real Madrid: José Mourinho volta ao El Clasico após 13 anos; veja histórico",
       "link": "https://ge.globo.com/futebol/futebol-internacional/futebol-espanhol/noticia/2026/10/24/barcelona-x-real-madrid-jose-mourinho-volta-ao-el-clasico-apos-13-anos-veja-historico.ghtml",
       "publishedAt": "2026-10-24T05:00:00.000Z",
@@ -2007,15 +2394,6 @@
       "title": "Campanha de Lula leva ao debate m�e de Ana Clara, menina morta por PM defendido por Fl�vio",
       "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/campanha-de-lula-leva-ao-debate-mae-de-ana-clara-menina-morta-por-pm-defendido-por-flavio.shtml",
       "publishedAt": "2026-10-24T00:59:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Flamengo recorre da escalação de Rojo, do Estudiantes, e tenta mudar classificação na Libertadores; entenda",
-      "link": "https://ge.globo.com/futebol/times/flamengo/noticia/2026/10/23/flamengo-recorre-da-escalacao-de-rojo-do-estudiantes-e-tenta-mudar-classificacao-na-libertadores-entenda.ghtml",
-      "publishedAt": "2026-10-23T23:53:07.000Z",
       "keywordScore": 1,
       "trendScore": 0.05,
       "score": 1.05
@@ -2238,15 +2616,6 @@
     },
     {
       "source": "CNN Brasil",
-      "title": "Trump retira tarifas de 50% sobre produtos agrícolas do Canadá",
-      "link": "https://www.cnnbrasil.com.br/agro/trump-retira-tarifas-de-50-sobre-produtos-agricolas-do-canada/",
-      "publishedAt": "2026-10-23T21:51:50.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
-    },
-    {
-      "source": "CNN Brasil",
       "title": "BC aprova medidas para proteger consumidor do endividamento",
       "link": "https://www.cnnbrasil.com.br/economia/money/macroeconomia/bc-aprova-medidas-para-proteger-consumidor-do-endividamento/",
       "publishedAt": "2026-10-23T21:48:37.000Z",
@@ -2268,6 +2637,15 @@
       "title": "Bitcoin opera estável apesar da alta do petróleo",
       "link": "https://www.cnnbrasil.com.br/economia/money/mercado/bitcoin-opera-estavel-apesar-da-alta-do-petroleo/",
       "publishedAt": "2026-10-23T21:32:52.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.05,
+      "score": 1.05
+    },
+    {
+      "source": "Exame",
+      "title": "Pesquisas para presidente hoje: quem está na frente nos levantamentos desta sexta-feira?",
+      "link": "https://exame.com/brasil/pesquisas-para-presidente-hoje-quem-esta-na-frente-nos-levantamentos-desta-sexta-feira/",
+      "publishedAt": "2026-10-23T21:29:16.000Z",
       "keywordScore": 1,
       "trendScore": 0.05,
       "score": 1.05
@@ -2373,15 +2751,6 @@
     },
     {
       "source": "InfoMoney",
-      "title": "Bradesco tem nova alta seguida no lucro e ações sobem, mas inadimplência preocupa",
-      "link": "https://www.infomoney.com.br/mercados/bradesco-bbdc4-11-altas-seguidas-no-lucro-mas-inadimplencia-preocupa-mercado-3t26-desempenho-acoes/",
-      "publishedAt": "2026-10-23T20:41:40.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
-    },
-    {
-      "source": "InfoMoney",
       "title": "Flávio aciona novamente TSE contra Lula e alega abuso de poder em comunicação digital",
       "link": "https://www.infomoney.com.br/politica/flavio-aciona-novamente-tse-contra-lula-e-alega-abuso-de-poder-em-comunicacao-digital/",
       "publishedAt": "2026-10-23T20:35:33.000Z",
@@ -2457,15 +2826,6 @@
       "title": "Defesa Civil de SP renova alerta de temporais em todo o estado no domingo de elei��o",
       "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/cotidiano/2026/10/defesa-civil-de-sp-renova-alerta-de-temporais-em-todo-o-estado-no-domingo-de-eleicao.shtml",
       "publishedAt": "2026-10-23T19:46:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
-    },
-    {
-      "source": "Suno Notícias",
-      "title": "Embraer (EMBJ3) está com a agenda cheia: US$ 35,7 bilhões na fila e alta de 29%",
-      "link": "https://www.suno.com.br/noticias/embraer-embj3-pedidos-recorde-xp-alta-29-por-cento/",
-      "publishedAt": "2026-10-23T19:45:02.000Z",
       "keywordScore": 1,
       "trendScore": 0.05,
       "score": 1.05
@@ -2661,15 +3021,6 @@
     },
     {
       "source": "CNN Brasil",
-      "title": "Anvisa endurece regras para uso de polilaminina após registro de 9 mortes",
-      "link": "https://www.cnnbrasil.com.br/saude/anvisa-endurece-regras-para-uso-de-polilaminina-apos-registro-de-9-mortes/",
-      "publishedAt": "2026-10-23T17:22:44.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
-    },
-    {
-      "source": "CNN Brasil",
       "title": "Flávio e Lula calcularão ataques em debates para não afastar indecisos",
       "link": "https://www.cnnbrasil.com.br/eleicoes/flavio-e-lula-calcularao-ataques-em-debates-para-nao-afastar-indecisos/",
       "publishedAt": "2026-10-23T17:15:25.000Z",
@@ -2850,6 +3201,15 @@
     },
     {
       "source": "CNN Brasil",
+      "title": "Flávio leva sertanejos à última propaganda no rádio; Lula aposta em Janones",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/flavio-leva-sertanejos-a-ultima-propaganda-no-radio-lula-aposta-em-janones/",
+      "publishedAt": "2026-10-23T14:01:19.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.05,
+      "score": 1.05
+    },
+    {
+      "source": "CNN Brasil",
       "title": "Protestos em Paris levam ao adiamento de PSG x Lyon no Campeonato Francês",
       "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/protestos-em-paris-levam-ao-adiamento-de-psg-x-lyon-no-campeonato-frances/",
       "publishedAt": "2026-10-23T13:58:33.000Z",
@@ -2984,18 +3344,18 @@
       "score": 1.05
     },
     {
-      "source": "Folha de S.Paulo",
-      "title": "Ipespe/Abrapel: Fl�vio Bolsonaro tem 50,5% dos votos v�lidos no 2� turno, e Lula, 49,5%",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/ipespeabrapel-flavio-bolsonaro-tem-505-dos-votos-validos-no-2o-turno-e-lula-495.shtml",
-      "publishedAt": "2026-10-23T13:00:00.000Z",
+      "source": "CNN Brasil",
+      "title": "Ipespe/Abrapel: Flávio é rejeitado por 48%; Lula, por 47%",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/ipespe-abrapel-flavio-e-rejeitado-por-48-lula-por-47/",
+      "publishedAt": "2026-10-23T13:01:50.000Z",
       "keywordScore": 1,
       "trendScore": 0.05,
       "score": 1.05
     },
     {
-      "source": "Suno Notícias",
-      "title": "Bradesco (BBDC4) tem lucro líquido recorrente de R$ 7,1 bi no 3T26, alta de 14,6%",
-      "link": "https://www.suno.com.br/noticias/bradesco-tem-lucro-liquido-recorrente-bi-no-3o-trimestre-go/",
+      "source": "Folha de S.Paulo",
+      "title": "Ipespe/Abrapel: Fl�vio Bolsonaro tem 50,5% dos votos v�lidos no 2� turno, e Lula, 49,5%",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/ipespeabrapel-flavio-bolsonaro-tem-505-dos-votos-validos-no-2o-turno-e-lula-495.shtml",
       "publishedAt": "2026-10-23T13:00:00.000Z",
       "keywordScore": 1,
       "trendScore": 0.05,
@@ -3060,15 +3420,6 @@
       "title": "Trump ataca LeBron James por postura durante hino dos EUA",
       "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/esporte/2026/10/trump-ataca-lebron-james-por-postura-durante-hino-dos-eua.shtml",
       "publishedAt": "2026-10-23T12:26:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Rooney condena jogadores do Manchester United em crise: \"Egoístas, agem como bebês\"",
-      "link": "https://ge.globo.com/futebol/futebol-internacional/futebol-ingles/noticia/2026/10/23/rooney-condena-jogadores-do-manchester-united-em-crise-egoistas-agem-como-bebes.ghtml",
-      "publishedAt": "2026-10-23T12:23:11.000Z",
       "keywordScore": 1,
       "trendScore": 0.05,
       "score": 1.05
@@ -3254,15 +3605,6 @@
       "score": 1.05
     },
     {
-      "source": "InfoMoney",
-      "title": "O que aconteceu com a Bolsa e dólar após o segundo turno, nas últimas eleições?",
-      "link": "https://www.infomoney.com.br/mercados/o-que-aconteceu-com-a-bolsa-e-dolar-apos-o-segundo-turno-nas-ultimas-eleicoes/",
-      "publishedAt": "2026-10-23T09:00:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
-    },
-    {
       "source": "Folha de S.Paulo",
       "title": "Gest�o Tarc�sio cobra do governo Lula R$ 70 milh�es por remo��o de fam�lias da Favela do Moinho",
       "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/painel/2026/10/gestao-tarcisio-cobra-do-governo-lula-r-70-milhoes-por-remocao-de-familias-da-favela-do-moinho.shtml",
@@ -3336,6 +3678,15 @@
     },
     {
       "source": "CNN Brasil",
+      "title": "Flávio e Lula afinam estratégias para o último duelo na TV antes das urnas",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/flavio-e-lula-afinam-estrategias-para-o-ultimo-duelo-na-tv-antes-das-urnas/",
+      "publishedAt": "2026-10-23T06:30:29.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.05,
+      "score": 1.05
+    },
+    {
+      "source": "CNN Brasil",
       "title": "Vacina contra câncer reduz risco de morte em 42% ou recorrência de melanoma",
       "link": "https://www.cnnbrasil.com.br/saude/vacina-contra-cancer-reduz-risco-de-morte-ou-recorrencia-de-melanoma-em-42/",
       "publishedAt": "2026-10-23T06:09:49.000Z",
@@ -3366,15 +3717,6 @@
       "title": "Negociar com patrão, mudar jornadas e regular apps: o que Lula e Flávio propõem aos trabalhadores",
       "link": "https://g1.globo.com/trabalho-e-carreira/noticia/2026/10/23/negociar-com-patrao-mudar-jornadas-e-regular-apps-o-que-lula-e-flavio-propoem-aos-trabalhadores.ghtml",
       "publishedAt": "2026-10-23T06:00:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Datafolha: Veja como Flávio e Lula pontuam por renda, gênero e religião",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/datafolha-veja-como-flavio-e-lula-pontuam-por-renda-genero-e-religiao/",
-      "publishedAt": "2026-10-23T05:23:59.000Z",
       "keywordScore": 1,
       "trendScore": 0.05,
       "score": 1.05
@@ -3429,6 +3771,15 @@
       "title": "Arrascaeta desabafa sobre eliminação do Flamengo: \"Se não dá o máximo, paga caro\"",
       "link": "https://ge.globo.com/futebol/times/flamengo/noticia/2026/10/23/arrascaeta-desabafa-sobre-eliminacao-do-flamengo-se-nao-da-o-maximo-paga-caro.ghtml",
       "publishedAt": "2026-10-23T03:06:01.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.05,
+      "score": 1.05
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Libertadores: Flamengo x Estudiantes bate recorde de público no Brasil",
+      "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/libertadores-da-america/libertadores-flamengo-x-estudiantes-bate-recorde-de-publico-no-brasil/",
+      "publishedAt": "2026-10-23T02:49:54.000Z",
       "keywordScore": 1,
       "trendScore": 0.05,
       "score": 1.05
@@ -3543,6 +3894,24 @@
     },
     {
       "source": "CNN Brasil",
+      "title": "Veja quem Ronaldo Caiado apoia no 2º turno entre Flávio e Lula",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/veja-quem-ronaldo-caiado-apoia-no-2o-turno-entre-flavio-e-lula/",
+      "publishedAt": "2026-10-23T00:57:08.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.05,
+      "score": 1.05
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Veja quem Augusto Cury apoia no 2º turno entre Flávio e Lula",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/veja-quem-augusto-cury-apoia-no-2o-turno-entre-flavio-e-lula/",
+      "publishedAt": "2026-10-23T00:57:06.000Z",
+      "keywordScore": 1,
+      "trendScore": 0.05,
+      "score": 1.05
+    },
+    {
+      "source": "CNN Brasil",
       "title": "É obrigatório votar no 2º turno? Veja as regras eleitorais",
       "link": "https://www.cnnbrasil.com.br/eleicoes/e-obrigatorio-votar-no-2o-turno-veja-as-regras-eleitorais/",
       "publishedAt": "2026-10-23T00:34:19.000Z",
@@ -3569,15 +3938,6 @@
       "score": 1.05
     },
     {
-      "source": "CNN Brasil",
-      "title": "Veja quem Renan Santos apoia no 2º turno entre Flávio e Lula",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/veja-quem-renan-santos-apoia-no-2o-turno-entre-flavio-e-lula/",
-      "publishedAt": "2026-10-22T23:58:14.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
-    },
-    {
       "source": "GE Globo Esporte",
       "title": "Quartas de final da Copa do Brasil sub-20 2026: veja classificados e datas dos confrontos",
       "link": "https://ge.globo.com/pa/futebol/copa-do-brasil-sub-20/noticia/2026/10/22/quartas-de-final-da-copa-do-brasil-sub-20-2026-veja-classificados-e-datas-dos-confrontos.ghtml",
@@ -3596,19 +3956,19 @@
       "score": 1.05
     },
     {
-      "source": "Neofeed",
-      "title": "Bradesco lucra R$ 7,1 bilhões e ROE atinge 16,1%",
-      "link": "https://neofeed.com.br/negocios/bradesco-lucra-r-71-bilhoes-e-roe-atinge-161/",
-      "publishedAt": "2026-10-22T23:29:47.000Z",
+      "source": "CNN Brasil",
+      "title": "Lula pede ao TSE retirada do “Exército do Lula” de registro da campanha",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/lula-pede-ao-tse-retirada-do-exercito-do-lula-de-registro-da-campanha/",
+      "publishedAt": "2026-10-22T23:21:49.000Z",
       "keywordScore": 1,
       "trendScore": 0.05,
       "score": 1.05
     },
     {
       "source": "CNN Brasil",
-      "title": "Lula pede ao TSE retirada do “Exército do Lula” de registro da campanha",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/lula-pede-ao-tse-retirada-do-exercito-do-lula-de-registro-da-campanha/",
-      "publishedAt": "2026-10-22T23:21:49.000Z",
+      "title": "Flamengo x Estudiantes: escalações e onde assistir ao jogo da Libertadores",
+      "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/libertadores-da-america/flamengo-x-estudiantes-escalacoes-e-onde-assistir-ao-jogo-da-libertadores-2/",
+      "publishedAt": "2026-10-22T23:01:44.000Z",
       "keywordScore": 1,
       "trendScore": 0.05,
       "score": 1.05
@@ -3623,184 +3983,517 @@
       "score": 1.05
     },
     {
-      "source": "CNN Brasil",
-      "title": "“A Fazenda 18”: parcial mostra peoa eliminada com alta rejeição",
-      "link": "https://www.cnnbrasil.com.br/pop/realities/a-fazenda-18-parcial-mostra-peoa-eliminada-com-alta-rejeicao/",
-      "publishedAt": "2026-10-22T22:44:41.000Z",
+      "source": "GE Globo Esporte",
+      "title": "Iago desfalca o São Paulo contra o Bahia; Wendell será o substituto",
+      "link": "https://ge.globo.com/futebol/times/sao-paulo/noticia/2026/10/24/iago-desfalca-o-sao-paulo-contra-o-bahia-wendell-sera-o-substituto.ghtml",
+      "publishedAt": "2026-10-24T22:27:26.000Z",
       "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
-    },
-    {
-      "source": "InfoMoney",
-      "title": "Polilaminina: Anvisa diz por que não apoia ampliar uso experimental após 9 mortes",
-      "link": "https://www.infomoney.com.br/saude/poliaminina-anvisa/",
-      "publishedAt": "2026-10-22T22:30:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
+      "trendScore": 0,
+      "score": 1
     },
     {
       "source": "CNN Brasil",
-      "title": "TSE dá 12h para Meta explicar alcance de perfis de Nikolas, Marçal e Flávio",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/tse-da-12h-para-meta-explicar-alcance-de-perfis-de-nikolas-marcal-e-flavio/",
-      "publishedAt": "2026-10-22T22:12:23.000Z",
+      "title": "Pedro Pascal lembra do início da carreira: “Você engole muito sapo”",
+      "link": "https://www.cnnbrasil.com.br/pop/celebridades/pedro-pascal-lembra-do-inicio-da-carreira-voce-engole-muito-sapo/",
+      "publishedAt": "2026-10-24T22:23:45.000Z",
       "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
+      "trendScore": 0,
+      "score": 1
     },
     {
       "source": "Folha de S.Paulo",
-      "title": "Datafolha: Fl�vio Bolsonaro e Lula empatam com 50% dos votos v�lidos cada um",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/datafolha-flavio-bolsonaro-e-lula-empatam-com-50-dos-votos-validos-cada.shtml",
-      "publishedAt": "2026-10-22T22:05:00.000Z",
+      "title": "O dia depois de amanh�: economia dif�cil e um presidente impopular",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/viniciustorres/2026/10/o-dia-depois-de-amanha-economia-dificil-e-um-presidente-impopular.shtml",
+      "publishedAt": "2026-10-24T22:23:00.000Z",
       "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
+      "trendScore": 0,
+      "score": 1
     },
     {
       "source": "CNN Brasil",
-      "title": "G5 ao Capital Insights: Há dúvida sobre como governo eleito tratará fiscal",
-      "link": "https://www.cnnbrasil.com.br/economia/money/mercado/g5-ao-capital-insights-ha-duvida-sobre-como-governo-eleito-tratara-fiscal/",
-      "publishedAt": "2026-10-22T22:01:39.000Z",
+      "title": "Antonelli conquista pole no GP dos EUA e pode ser campeão mais jovem da F1",
+      "link": "https://www.cnnbrasil.com.br/esportes/automobilismo/antonelli-conquista-pole-no-gp-dos-eua-e-pode-ser-campeao-mais-jovem-da-f1/",
+      "publishedAt": "2026-10-24T22:22:15.000Z",
       "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Quaest: Allyson Bezerra (Uni�o Brasil) tem 51%, ante 49% de Cadu de Lula (PT) no Rio Grande do Norte",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/quaest-allyson-bezerra-uniao-brasil-tem-51-ante-49-de-cadu-de-lula-pt-no-rio-grande-do-norte.shtml",
+      "publishedAt": "2026-10-24T22:22:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
     },
     {
       "source": "CNN Brasil",
-      "title": "Rooney chama jogadores do Manchester United de “egoístas” após goleada",
-      "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/futebol-ingles/rooney-chama-jogadores-do-manchester-united-de-egoistas-apos-goleada/",
-      "publishedAt": "2026-10-22T21:55:51.000Z",
+      "title": "Pesquisas mostram Flávio numericamente à frente de Lula, na margem de erro",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/ultimas-pesquisas-segundo-turno-eleicao/",
+      "publishedAt": "2026-10-24T22:21:07.000Z",
       "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
+      "trendScore": 0,
+      "score": 1
     },
     {
       "source": "Folha de S.Paulo",
-      "title": "Mendon�a diz que Lula e Fl�vio Bolsonaro podem abrir seus sigilos e que medida independe de aval do TSE",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/mendonca-diz-que-lula-e-flavio-bolsonaro-podem-abrir-seus-sigilos-e-que-medida-independe-de-aval-do-tse.shtml",
-      "publishedAt": "2026-10-22T21:51:00.000Z",
+      "title": "Campanha de Fl�vio diz temer interfer�ncia e tratamento desigual por ministros do TSE",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/painel/2026/10/campanha-de-flavio-diz-temer-interferencia-e-tratamento-desigual-por-ministros-do-tse.shtml",
+      "publishedAt": "2026-10-24T22:19:00.000Z",
       "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "Tecmundo",
+      "title": "10 melhores dicas para aproveitar em The Witcher 3 remasterizado ",
+      "link": "https://www.estadao.com.br/tecmundo/voxel/como-jogar-the-witcher-3-remasterizado-confira-10-dicas/",
+      "publishedAt": "2026-10-24T22:15:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
     },
     {
       "source": "Folha de S.Paulo",
-      "title": "A Fazenda 18: Enquete mostra que peoa deve ser eliminada do reality",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://f5.folha.uol.com.br/televisao/a-fazenda-18/2026/10/a-fazenda-18-enquete-mostra-que-peoa-deve-ser-eliminada-do-reality.shtml",
-      "publishedAt": "2026-10-22T21:51:00.000Z",
+      "title": "Quaest: Pazolini lidera no Esp�rito Santo com 55%; Ferra�o tem 45%",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/quaest-pazolini-lidera-no-espirito-santo-com-55-ferraco-tem-45.shtml",
+      "publishedAt": "2026-10-24T22:08:00.000Z",
       "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Tarcísio articula 93 atos de campanha de Flávio em SP até sábado",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/tarcisio-articula-93-atos-de-campanha-de-flavio-em-sp-ate-sabado/",
-      "publishedAt": "2026-10-22T21:50:36.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
+      "trendScore": 0,
+      "score": 1
     },
     {
       "source": "Folha de S.Paulo",
-      "title": "TSE d� prazo de 12 horas para Meta explicar alcance do perfil de Nikolas no Instagram",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/tse-da-prazo-de-12-horas-para-meta-explicar-alcance-do-perfil-de-nikolas-no-instagram.shtml",
-      "publishedAt": "2026-10-22T21:49:00.000Z",
+      "title": "Qu�nia registra segunda morte por ebola",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/equilibrioesaude/2026/10/quenia-registra-segunda-morte-por-ebola.shtml",
+      "publishedAt": "2026-10-24T22:06:00.000Z",
       "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
+      "trendScore": 0,
+      "score": 1
     },
     {
-      "source": "Exame",
-      "title": "Sylvester Stallone defende IA no cinema e já sugeriu rejuvenescer Rambo com a tecnologia",
-      "link": "https://exame.com/pop/sylvester-stallone-defende-ia-no-cinema-e-ja-sugeriu-rejuvenescer-rambo-com-a-tecnologia/",
-      "publishedAt": "2026-10-22T21:41:44.000Z",
+      "source": "Canaltech",
+      "title": "5 infrações de trânsito que podem levar à apreensão do carro",
+      "link": "https://canaltech.com.br/carros/5-infracoes-de-transito-que-podem-levar-a-apreensao-do-carro/",
+      "publishedAt": "2026-10-24T22:05:03.000Z",
       "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Bradesco segura despesas e lucro sobe 14,6% para R$ 7,1 bilh�es no 3� tri",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://c-level.folha.uol.com.br/financas/2026/10/bradesco-segura-despesas-e-lucro-sobe-para-r-71-bilhoes-no-3o-tri.shtml",
-      "publishedAt": "2026-10-22T21:24:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Posso votar em trânsito no 2º turno? Veja o que fazer",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/posso-votar-em-transito-no-2o-turno-veja-o-que-fazer/",
-      "publishedAt": "2026-10-22T21:20:44.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Quando uma receita de bolo n�o � uma receita de bolo",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/blogs/cozinha-bruta/2026/10/quando-uma-receita-de-bolo-nao-e-uma-receita-de-bolo.shtml",
-      "publishedAt": "2026-10-22T21:15:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Endrick pode ganhar chance contra o Barcelona com ausência de Vinícius Jr.",
-      "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/endrick-pode-ganhar-chance-contra-o-barcelona-com-ausencia-de-vinicius-jr/",
-      "publishedAt": "2026-10-22T21:14:38.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Voo da Latam solicita prioridade para pousar em Porto Alegre",
-      "link": "https://www.cnnbrasil.com.br/nacional/sudeste/sp/voo-da-latam-solicita-prioridade-para-pousar-em-porto-alegre/",
-      "publishedAt": "2026-10-22T21:12:32.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Pilotos da Latam declaram pan-pan e desligam motor de Airbus antes do pouso em Porto Alegre",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/cotidiano/2026/10/pilotos-da-latam-declaram-pan-pan-e-desligam-motor-de-airbus-antes-do-pouso-em-porto-alegre.shtml",
-      "publishedAt": "2026-10-22T20:56:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Sylvester Stallone defende uso de IA no cinema e j� prop�s rejuvenescer Rambo com a tecnologia",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://f5.folha.uol.com.br/celebridades/2026/10/sylvester-stallone-defende-uso-de-ia-no-cinema-e-ja-propos-rejuvenescer-rambo-com-a-tecnologia.shtml",
-      "publishedAt": "2026-10-22T20:45:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Debate da Globo entre Lula e Fl�vio ter� quatro blocos e restri��o a movimenta��o; veja regras",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/debate-da-globo-entre-lula-e-flavio-tera-quatro-blocos-e-restricao-a-movimentacao-veja-regras.shtml",
-      "publishedAt": "2026-10-22T20:21:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
+      "trendScore": 0,
+      "score": 1
     },
     {
       "source": "GE Globo Esporte",
-      "title": "Lyanco critica atuação do Atlético-MG mesmo com ida à final: \"Gosto que faltou um pouco mais\"",
-      "link": "https://ge.globo.com/futebol/times/atletico-mg/noticia/2026/10/22/lyanco-critica-atuacao-do-atletico-mg-mesmo-com-ida-a-final-gosto-que-faltou-um-pouco-mais.ghtml",
-      "publishedAt": "2026-10-22T20:08:09.000Z",
+      "title": "Tite aponta derrota justa do Botafogo: \"Temos que nos tornar uma equipe mais competitiva\"",
+      "link": "https://ge.globo.com/futebol/times/botafogo/noticia/2026/10/24/tite-aponta-derrota-justa-do-botafogo-temos-que-nos-tornar-uma-equipe-mais-competitiva.ghtml",
+      "publishedAt": "2026-10-24T22:04:15.000Z",
       "keywordScore": 1,
-      "trendScore": 0.05,
-      "score": 1.05
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Fachin manda TSE explicar decisão sobre transporte de indígenas no 2º turno",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/fachin-manda-tse-explicar-decisao-sobre-transporte-de-indigenas-no-2o-turno/",
+      "publishedAt": "2026-10-24T22:02:27.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "Tecmundo",
+      "title": "Big techs: confira lista de vagas de trabalho disponíveis no Brasil",
+      "link": "https://www.estadao.com.br/tecmundo/big-techs/big-techs-confira-lista-de-vagas-de-trabalho-disponiveis-no-brasil/",
+      "publishedAt": "2026-10-24T22:00:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Datafolha: Eleitor se divide sobre Lula ou Fl�vio como vencedor de debate, e maioria diz ter assistido",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/datafolha-eleitor-se-divide-sobre-lula-ou-flavio-como-vencedor-de-debate-e-maioria-diz-ter-assistido.shtml",
+      "publishedAt": "2026-10-24T21:56:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Virginia mostra novo buquê que recebeu e deixa fãs curiosos",
+      "link": "https://www.cnnbrasil.com.br/pop/celebridades/virginia-mostra-novo-buque-que-recebeu-e-deixa-fas-curiosos/",
+      "publishedAt": "2026-10-24T21:47:51.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "STF torna Oswaldo Eustáquio réu por associação criminosa no 8 de janeiro",
+      "link": "https://www.cnnbrasil.com.br/politica/stf-torna-oswaldo-eustaquio-reu-por-associacao-criminosa-no-8-de-janeiro/",
+      "publishedAt": "2026-10-24T21:39:52.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Pedro Pascal declara apoio � reelei��o de Lula nas redes sociais",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://f5.folha.uol.com.br/celebridades/2026/10/pedro-pascal-declara-apoio-a-reeleicao-de-lula-nas-redes-sociais.shtml",
+      "publishedAt": "2026-10-24T21:39:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Atuações do Botafogo: Tite, Ferraresi e Allan são os piores em derrota no Beira-Rio; dê suas notas",
+      "link": "https://ge.globo.com/futebol/times/botafogo/noticia/2026/10/24/atuacoes-do-botafogo-tite-ferraresi-e-allan-sao-os-piores-em-derrota-no-beira-rio-de-suas-notas.ghtml",
+      "publishedAt": "2026-10-24T21:36:31.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Atuações do São Paulo: Rafael salva, e Pedro Lima surpreende no ataque; dê suas notas",
+      "link": "https://ge.globo.com/futebol/times/sao-paulo/noticia/2026/10/24/atuacoes-do-sao-paulo-rafael-salva-e-pedro-lima-surpreende-no-ataque-de-suas-notas.ghtml",
+      "publishedAt": "2026-10-24T21:32:56.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Athletico-PR apenas empata com o Vitória e pode deixar o G4 do Brasileirão",
+      "link": "https://www.cnnbrasil.com.br/esportes/brasileirao/athletico-pr-apenas-empata-com-o-vitoria-e-pode-deixar-o-g4-do-brasileirao/",
+      "publishedAt": "2026-10-24T21:32:38.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Polegar na calça jeans: entenda o hábito que persegue muitas de pessoas",
+      "link": "https://www.cnnbrasil.com.br/curiosidades/polegar-na-calca-jeans-entenda-o-habito-que-persegue-muitas-de-pessoas/",
+      "publishedAt": "2026-10-24T21:30:55.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Internacional bate Botafogo, sai do Z4 provisoriamente e “puxa” Corinthians",
+      "link": "https://www.cnnbrasil.com.br/esportes/brasileirao/internacional-bate-botafogo-sai-do-z4-provisoriamente-e-puxa-corinthians/",
+      "publishedAt": "2026-10-24T21:29:45.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Prosperidade confirma o favoritismo e é tricampeão do Campeonato Capixaba Feminino",
+      "link": "https://ge.globo.com/es/futebol/campeonato-capixaba-feminino/noticia/2026/10/24/prosperidade-confirma-o-favoritismo-e-e-tricampeao-do-campeonato-capixaba-feminino.ghtml",
+      "publishedAt": "2026-10-24T21:29:16.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Idoso viraliza ao ficar no centro de redemoinho de areia no Piauí",
+      "link": "https://www.cnnbrasil.com.br/nacional/nordeste/pi/idoso-viraliza-ao-ficar-no-centro-de-redemoinho-de-areia-no-piaui/",
+      "publishedAt": "2026-10-24T21:25:40.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Atuações do Avaí: Luiz Henrique e DG falham nos gols do Botafogo-SP; dê suas notas",
+      "link": "https://ge.globo.com/sc/futebol/times/avai/noticia/2026/10/24/atuacoes-do-avai-luiz-henrique-e-dg-falham-nos-gols-do-botafogo-sp-de-suas-notas.ghtml",
+      "publishedAt": "2026-10-24T21:25:20.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Nick Reiner receberá fundo dos pais enquanto aguarda julgamento na prisão",
+      "link": "https://www.cnnbrasil.com.br/pop/celebridades/nick-reiner-recebera-fundo-dos-pais-enquanto-aguarda-julgamento-na-prisao/",
+      "publishedAt": "2026-10-24T21:23:45.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Quais foram todos os times campeões da história do Campeonato Capixaba Feminino?",
+      "link": "https://ge.globo.com/es/futebol/campeonato-capixaba-feminino/noticia/2026/10/24/quais-foram-todos-os-times-campeoes-da-historia-do-campeonato-capixaba-feminino.ghtml",
+      "publishedAt": "2026-10-24T21:19:38.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Cantor gospel sofre convulsão e passará por cirurgia para retirar tumores",
+      "link": "https://www.cnnbrasil.com.br/pop/celebridades/cantor-gospel-sofre-convulsao-e-passara-por-cirurgia-para-retirar-tumores/",
+      "publishedAt": "2026-10-24T21:14:04.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Análise: Presidente eleito terá oposição mobilizada",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/analise-presidente-eleito-tera-oposicao-mobilizada/",
+      "publishedAt": "2026-10-24T21:10:38.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "InfoMoney",
+      "title": "Quem está na frente no 2º turno no Espírito Santo?",
+      "link": "https://www.infomoney.com.br/politica/quem-esta-na-frente-no-2o-turno-no-espirito-santo/",
+      "publishedAt": "2026-10-24T21:04:11.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "InfoMoney",
+      "title": "Quem está na frente no 2º turno no Distrito Federal?",
+      "link": "https://www.infomoney.com.br/politica/quem-esta-na-frente-no-2o-turno-no-distrito-federal/",
+      "publishedAt": "2026-10-24T21:01:46.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "InfoMoney",
+      "title": "Inmet prevê que Rio terá novembro mais quente e com menos chuvas do que a média",
+      "link": "https://www.infomoney.com.br/brasil/inmet-preve-que-rio-tera-novembro-mais-quente-e-com-menos-chuvas-do-que-a-media/",
+      "publishedAt": "2026-10-24T21:00:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Busca por prop�sito na vida pode gerar ansiedade; saiba como lidar",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/equilibrio/2026/10/busca-por-proposito-na-vida-pode-gerar-ansiedade-saiba-como-lidar.shtml",
+      "publishedAt": "2026-10-24T21:00:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "I have a dream",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/antonioprata/2026/10/i-have-a-dream.shtml",
+      "publishedAt": "2026-10-24T21:00:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "� poss�vel ficar milion�rio investindo apenas em renda fixa?",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/blogs/de-grao-em-grao/2026/10/e-possivel-ficar-milionario-investindo-apenas-em-renda-fixa.shtml",
+      "publishedAt": "2026-10-24T21:00:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "Canaltech",
+      "title": "Do slasher ao sobrenatural: 8 franquias de terror para assistir na Netflix",
+      "link": "https://canaltech.com.br/entretenimento/slasher-sobrenatural-franquias-terror-assistir-netflix/",
+      "publishedAt": "2026-10-24T21:00:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Flávio agradece recepção em BH; Lula fala em campanha similar à de 1989",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/flavio-agradece-recepcao-em-bh-lula-fala-em-campanha-similar-a-de-1989/",
+      "publishedAt": "2026-10-24T20:59:18.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Sorocaba elimina o Corinthians e vai à semifinal da Liga Futsal",
+      "link": "https://ge.globo.com/sp/tem-esporte/futsal/noticia/2026/10/24/sorocaba-elimina-o-corinthians-e-vai-a-semifinal-da-liga-futsal.ghtml",
+      "publishedAt": "2026-10-24T20:54:03.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Campanha de Lula aposta em casos Ana Clara e 'nove dedos' para sensibilizar eleitor",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/painel/2026/10/campanha-de-lula-aposta-em-casos-ana-clara-e-nove-dedos-para-sensibilizar-eleitor.shtml",
+      "publishedAt": "2026-10-24T20:49:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Fran�a evita rebaixamento pela Moodys, em al�vio para o governo Macron",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/franca-evita-rebaixamento-pela-moodys-em-alivio-para-o-governo-macron.shtml",
+      "publishedAt": "2026-10-24T20:47:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Remoção de guindaste em SP será feita após perícia de policiais",
+      "link": "https://www.cnnbrasil.com.br/nacional/sudeste/sp/remocao-de-guindaste-em-sp-sera-feita-apos-pericia-de-policiais/",
+      "publishedAt": "2026-10-24T20:42:36.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Saiba por que Palmeiras x Red Bull Bragantino será na Arena Barueri",
+      "link": "https://www.cnnbrasil.com.br/esportes/futebol/palmeiras/saiba-por-que-palmeiras-x-red-bull-bragantino-sera-na-arena-barueri/",
+      "publishedAt": "2026-10-24T20:39:11.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Ato de esquerda re�ne milhares em Bras�lia pela reelei��o de Lula",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/blogs/brasilia-hoje/2026/10/ato-de-esquerda-reune-milhares-em-brasilia-pela-reeleicao-de-lula.shtml",
+      "publishedAt": "2026-10-24T20:36:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Dragões realmente existiram? O que diz a ciência sobre os primos mitológicos dos dinossauros",
+      "link": "https://www.cnnbrasil.com.br/curiosidades/dragoes-realmente-existiram-o-que-diz-a-ciencia-sobre-os-primos-mitologicos-dos-dinossauros/",
+      "publishedAt": "2026-10-24T20:35:07.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Procuradoria defende manuten��o de 'Ex�rcito do Lula' ap�s TSE barrar suspens�o do canal",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/procuradoria-defende-manutencao-de-exercito-do-lula-apos-tse-barrar-suspensao-do-canal.shtml",
+      "publishedAt": "2026-10-24T20:29:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Gordão da XJ vai ao hospital às pressas após apresentar sangramento: “Medo”",
+      "link": "https://www.cnnbrasil.com.br/pop/celebridades/gordao-da-xj-vai-ao-hospital-as-pressas-apos-apresentar-sangramento-medo/",
+      "publishedAt": "2026-10-24T20:28:43.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Seleção Brasileira: veja nomes presentes na pré-lista de Carlo Ancelotti",
+      "link": "https://www.cnnbrasil.com.br/esportes/futebol/selecao-brasileira/selecao-brasileira-veja-nomes-presentes-na-pre-lista-de-carlo-ancelotti/",
+      "publishedAt": "2026-10-24T20:27:02.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Arthur Aguiar e Jheny Santucci aparecem juntos em clima de reconciliação",
+      "link": "https://www.cnnbrasil.com.br/pop/celebridades/arthur-aguiar-e-jheny-santucci-aparecem-juntos-em-clima-de-reconciliacao/",
+      "publishedAt": "2026-10-24T20:23:05.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Ronaldinho jogar� na S�rie C italiana em 15 de novembro",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/esporte/2026/10/ronaldinho-jogara-na-serie-c-italiana-em-15-de-novembro.shtml",
+      "publishedAt": "2026-10-24T20:22:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Adriana marca quatro gols em goleada do Al-Qadisiyah e mantém equipe invicta na Liga Saudita",
+      "link": "https://ge.globo.com/pi/futebol/futebol-feminino/noticia/2026/10/24/adriana-marca-quatro-gols-em-goleada-do-al-qadisiyah-e-mantem-equipe-invicta-na-liga-saudita.ghtml",
+      "publishedAt": "2026-10-24T20:16:14.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "Tecmundo",
+      "title": "PS5 desbloqueado: o que é Relapse, PS5SX2, Overdrive e o que isso tem a ver com GTA 6?",
+      "link": "https://www.estadao.com.br/tecmundo/voxel/ps5-desbloqueado-o-que-e-relapse-ps5sx2-overdrive-e-o-que-isso-tem-a-ver-com-gta-6/",
+      "publishedAt": "2026-10-24T20:15:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Em postagem, m�dico do Einstein diz n�o atender 'petistas vagabundos'",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/equilibrioesaude/2026/10/em-postagem-medico-do-einstein-diz-nao-atender-petistas-vagabundos.shtml",
+      "publishedAt": "2026-10-24T20:14:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Cinco estados têm alerta de perigo para tempestades durante eleições",
+      "link": "https://www.cnnbrasil.com.br/nacional/brasil/cinco-estados-tem-alerta-de-perigo-para-tempestades-durante-eleicoes/",
+      "publishedAt": "2026-10-24T20:11:02.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Pol�cia encontra 'Mein Kampf', de Hitler, na resid�ncia de atirador na Fran�a",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mundo/2026/10/policia-encontra-mein-kampf-de-hitler-na-residencia-de-atirador-na-franca.shtml",
+      "publishedAt": "2026-10-24T20:09:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "Folha de S.Paulo",
+      "title": "Intelectuais judeus do Brasil e do exterior assinam manifesto a favor de Lula",
+      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/monicabergamo/2026/10/intelectuais-judeus-do-brasil-e-do-exterior-assinam-manifesto-a-favor-de-lula.shtml",
+      "publishedAt": "2026-10-24T20:07:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "MP Eleitoral se manifesta contra bloqueio do canal “Exército do Lula”",
+      "link": "https://www.cnnbrasil.com.br/eleicoes/mp-eleitoral-se-manifesta-contra-bloqueio-do-canal-exercito-do-lula/",
+      "publishedAt": "2026-10-24T20:06:53.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
     },
     {
       "source": "Folha de S.Paulo",
@@ -4028,6 +4721,15 @@
       "score": 1
     },
     {
+      "source": "Exame",
+      "title": "Pesquisa AtlasIntel: Pazolini tem 51,2% e Ferraço, 48,8%, no segundo turno",
+      "link": "https://exame.com/brasil/pesquisa-atlasintel-pazolini-tem-512-e-ferraco-488-no-segundo-turno/",
+      "publishedAt": "2026-10-24T19:00:46.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
       "source": "CNN Brasil",
       "title": "Chefs revelam por que estão trocando a manteiga por água ao fritar ovos — e o segredo está no vapor da tampa",
       "link": "https://www.cnnbrasil.com.br/curiosidades/chefs-revelam-por-que-estao-trocando-a-manteiga-por-agua-ao-fritar-ovos-e-o-segredo-esta-no-vapor-da-tampa/",
@@ -4082,6 +4784,15 @@
       "score": 1
     },
     {
+      "source": "Exame",
+      "title": "Pesquisa AtlasIntel: Cadu tem 51,1% e Allyson 48,9% no 2º turno no RN",
+      "link": "https://exame.com/brasil/pesquisa-atlasintel-cadu-tem-511-e-allyson-489-no-2o-turno-no-rn/",
+      "publishedAt": "2026-10-24T18:44:04.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
       "source": "Folha de S.Paulo",
       "title": "Tarc�sio orientou Fl�vio a falar sobre obras paradas e aumentar tom indignado",
       "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/painel/2026/10/tarcisio-orientou-flavio-a-falar-sobre-obras-paradas-e-aumentar-tom-indignado.shtml",
@@ -4095,15 +4806,6 @@
       "title": "Checagem de fatos, quem ganhou e 'gugo': veja termos mais pesquisados no debate entre Lula e Fl�vio",
       "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/checagem-de-fatos-quem-ganhou-e-gugo-veja-termos-mais-pesquisados-no-debate-entre-lula-e-flavio.shtml",
       "publishedAt": "2026-10-24T18:41:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Vasco abre venda de ingressos para jogo contra o Flamengo no Nilton Santos e indica público 90/10",
-      "link": "https://ge.globo.com/futebol/times/vasco/noticia/2026/10/24/vasco-abre-venda-de-ingressos-contra-no-flamengo-no-nilton-santos-e-indica-publico-9010-no-classico.ghtml",
-      "publishedAt": "2026-10-24T18:36:24.000Z",
       "keywordScore": 1,
       "trendScore": 0,
       "score": 1
@@ -4226,15 +4928,6 @@
       "score": 1
     },
     {
-      "source": "InfoMoney",
-      "title": "Cerca de 1.200 palestinos são deslocados em Hebron com início de operação israelense",
-      "link": "https://www.infomoney.com.br/mundo/cerca-de-1-200-palestinos-sao-deslocados-em-hebron-com-inicio-de-operacao-israelense/",
-      "publishedAt": "2026-10-24T18:05:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
       "source": "Folha de S.Paulo",
       "title": "John Leguizamo, ator de 'A Odisseia', far� palestra na Mostra de SP",
       "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/ilustrada/2026/10/john-leguizamo-ator-de-a-odisseia-fara-palestra-na-mostra-de-sp.shtml",
@@ -4298,6 +4991,15 @@
       "score": 1
     },
     {
+      "source": "Exame",
+      "title": "McDonald’s encerra patrocínio da Copa do Mundo após 32 anos, diz site",
+      "link": "https://exame.com/marketing/mcdonalds-encerra-patrocinio-da-copa-do-mundo-apos-32-anos-diz-site/",
+      "publishedAt": "2026-10-24T17:52:38.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
       "source": "Folha de S.Paulo",
       "title": "Assessora sinaliza perman�ncia de secret�ria da Cultura de Tarc�sio no segundo mandato",
       "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/painel/2026/10/assessora-sinaliza-permanencia-de-secretaria-da-cultura-de-tarcisio-no-segundo-mandato.shtml",
@@ -4311,6 +5013,15 @@
       "title": "Ato pr�-Lula volta a reunir centenas de brasileiros no Port�o de Brandemburgo em Berlim",
       "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/ato-pro-lula-reune-centenas-no-portao-de-brandemburgo-em-berlim.shtml",
       "publishedAt": "2026-10-24T17:46:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "Exame",
+      "title": "Como usar o e-Título como documento no dia da eleição e localizar sua seção",
+      "link": "https://exame.com/brasil/esqueci-o-titulo-posso-votar-so-com-o-e-titulo-ou-o-documento-com-foto/",
+      "publishedAt": "2026-10-24T17:44:07.000Z",
       "keywordScore": 1,
       "trendScore": 0,
       "score": 1
@@ -4460,15 +5171,6 @@
       "score": 1
     },
     {
-      "source": "Folha de S.Paulo",
-      "title": "Apoiadores chegam para ato de Lula na avenida Paulista",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/apoiadores-chegam-para-ato-de-lula-na-avenida-paulista.shtml",
-      "publishedAt": "2026-10-24T16:48:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
       "source": "InfoMoney",
       "title": "Filme sobre fraude de Elizabeth Holmes ganha data de estreia no Brasil; entenda",
       "link": "https://www.infomoney.com.br/business/filme-sobre-fraude-de-elizabeth-holmes-ganha-data-de-estreia-no-brasil-entenda/",
@@ -4509,15 +5211,6 @@
       "title": "Recém-coroado “rei” dos fungos gigantes chega a incríveis 60 cm de altura; conheça o Dianjunus rex",
       "link": "https://www.cnnbrasil.com.br/ciencia/recem-coroado-rei-dos-fungos-gigantes-chega-a-incriveis-60-cm-de-altura-conheca-o-dianjunus-rex/",
       "publishedAt": "2026-10-24T16:36:40.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Exame",
-      "title": "Segundo turno das eleições começa no exterior; Nova Zelândia abre urnas",
-      "link": "https://exame.com/mundo/segundo-turno-das-eleicoes-comeca-no-exterior-nova-zelandia-abre-urnas/",
-      "publishedAt": "2026-10-24T16:34:41.000Z",
       "keywordScore": 1,
       "trendScore": 0,
       "score": 1
@@ -4640,6 +5333,15 @@
       "score": 1
     },
     {
+      "source": "CNN Brasil",
+      "title": "Quanto tempo de forno para assar meia receita? E o dobro? Este erro de cálculo pode estar fazendo seu bolo queimar",
+      "link": "https://www.cnnbrasil.com.br/curiosidades/quanto-tempo-de-forno-para-assar-receita-dobrar-erro-cozinha/",
+      "publishedAt": "2026-10-24T16:05:05.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
       "source": "InfoMoney",
       "title": "Guarujá vai cobrar taxa de até R$ 145 para entrada de veículos de turistas",
       "link": "https://www.infomoney.com.br/brasil/guaruja-vai-cobrar-taxa-de-ate-r-145-para-entrada-de-veiculos-de-turistas/",
@@ -4707,15 +5409,6 @@
       "title": "Willer Tomaz diz que “sala secreta” era usada por empresa de táxi-aéreo",
       "link": "https://www.cnnbrasil.com.br/politica/willer-tomaz-diz-que-sala-secreta-era-usada-por-empresa-de-taxi-aereo/",
       "publishedAt": "2026-10-24T15:51:27.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Exame",
-      "title": "Quem está na frente em 2026 na pesquisa que se aproximou da diferença da eleição de 2022",
-      "link": "https://exame.com/brasil/quem-esta-na-frente-em-2026-na-pesquisa-que-se-aproximou-da-diferenca-da-eleicao-de-2022/",
-      "publishedAt": "2026-10-24T15:50:21.000Z",
       "keywordScore": 1,
       "trendScore": 0,
       "score": 1
@@ -4973,6 +5666,15 @@
       "score": 1
     },
     {
+      "source": "GE Globo Esporte",
+      "title": "Escalação do Vasco: Puma será titular contra o Corinthians, e Marino pode ganhar chance",
+      "link": "https://ge.globo.com/futebol/times/vasco/noticia/2026/10/24/escalacao-do-vasco-puma-sera-titular-contra-o-corinthians-e-marino-pode-ganhar-chance.ghtml",
+      "publishedAt": "2026-10-24T14:54:45.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
       "source": "CNN Brasil",
       "title": "Acidente entre carretas causa incêndio e uma pessoa morre carbonizada em MG",
       "link": "https://www.cnnbrasil.com.br/nacional/sudeste/mg/acidente-entre-carretas-causa-incendio-e-uma-pessoa-morre-carbonizada-em-mg/",
@@ -5211,15 +5913,6 @@
       "title": "Kim Jong-un cruza nova ponte que une Coreia do Norte à China",
       "link": "https://www.cnnbrasil.com.br/internacional/kim-jong-un-cruza-nova-ponte-que-une-coreia-do-norte-a-china/",
       "publishedAt": "2026-10-24T14:00:05.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Eliminação na Libertadores afeta finanças do Flamengo e impede chance de cobrir déficits em 2026",
-      "link": "https://ge.globo.com/futebol/times/flamengo/noticia/2026/10/24/eliminacao-na-libertadores-afeta-financas-do-flamengo-e-impede-chance-de-cobrir-deficits-em-2026.ghtml",
-      "publishedAt": "2026-10-24T14:00:00.000Z",
       "keywordScore": 1,
       "trendScore": 0,
       "score": 1
@@ -5589,6 +6282,15 @@
       "title": "Casas Bahia negocia empréstimo de R$ 300 milhões para não parar as operações",
       "link": "https://www.infomoney.com.br/mercados/casas-bahia-negocia-emprestimo-de-r-300-milhoes-para-nao-parar-as-operacoes/",
       "publishedAt": "2026-10-24T12:45:45.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "Exame",
+      "title": "CNT/MDA: Lula chega ao 2º turno melhor que Jair, mas com avaliação negativa e positiva empatadas",
+      "link": "https://exame.com/brasil/cnt-mda-lula-chega-ao-2o-turno-melhor-que-jair-mas-com-avaliacao-negativa-e-positiva-empatadas/",
+      "publishedAt": "2026-10-24T12:45:38.000Z",
       "keywordScore": 1,
       "trendScore": 0,
       "score": 1
@@ -7718,6 +8420,15 @@
       "score": 1
     },
     {
+      "source": "GE Globo Esporte",
+      "title": "Flamengo recorre da escalação de Rojo, do Estudiantes, e tenta mudar classificação na Libertadores; entenda",
+      "link": "https://ge.globo.com/futebol/times/flamengo/noticia/2026/10/23/flamengo-recorre-da-escalacao-de-rojo-do-estudiantes-e-tenta-mudar-classificacao-na-libertadores-entenda.ghtml",
+      "publishedAt": "2026-10-23T23:53:07.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
       "source": "Folha de S.Paulo",
       "title": "Datafolha: Combate � viol�ncia lidera como prioridade de eleitores para presidente eleito",
       "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/datafolha-combate-a-violencia-lidera-como-prioridade-de-eleitores-para-presidente-eleito.shtml",
@@ -8510,15 +9221,6 @@
       "score": 1
     },
     {
-      "source": "Exame",
-      "title": "Pesquisas para presidente hoje: quem está na frente nos levantamentos desta sexta-feira?",
-      "link": "https://exame.com/brasil/pesquisas-para-presidente-hoje-quem-esta-na-frente-nos-levantamentos-desta-sexta-feira/",
-      "publishedAt": "2026-10-23T21:29:16.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
       "source": "Folha de S.Paulo",
       "title": "Fl�vio Bolsonaro advogou durante campanha para cliente de Willer e peticionou em dia da vota��o da 6x1",
       "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/flavio-bolsonaro-advogou-durante-campanha-para-cliente-de-willer-e-peticionou-em-dia-da-votacao-da-6x1.shtml",
@@ -8775,6 +9477,15 @@
       "title": "Análise: Como os protestos na França impactam as marcas de luxo?",
       "link": "https://www.cnnbrasil.com.br/economia/money/macroeconomia/analise-como-os-protestos-na-franca-impactam-as-marcas-de-luxo/",
       "publishedAt": "2026-10-23T20:42:19.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "InfoMoney",
+      "title": "Bradesco tem nova alta seguida no lucro e ações sobem, mas inadimplência preocupa",
+      "link": "https://www.infomoney.com.br/mercados/bradesco-bbdc4-11-altas-seguidas-no-lucro-mas-inadimplencia-preocupa-mercado-3t26-desempenho-acoes/",
+      "publishedAt": "2026-10-23T20:41:40.000Z",
       "keywordScore": 1,
       "trendScore": 0,
       "score": 1
@@ -9162,6 +9873,15 @@
       "title": "Diamante Energia faz primeiro teste com carvão híbrido em térmica de Pecém",
       "link": "https://www.cnnbrasil.com.br/infra/diamante-energia-faz-primeiro-teste-com-carvao-hibrido-em-termica-de-pecem/",
       "publishedAt": "2026-10-23T19:46:38.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "Suno Notícias",
+      "title": "Embraer (EMBJ3) está com a agenda cheia: US$ 35,7 bilhões na fila e alta de 29%",
+      "link": "https://www.suno.com.br/noticias/embraer-embj3-pedidos-recorde-xp-alta-29-por-cento/",
+      "publishedAt": "2026-10-23T19:45:02.000Z",
       "keywordScore": 1,
       "trendScore": 0,
       "score": 1
@@ -10242,6 +10962,15 @@
       "title": "Krispy Kreme lança linha especial de donuts inspirada em Harry Potter",
       "link": "https://www.cnnbrasil.com.br/economia/money/negocios/krispy-kreme-lanca-linha-especial-de-donuts-inspirada-em-harry-potter/",
       "publishedAt": "2026-10-23T17:23:06.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
+      "title": "Anvisa endurece regras para uso de polilaminina após registro de 9 mortes",
+      "link": "https://www.cnnbrasil.com.br/saude/anvisa-endurece-regras-para-uso-de-polilaminina-apos-registro-de-9-mortes/",
+      "publishedAt": "2026-10-23T17:22:44.000Z",
       "keywordScore": 1,
       "trendScore": 0,
       "score": 1
@@ -11624,15 +12353,6 @@
       "score": 1
     },
     {
-      "source": "CNN Brasil",
-      "title": "Flávio leva sertanejos à última propaganda no rádio; Lula aposta em Janones",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/flavio-leva-sertanejos-a-ultima-propaganda-no-radio-lula-aposta-em-janones/",
-      "publishedAt": "2026-10-23T14:01:19.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
       "source": "InfoMoney",
       "title": "Investidor estrangeiro eleva compra de seguro contra queda da Bolsa após o 2º turno",
       "link": "https://www.infomoney.com.br/onde-investir/investidor-estrangeiro-eleva-compra-de-seguro-contra-queda-da-bolsa-apos-o-2o-turno/",
@@ -12047,6 +12767,15 @@
       "score": 1
     },
     {
+      "source": "Suno Notícias",
+      "title": "Bradesco (BBDC4) tem lucro líquido recorrente de R$ 7,1 bi no 3T26, alta de 14,6%",
+      "link": "https://www.suno.com.br/noticias/bradesco-tem-lucro-liquido-recorrente-bi-no-3o-trimestre-go/",
+      "publishedAt": "2026-10-23T13:00:00.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
       "source": "Folha de S.Paulo",
       "title": "'Sem pernas, mas que caminha'",
       "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/cotidiano/2026/10/sem-pernas-mas-que-caminha.shtml",
@@ -12249,6 +12978,15 @@
       "title": "Brecha no PHP que tirou sites do ar foi descoberta há dois anos; responsável cita falta de recursos para corrigi-la",
       "link": "https://g1.globo.com/tecnologia/ciberseguranca/noticia/2026/10/23/brecha-no-php-que-tirou-sites-do-ar-foi-descoberta-ha-dois-anos-responsavel-cita-falta-de-recursos-para-corrigi-la.ghtml",
       "publishedAt": "2026-10-23T12:25:57.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "GE Globo Esporte",
+      "title": "Rooney condena jogadores do Manchester United em crise: \"Egoístas, agem como bebês\"",
+      "link": "https://ge.globo.com/futebol/futebol-internacional/futebol-ingles/noticia/2026/10/23/rooney-condena-jogadores-do-manchester-united-em-crise-egoistas-agem-como-bebes.ghtml",
+      "publishedAt": "2026-10-23T12:23:11.000Z",
       "keywordScore": 1,
       "trendScore": 0,
       "score": 1
@@ -13325,15 +14063,6 @@
       "score": 1
     },
     {
-      "source": "CNN Brasil",
-      "title": "Flávio e Lula afinam estratégias para o último duelo na TV antes das urnas",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/flavio-e-lula-afinam-estrategias-para-o-ultimo-duelo-na-tv-antes-das-urnas/",
-      "publishedAt": "2026-10-23T06:30:29.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
       "source": "GE Globo Esporte",
       "title": "Fluminense supera expectativa na Libertadores, mas eliminação terá impacto financeiro no clube",
       "link": "https://ge.globo.com/futebol/times/fluminense/noticia/2026/10/23/fluminense-supera-expectativa-na-libertadores-mas-eliminacao-tera-impacto-financeiro-no-clube.ghtml",
@@ -13490,15 +14219,6 @@
       "source": "Folha de S.Paulo",
       "title": "Veja os n�meros de Dorinha e Vicentinho J�nior, candidatos ao governo do Tocantins",
       "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/veja-os-numeros-de-dorinha-e-vicentinho-junior-candidatos-ao-governo-do-tocantins.shtml",
-      "publishedAt": "2026-10-23T03:30:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Veja os n�meros de Omar Aziz e Maria do Carmo, candidatos ao governo do Amazonas",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/veja-os-numeros-de-omar-aziz-e-maria-do-carmo-candidatos-ao-governo-do-amazonas.shtml",
       "publishedAt": "2026-10-23T03:30:00.000Z",
       "keywordScore": 1,
       "trendScore": 0,
@@ -14027,24 +14747,6 @@
       "score": 1
     },
     {
-      "source": "CNN Brasil",
-      "title": "Veja quem Ronaldo Caiado apoia no 2º turno entre Flávio e Lula",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/veja-quem-ronaldo-caiado-apoia-no-2o-turno-entre-flavio-e-lula/",
-      "publishedAt": "2026-10-23T00:57:08.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Veja quem Augusto Cury apoia no 2º turno entre Flávio e Lula",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/veja-quem-augusto-cury-apoia-no-2o-turno-entre-flavio-e-lula/",
-      "publishedAt": "2026-10-23T00:57:06.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
       "source": "Brazil Journal",
       "title": "EDITORIAL. Um dia triste",
       "link": "https://braziljournal.com/editorial-um-dia-triste",
@@ -14369,6 +15071,15 @@
       "score": 1
     },
     {
+      "source": "Neofeed",
+      "title": "Bradesco lucra R$ 7,1 bilhões e ROE atinge 16,1%",
+      "link": "https://neofeed.com.br/negocios/bradesco-lucra-r-71-bilhoes-e-roe-atinge-161/",
+      "publishedAt": "2026-10-22T23:29:47.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
       "source": "CNN Brasil",
       "title": "Nova York proíbe passeios com carruagens puxadas por cavalos",
       "link": "https://www.cnnbrasil.com.br/internacional/nova-york-proibe-passeios-com-carruagens-puxadas-por-cavalos/",
@@ -14532,6 +15243,15 @@
     },
     {
       "source": "CNN Brasil",
+      "title": "Michael Gray, ator de “Shazam!”, morre aos 75 anos, diz site",
+      "link": "https://www.cnnbrasil.com.br/pop/streaming/michael-gray-ator-de-shazam-morre-aos-75-anos-diz-site/",
+      "publishedAt": "2026-10-22T22:56:49.000Z",
+      "keywordScore": 1,
+      "trendScore": 0,
+      "score": 1
+    },
+    {
+      "source": "CNN Brasil",
       "title": "PGR defende manter sigilo de visitas de Vorcaro e Viviane Moraes ao Senado",
       "link": "https://www.cnnbrasil.com.br/politica/pgr-defende-manter-sigilo-de-visitas-de-vorcaro-e-viviane-moraes-ao-senado/",
       "publishedAt": "2026-10-22T22:55:59.000Z",
@@ -14553,870 +15273,6 @@
       "title": "Governo Trump deportou 980 mil pessoas dos EUA em 18 meses, diz instituto",
       "link": "https://www.cnnbrasil.com.br/internacional/governo-trump-deportou-980-mil-pessoas-dos-eua-em-18-meses-diz-instituto/",
       "publishedAt": "2026-10-22T22:54:18.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Infra S.A. prevê concluir estudo da Transnordestina até o fim do ano",
-      "link": "https://www.cnnbrasil.com.br/infra/infra-s-a-preve-concluir-estudo-da-transnordestina-ate-o-fim-do-ano/",
-      "publishedAt": "2026-10-22T22:45:24.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Tecmundo",
-      "title": "Falha crítica no Node.js permite ataque cibernético e execução remota de códigos",
-      "link": "https://www.estadao.com.br/tecmundo/ciberseguranca/falha-critica-no-nodejs-permite-ataque-cibernetico-e-execucao-remota-de-codigos/",
-      "publishedAt": "2026-10-22T22:45:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Venezuelanos exigem eleições e fazem maior protesto contra governo em anos",
-      "link": "https://www.cnnbrasil.com.br/internacional/venezuelanos-exigem-eleicoes-e-fazem-maior-protesto-contra-governo-em-anos/",
-      "publishedAt": "2026-10-22T22:40:08.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Harry Kane desafia recorde de Cristiano Ronaldo na Champions League",
-      "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/champions-league/harry-kane-desafia-recorde-de-cristiano-ronaldo-na-champions-league/",
-      "publishedAt": "2026-10-22T22:39:53.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Omonia 1 x 4 Benfica: veja os melhores momentos do jogo da Europa League",
-      "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/omonia-x-benfica-veja-os-melhores-momentos-do-jogo-da-europa-league/",
-      "publishedAt": "2026-10-22T22:39:42.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Felipe Neto se casa com influenciadora 14 anos mais nova; veja fotos",
-      "link": "https://www.cnnbrasil.com.br/pop/celebridades/felipe-neto-se-casa-com-influenciadora-14-anos-mais-nova-veja-fotos/",
-      "publishedAt": "2026-10-22T22:39:06.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Justiça dá 24 horas para União garantir transporte a indígenas no 2º turno",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/justica-da-24-horas-para-uniao-garantir-transporte-a-indigenas-no-2o-turno/",
-      "publishedAt": "2026-10-22T22:36:01.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Virginia usa look inusitado em festa da filha e gera reações: “Pavoroso”",
-      "link": "https://www.cnnbrasil.com.br/style/moda/virginia-usa-look-inusitado-em-festa-da-filha-e-gera-reacoes-pavoroso/",
-      "publishedAt": "2026-10-22T22:32:18.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Andreas Pereira é absolvido pelo STJD em caso de expulsão contra o Athletico-PR; Palmeiras é punido",
-      "link": "https://ge.globo.com/futebol/times/palmeiras/noticia/2026/10/22/andreas-pereira-e-absolvido-pelo-stjd-em-caso-de-expulsao-contra-o-athletico-pr-palmeiras-e-punido.ghtml",
-      "publishedAt": "2026-10-22T22:30:38.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Tecmundo",
-      "title": "FF7 Rebirth e mais jogos para PS4 e PS5 com até 90% OFF na PS Store",
-      "link": "https://www.estadao.com.br/tecmundo/voxel/ff7-rebirth-e-mais-jogos-para-ps4-e-ps5-com-ate-90-off-na-ps-store/",
-      "publishedAt": "2026-10-22T22:30:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Uma reflexão sobre coragem ou sofrimento? O que está por trás de “tudo vale a pena se a alma não é pequena”, de Fernando Pessoa",
-      "link": "https://www.cnnbrasil.com.br/curiosidades/uma-reflexao-sobre-coragem-ou-sofrimento-o-que-esta-por-tras-de-tudo-vale-a-pena-se-a-alma-nao-e-pequena-de-fernando-pessoa/",
-      "publishedAt": "2026-10-22T22:19:20.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Vídeo: Terremoto de magnitude 7 no Tibete gera desespero e caos",
-      "link": "https://www.cnnbrasil.com.br/internacional/video-terremoto-de-magnitude-7-no-tibete-gera-desespero-e-caos/",
-      "publishedAt": "2026-10-22T22:16:42.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Canaltech",
-      "title": "Mistério resolvido! Cientistas descobrem o momento exato retratado em \"A Noite Estrelada\" de Van Gogh",
-      "link": "https://canaltech.com.br/ciencia-e-espaco/misterio-resolvido-cientistas-descobrem-o-momento-exato-retratado-em-a-noite-estrelada-de-van-gogh/",
-      "publishedAt": "2026-10-22T22:15:02.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Tecmundo",
-      "title": "Falha crítica no GitLab permite invasão de servidores",
-      "link": "https://www.estadao.com.br/tecmundo/ciberseguranca/falha-critica-no-gitlab-permite-invasao-de-servidores/",
-      "publishedAt": "2026-10-22T22:15:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Yamal e Endrick se tornam fenômenos nas redes e movem a geração Z",
-      "link": "https://www.cnnbrasil.com.br/esportes/futebol/yamal-e-endrick-se-tornam-fenomenos-nas-redes-e-movem-a-geracao-z/",
-      "publishedAt": "2026-10-22T22:13:15.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Dirigente da NBA revela o que falta para o Brasil receber jogos da liga",
-      "link": "https://www.cnnbrasil.com.br/esportes/basquete/dirigente-da-nba-revela-o-que-falta-para-o-brasil-receber-jogos-da-liga/",
-      "publishedAt": "2026-10-22T22:13:08.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Pinheiro Braathen lembra aposentadoria precoce e opção por defender Brasil",
-      "link": "https://www.cnnbrasil.com.br/esportes/olimpiadas/pinheiro-braathen-lembra-aposentadoria-precoce-e-opcao-por-defender-brasil/",
-      "publishedAt": "2026-10-22T22:10:55.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Queimadas no AM: FAB usa sistema que despeja 12 mil litros de água",
-      "link": "https://www.cnnbrasil.com.br/nacional/norte/am/queimadas-no-am-fab-usa-sistema-que-despeja-12-mil-litros-de-agua/",
-      "publishedAt": "2026-10-22T22:08:18.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Anvisa restringe uso compassivo da polilaminina e rebate cr�ticas de pesquisadora",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/equilibrioesaude/2026/10/anvisa-restringe-uso-compassivo-da-polilaminina-e-rebate-criticas-de-tatiana-coelho-de-sampaio.shtml",
-      "publishedAt": "2026-10-22T22:08:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Neofeed",
-      "title": "Com ágio e lucro, primeiro leilão de gás da União sinaliza quebra de monopólio da Petrobras",
-      "link": "https://neofeed.com.br/economia/com-agio-e-lucro-primeiro-leilao-de-gas-da-uniao-sinaliza-quebra-de-monopolio-da-petrobras/",
-      "publishedAt": "2026-10-22T22:06:57.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "G1",
-      "title": "Trabalhadora grávida impedida de pausar atendimento para vomitar receberá R$ 30 mil",
-      "link": "https://g1.globo.com/trabalho-e-carreira/noticia/2026/10/22/gravida-funcionaria-sera-indenizada-em-r-30-mil-apos-ser-obrigada-a-vomitar-em-lixeira-no-trabalho.ghtml",
-      "publishedAt": "2026-10-22T22:06:34.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Neymar revela o que fará no ano seguinte quando se aposentar do futebol",
-      "link": "https://www.cnnbrasil.com.br/esportes/futebol/santos/neymar-revela-o-que-fara-no-ano-seguinte-quando-se-aposentar-do-futebol/",
-      "publishedAt": "2026-10-22T22:02:07.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Canaltech",
-      "title": "Kindle Unlimited acabou: Amazon muda serviço para Kindle+ em ofensiva de audiobooks",
-      "link": "https://canaltech.com.br/apps/kindle-unlimited-acabou-amazon-muda-servico-para-kindle-em-ofensiva-de-audiobooks/",
-      "publishedAt": "2026-10-22T22:01:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Tecmundo",
-      "title": "Próxima geração do iPhone Duo deve trazer Face ID e botão de ação, sugere rumor",
-      "link": "https://www.estadao.com.br/tecmundo/produto-e-review/proxima-geracao-do-iphone-duo-deve-trazer-face-id-e-botao-de-acao-sugere-rumor/",
-      "publishedAt": "2026-10-22T22:00:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Soja e bovinos t�m os melhores desempenhos no campo neste ano",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/vaivem/2026/10/soja-e-bovinos-tem-os-melhores-desempenhos-no-campo-neste-ano.shtml",
-      "publishedAt": "2026-10-22T22:00:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "InfoMoney",
-      "title": "SpaceX negocia acesso a 80 mil torres para desafiar gigantes da telefonia nos EUA",
-      "link": "https://www.infomoney.com.br/business/spacex-negocia-acesso-a-80-mil-torres-para-desafiar-gigantes-da-telefonia-nos-eua/",
-      "publishedAt": "2026-10-22T21:58:18.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Trump invoca Lei da era da Guerra Fria para produção e refino de petróleo",
-      "link": "https://www.cnnbrasil.com.br/internacional/trump-invoca-lei-da-era-da-guerra-fria-para-producao-e-refino-de-petroleo/",
-      "publishedAt": "2026-10-22T21:57:12.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Virginia posa ao lado de Zé Felipe em festa de Maria Flor; veja",
-      "link": "https://www.cnnbrasil.com.br/pop/celebridades/virginia-posa-ao-lado-de-ze-felipe-em-festa-de-maria-flor-veja/",
-      "publishedAt": "2026-10-22T21:56:43.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Antaq vê reforço à autonomia em parecer da AGU sobre diretores-gerais",
-      "link": "https://www.cnnbrasil.com.br/infra/antaq-ve-parecer-da-agu-sobre-substituicao-de-diretores-gerais-como-reforco-a-autonomia/",
-      "publishedAt": "2026-10-22T21:53:47.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "InfoMoney",
-      "title": "Trump defende anúncio polêmico de aliado em Ohio e amplia tensão nas Midterms",
-      "link": "https://www.infomoney.com.br/mundo/trump-defende-anuncio-polemico-de-aliado-em-ohio-e-amplia-tensao-nas-midterms/",
-      "publishedAt": "2026-10-22T21:53:32.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Janela de importa��o de etanol pelo Brasil deve ser reaberta entre dezembro e janeiro",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/janela-de-importacao-de-etanol-pelo-brasil-deve-ser-reaberta-entre-dezembro-e-janeiro.shtml",
-      "publishedAt": "2026-10-22T21:53:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Corretores de imóveis ganham novas ferramentas de trabalho",
-      "link": "https://www.cnnbrasil.com.br/branded-content/nacional/corretores-de-imoveis-ganham-novas-ferramentas-de-trabalho/",
-      "publishedAt": "2026-10-22T21:51:47.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Escalação do São Paulo: Calleri e Artur fazem treino adaptado, mas devem enfrentar o Mirassol",
-      "link": "https://ge.globo.com/futebol/times/sao-paulo/noticia/2026/10/22/escalacao-do-sao-paulo-calleri-e-artur-fazem-treino-adaptado-mas-devem-enfrentar-o-mirassol.ghtml",
-      "publishedAt": "2026-10-22T21:51:33.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Bradesco amplia crédito rural para empresas em 30,2%",
-      "link": "https://www.cnnbrasil.com.br/agro/bradesco-amplia-credito-rural-para-empresas-em-302/",
-      "publishedAt": "2026-10-22T21:51:01.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Quaest: maioria acha que Flávio vai baixar imposto; Lula, manter benefícios",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/quaest-maioria-acha-que-flavio-vai-baixar-imposto-lula-manter-beneficios/",
-      "publishedAt": "2026-10-22T21:47:55.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Guerra dos sigilos e outros factoides dominam reta final da campanha; veja v�deo",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/painel/2026/10/guerra-dos-sigilos-e-outros-factoides-dominam-reta-final-da-campanha-veja-video.shtml",
-      "publishedAt": "2026-10-22T21:46:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Dinamarca encomenda mísseis de longo alcance e irrita russos",
-      "link": "https://www.cnnbrasil.com.br/internacional/dinamarca-encomenda-misseis-de-longo-alcance-irrita-russos/",
-      "publishedAt": "2026-10-22T21:45:13.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Suno Notícias",
-      "title": "IFIX recua 0,04% e fecha pregão em 3.973,66 pontos",
-      "link": "https://www.suno.com.br/noticias/ifix-recua-004-e-fecha-pregao-em-3-97366-pontos/",
-      "publishedAt": "2026-10-22T21:45:02.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Canaltech",
-      "title": "Como Mercenários 2 se conecta ao universo de Cyberpunk 2077",
-      "link": "https://canaltech.com.br/entretenimento/como-mercenarios-2-se-conecta-ao-universo-de-cyberpunk-2077/",
-      "publishedAt": "2026-10-22T21:45:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Estados Unidos anunciam escritório antidrogas no Paraguai",
-      "link": "https://www.cnnbrasil.com.br/internacional/estados-unidos-anunciam-escritorio-antidrogas-no-paraguai/",
-      "publishedAt": "2026-10-22T21:43:53.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Os fantasmas que o Brasil se recusa a enterrar",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/djamila-ribeiro/2026/10/os-fantasmas-que-o-brasil-se-recusa-a-enterrar.shtml",
-      "publishedAt": "2026-10-22T21:43:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Análise: Flávio mira votos “lulistas” de Cury, Lula busca o centro",
-      "link": "https://www.cnnbrasil.com.br/eleicoes/analise-flavio-mira-votos-lulistas-de-cury-lula-busca-o-centro/",
-      "publishedAt": "2026-10-22T21:42:51.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Diretora de prisão feminina é presa por suspeita de desvio de alimentos",
-      "link": "https://www.cnnbrasil.com.br/nacional/sudeste/rj/diretora-de-prisao-feminina-e-presa-por-suspeita-de-desvio-de-alimentos/",
-      "publishedAt": "2026-10-22T21:40:25.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Elevada umidade retarda plantio de soja no Rio Grande do Sul, diz Emater",
-      "link": "https://www.cnnbrasil.com.br/agro/elevada-umidade-retarda-plantio/",
-      "publishedAt": "2026-10-22T21:39:21.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Honda terá carro baseado no Mitsubishi Triton até 2028",
-      "link": "https://www.cnnbrasil.com.br/auto/honda-vai-ter-carro-baseado-no-mitsubishi-triton-ate-2028/",
-      "publishedAt": "2026-10-22T21:37:18.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Hitachi Energy anuncia nova unidade no Brasil e eleva plano de investimentos a US$ 350 milh�es",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://c-level.folha.uol.com.br/negocios/2026/10/hitachi-energy-anuncia-nova-unidade-no-brasil-e-eleva-plano-de-investimentos-a-us-350-milhoes.shtml",
-      "publishedAt": "2026-10-22T21:35:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Veja todos os resultados da terceira rodada da Liga Europa",
-      "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/veja-todos-os-resultados-da-terceira-rodada-da-liga-europa/",
-      "publishedAt": "2026-10-22T21:32:51.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Exame",
-      "title": "Vai ao show do BTS? Saiba onde comprar a ARMY Bomb oficial em São Paulo",
-      "link": "https://exame.com/pop/vai-ao-show-do-bts-saiba-onde-comprar-a-army-bomb-oficial-em-sao-paulo/",
-      "publishedAt": "2026-10-22T21:32:06.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "EUA: Deputados democratas questionam Meta sobre tratamento a Flávio e Lula",
-      "link": "https://www.cnnbrasil.com.br/internacional/eua-deputados-democratas-questionam-meta-sobre-tratamento-a-flavio-e-lula/",
-      "publishedAt": "2026-10-22T21:31:53.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Banheiro: produtos para uma limpeza eficiente e segura",
-      "link": "https://www.cnnbrasil.com.br/comportamento/casa-e-decoracao/banheiro-produtos-para-uma-limpeza-eficiente-e-segura/",
-      "publishedAt": "2026-10-22T21:30:03.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Tecmundo",
-      "title": "Navegador Arc terá atividades encerradas; saiba detalhes",
-      "link": "https://www.estadao.com.br/tecmundo/produto-e-review/navegador-arc-tera-atividades-encerradas-saiba-detalhes/",
-      "publishedAt": "2026-10-22T21:30:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Tentativa de roubo termina com v�tima baleada na cabe�a na zona oeste de S�o Paulo",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/cotidiano/2026/10/motoqueiro-e-baleado-na-cabeca-durante-roubo-na-zona-oeste-de-sao-paulo.shtml",
-      "publishedAt": "2026-10-22T21:28:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Prefeitura de Brodowski (SP) mente sobre investiga��o de problema de pele que atinge 235 pessoas",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/equilibrioesaude/2026/10/prefeitura-de-brodowski-sp-mente-sobre-investigacao-de-problema-de-pele-que-atinge-235-pessoas.shtml",
-      "publishedAt": "2026-10-22T21:26:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Vasco avalia futuro de Léo Jardim após falha em eliminação na Sul-Americana",
-      "link": "https://www.cnnbrasil.com.br/esportes/futebol/vasco-da-gama/vasco-avalia-futuro-de-leo-jardim-apos-falha-em-eliminacao-na-sul-americana/",
-      "publishedAt": "2026-10-22T21:25:27.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Exame",
-      "title": "Como doar quando ninguém sabe o que vem: uma resposta para a semana mais incerta do ano",
-      "link": "https://exame.com/esg/como-doar-quando-ninguem-sabe-o-que-vem-uma-resposta-para-a-semana-mais-incerta-do-ano/",
-      "publishedAt": "2026-10-22T21:22:50.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "China acha material inesperado na Lua – e há mais de 2 anos tenta decifrar como foi parar lá",
-      "link": "https://www.cnnbrasil.com.br/curiosidades/china-acha-material-inesperado-na-lua-e-ha-mais-de-2-anos-tenta-decifrar-como-foi-parar-la/",
-      "publishedAt": "2026-10-22T21:18:59.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Bournemouth aproveita expulsão de goleiro do Milan e vence na Europa League",
-      "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/bournemouth-aproveita-expulsao-de-goleiro-do-milan-e-vence-na-europa-league/",
-      "publishedAt": "2026-10-22T21:18:20.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Empres�rio de SP acusado de agredir mulher deixa pris�o e usar� tornozeleira, diz defesa",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/cotidiano/2026/10/empresario-de-sp-acusado-de-agredir-mulher-deixa-prisao-e-usara-tornozeleira-diz-defesa.shtml",
-      "publishedAt": "2026-10-22T21:15:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "CNN Brasil e Itatiaia transmitem Brest x Nice; veja horário e como assistir",
-      "link": "https://www.cnnbrasil.com.br/esportes/futebol/futebol-internacional/cnn-brasil-e-itatiaia-transmitem-brest-x-nice-veja-horario-e-como-assistir/",
-      "publishedAt": "2026-10-22T21:15:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Tecmundo",
-      "title": "10 melhores jogos da BioWare para relembrar o legado do estúdio nos games",
-      "link": "https://www.estadao.com.br/tecmundo/voxel/10-melhores-jogos-da-bioware-para-relembrar-o-legado-do-estudio-nos-games/",
-      "publishedAt": "2026-10-22T21:15:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Lula foca atos com multid�o na reta final pensando em cortes para redes",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/painel/2026/10/lula-foca-atos-com-multidao-na-reta-final-pensando-em-cortes-para-redes.shtml",
-      "publishedAt": "2026-10-22T21:14:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "CNN Brasil",
-      "title": "Halloween: rede de cinema divulga filmes de terror a R$12",
-      "link": "https://www.cnnbrasil.com.br/pop/cinema/halloween-rede-de-cinema-divulga-filmes-de-terror-a-r12/",
-      "publishedAt": "2026-10-22T21:13:32.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Avan�o da extrema direita acende alerta em ONGs que defendem direitos e ambiente",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/folha-social-mais/2026/10/avanco-da-extrema-direita-acende-alerta-em-ongs-que-defendem-direitos-e-ambiente.shtml",
-      "publishedAt": "2026-10-22T21:13:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Canaltech",
-      "title": "iPhone Duo ajuda rival? Vendas de dobráveis Samsung disparam após estreia",
-      "link": "https://canaltech.com.br/smartphone/iphone-duo-ajuda-rival-vendas-de-dobraveis-samsung-disparam-apos-estreia/",
-      "publishedAt": "2026-10-22T21:11:21.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Farm planeja entrar na �sia em tr�s anos, mesmo com poss�vel venda da empresa",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/painelsa/2026/10/farm-planeja-entrar-na-asia-em-tres-anos-mesmo-com-possivel-venda-da-empresa.shtml",
-      "publishedAt": "2026-10-22T21:11:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Um guia para os impostos ruins do Reino Unido �s v�speras do or�amento",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/um-guia-para-os-impostos-ruins-do-reino-unido-as-vesperas-do-orcamento.shtml",
-      "publishedAt": "2026-10-22T21:09:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Trabalhadora gr�vida orientada a vomitar em lixeira receber� R$ 30 mil em a��o contra Vivo e call center",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mercado/2026/10/trabalhadora-gravida-orientada-a-vomitar-em-lixeira-recebera-r-30-mil-em-acao-contra-vivo-e-call-center.shtml",
-      "publishedAt": "2026-10-22T21:05:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Canaltech",
-      "title": "Google Planilhas ganha novo visual e gráficos de caixa para bater de frente com o Excel",
-      "link": "https://canaltech.com.br/apps/google-planilhas-ganha-novo-visual-e-graficos-de-caixa-para-bater-de-frente-com-o-excel/",
-      "publishedAt": "2026-10-22T21:04:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "PM abre investiga��o para apurar se agentes obrigaram jovens presos a vestir camiseta do PT",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/monicabergamo/2026/10/pm-abre-investigacao-para-apurar-se-agentes-obrigaram-jovens-presos-a-vestir-camiseta-do-pt.shtml",
-      "publishedAt": "2026-10-22T21:02:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Canaltech",
-      "title": "ASUS lança Vivobook S14 no Brasil com Snapdragon X e bateria de 30 horas",
-      "link": "https://canaltech.com.br/notebook/asus-lanca-vivobook-s14-no-brasil-com-snapdragon-x-e-bateria-de-30-horas/",
-      "publishedAt": "2026-10-22T21:00:04.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Alice Wegmann e Andr� Lamoglia v�o a jantar da Bvlgari na Pinacoteca de SP",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/monicabergamo/2026/10/alice-wegmann-e-andre-lamoglia-vao-a-jantar-da-bvlgari-na-pinacoteca-de-sp.shtml",
-      "publishedAt": "2026-10-22T21:00:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Para conseguir dormir nestas elei��es",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/suzanaherculanohouzel/2026/10/para-conseguir-dormir-nestas-eleicoes.shtml",
-      "publishedAt": "2026-10-22T21:00:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Curso gratuito online aborda jornalismo de solu��es",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/blogs/novo-em-folha/2026/10/curso-gratuito-online-aborda-jornalismo-de-solucoes.shtml",
-      "publishedAt": "2026-10-22T21:00:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Como voc� pode perder 30% investindo em renda fixa?",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/blogs/de-grao-em-grao/2026/10/como-voce-pode-perder-30-investindo-em-renda-fixa.shtml",
-      "publishedAt": "2026-10-22T21:00:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Tecmundo",
-      "title": "Apple vai usar selo para identificar apps otimizados para o iPhone Duo",
-      "link": "https://www.estadao.com.br/tecmundo/produto-e-review/apple-vai-usar-selo-para-identificar-apps-otimizados-para-o-iphone-duo/",
-      "publishedAt": "2026-10-22T21:00:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Escalação do Cruzeiro: Artur Jorge tem desfalque no ataque e novidade na defesa",
-      "link": "https://ge.globo.com/futebol/times/cruzeiro/noticia/2026/10/22/escalacao-do-cruzeiro-artur-jorge-tem-desfalque-no-ataque-e-novidade-na-defesa.ghtml",
-      "publishedAt": "2026-10-22T20:58:50.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Irm� de Matthew Perry revela momento emocionante do elenco de Friends em funeral",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://f5.folha.uol.com.br/celebridades/2026/10/irma-de-matthew-perry-revela-momento-emocionante-do-elenco-de-friends-em-funeral.shtml",
-      "publishedAt": "2026-10-22T20:56:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Rep�rter de TV na Austr�lia salva homem em carro levado por enchente; veja v�deo",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mundo/2026/10/reporter-de-tv-na-australia-salva-homem-em-carro-levado-por-enchente-veja-video.shtml",
-      "publishedAt": "2026-10-22T20:55:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Debates no YouTube viram estrat�gia eleitoral e impulsionam 'pol�ticos influencers'",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/blogs/hashtag/2026/10/debates-no-youtube-viram-estrategia-eleitoral-e-impulsionam-politicos-influencers.shtml",
-      "publishedAt": "2026-10-22T20:54:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Tecmundo",
-      "title": "Spotify prevê lucro acima do esperado no 4º trimestre com IA e ações sobem mais de 9%",
-      "link": "https://www.estadao.com.br/tecmundo/big-techs/spotify-preve-lucro-acima-do-esperado-no-4-trimestre-com-ia-e-acoes-sobem-mais-de-9/",
-      "publishedAt": "2026-10-22T20:45:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Nasdaq cai e t�tulos do Tesouro dos EUA disparam com temor sobre gastos da Meta em IA",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://c-level.folha.uol.com.br/negocios/2026/10/nasdaq-cai-enquanto-titulos-do-tesouro-disparam-com-temor-sobre-gastos-da-meta-em-ia.shtml",
-      "publishedAt": "2026-10-22T20:45:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Exame",
-      "title": "Pela 1ª vez desde julho, aprovação de Lula supera desaprovação com 49% contra 48%",
-      "link": "https://exame.com/brasil/pela-1a-vez-desde-julho-aprovacao-de-lula-supera-desaprovacao-com-49-contra-48/",
-      "publishedAt": "2026-10-22T20:32:05.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Bernie Sanders e deputados dos EUA cobram Meta por atua��o na elei��o do Brasil",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/bernie-sanders-e-deputados-dos-eua-cobram-meta-por-atuacao-na-eleicao-do-brasil.shtml",
-      "publishedAt": "2026-10-22T20:32:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Justi�a manda Prefeitura de SP demolir obra de construtora envolvida em queda que matou seis",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/cotidiano/2026/10/justica-manda-prefeitura-de-sp-demolir-obra-de-construtora-envolvida-em-queda-que-matou-seis.shtml",
-      "publishedAt": "2026-10-22T20:30:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Suno Notícias",
-      "title": "Inter (INBR32) saiu da B3? Entenda o novo código INBR34 e o que muda para os investidores",
-      "link": "https://www.suno.com.br/noticias/inter-inbr32-saiu-da-b3-entenda-o-novo-codigo-inbr34-e-o-que-muda-para-os-investidores/",
-      "publishedAt": "2026-10-22T20:25:07.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Justi�a decreta perda de pr�dio usado pelo PCC para tr�fico e prostitui��o no centro de S�o Paulo",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/cotidiano/2026/10/justica-decreta-perda-de-predio-usado-pelo-pcc-para-trafico-e-prostituicao-no-centro-de-sao-paulo.shtml",
-      "publishedAt": "2026-10-22T20:25:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "IA e infla��o: quanto os bancos centrais devem se preocupar?",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://c-level.folha.uol.com.br/ia/2026/10/ia-e-inflacao-quanto-os-bancos-centrais-devem-se-preocupar.shtml",
-      "publishedAt": "2026-10-22T20:22:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "'Mother Mary' com Anne Hathaway: o que ver na TV e no streaming na sexta-feira",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/ilustrada/2026/10/mother-mary-com-anne-hathaway-o-que-ver-na-tv-e-no-streaming-na-sexta-feira.shtml",
-      "publishedAt": "2026-10-22T20:21:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Call of Duty imagina Coreia do Norte invadindo o Sul, mas qual a chance de isso realmente acontecer?",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mundo/2026/10/call-of-duty-imagina-coreia-do-norte-invadindo-o-sul-mas-qual-a-chance-de-isso-realmente-acontecer.shtml",
-      "publishedAt": "2026-10-22T20:20:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Universidad de Chile x Deportivo Cali - Taça Libertadores Feminina 2026 - Ao vivo - globoesporte.com",
-      "link": "https://ge.globo.com/futebol/libertadores-feminina/jogo/22-10-2026/universidad-de-chile-deportivo-cali.ghtml",
-      "publishedAt": "2026-10-22T20:18:45.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "GE Globo Esporte",
-      "title": "Libertad x Nacional-URU - Taça Libertadores Feminina 2026 - Ao vivo - globoesporte.com",
-      "link": "https://ge.globo.com/futebol/libertadores-feminina/jogo/22-10-2026/libertad-nacional-uru.ghtml",
-      "publishedAt": "2026-10-22T20:18:33.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Kassio manda Meta apresentar em 24 horas relat�rio detalhado sobre a��es do 'Ex�rcito de Lula'",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/kassio-manda-meta-apresentar-em-24-horas-relatorio-detalhado-sobre-acoes-do-exercito-de-lula.shtml",
-      "publishedAt": "2026-10-22T20:18:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Ap�s negar pedido, Justi�a eleitoral do Amazonas diz que transporte para ind�genas no Vale do Javari no 2� turno est� garantido",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/monicabergamo/2026/10/apos-negar-pedido-justica-eleitoral-do-amazonas-diz-que-transporte-para-indigenas-no-vale-do-javari-no-2o-turno-esta-garantido.shtml",
-      "publishedAt": "2026-10-22T20:15:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Tecmundo",
-      "title": "CD Projekt Red revela segredo por trás do sucesso contínuo de The Witcher 3 Wild Hunt",
-      "link": "https://www.estadao.com.br/tecmundo/voxel/cd-projekt-red-revela-segredo-por-tras-do-sucesso-continuo-de-the-witcher-3-wild-hunt/",
-      "publishedAt": "2026-10-22T20:12:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "DPSP, dona da Drogaria S�o Paulo, aposta em vacina��o para atrair visitas e registra 15% de alta",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/colunas/painelsa/2026/10/dpsp-dona-da-drogaria-sao-paulo-aposta-em-vacinacao-para-atrair-visitas-e-registra-15-de-alta.shtml",
-      "publishedAt": "2026-10-22T20:11:00.000Z",
-      "keywordScore": 1,
-      "trendScore": 0,
-      "score": 1
-    },
-    {
-      "source": "Folha de S.Paulo",
-      "title": "Datafolha: Celina Le�o mant�m lideran�a no DF",
-      "link": "https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/poder/2026/10/datafolha-celina-leao-mantem-lideranca-no-df.shtml",
-      "publishedAt": "2026-10-22T20:09:00.000Z",
       "keywordScore": 1,
       "trendScore": 0,
       "score": 1
